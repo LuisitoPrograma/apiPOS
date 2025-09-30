@@ -38,7 +38,209 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <!-- STYLES -->
-<link rel="stylesheet" href="css/register_styles.css">
+<style>
+:root{
+--primary:#FF5900; 
+--primary-600:#ff6f22;
+--indigo:#080060;   
+--bg:#ffffff;     
+--text:#1f2937;
+--muted:#6b7280;
+--card:#ffffff;
+--radius:16px;
+--shadow:0 10px 25px rgba(213, 42, 42, 0.08);
+--plomo-oscuro: #5a6268;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:#fff}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:min(1180px,92%);margin:0 auto}
+.btn{appearance:none;border:0;cursor:pointer;padding:.9rem 1.2rem;border-radius:999px;font-weight:600;transition:.2s background,.2s box-shadow,.2s transform;display:inline-flex;align-items:center;gap:.5rem}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{background:var(--primary-600);box-shadow:0 6px 18px rgba(255,89,0,.35)}
+.btn-outline{background:#fff;border:2px solid var(--indigo);color:var(--indigo)}
+.btn-outline:hover{background:var(--indigo);color:#fff}
+
+/* Header */
+header{position:sticky;top:0;background:#fff;z-index:40;border-bottom:1px solid #ffffff}
+.topbar{display:flex;justify-content:space-between;align-items:center;height:50px}
+.brand{display:flex;align-items:center;gap:.75rem}
+.brand img{height:44px;width:auto}
+.brand .dot{width:6px;height:6px;background:var(--primary);border-radius:999px;margin-left:.25rem}
+nav{display:flex;align-items:center;gap:.6rem}
+.pill{font-size:.86rem;padding:.55rem 1rem;border-radius:999px;border:1px solid #eee;background:#fff}
+
+/* Hero */
+.hero{background:linear-gradient(180deg,#fff 0,#fff 60%, var(--bg) 60%, var(--bg) 100%)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:36px 0 24px}
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow)}
+.welcome{padding:24px 24px 8px}
+.welcome h1{font-size:1.35rem;margin:0 0 .5rem;color:var(--indigo)}
+.welcome p{color:var(--muted);line-height:1.6;margin:0}
+.cta{margin-top:18px}
+.panel{padding:18px}
+.panel h4{margin:0 0 2px;font-size:.95rem;color:#111}
+.guides{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.guide{border:1px dashed #FF5900;border-radius:12px;padding:14px ;background-color: #ffffff;}
+.guide b{display:block;margin-bottom:.25rem}
+.guide small{display:block;color:var(--muted)}
+.icono-pequeno {width: 40px; height: auto; display: block; margin: 0 auto;}
+.btn-guia { background-color: #f8f8f8; color: #bb1919; padding: 10px 16px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; transition: background 0.3s ease;}
+.btn-guia:hover {background-color: #f8f8f8;}
+.titulo-principal {font-size: 38px !important; font-weight: bold; text-align: left;}
+
+/* Stepper + form */
+.stepper {display: flex;justify-content: center;gap: 40px;}
+.bullet {display: flex;flex-direction: column; align-items: center; cursor: pointer;}
+.num { background: #FF5900;color: #fff;width: 35px;height: 35px;display: flex;justify-content: center;align-items: center;border-radius: 50%;font-weight: bold;margin-bottom: 5px;}
+.bullet span {font-weight: 300; color: #080060; font-size: 14px;}
+.stepper{display:flex;gap:32px;align-items:center;padding:12px 16px;border-bottom:1px solid #eee}
+.bullet{display:flex;align-items:center;gap:.5rem}
+.bullet .num{width:30px;height:30px;border-radius:999px;background:#f1f5f9;display:grid;place-items:center;color:#111;font-weight:700}
+.bullet.active .num{background:var(--primary);color:#fff}
+.bullet span{font-size:.9rem;color:var(--muted)}
+.form{padding:18px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+
+/* Logos + videos */
+.trust{margin:28px 0 8px}
+.trust p{margin:0;color:#111}
+.logo-row{display:grid;grid-template-columns:repeat(8,1fr);gap:18px;align-items:center;opacity:.9}
+.logo{height:40px;background:#fff;border-radius:8px;box-shadow:0 6px 14px rgba(0,0,0,.05);display:grid;place-items:center}
+.vid-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:14px}
+.vid{position:relative;overflow:hidden;border-radius:14px;box-shadow:var(--shadow)}
+.vid iframe{aspect-ratio:16/9;width:100%;height:auto;border:0}
+
+/* Refer & benefits */
+.belt{background:var(--bg);padding:36px 0;margin-top:30px}
+.belt .title{font-size:1.25rem;font-weight:800}
+.highlight{color:var(--primary)}
+.benefits{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}
+.benefit-card {background: #fff;border-radius: 16px;box-shadow: var(--shadow);padding: 16px;font-size: 0.55rem; color: #000000; }
+div.benefit-card strong {font-size: 0.91rem !important; line-height: 1.6 !important;color: #080060 !important; display: block; margin-bottom: 6px;}
+.benefit-card strong {font-size: 0.9rem;}
+.benefit-card p,.benefit-card span,.benefit-card label {color: #201f1e;  font-size: 0.8rem; }
+
+/* CSS */
+.benefit-card {background: #fff;border-radius: 12px;padding: 16px; text-align: left;}
+
+/* Contenedor del checkbox + texto */
+.checkbox-card {display: flex; gap: 12px;align-items: flex-start; justify-content: flex-start;}
+.checkbox-card input[type="checkbox"] {width: 18px;height: 18px;margin: 3px 0 0 0;  flex: 0 0 auto;cursor: pointer;}
+.checkbox-label {flex: 1;margin: 0;color: #FF5900;font-weight: 600;line-height: 1.35; font-size: 0.95rem;}
+.benefit-card, .checkbox-card, .checkbox-label { text-align: left !important; }
+
+/* Texto dentro del input */
+.list{display:grid;gap:8px}
+.list li{display:flex;gap:.6rem;align-items:flex-start}
+.badge{width:28px;height:28px;border-radius:999px;background:var(--primary);color:#fff;display:grid;place-items:center;font-weight:800}
+
+/* Footer */
+footer{background:var(--indigo);color:#e6e6ff;margin-top:40px}
+.foot{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;padding:28px 0}
+footer h4{margin:0 0 .6rem;font-weight:800}
+footer a{color:#e6e6ff;opacity:.9}
+.copy{border-top:1px solid rgba(255,255,255,.12);padding:12px 0;color:#c7c7ff;font-size:.85rem}
+
+/* ========= ESTILOS BASE ========= */
+body{font-family:Arial,sans-serif;margin:0}
+label{font-size:.85rem;font-weight:600;color:#111;margin-bottom:6px;display:block}
+input,select,textarea{width:100%;padding:.4rem .6rem;border:1px solid #e5e7eb;border-radius:12px;background:#fff;font:inherit;color:var(--plomo-oscuro);font-size:13px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 4px rgba(255,89,0,.12)}
+
+/* ========= CAMPOS ESPECIALES ========= */
+input[type="date"].fecha{padding:6px 8px;border:1px solid #ccc;border-radius:8px;font-size:13px;color:var(--plomo-oscuro)}
+input[type="checkbox"]:checked,input[type="radio"]:checked{accent-color:var(--primary)}
+
+/* ========= CONTENEDOR CONTRASEÑA ========= */
+.password-container{position:relative;display:flex;align-items:center}
+.password-container input{padding-right:40px}
+.toggle-password{position:absolute;right:12px;cursor:pointer;color:var(--plomo-oscuro);font-size:16px}
+
+/* ========= CHECKBOX RECORDAR DATOS ========= */
+.remember-container{display:flex;align-items:center;gap:8px;margin-top:10px}
+.remember-container input[type="checkbox"]{width:16px;height:16px;accent-color:var(--primary)}
+.remember-container label{margin:0;font-size:13px;color:var(--plomo-oscuro);font-weight:normal}
+
+/* ========= BOTONES ========= */
+.btn-seleccionar{background:#f8f8f8;color:#474747;padding:8px 16px;border-radius:8px;border:1px solid #ccc;cursor:pointer;font-weight:normal;display:block;width:100%;text-align:center;transition:background .3s ease;font-size:13px}
+.btn-seleccionar:hover{background:#e6e6e6}
+.btn-seleccionar-angosto{background:#f8f8f8;color:#474747;padding:6px 12px;border-radius:6px;border:1px solid #ccc;cursor:pointer;font-weight:normal;display:inline-block;width:auto;min-width:100px;text-align:center;transition:background .3s ease;font-size:12px;white-space:nowrap}
+.btn-seleccionar-angosto:hover{background:#e6e6e6}
+
+/* ========= SELECT UBICACIÓN ========= */
+.ubicacion{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.ubicacion select{padding:10px 15px;border:2px solid #e9ecef;border-radius:12px;background:#f8f9fa;color:var(--plomo-oscuro);font-size:13px;font-family:inherit;transition:all .3s ease;appearance:none;background-image:url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236c757d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");background-repeat:no-repeat;background-position:right 15px center;background-size:16px;padding-right:40px}
+.ubicacion select:focus{border-color:#4361ee;box-shadow:0 0 0 3px rgba(67,97,238,.15);background-color:#fff}
+
+/* ========= TITULOS Y ACCIONES ========= */
+.titulo-negocio{color:#111;font-weight:bold;font-size:15px;margin-bottom:30px}
+.actions{display:flex;justify-content:flex-end;gap:10px;margin-top:8px}
+
+/* ========= TEXTO DESARROLLADO POR ========= */
+.developed-by{text-align:left;padding:15px 0;background:#080060;color:#fff;font-size:14px;border-top:1px solid #080060}
+.developed-by a{color:#fff;text-decoration:none;font-weight:600}
+
+/* ========= CAMPOS REQUERIDOS ========= */
+.required::after{content:" *";color:#FA980F}
+
+/* ========= NOTIFICACIONES ========= */
+.notification{position:fixed;top:200px;right:80px;background:#080060;color:#fff;padding:15px 20px;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.15);z-index:1000;display:none;font-size:14px}
+.notification-success{position:fixed;top:20px;right:20px;background:#4CAF50;color:#fff;padding:15px 20px;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.15);z-index:1000;display:none;font-size:14px}
+#emailNotification{background:#080060; top: 200px; right: 20px;}
+
+/* ========= RESPONSIVE ========= */
+@media screen and (max-width:767px){.ocultar-movil{display:none!important}}
+
+/* Responsive */
+@media (max-width:1000px){.hero-grid,.benefits{grid-template-columns:1fr}.logo-row{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:720px){.grid-2,.grid-3{grid-template-columns:1fr}.vid-grid{grid-template-columns:1fr}.foot{grid-template-columns:1fr 1fr}.stepper{gap:16px}}
+.trust p {font-size: 14px;}
+.trust p strong.highlight {font-size: 14px;}
+.vid iframe {width: 100%;height: 100px;border: none;}
+.vid {position: relative;width: 100%;padding-bottom: 7.25%;height: 0;}
+.vid iframe {position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
+.benefit-card-lg h3 {font-size: 20px;}
+.benefit-card-lg ul li div b {font-size: 15px;}
+.benefit-card-lg ul li div small {font-size: 15px;}
+.benefit-card-lg .badge {font-size: 15px;width: 20px;height: 20px;line-height: 20px; }
+.benefit-card-lg .btn {font-size: 17px; padding: 8px 14px;}
+.about-text {width: 100%;margin: 0 auto;text-align: left;}
+.copy {text-align: center;font-size: 14px;padding: 10px 0;}
+.about-text h3 {font-size: 25px; margin-bottom: 100px;text-align: center; }
+.about-text p {opacity: 0.9;line-height: 1.65;text-align: justify;}
+.social-footer {text-align: left; padding: 10px 3px;background: var(--indigo);border-top: 1px solid rgba(255,255,255,0.15);}
+.social-footer a {display: inline-flex;align-items: center;justify-content: center;width: 45px;height: 45px;margin-right: 1px; border-radius: 80%;background: #fff;font-size: 14px;transition: transform 0.3s;}
+
+/* Colores de los iconos */
+.social-footer a.facebook { color: #1877f2; } 
+.social-footer a.home     { color: #000; }    
+.social-footer a.youtube  { color: #ff0000; } 
+.social-footer a.tiktok   { color: #000; }    
+
+/* Hover efecto */
+.social-footer a:hover {transform: scale(1.15)}
+
+.whatsapp-float {position: fixed;bottom: 20px;right: 20px;background: #25D366;color: #fff;width: 60px;height: 60px;border-radius: 50%;display: flex;align-items: center;justify-content: center;font-size: 28px;box-shadow: 0 4px 12px rgba(0,0,0,0.2);transition: transform 0.3s ease, box-shadow 0.3s ease;z-index: 1000;}
+.whatsapp-float:hover {transform: scale(1.1);box-shadow: 0 6px 18px rgba(0,0,0,0.3);}
+
+/* Estilo para checkbox de zona selva */
+.checkbox-option {display: flex;align-items: center;gap: 8px;padding: 12px 18px;border: 2px solid #ddd;border-radius: 12px;cursor: pointer;transition: all 0.3s ease;font-size: 13px;color: #333;background: #fff;box-shadow: 0 4px 8px rgba(0,0,0,0.05);justify-content: flex-start;width: 100%;}
+.checkbox-option:hover {border-color: #FF5900;box-shadow: 0 6px 14px rgba(255, 89, 0, 0.2);}
+.checkbox-option input[type="checkbox"] {width: 12px;height: 12px;accent-color: #FF5900;cursor: pointer;}
+.checkbox-option span {flex: 1;}
+
+/* Estilo para checkbox de términos */
+.checkbox-terminos {display: flex;align-items: center;gap: 8px;padding: 12px 18px;border: 2px solid #ddd;border-radius: 12px;cursor: pointer;transition: all 0.3s ease;font-size: 13px;color: #333;background: #fff;box-shadow: 0 4px 8px rgba(0,0,0,0.05);justify-content: flex-start;width: 100%;margin-top: 10px;}
+.checkbox-terminos:hover {border-color: #FF5900;box-shadow: 0 6px 14px rgba(255, 89, 0, 0.2);}
+.checkbox-terminos input[type="checkbox"] {width: 12px;height: 12px;accent-color: #FF5900;cursor: pointer;}
+.checkbox-terminos span {flex: 1;}
+
+/* Estilos para mostrar nombres de archivos seleccionados */
+.file-info {font-size: 0.8rem; color: var(--muted); font-style: italic; margin-top: 5px;}
+</style>
 </head>
 <body>
 
@@ -445,7 +647,387 @@
 </a>
 
 <!-- SCRIPTS -->
-<script src="js/register_form.js"></script>
-<script src="js/register_ubigeo.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+/* FILE SELECTORS (LOGO, EXCEL, SUNAT) */
+const inputLogo = document.querySelector('#logo[type="file"]');
+const logoInfo =
+document.querySelector('#logo[type="file"] + .file-info') ||
+document.querySelector('#logo_info');
+
+if (inputLogo) {
+inputLogo.addEventListener('change', function () {
+if (this.files?.length) {
+if (logoInfo) logoInfo.textContent = `Archivo seleccionado: ${this.files[0].name}`;
+} else {
+if (logoInfo) logoInfo.textContent = 'No se ha seleccionado ningún archivo';
+}
+});
+}
+
+/* FILE SELECTOR FOR EXCEL */
+const inputExcel = document.querySelector('#archivo_excel[type="file"], #archivo-excel[type="file"]');
+const nombreArchivoExcel =
+document.querySelector('#archivo_excel[type="file"] + .file-info') ||
+document.querySelector('#archivo-excel[type="file"] + .file-info') ||
+document.querySelector('#archivo_excel_info');
+
+if (inputExcel) {
+inputExcel.addEventListener('change', function () {
+if (this.files?.length) {
+nombreArchivoExcel && (nombreArchivoExcel.textContent = `Archivo seleccionado: ${this.files[0].name}`);
+} else {
+nombreArchivoExcel && (nombreArchivoExcel.textContent = 'No se ha seleccionado ningún archivo');
+}
+});
+}
+
+/* FILE SELECTOR FOR SUNAT DOCUMENTS */
+const inputSunat = document.querySelector('#archivo_sunat[type="file"], #archivo-sunat[type="file"], #documentos-sunat[type="file"]');
+const nombreArchivoSunat =
+document.querySelector('#archivo_sunat[type="file"] + .file-info') ||
+document.querySelector('#archivo-sunat[type="file"] + .file-info') ||
+document.querySelector('#documentos-sunat[type="file"] + .file-info') ||
+document.querySelector('#archivo_sunat_info');
+
+if (inputSunat) {
+inputSunat.addEventListener('change', function () {
+if (this.files?.length) {
+if (this.files.length === 1) {
+nombreArchivoSunat && (nombreArchivoSunat.textContent = `Archivo seleccionado: ${this.files[0].name}`);
+} else {
+nombreArchivoSunat && (nombreArchivoSunat.textContent = `${this.files.length} archivos seleccionados`);
+}
+} else {
+nombreArchivoSunat && (nombreArchivoSunat.textContent = 'No se ha seleccionado ningún archivo');
+}
+});
+}
+
+/* NOTIFICATIONS */
+const showNotification = () => {
+const n = document.getElementById('requiredFieldsNotification');
+if (!n) return;
+n.style.display = 'block';
+setTimeout(() => (n.style.display = 'none'), 5000);
+};
+
+const showEmailNotification = () => {
+const n = document.getElementById('emailNotification');
+if (!n) return;
+n.style.display = 'block';
+setTimeout(() => (n.style.display = 'none'), 5000);
+};
+
+const showSuccessNotification = () => {
+const n = document.getElementById('successNotification');
+if (!n) return;
+n.style.display = 'block';
+setTimeout(() => (n.style.display = 'none'), 5000);
+};
+
+const isValidEmail = (email) => email && email.includes('@') && email.includes('.');
+
+/* STEP NAVIGATION */
+function goto(n) {
+document.querySelectorAll('.bullet').forEach(b => b.classList.toggle('active', Number(b.dataset.step) === n));
+document.querySelectorAll('.step').forEach(s => (s.hidden = Number(s.dataset.step) !== n));
+const registro = document.getElementById('registro');
+if (registro) window.scrollTo({ top: registro.offsetTop - 80, behavior: 'smooth' });
+}
+window.goto = goto;
+
+/* STEP VALIDATION */
+function validateStep(step) {
+const currentStep = document.querySelector(`.step[data-step="${step}"]`);
+if (!currentStep) return;
+const requiredFields = currentStep.querySelectorAll('.required');
+let isValid = true;
+
+requiredFields.forEach(field => {
+const wrapper = field.closest('div') || field.parentElement;
+const input = wrapper?.querySelector('input, select, textarea');
+if (input && input.type !== 'checkbox' && !input.value.trim()) {
+isValid = false;
+input.style.borderColor = 'red';
+} else if (input) {
+input.style.borderColor = '';
+}
+});
+
+/* ADDITIONAL RULES FOR STEP 3 */
+if (step === 3) {
+const terminos = document.getElementById('terminos_condiciones');
+if (terminos && !terminos.checked) {
+isValid = false;
+terminos.style.outline = '2px solid red';
+} else if (terminos) {
+terminos.style.outline = '';
+}
+
+const emailInput = document.getElementById('email_crear_cuenta');
+if (emailInput && emailInput.value.trim() && !isValidEmail(emailInput.value.trim())) {
+isValid = false;
+emailInput.style.borderColor = 'red';
+}
+}
+
+if (!isValid) {
+if (step === 3) {
+const emailInput = document.getElementById('email_crear_cuenta');
+if (emailInput && emailInput.value.trim() && !isValidEmail(emailInput.value.trim())) {
+showEmailNotification();
+} else {
+showNotification();
+}
+} else {
+showNotification();
+}
+return;
+}
+
+goto(step + 1);
+}
+window.validateStep = validateStep;
+
+/* VALIDATE AND SUBMIT FULL FORM */
+function validateAndSubmit() {
+let isValid = true;
+
+for (let i = 1; i <= 5; i++) {
+const step = document.querySelector(`.step[data-step="${i}"]`);
+if (!step) continue;
+const requiredFields = step.querySelectorAll('.required');
+
+requiredFields.forEach(field => {
+const wrapper = field.closest('div') || field.parentElement;
+const input = wrapper?.querySelector('input, select, textarea');
+if (input && input.type !== 'checkbox' && !input.value.trim()) {
+isValid = false;
+input.style.borderColor = 'red';
+}
+});
+
+if (i === 3) {
+const terminos = document.getElementById('terminos_condiciones');
+if (terminos && !terminos.checked) {
+isValid = false;
+terminos.style.outline = '2px solid red';
+}
+const emailInput = document.getElementById('email_crear_cuenta');
+if (emailInput && emailInput.value.trim() && !isValidEmail(emailInput.value.trim())) {
+isValid = false;
+emailInput.style.borderColor = 'red';
+}
+}
+}
+
+if (!isValid) {
+const emailInput = document.getElementById('email_crear_cuenta');
+if (emailInput && emailInput.value.trim() && !isValidEmail(emailInput.value.trim())) {
+showEmailNotification();
+} else {
+showNotification();
+}
+return;
+}
+
+showSuccessNotification();
+
+}
+window.validateAndSubmit = validateAndSubmit;
+
+/* TOGGLE PASSWORD VISIBILITY */
+const togglePasswordBtn = document.getElementById('togglePassword');
+if (togglePasswordBtn) {
+togglePasswordBtn.addEventListener('click', function () {
+const passwordInput = document.getElementById('password_crear_cuenta');
+if (!passwordInput) return;
+const type = passwordInput.type === 'password' ? 'text' : 'password';
+passwordInput.type = type;
+this.classList.toggle('fa-eye');
+this.classList.toggle('fa-eye-slash');
+});
+}
+
+/* TERMS AND SUPPORT CHECKBOX INTERACTION */
+const terminosCheckbox = document.getElementById('terminos_condiciones');
+const soporteCheckbox = document.getElementById('soporte');
+if (terminosCheckbox) {
+terminosCheckbox.addEventListener('change', function () {
+if (this.checked && soporteCheckbox) soporteCheckbox.checked = false;
+});
+}
+
+/* EMAIL VALIDATION ON BLUR */
+const emailBlurInput = document.getElementById('email_crear_cuenta');
+if (emailBlurInput) {
+emailBlurInput.addEventListener('blur', function () {
+if (this.value.trim() && !isValidEmail(this.value.trim())) {
+this.style.borderColor = 'red';
+showEmailNotification();
+} else {
+this.style.borderColor = '';
+}
+});
+}
+
+/* REMEMBER LOGIN DATA (LOCAL STORAGE) */
+const rememberCheckbox = document.getElementById('remember');
+const emailInput = document.getElementById('email_crear_cuenta');
+const passwordInput = document.getElementById('password_crear_cuenta');
+
+/* LOAD SAVED DATA FROM LOCAL STORAGE */
+if ((emailInput || passwordInput) && rememberCheckbox) {
+const savedEmail = localStorage.getItem('savedEmail');
+const savedPassword = localStorage.getItem('savedPassword');
+if (savedEmail && emailInput) emailInput.value = savedEmail;
+if (savedPassword && passwordInput) passwordInput.value = savedPassword;
+if ((savedEmail || savedPassword) && rememberCheckbox) rememberCheckbox.checked = true;
+}
+
+/* SAVE OR DELETE DATA WHEN CHECKBOX CHANGES */
+if (rememberCheckbox) {
+rememberCheckbox.addEventListener('change', () => {
+if (rememberCheckbox.checked) {
+emailInput && localStorage.setItem('savedEmail', emailInput.value || '');
+passwordInput && localStorage.setItem('savedPassword', passwordInput.value || '');
+} else {
+localStorage.removeItem('savedEmail');
+localStorage.removeItem('savedPassword');
+}
+});
+
+/* UPDATE SAVED DATA WHEN USER TYPES */
+if (emailInput) {
+emailInput.addEventListener('input', () => {
+if (rememberCheckbox.checked) localStorage.setItem('savedEmail', emailInput.value || '');
+});
+}
+if (passwordInput) {
+passwordInput.addEventListener('input', () => {
+if (rememberCheckbox.checked) localStorage.setItem('savedPassword', passwordInput.value || '');
+});
+}
+}
+
+  //  SELECT ELEMENTS
+  const selDepa = document.getElementById('departamento');
+  const selProv = document.getElementById('provincia');
+  const selDist = document.getElementById('distrito');
+
+  //  CHECK IF SELECTS EXIST
+  if (!selDepa || !selProv || !selDist) {
+    console.warn('register_ubigeo.js: uno o más selects no encontrados (esperados: departamento, provincia, distrito).');
+    return;
+  }
+
+  //  JSON FILE PATHS
+  const basePath = 'json/'; 
+  const depFile = basePath + 'peru_departamentos.json';
+  const provFile = basePath + 'peru_provincias.json';
+  const distFile = basePath + 'peru_distritos.json';
+
+  //  INITIAL SELECT MESSAGES
+  selDepa.innerHTML = `<option value="" disabled selected>Cargando departamentos...</option>`;
+  selProv.innerHTML = `<option value="" disabled selected>Provincia</option>`;
+  selDist.innerHTML = `<option value="" disabled selected>Distrito</option>`;
+
+  //  LOAD JSON DATA FOR DEPARTMENTS, PROVINCES, DISTRICTS
+  Promise.all([
+    fetch(depFile).then(r => {
+      if (!r.ok) throw new Error('dep fetch ' + r.status);
+      return r.json();
+    }),
+    fetch(provFile).then(r => {
+      if (!r.ok) throw new Error('prov fetch ' + r.status);
+      return r.json();
+    }),
+    fetch(distFile).then(r => {
+      if (!r.ok) throw new Error('dist fetch ' + r.status);
+      return r.json();
+    })
+  ])
+  .then(([depJson, provJson, distJson]) => {
+
+    //  NORMALIZE ARRAYS
+    const departamentos = Array.isArray(depJson.rows) ? depJson.rows : (Array.isArray(depJson) ? depJson : []);
+    const provincias = Array.isArray(provJson.rows) ? provJson.rows : (Array.isArray(provJson) ? provJson : []);
+    const distritos = Array.isArray(distJson.rows) ? distJson.rows : (Array.isArray(distJson) ? distJson : []);
+
+    //  NO DEPARTMENTS FOUND
+    if (departamentos.length === 0) {
+      console.warn('register_ubigeo.js: no se encontraron departamentos en el JSON.');
+      selDepa.innerHTML = `<option value="" disabled selected>No hay departamentos</option>`;
+      return;
+    }
+
+    //  POPULATE DEPARTMENTS SELECT
+    selDepa.innerHTML = `<option value="" disabled selected>Departamento</option>`;
+    departamentos.forEach(d => {
+      //  ENSURE ID AND NAME EXIST
+      const id = d.id ?? d.codigo ?? d.code ?? d.value ?? '';
+      const name = d.name ?? d.nombre ?? d.label ?? '';
+      if (id && name) selDepa.insertAdjacentHTML('beforeend', `<option value="${id}">${name}</option>`);
+    });
+
+    //  STORE PROVINCES AND DISTRICTS ARRAYS IN DATASET
+    selDepa.dataset.provincias = JSON.stringify(provincias);
+    selDepa.dataset.distritos = JSON.stringify(distritos);
+
+  })
+  .catch(err => {
+    //  ERROR LOADING JSON FILES
+    console.error('register_ubigeo.js - error cargando JSONs:', err);
+    selDepa.innerHTML = `<option value="" disabled selected>Error cargando datos</option>`;
+  });
+
+  //  ON DEPARTMENT CHANGE => POPULATE PROVINCES
+  selDepa.addEventListener('change', () => {
+    const depId = selDepa.value;
+    selProv.innerHTML = `<option value="" disabled selected>Provincia</option>`;
+    selDist.innerHTML = `<option value="" disabled selected>Distrito</option>`;
+
+    let provincias = [];
+    try { provincias = JSON.parse(selDepa.dataset.provincias || '[]'); } catch(e) { provincias = []; }
+
+    provincias
+      .filter(p => String(p.department_id ?? p.departamento_id ?? p.dep_id ?? '') === String(depId))
+      .forEach(p => {
+        const id = p.id ?? p.codigo ?? p.code ?? p.value ?? '';
+        const name = p.name ?? p.nombre ?? p.label ?? '';
+        if (id && name) selProv.insertAdjacentHTML('beforeend', `<option value="${id}">${name}</option>`);
+      });
+
+    //  IF NO PROVINCES FOUND
+    if (selProv.options.length === 1) {
+      selProv.innerHTML = `<option value="" disabled selected>Sin provincias</option>`;
+    }
+  });
+
+  //  ON PROVINCE CHANGE => POPULATE DISTRICTS
+  selProv.addEventListener('change', () => {
+    const provId = selProv.value;
+    selDist.innerHTML = `<option value="" disabled selected>Distrito</option>`;
+
+    let distritos = [];
+    try { distritos = JSON.parse(selDepa.dataset.distritos || '[]'); } catch(e) { distritos = []; }
+
+    distritos
+      .filter(d => String(d.province_id ?? d.provincia_id ?? d.prov_id ?? '') === String(provId))
+      .forEach(d => {
+        const id = d.id ?? d.codigo ?? d.code ?? d.value ?? '';
+        const name = d.name ?? d.nombre ?? d.label ?? '';
+        if (id && name) selDist.insertAdjacentHTML('beforeend', `<option value="${id}">${name}</option>`);
+      });
+
+    //  IF NO DISTRICTS FOUND
+    if (selDist.options.length === 1) {
+      selDist.innerHTML = `<option value="" disabled selected>Sin distritos</option>`;
+    }
+  });
+});
+</script>
 </body>
 </html>

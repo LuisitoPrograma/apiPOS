@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Principal</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .app-container {
+            max-width: 100%;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .header-titles h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .header-titles h2 {
+            font-size: 18px;
+            color: #666;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .pipeline-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding-bottom: 20px;
+            min-height: 70vh;
+        }
+
+        .etapa {
+            min-width: 280px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .etapa-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+
+        .etapa-title {
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .etapa-actions {
+            display: flex;
+            gap: 5px;
+        }
+
+        .etapa-actions button {
+            background: none;
+            color: #666;
+            padding: 2px 5px;
+            font-size: 12px;
+        }
+
+        .etapa-actions button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .tickets-container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            min-height: 100px;
+        }
+
+        .ticket {
+            background-color: white;
+            border-radius: 6px;
+            padding: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            cursor: grab;
+            position: relative;
+        }
+
+        .ticket:active {
+            cursor: grabbing;
+        }
+
+        .ticket-title {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .ticket-date {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .ticket-actions {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            display: flex;
+            gap: 5px;
+        }
+
+        .ticket-actions button {
+            background: none;
+            color: #666;
+            padding: 0;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ticket-actions button:hover {
+            background-color: #f0f0f0;
+        }
+
+        .add-ticket-btn {
+            width: 100%;
+            padding: 8px;
+            background-color: #e0e0e0;
+            color: #666;
+            border: 1px dashed #999;
+        }
+
+        .add-ticket-btn:hover {
+            background-color: #d0d0d0;
+        }
+
+        /* Modales */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            color: #aaa;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="color"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-group input[type="color"] {
+            height: 40px;
+            padding: 2px;
+        }
+
+        #etapaForm button,
+        #ticketForm button {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .confirm-modal {
+            text-align: center;
+        }
+
+        .confirm-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        #confirmCancelBtn {
+            background-color: #f44336;
+        }
+
+        #confirmCancelBtn:hover {
+            background-color: #d32f2f;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .modal-content {
+                margin: 20% auto;
+                width: 95%;
+            }
+            
+            .etapa {
+                min-width: 250px;
+            }
+        }
+
+        /* Efecto de arrastre */
+        .ticket.dragging {
+            opacity: 0.5;
+            transform: scale(0.95);
+        }
+
+        .etapa.highlight {
+            background-color: #e8f5e9;
+            border: 2px dashed #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-titles">
+                <h1>Panel Principal</h1>
+                <h2>Sucursal Principal Sucursal P</h2>
+            </div>
+            <button id="addEtapaBtn">+ Añadir Etapa</button>
+        </header>
+        
+        <div class="pipeline-container" id="pipelineContainer">
+            <!-- Las etapas se generarán dinámicamente -->
+        </div>
+        
+        <!-- Modal para añadir/editar etapas -->
+        <div id="etapaModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modalTitle">Nueva Etapa</h2>
+                <form id="etapaForm">
+                    <input type="hidden" id="etapaId">
+                    <div class="form-group">
+                        <label for="etapaNombre">Nombre:</label>
+                        <input type="text" id="etapaNombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="etapaColor">Color:</label>
+                        <input type="color" id="etapaColor" value="#4CAF50">
+                    </div>
+                    <button type="submit">Guardar</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Modal para añadir/editar tickets -->
+        <div id="ticketModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="ticketModalTitle">Nuevo Ticket</h2>
+                <form id="ticketForm">
+                    <input type="hidden" id="ticketId">
+                    <input type="hidden" id="ticketEtapaId">
+                    <div class="form-group">
+                        <label for="ticketNombre">Nombre:</label>
+                        <input type="text" id="ticketNombre" required>
+                    </div>
+                    <button type="submit">Guardar</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal de confirmación -->
+        <div id="confirmModal" class="modal">
+            <div class="modal-content confirm-modal">
+                <h2 id="confirmModalTitle">Confirmar acción</h2>
+                <p id="confirmModalMessage">¿Estás seguro de que deseas realizar esta acción?</p>
+                <div class="confirm-buttons">
+                    <button id="confirmCancelBtn">Cancelar</button>
+                    <button id="confirmOkBtn">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Variables globales
+        let etapas = [];
+        let tickets = [];
+        let currentEtapaId = null;
+        let currentTicketId = null;
+        let confirmCallback = null;
+        let draggedTicket = null;
+
+        // Elementos del DOM
+        const pipelineContainer = document.getElementById('pipelineContainer');
+        const addEtapaBtn = document.getElementById('addEtapaBtn');
+        const etapaModal = document.getElementById('etapaModal');
+        const ticketModal = document.getElementById('ticketModal');
+        const confirmModal = document.getElementById('confirmModal');
+        const etapaForm = document.getElementById('etapaForm');
+        const ticketForm = document.getElementById('ticketForm');
+        const etapaNombreInput = document.getElementById('etapaNombre');
+        const etapaColorInput = document.getElementById('etapaColor');
+        const etapaIdInput = document.getElementById('etapaId');
+        const ticketNombreInput = document.getElementById('ticketNombre');
+        const ticketIdInput = document.getElementById('ticketId');
+        const ticketEtapaIdInput = document.getElementById('ticketEtapaId');
+        const modalTitle = document.getElementById('modalTitle');
+        const ticketModalTitle = document.getElementById('ticketModalTitle');
+        const confirmOkBtn = document.getElementById('confirmOkBtn');
+        const confirmCancelBtn = document.getElementById('confirmCancelBtn');
+
+        // Cerrar modales al hacer clic en la X
+        document.querySelectorAll('.close').forEach(closeBtn => {
+            closeBtn.addEventListener('click', () => {
+                etapaModal.style.display = 'none';
+                ticketModal.style.display = 'none';
+                confirmModal.style.display = 'none';
+            });
+        });
+
+        // Cerrar modales al hacer clic fuera del contenido
+        window.addEventListener('click', (event) => {
+            if (event.target === etapaModal) {
+                etapaModal.style.display = 'none';
+            }
+            if (event.target === ticketModal) {
+                ticketModal.style.display = 'none';
+            }
+            if (event.target === confirmModal) {
+                confirmModal.style.display = 'none';
+            }
+        });
+
+        // Botón para añadir etapa
+        addEtapaBtn.addEventListener('click', () => {
+            etapaIdInput.value = '';
+            etapaNombreInput.value = '';
+            etapaColorInput.value = '#4CAF50';
+            modalTitle.textContent = 'Nueva Etapa';
+            etapaModal.style.display = 'block';
+        });
+
+        // Formulario de etapa
+        etapaForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const nombre = etapaNombreInput.value.trim();
+            const color = etapaColorInput.value;
+            
+            if (nombre) {
+                if (etapaIdInput.value) {
+                    // Editar etapa existente
+                    const etapaId = etapaIdInput.value;
+                    const etapaIndex = etapas.findIndex(e => e.id === etapaId);
+                    
+                    if (etapaIndex !== -1) {
+                        etapas[etapaIndex].nombre = nombre;
+                        etapas[etapaIndex].color = color;
+                    }
+                } else {
+                    // Crear nueva etapa
+                    const nuevaEtapa = {
+                        id: generateId(),
+                        nombre: nombre,
+                        color: color,
+                        fechaCreacion: new Date().toISOString()
+                    };
+                    etapas.push(nuevaEtapa);
+                }
+                
+                renderPipeline();
+                etapaModal.style.display = 'none';
+            }
+        });
+
+        // Formulario de ticket
+        ticketForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const nombre = ticketNombreInput.value.trim();
+            const etapaId = ticketEtapaIdInput.value;
+            
+            if (nombre && etapaId) {
+                if (ticketIdInput.value) {
+                    // Editar ticket existente
+                    const ticketId = ticketIdInput.value;
+                    const ticketIndex = tickets.findIndex(t => t.id === ticketId);
+                    
+                    if (ticketIndex !== -1) {
+                        tickets[ticketIndex].nombre = nombre;
+                    }
+                } else {
+                    // Crear nuevo ticket
+                    const nuevoTicket = {
+                        id: generateId(),
+                        nombre: nombre,
+                        fechaCreacion: new Date().toISOString(),
+                        id_etapa: etapaId
+                    };
+                    tickets.push(nuevoTicket);
+                }
+                
+                renderPipeline();
+                ticketModal.style.display = 'none';
+            }
+        });
+
+        // Confirmación modal
+        confirmOkBtn.addEventListener('click', () => {
+            if (confirmCallback) {
+                confirmCallback();
+            }
+            confirmModal.style.display = 'none';
+        });
+
+        confirmCancelBtn.addEventListener('click', () => {
+            confirmModal.style.display = 'none';
+        });
+
+        // Función para mostrar confirmación
+        function showConfirm(message, callback) {
+            confirmCallback = callback;
+            document.getElementById('confirmModalMessage').textContent = message;
+            confirmModal.style.display = 'block';
+        }
+
+        // Función para generar IDs únicos
+        function generateId() {
+            return Date.now().toString(36) + Math.random().toString(36).substr(2);
+        }
+
+        // Función para renderizar el pipeline
+        function renderPipeline() {
+            pipelineContainer.innerHTML = '';
+            
+            etapas.forEach(etapa => {
+                const etapaElement = document.createElement('div');
+                etapaElement.className = 'etapa';
+                etapaElement.style.borderTop = `4px solid ${etapa.color}`;
+                etapaElement.dataset.etapaId = etapa.id;
+                
+                // Header de la etapa
+                const etapaHeader = document.createElement('div');
+                etapaHeader.className = 'etapa-header';
+                
+                const etapaTitle = document.createElement('div');
+                etapaTitle.className = 'etapa-title';
+                etapaTitle.textContent = etapa.nombre;
+                
+                const etapaActions = document.createElement('div');
+                etapaActions.className = 'etapa-actions';
+                
+                const editEtapaBtn = document.createElement('button');
+                editEtapaBtn.textContent = '✏️';
+                editEtapaBtn.title = 'Editar etapa';
+                editEtapaBtn.addEventListener('click', () => editEtapa(etapa.id));
+                
+                const deleteEtapaBtn = document.createElement('button');
+                deleteEtapaBtn.textContent = '🗑️';
+                deleteEtapaBtn.title = 'Eliminar etapa';
+                deleteEtapaBtn.addEventListener('click', () => deleteEtapa(etapa.id));
+                
+                etapaActions.appendChild(editEtapaBtn);
+                etapaActions.appendChild(deleteEtapaBtn);
+                etapaHeader.appendChild(etapaTitle);
+                etapaHeader.appendChild(etapaActions);
+                
+                // Contenedor de tickets
+                const ticketsContainer = document.createElement('div');
+                ticketsContainer.className = 'tickets-container';
+                
+                // Añadir eventos de arrastre
+                ticketsContainer.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    etapaElement.classList.add('highlight');
+                });
+                
+                ticketsContainer.addEventListener('dragleave', () => {
+                    etapaElement.classList.remove('highlight');
+                });
+                
+                ticketsContainer.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    etapaElement.classList.remove('highlight');
+                    
+                    if (draggedTicket) {
+                        const ticketId = draggedTicket.dataset.ticketId;
+                        moveTicketToEtapa(ticketId, etapa.id);
+                    }
+                });
+                
+                // Filtrar tickets para esta etapa
+                const etapaTickets = tickets.filter(ticket => ticket.id_etapa === etapa.id);
+                
+                etapaTickets.forEach(ticket => {
+                    const ticketElement = createTicketElement(ticket);
+                    ticketsContainer.appendChild(ticketElement);
+                });
+                
+                // Botón para añadir ticket
+                const addTicketBtn = document.createElement('button');
+                addTicketBtn.className = 'add-ticket-btn';
+                addTicketBtn.textContent = '+ Añadir Ticket';
+                addTicketBtn.addEventListener('click', () => {
+                    currentEtapaId = etapa.id;
+                    ticketIdInput.value = '';
+                    ticketNombreInput.value = '';
+                    ticketEtapaIdInput.value = etapa.id;
+                    ticketModalTitle.textContent = 'Nuevo Ticket';
+                    ticketModal.style.display = 'block';
+                });
+                
+                etapaElement.appendChild(etapaHeader);
+                etapaElement.appendChild(ticketsContainer);
+                etapaElement.appendChild(addTicketBtn);
+                
+                pipelineContainer.appendChild(etapaElement);
+            });
+        }
+
+        // Función para crear elemento de ticket
+        function createTicketElement(ticket) {
+            const ticketElement = document.createElement('div');
+            ticketElement.className = 'ticket';
+            ticketElement.dataset.ticketId = ticket.id;
+            ticketElement.draggable = true;
+            
+            // Configurar eventos de arrastre
+            ticketElement.addEventListener('dragstart', (e) => {
+                draggedTicket = ticketElement;
+                ticketElement.classList.add('dragging');
+                e.dataTransfer.setData('text/plain', ticket.id);
+                e.dataTransfer.effectAllowed = 'move';
+            });
+            
+            ticketElement.addEventListener('dragend', () => {
+                ticketElement.classList.remove('dragging');
+                draggedTicket = null;
+            });
+            
+            const ticketTitle = document.createElement('div');
+            ticketTitle.className = 'ticket-title';
+            ticketTitle.textContent = ticket.nombre;
+            
+            const ticketDate = document.createElement('div');
+            ticketDate.className = 'ticket-date';
+            ticketDate.textContent = formatDate(ticket.fechaCreacion);
+            
+            const ticketActions = document.createElement('div');
+            ticketActions.className = 'ticket-actions';
+            
+            const editTicketBtn = document.createElement('button');
+            editTicketBtn.textContent = '✏️';
+            editTicketBtn.title = 'Editar ticket';
+            editTicketBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                editTicket(ticket.id);
+            });
+            
+            const deleteTicketBtn = document.createElement('button');
+            deleteTicketBtn.textContent = '🗑️';
+            deleteTicketBtn.title = 'Eliminar ticket';
+            deleteTicketBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                deleteTicket(ticket.id);
+            });
+            
+            ticketActions.appendChild(editTicketBtn);
+            ticketActions.appendChild(deleteTicketBtn);
+            
+            ticketElement.appendChild(ticketTitle);
+            ticketElement.appendChild(ticketDate);
+            ticketElement.appendChild(ticketActions);
+            
+            return ticketElement;
+        }
+
+        // Función para editar etapa
+        function editEtapa(etapaId) {
+            const etapa = etapas.find(e => e.id === etapaId);
+            if (etapa) {
+                etapaIdInput.value = etapa.id;
+                etapaNombreInput.value = etapa.nombre;
+                etapaColorInput.value = etapa.color;
+                modalTitle.textContent = 'Editar Etapa';
+                etapaModal.style.display = 'block';
+            }
+        }
+
+        // Función para eliminar etapa
+        function deleteEtapa(etapaId) {
+            showConfirm('¿Estás seguro de que deseas eliminar esta etapa y todos sus tickets?', () => {
+                // Eliminar tickets asociados
+                tickets = tickets.filter(ticket => ticket.id_etapa !== etapaId);
+                
+                // Eliminar etapa
+                etapas = etapas.filter(etapa => etapa.id !== etapaId);
+                
+                renderPipeline();
+            });
+        }
+
+        // Función para editar ticket
+        function editTicket(ticketId) {
+            const ticket = tickets.find(t => t.id === ticketId);
+            if (ticket) {
+                ticketIdInput.value = ticket.id;
+                ticketNombreInput.value = ticket.nombre;
+                ticketEtapaIdInput.value = ticket.id_etapa;
+                ticketModalTitle.textContent = 'Editar Ticket';
+                ticketModal.style.display = 'block';
+            }
+        }
+
+        // Función para eliminar ticket
+        function deleteTicket(ticketId) {
+            showConfirm('¿Estás seguro de que deseas eliminar este ticket?', () => {
+                tickets = tickets.filter(ticket => ticket.id !== ticketId);
+                renderPipeline();
+            });
+        }
+
+        // Función para mover ticket a otra etapa
+        function moveTicketToEtapa(ticketId, nuevaEtapaId) {
+            const ticketIndex = tickets.findIndex(t => t.id === ticketId);
+            if (ticketIndex !== -1) {
+                tickets[ticketIndex].id_etapa = nuevaEtapaId;
+                renderPipeline();
+            }
+        }
+
+        // Función para formatear fecha
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('es-ES', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+            });
+        }
+
+        // Datos iniciales de ejemplo
+        function initData() {
+            if (etapas.length === 0) {
+                etapas = [
+                    {
+                        id: 'etapa1',
+                        nombre: 'Por hacer',
+                        color: '#FF9800',
+                        fechaCreacion: new Date().toISOString()
+                    },
+                    {
+                        id: 'etapa2',
+                        nombre: 'En progreso',
+                        color: '#2196F3',
+                        fechaCreacion: new Date().toISOString()
+                    },
+                    {
+                        id: 'etapa3',
+                        nombre: 'Terminado',
+                        color: '#4CAF50',
+                        fechaCreacion: new Date().toISOString()
+                    }
+                ];
+            }
+            
+            if (tickets.length === 0) {
+                tickets = [
+                    {
+                        id: 'ticket1',
+                        nombre: 'Implementar diseño',
+                        fechaCreacion: new Date().toISOString(),
+                        id_etapa: 'etapa1'
+                    },
+                    {
+                        id: 'ticket2',
+                        nombre: 'Desarrollar funcionalidad',
+                        fechaCreacion: new Date().toISOString(),
+                        id_etapa: 'etapa1'
+                    },
+                    {
+                        id: 'ticket3',
+                        nombre: 'Revisar código',
+                        fechaCreacion: new Date().toISOString(),
+                        id_etapa: 'etapa2'
+                    }
+                ];
+            }
+        }
+
+        // Inicialización
+        function init() {
+            initData();
+            renderPipeline();
+        }
+
+        // Iniciar la aplicación
+        init();
+    </script>
+</body>
+</html>

@@ -3,7 +3,7 @@ Name: apiPOS
 Author: Luisito Programa
 Website 1: luisitoprograma.com
 Website 2: apiERP.dev
-version: 5.2.2
+version: 5.2.3
 */
 
 /* Fonts */
@@ -59,6 +59,8 @@ scroll-behavior: smooth;
 body {
 font-family: var(--default-font);
 overflow: hidden;
+margin: 0 !important;
+padding: 0 !important;
 }
 
 h1,

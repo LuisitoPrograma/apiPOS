@@ -9,7 +9,7 @@ reference: "Filipenses 4:13"
 },
 {
 text: "El Señor es mi pastor, nada me faltará.",
-reference: "Salmos 23:1"
+reference: "Salmoss 23:1"
 },
 {
 text: "Porque de tal manera amó Dios al mundo, que ha dado a su Hijo unigénito, para que todo aquel que en él cree, no se pierda, mas tenga vida eterna.",
@@ -21,7 +21,7 @@ reference: "Filipenses 4:13"
 },
 {
 text: "El Señor es mi pastor, nada me faltará.",
-reference: "Salmos 23:1"
+reference: "Salmoss 23:1"
 },
 {
 text: "Confía en el Señor de todo corazón, y no en tu propia inteligencia.",
@@ -69,7 +69,7 @@ reference: "1 Corintios 16:14"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmos 119:105"
+reference: "Salmoss 119:105"
 },
 {
 text: "Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas.",
@@ -105,15 +105,15 @@ reference: "Josué 1:9"
 },
 {
 text: "Mi carne y mi corazón pueden desfallecer, pero Dios es la roca de mi corazón y mi porción para siempre.",
-reference: "Salmo 73:26"
+reference: "Salmos 73:26"
 },
 {
 text: "Jehová es mi fortaleza y mi escudo; en él confió mi corazón, y fui ayudado; por lo que se gozó mi corazón, y con mi cántico le alabaré.",
-reference: "Salmo 28:7"
+reference: "Salmos 28:7"
 },
 {
 text: "Echa sobre Jehová tu carga, y él te sustentará; no dejará para siempre caído al justo.",
-reference: "Salmo 55:22"
+reference: "Salmos 55:22"
 },
 {
 text: "Fortaleceos en el Señor, y en el poder de su fuerza.",
@@ -121,7 +121,7 @@ reference: "Efesios 6:10"
 },
 {
 text: "Dios es nuestro amparo y fortaleza, nuestro pronto auxilio en las tribulaciones.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "Porque no nos ha dado Dios espíritu de cobardía, sino de poder, de amor y de dominio propio.",
@@ -129,11 +129,11 @@ reference: "2 Timoteo 1:7"
 },
 {
 text: "El Señor es mi luz y mi salvación; ¿de quién temeré? El Señor es la fortaleza de mi vida; ¿de quién he de atemorizarme?",
-reference: "Salmo 27:1"
+reference: "Salmos 27:1"
 },
 {
 text: "El que habita al abrigo del Altísimo, morará bajo la sombra del Omnipotente.",
-reference: "Salmo 91:1"
+reference: "Salmos 91:1"
 },
 {
 text: "No temas, porque yo estoy contigo; no desmayes, porque yo soy tu Dios que te esfuerzo; siempre te ayudaré, siempre te sustentaré con la diestra de mi justicia.",
@@ -141,11 +141,11 @@ reference: "Isaías 41:10"
 },
 {
 text: "Te amo, oh Jehová, fortaleza mía.",
-reference: "Salmo 18:1"
+reference: "Salmos 18:1"
 },
 {
 text: "Aunque ande en valle de sombra de muerte, no temeré mal alguno, porque tú estarás conmigo; tu vara y tu cayado me infundirán aliento.",
-reference: "Salmo 23:4"
+reference: "Salmos 23:4"
 },
 {
 text: "La paz os dejo, mi paz os doy; yo no os la doy como el mundo la da. No se turbe vuestro corazón, ni tenga miedo.",
@@ -161,15 +161,15 @@ reference: "Nahúm 1:7"
 },
 {
 text: "Porque un momento será su ira, pero su favor dura toda la vida. Por la noche durará el lloro, y a la mañana vendrá la alegría.",
-reference: "Salmo 30:5"
+reference: "Salmos 30:5"
 },
 {
 text: "Mi socorro viene de Jehová, que hizo los cielos y la tierra.",
-reference: "Salmo 121:2"
+reference: "Salmos 121:2"
 },
 {
 text: "Jehová dará poder a su pueblo; Jehová bendecirá a su pueblo con paz.",
-reference: "Salmo 29:11"
+reference: "Salmos 29:11"
 },
 {
 text: "Y la paz de Dios, que sobrepasa todo entendimiento, guardará vuestros corazones y vuestros pensamientos en Cristo Jesús.",
@@ -177,7 +177,7 @@ reference: "Filipenses 4:7"
 },
 {
 text: "Aun la oscuridad no es oscura para ti, y la noche resplandece como el día; lo mismo te es la oscuridad que la luz.",
-reference: "Salmo 139:12"
+reference: "Salmos 139:12"
 },
 {
 text: "El Señor es fiel; él los fortalecerá y los protegerá del maligno.",
@@ -193,7 +193,7 @@ reference: "Romanos 8:31"
 },
 {
 text: "Encomienda a Jehová tu camino, y confía en él; y él hará.",
-reference: "Salmo 37:5"
+reference: "Salmos 37:5"
 },
 {
 text: "Alégrense en el Señor siempre. Repito: ¡Alégrense!",
@@ -261,23 +261,23 @@ reference: "Efesios 6:13"
 },
 {
 text: "Sé tú mi roca de refugio, la fortaleza donde siempre pueda esconderme.",
-reference: "Salmo 71:3"
+reference: "Salmos 71:3"
 },
 {
 text: "Es mejor refugiarse en el Señor que confiar en el hombre.",
-reference: "Salmo 118:8"
+reference: "Salmos 118:8"
 },
 {
 text: "Los justos claman, y Jehová oye, y los libra de todas sus angustias.",
-reference: "Salmo 34:17"
+reference: "Salmos 34:17"
 },
 {
 text: "Jehová es la porción de mi herencia y de mi copa; tú sustentas mi suerte.",
-reference: "Salmo 16:5"
+reference: "Salmos 16:5"
 },
 {
 text: "La bondad y el amor me seguirán todos los días de mi vida; y en la casa de Jehová moraré por largos días.",
-reference: "Salmo 23:6"
+reference: "Salmos 23:6"
 },
 {
 text: "Venid a mí todos los que estáis trabajados y cargados, y yo os haré descansar.",
@@ -285,7 +285,7 @@ reference: "Mateo 11:28"
 },
 {
 text: "Mi alma espera solamente en Dios; de él viene mi salvación.",
-reference: "Salmo 62:1"
+reference: "Salmos 62:1"
 },
 {
 text: "Someteos, pues, a Dios; resistid al diablo, y huirá de vosotros.",
@@ -297,7 +297,7 @@ reference: "Eclesiastés 12:13"
 },
 {
 text: "Jehová cumplirá su propósito en mí; tu misericordia, oh Jehová, es para siempre; no desampares la obra de tus manos.",
-reference: "Salmo 138:8"
+reference: "Salmos 138:8"
 },
 {
 text: "Regocíjense en la esperanza, sean pacientes en la tribulación, perseveren en la oración.",
@@ -313,15 +313,15 @@ reference: "Hebreos 11:1"
 },
 {
 text: "Tú me enseñas el camino de la vida; con tu presencia me llenas de alegría; vives para siempre a mi lado y me colmas de felicidad.",
-reference: "Salmo 16:11"
+reference: "Salmos 16:11"
 },
 {
 text: "Los ojos de Jehová están sobre los justos, y atentos sus oídos al clamor de ellos.",
-reference: "Salmo 34:15"
+reference: "Salmos 34:15"
 },
 {
 text: "En Dios solamente está acallada mi alma; de él viene mi salvación.",
-reference: "Salmo 62:1"
+reference: "Salmos 62:1"
 },
 {
 text: "Clama a mí, y yo te responderé, y te enseñaré cosas grandes y ocultas que tú no conoces.",
@@ -329,11 +329,11 @@ reference: "Jeremías 33:3"
 },
 {
 text: "Mas tú, Señor, eres Dios misericordioso y clemente, lento para la ira, y grande en misericordia y verdad.",
-reference: "Salmo 86:15"
+reference: "Salmos 86:15"
 },
 {
 text: "No a nosotros, oh Jehová, no a nosotros, sino a tu nombre da gloria, por tu misericordia y por tu verdad.",
-reference: "Salmo 115:1"
+reference: "Salmos 115:1"
 },
 {
 text: "Y la bendición de Jehová es la que enriquece, y no añade tristeza con ella.",
@@ -453,7 +453,7 @@ reference: "Efesios 2:4-5"
 },
 {
 text: "La misericordia de Jehová es para siempre.",
-reference: "Salmo 136:1"
+reference: "Salmos 136:1"
 },
 {
 text: "Por la misericordia de Jehová no hemos sido consumidos, porque nunca decayeron sus misericordias.",
@@ -493,7 +493,7 @@ reference: "Éxodo 20:12"
 },
 {
 text: "Aun de viejos darán fruto; estarán vigorosos y verdes.",
-reference: "Salmo 92:14"
+reference: "Salmos 92:14"
 },
 {
 text: "No te olvides de hacer el bien y de compartir lo que tienes, porque esos sacrificios agradan a Dios.",
@@ -533,7 +533,7 @@ reference: "Romanos 12:2"
 },
 {
 text: "Crea en mí, oh Dios, un corazón limpio, y renueva un espíritu recto dentro de mí.",
-reference: "Salmo 51:10"
+reference: "Salmos 51:10"
 },
 {
 text: "Con toda humildad y mansedumbre, con paciencia, soportándoos unos a otros en amor.",
@@ -549,7 +549,7 @@ reference: "Romanos 5:5"
 },
 {
 text: "El hombre de bien tiene compasión y presta; gobierna sus asuntos con justicia.",
-reference: "Salmo 112:5"
+reference: "Salmos 112:5"
 },
 {
 text: "En esto se ha manifestado el amor de Dios en nosotros: en que Dios ha enviado a su Hijo unigénito al mundo para que vivamos por medio de él.",
@@ -569,7 +569,7 @@ reference: "2 Corintios 9:7"
 },
 {
 text: "Pero la misericordia de Jehová es desde la eternidad y hasta la eternidad sobre los que le temen, y su justicia sobre los hijos de los hijos.",
-reference: "Salmo 103:17"
+reference: "Salmos 103:17"
 },
 {
 text: "El Señor, tu Dios, está en medio de ti, guerrero victorioso; se gozará sobre ti con alegría, te renovará con su amor, se regocijará sobre ti con cánticos.",
@@ -645,11 +645,11 @@ reference: "Proverbios 15:28"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Guíame en tu verdad, y enséñame, porque tú eres el Dios de mi salvación; en ti he esperado todo el día.",
-reference: "Salmo 25:5"
+reference: "Salmos 25:5"
 },
 {
 text: "Enseña a tu hijo el camino que debe seguir, y aun cuando sea viejo no se apartará de él.",
@@ -665,7 +665,7 @@ reference: "Josué 1:8"
 },
 {
 text: "Examíname, oh Dios, y conoce mi corazón; Pruébame y conoce mis pensamientos; Y ve si hay en mí camino de perversidad, Y guíame en el camino eterno.",
-reference: "Salmo 139:23-24"
+reference: "Salmos 139:23-24"
 },
 {
 text: "Fíate de Jehová de todo tu corazón, y no estribes en tu propia prudencia.",
@@ -677,11 +677,11 @@ reference: "Proverbios 3:6"
 },
 {
 text: "Porque el Señor es bueno; para siempre es su misericordia, y su verdad por todas las generaciones.",
-reference: "Salmo 100:5"
+reference: "Salmos 100:5"
 },
 {
 text: "El camino de Dios es perfecto; la palabra de Jehová es probada; Él es escudo a todos los que en él confían.",
-reference: "Salmo 18:30"
+reference: "Salmos 18:30"
 },
 {
 text: "Porque no hay otro nombre bajo el cielo, dado a los hombres, en que podamos ser salvos.",
@@ -745,7 +745,7 @@ reference: "Romanos 12:1"
 },
 {
 text: "Jehová es mi pastor; nada me faltará.",
-reference: "Salmo 23:1"
+reference: "Salmos 23:1"
 },
 {
 text: "No temas, porque yo te redimí; te puse nombre, mío eres tú.",
@@ -757,7 +757,7 @@ reference: "1 Tesalonicenses 4:1 (paráfrasis)"
 },
 {
 text: "Estad quietos, y conoced que yo soy Dios.",
-reference: "Salmo 46:10"
+reference: "Salmos 46:10"
 },
 {
 text: "Porque con Dios nada será imposible.",
@@ -853,7 +853,7 @@ reference: "Apocalipsis 1:5"
 },
 {
 text: "Entonces alabaré el nombre de Dios con cánticos, y lo honraré con acción de gracias.",
-reference: "Salmo 69:30"
+reference: "Salmos 69:30"
 },
 {
 text: "Así que, hermanos, os ruego por las misericordias de Dios, que presentéis vuestros cuerpos en sacrificio vivo, santo, agradable a Dios, que es vuestro culto racional.",
@@ -869,7 +869,7 @@ reference: "1 Tesalonicenses 5:18"
 },
 {
 text: "El Señor es mi roca, mi baluarte y mi libertador; mi Dios, mi roca en quien me refugio; mi escudo y el cuerno de mi salvación, mi altura inexpugnable.",
-reference: "Salmo 18:2"
+reference: "Salmos 18:2"
 },
 {
 text: "Por tanto, acerquémonos con confianza al trono de la gracia para que recibamos misericordia, y hallemos gracia para la ayuda oportuna.",
@@ -881,7 +881,7 @@ reference: "Job 19:25"
 },
 {
 text: "Él sana a los quebrantados de corazón, y venda sus heridas.",
-reference: "Salmo 147:3"
+reference: "Salmos 147:3"
 },
 {
 text: "Y la bendición de Jehová es la que enriquece, y no añade tristeza con ella.",
@@ -989,15 +989,15 @@ reference: "Romanos 6:23"
 },
 {
 text: "Jehová es mi luz y mi salvación; ¿de quién temeré?",
-reference: "Salmo 27:1"
+reference: "Salmos 27:1"
 },
 {
 text: "Aunque un ejército acampe contra mí, no temerá mi corazón; aunque contra mí se levante guerra, yo estaré confiado.",
-reference: "Salmo 27:3"
+reference: "Salmos 27:3"
 },
 {
 text: "El Señor es mi roca, mi fortaleza y mi libertador.",
-reference: "Salmo 18:2"
+reference: "Salmos 18:2"
 },
 {
 text: "Mas la senda de los justos es como la luz de la aurora, que va en aumento hasta que el día es perfecto.",
@@ -1017,11 +1017,11 @@ reference: "Filipenses 4:19"
 },
 {
 text: "Jehová te guardará de todo mal; él guardará tu alma.",
-reference: "Salmo 121:7"
+reference: "Salmos 121:7"
 },
 {
 text: "La ley de Jehová es perfecta, que convierte el alma; el testimonio de Jehová es fiel, que hace sabio al sencillo.",
-reference: "Salmo 19:7"
+reference: "Salmos 19:7"
 },
 {
 text: "Por nada estéis afanosos, sino sean conocidas vuestras peticiones delante de Dios en toda oración y ruego, con acción de gracias.",
@@ -1069,7 +1069,7 @@ reference: "Proverbios 11:28"
 },
 {
 text: "Encomienda a Jehová tu camino, y confía en él; y él hará.",
-reference: "Salmo 37:5"
+reference: "Salmos 37:5"
 },
 {
 text: "Es mejor un bocado seco y en paz que una casa llena de banquetes con contienda.",
@@ -1125,11 +1125,11 @@ reference: "Juan 10:11"
 },
 {
 text: "Este es el día que hizo Jehová; Nos gozaremos y alegraremos en él.",
-reference: "Salmo 118:24"
+reference: "Salmos 118:24"
 },
 {
 text: "Alabad a Jehová, porque es bueno; porque su misericordia es eterna.",
-reference: "Salmo 136:1"
+reference: "Salmos 136:1"
 },
 {
 text: "En la multitud de palabras no falta pecado; Mas el que refrena sus labios es prudente.",
@@ -1245,7 +1245,7 @@ reference: "Números 14:18"
 },
 {
 text: "Jehová es mi fortaleza y mi escudo; en él confió mi corazón, y fui ayudado.",
-reference: "Salmo 28:7"
+reference: "Salmos 28:7"
 },
 {
 text: "Mas a Dios gracias, el cual nos lleva siempre en triunfo en Cristo Jesús.",
@@ -1257,11 +1257,11 @@ reference: "Proverbios 17:9"
 },
 {
 text: "El hombre de bien tiene compasión y presta; gobierna sus asuntos con justicia.",
-reference: "Salmo 112:5"
+reference: "Salmos 112:5"
 },
 {
 text: "Como el padre se compadece de los hijos, se compadece Jehová de los que le temen.",
-reference: "Salmo 103:13"
+reference: "Salmos 103:13"
 },
 {
 text: "El Señor es fiel, y él los fortalecerá y los protegerá del maligno.",
@@ -1390,15 +1390,15 @@ reference: "Hebreos 4:15"
 },
 {
 text: "El Señor es mi luz y mi salvación; ¿de quién temeré? El Señor es la fortaleza de mi vida; ¿de quién he de atemorizarme?",
-reference: "Salmo 27:1"
+reference: "Salmos 27:1"
 },
 {
 text: "Aunque un ejército acampe contra mí, no temerá mi corazón.",
-reference: "Salmo 27:3"
+reference: "Salmos 27:3"
 },
 {
 text: "El que habita al abrigo del Altísimo, morará bajo la sombra del Omnipotente.",
-reference: "Salmo 91:1"
+reference: "Salmos 91:1"
 },
 {
 text: "Porque yo sé los pensamientos que tengo acerca de vosotros, dice Jehová, pensamientos de paz, y no de mal, para daros el fin que esperáis.",
@@ -1422,7 +1422,7 @@ reference: "Deuteronomio 31:8"
 },
 {
 text: "Encomienda a Jehová tu camino, y confía en él; y él hará.",
-reference: "Salmo 37:5"
+reference: "Salmos 37:5"
 },
 {
 text: "La fe es la certeza de lo que se espera, la convicción de lo que no se ve.",
@@ -1470,7 +1470,7 @@ reference: "Proverbios 28:13"
 },
 {
 text: "La misericordia de Jehová es para siempre.",
-reference: "Salmo 136:1"
+reference: "Salmos 136:1"
 },
 {
 text: "Por la misericordia de Jehová no hemos sido consumidos, porque nunca decayeron sus misericordias.",
@@ -1514,11 +1514,11 @@ reference: "Proverbios 11:25"
 },
 {
 text: "Jehová es mi pastor; nada me faltará.",
-reference: "Salmo 23:1"
+reference: "Salmos 23:1"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Yo soy el camino, la verdad y la vida; nadie viene al Padre sino por mí.",
@@ -1542,7 +1542,7 @@ reference: "Romanos 12:21"
 },
 {
 text: "Estad quietos, y conoced que yo soy Dios.",
-reference: "Salmo 46:10"
+reference: "Salmos 46:10"
 },
 {
 text: "Porque con Dios nada será imposible.",
@@ -1606,7 +1606,7 @@ reference: "Hebreos 4:16"
 },
 {
 text: "Él sana a los quebrantados de corazón, y venda sus heridas.",
-reference: "Salmo 147:3"
+reference: "Salmos 147:3"
 },
 {
 text: "Encomienda a Jehová tus obras, y tus pensamientos serán afirmados.",
@@ -1646,11 +1646,11 @@ reference: "Proverbios 15:16"
 },
 {
 text: "Jehová es mi fortaleza y mi escudo; en él confió mi corazón.",
-reference: "Salmo 28:7"
+reference: "Salmos 28:7"
 },
 {
 text: "La ley de Jehová es perfecta, que convierte el alma; el testimonio de Jehová es fiel, que hace sabio al sencillo.",
-reference: "Salmo 19:7"
+reference: "Salmos 19:7"
 },
 {
 text: "Honra a Jehová con tus bienes, y con las primicias de todos tus frutos.",
@@ -1710,7 +1710,7 @@ reference: "Filipenses 2:14"
 },
 {
 text: "Como el padre se compadece de los hijos, se compadece Jehová de los que le temen.",
-reference: "Salmo 103:13"
+reference: "Salmos 103:13"
 },
 {
 text: "En aquel día se dirá: Ciertamente este es nuestro Dios; le hemos esperado, y él nos salvará; este es Jehová a quien hemos esperado, nos gozaremos y alegraremos en su salvación.",
@@ -1782,7 +1782,7 @@ reference: "Hebreos 4:15"
 },
 {
 text: "El que habita al abrigo del Altísimo, morará bajo la sombra del Omnipotente.",
-reference: "Salmo 91:1"
+reference: "Salmos 91:1"
 },
 {
 text: "La fe es la certeza de lo que se espera, la convicción de lo que no se ve.",
@@ -1802,7 +1802,7 @@ reference: "Proverbios 14:1"
 },
 {
 text: "La misericordia de Jehová es para siempre.",
-reference: "Salmo 136:1"
+reference: "Salmos 136:1"
 },
 {
 text: "El amor cubre multitud de pecados.",
@@ -1810,11 +1810,11 @@ reference: "1 Pedro 4:8"
 },
 {
 text: "Jehová es mi pastor; nada me faltará.",
-reference: "Salmo 23:1"
+reference: "Salmos 23:1"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Yo soy el camino, la verdad y la vida; nadie viene al Padre sino por mí.",
@@ -1826,7 +1826,7 @@ reference: "Mateo 6:33"
 },
 {
 text: "Estad quietos, y conoced que yo soy Dios.",
-reference: "Salmo 46:10"
+reference: "Salmos 46:10"
 },
 {
 text: "Porque con Dios nada será imposible.",
@@ -1858,7 +1858,7 @@ reference: "Lucas 6:37"
 },
 {
 text: "La ley de Jehová es perfecta, que convierte el alma; el testimonio de Jehová es fiel, que hace sabio al sencillo.",
-reference: "Salmo 19:7"
+reference: "Salmos 19:7"
 },
 {
 text: "Honra a Jehová con tus bienes, y con las primicias de todos tus frutos.",
@@ -1870,7 +1870,7 @@ reference: "Proverbios 23:4"
 },
 {
 text: "Alabad a Jehová, porque es bueno; porque su misericordia es eterna.",
-reference: "Salmo 136:1"
+reference: "Salmos 136:1"
 },
 {
 text: "El corazón alegre es buena medicina.",
@@ -1906,11 +1906,11 @@ reference: "2 Timoteo 3:16"
 },
 {
 text: "Bienaventurado el varón que no anduvo en consejo de malos, ni estuvo en camino de pecadores, ni en silla de escarnecedores se ha sentado.",
-reference: "Salmo 1:1"
+reference: "Salmos 1:1"
 },
 {
 text: "Sino que en la ley de Jehová está su delicia, y en su ley medita de día y de noche.",
-reference: "Salmo 1:2"
+reference: "Salmos 1:2"
 },
 {
 text: "Mas la senda de los justos es como la luz de la aurora, que va en aumento hasta que el día es perfecto.",
@@ -2066,19 +2066,19 @@ reference: "Apocalipsis 3:22"
 },
 {
 text: "Mi alma espera solamente en Dios; de él viene mi salvación.",
-reference: "Salmo 62:1"
+reference: "Salmos 62:1"
 },
 {
 text: "El que habita al abrigo del Altísimo, morará bajo la sombra del Omnipotente.",
-reference: "Salmo 91:1"
+reference: "Salmos 91:1"
 },
 {
 text: "El Señor es mi luz y mi salvación; ¿de quién temeré? El Señor es la fortaleza de mi vida; ¿de quién he de atemorizarme?",
-reference: "Salmo 27:1"
+reference: "Salmos 27:1"
 },
 {
 text: "Aunque ande en valle de sombra de muerte, no temeré mal alguno, porque tú estarás conmigo.",
-reference: "Salmo 23:4"
+reference: "Salmos 23:4"
 },
 {
 text: "No temas, porque yo estoy contigo; no desmayes, porque yo soy tu Dios que te esfuerzo.",
@@ -2086,7 +2086,7 @@ reference: "Isaías 41:10"
 },
 {
 text: "Dios es nuestro amparo y fortaleza, nuestro pronto auxilio en las tribulaciones.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "Fortaleceos en el Señor, y en el poder de su fuerza.",
@@ -2134,11 +2134,11 @@ reference: "1 Juan 1:9"
 },
 {
 text: "Mas tú, Señor, eres Dios misericordioso y clemente, lento para la ira, y grande en misericordia y verdad.",
-reference: "Salmo 86:15"
+reference: "Salmos 86:15"
 },
 {
 text: "La misericordia de Jehová es para siempre.",
-reference: "Salmo 136:1"
+reference: "Salmos 136:1"
 },
 {
 text: "Por la misericordia de Jehová no hemos sido consumidos, porque nunca decayeron sus misericordias.",
@@ -2226,7 +2226,7 @@ reference: "Proverbios 28:18"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Escudriñad las Escrituras; porque a vosotros os parece que en ellas tenéis la vida eterna.",
@@ -2322,11 +2322,11 @@ reference: "Proverbios 15:28"
 },
 {
 text: "Jehová cumplirá su propósito en mí; tu misericordia, oh Jehová, es para siempre; no desampares la obra de tus manos.",
-reference: "Salmo 138:8"
+reference: "Salmos 138:8"
 },
 {
 text: "Tú me enseñas el camino de la vida; con tu presencia me llenas de alegría; vives para siempre a mi lado y me colmas de felicidad.",
-reference: "Salmo 16:11"
+reference: "Salmos 16:11"
 },
 {
 text: "Mas la sabiduría que es de lo alto es primeramente pura, después pacífica, amable, benigna, llena de misericordia y de buenos frutos.",
@@ -2430,19 +2430,19 @@ reference: "1 Juan 4:8"
 },
 {
 text: "Alabad a Jehová, naciones todas; pueblos todos, alabadle.",
-reference: "Salmo 117:1"
+reference: "Salmos 117:1"
 },
 {
 text: "Todo lo que respira alabe a JAH. Aleluya.",
-reference: "Salmo 150:6"
+reference: "Salmos 150:6"
 },
 {
 text: "Este es el día que hizo Jehová; Nos gozaremos y alegraremos en él.",
-reference: "Salmo 118:24"
+reference: "Salmos 118:24"
 },
 {
 text: "Te alabaré con todo mi corazón; Delante de los dioses te cantaré alabanzas.",
-reference: "Salmo 138:1"
+reference: "Salmos 138:1"
 },
 {
 text: "Dad gracias en todo, porque esta es la voluntad de Dios para con vosotros en Cristo Jesús.",
@@ -2450,7 +2450,7 @@ reference: "1 Tesalonicenses 5:18"
 },
 {
 text: "Cantad a Jehová cántico nuevo; Cantad a Jehová, toda la tierra.",
-reference: "Salmo 96:1"
+reference: "Salmos 96:1"
 },
 {
 text: "Alegraos en el Señor siempre. Otra vez digo: ¡Alegraos!",
@@ -2458,7 +2458,7 @@ reference: "Filipenses 4:4"
 },
 {
 text: "Porque mejor es un día en tus atrios que mil fuera de ellos. Escogería antes estar a la puerta de la casa de mi Dios, que habitar en las moradas de maldad.",
-reference: "Salmo 84:10"
+reference: "Salmos 84:10"
 },
 {
 text: "Ofrezcamos siempre a Dios, por medio de él, sacrificio de alabanza, es decir, fruto de labios que confiesan su nombre.",
@@ -2466,31 +2466,31 @@ reference: "Hebreos 13:15"
 },
 {
 text: "Entonces alabaré el nombre de Dios con cánticos, y lo honraré con acción de gracias.",
-reference: "Salmo 69:30"
+reference: "Salmos 69:30"
 },
 {
 text: "Entrad por sus puertas con acción de gracias, por sus atrios con alabanza; Alabadle, bendecid su nombre.",
-reference: "Salmo 100:4"
+reference: "Salmos 100:4"
 },
 {
 text: "En Dios pondré mi alabanza; En Dios he confiado; no temeré.",
-reference: "Salmo 56:4"
+reference: "Salmos 56:4"
 },
 {
 text: "Grande es Jehová, y digno de ser en gran manera alabado; y su grandeza es inescrutable.",
-reference: "Salmo 145:3"
+reference: "Salmos 145:3"
 },
 {
 text: "Mi alma alaba a Jehová, y todo mi ser su santo nombre.",
-reference: "Salmo 103:1"
+reference: "Salmos 103:1"
 },
 {
 text: "Alabad a Jehová, porque él es bueno; Porque su misericordia es para siempre.",
-reference: "Salmo 136:1"
+reference: "Salmos 136:1"
 },
 {
 text: "Él sana a los quebrantados de corazón, y venda sus heridas.",
-reference: "Salmo 147:3"
+reference: "Salmos 147:3"
 },
 {
 text: "Mi Dios, pues, suplirá todo lo que os falta conforme a sus riquezas en gloria en Cristo Jesús.",
@@ -2502,7 +2502,7 @@ reference: "Efesios 4:2"
 },
 {
 text: "Jehová cumplirá su propósito en mí; tu misericordia, oh Jehová, es para siempre.",
-reference: "Salmo 138:8"
+reference: "Salmos 138:8"
 },
 {
 text: "El que se humilla será enaltecido, y el que se enaltece será humillado.",
@@ -2590,11 +2590,11 @@ reference: "2 Corintios 4:16"
 },
 {
 text: "Pero la misericordia de Jehová es desde la eternidad y hasta la eternidad sobre los que le temen.",
-reference: "Salmo 103:17"
+reference: "Salmos 103:17"
 },
 {
 text: "Como el padre se compadece de los hijos, se compadece Jehová de los que le temen.",
-reference: "Salmo 103:13"
+reference: "Salmos 103:13"
 },
 {
 text: "El que riega será también regado.",
@@ -2803,11 +2803,11 @@ reference: "Mateo 24:13"
 },
 {
 text: "Jehová es mi luz y mi salvación; ¿de quién temeré?",
-reference: "Salmo 27:1"
+reference: "Salmos 27:1"
 },
 {
 text: "Dios es nuestro amparo y fortaleza, nuestro pronto auxilio en las tribulaciones.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "Todo lo puedo en Cristo que me fortalece.",
@@ -2823,7 +2823,7 @@ reference: "Deuteronomio 31:8"
 },
 {
 text: "Mi carne y mi corazón pueden desfallecer, pero Dios es la roca de mi corazón.",
-reference: "Salmo 73:26"
+reference: "Salmos 73:26"
 },
 {
 text: "La paz os dejo, mi paz os doy.",
@@ -2835,7 +2835,7 @@ reference: "Isaías 41:10"
 },
 {
 text: "Echa sobre Jehová tu carga, y él te sustentará.",
-reference: "Salmo 55:22"
+reference: "Salmos 55:22"
 },
 {
 text: "Porque mis pensamientos no son vuestros pensamientos, ni vuestros caminos mis caminos.",
@@ -2883,7 +2883,7 @@ reference: "Efesios 4:32"
 },
 {
 text: "Como el padre se compadece de los hijos, se compadece Jehová de los que le temen.",
-reference: "Salmo 103:13"
+reference: "Salmos 103:13"
 },
 {
 text: "Porque yo sé los pensamientos que tengo acerca de vosotros, dice Jehová, pensamientos de paz, y no de mal, para daros el fin que esperáis.",
@@ -2915,11 +2915,11 @@ reference: "Proverbios 17:22 (paráfrasis)"
 },
 {
 text: "Aun la oscuridad no es oscura para ti, y la noche resplandece como el día; lo mismo te es la oscuridad que la luz.",
-reference: "Salmo 139:12"
+reference: "Salmos 139:12"
 },
 {
 text: "Aunque un ejército acampe contra mí, no temerá mi corazón; aunque contra mí se levante guerra, yo estaré confiado.",
-reference: "Salmo 27:3"
+reference: "Salmos 27:3"
 },
 {
 text: "Porque la leve tribulación momentánea produce en nosotros un cada vez más excelente y eterno peso de gloria.",
@@ -2939,19 +2939,19 @@ reference: "2 Tesalonicenses 3:3"
 },
 {
 text: "No te angusties por los malvados, ni envidies a los que cometen iniquidad.",
-reference: "Salmo 37:1"
+reference: "Salmos 37:1"
 },
 {
 text: "Encomienda a Jehová tu camino, y confía en él; y él hará.",
-reference: "Salmo 37:5"
+reference: "Salmos 37:5"
 },
 {
 text: "Es mejor refugiarse en el Señor que confiar en el hombre.",
-reference: "Salmo 118:8"
+reference: "Salmos 118:8"
 },
 {
 text: "Los justos claman, y Jehová oye, y los libra de todas sus angustias.",
-reference: "Salmo 34:17"
+reference: "Salmos 34:17"
 },
 {
 text: "Jehová es bueno, fortaleza en el día de la angustia; y conoce a los que en él confían.",
@@ -3019,15 +3019,15 @@ reference: "Éxodo 15:2"
 },
 {
 text: "Jehová te guardará de todo mal; él guardará tu alma.",
-reference: "Salmo 121:7"
+reference: "Salmos 121:7"
 },
 {
 text: "Mi socorro viene de Jehová, que hizo los cielos y la tierra.",
-reference: "Salmo 121:2"
+reference: "Salmos 121:2"
 },
 {
 text: "Jehová dará poder a su pueblo; Jehová bendecirá a su pueblo con paz.",
-reference: "Salmo 29:11"
+reference: "Salmos 29:11"
 },
 {
 text: "El corazón alegre es buena medicina.",
@@ -3043,7 +3043,7 @@ reference: "1 Tesalonicenses 5:18"
 },
 {
 text: "La bondad y el amor me seguirán todos los días de mi vida; y en la casa de Jehová moraré por largos días.",
-reference: "Salmo 23:6"
+reference: "Salmos 23:6"
 },
 {
 text: "Si decimos que confesamos nuestros pecados, él es fiel y justo para perdonar nuestros pecados.",
@@ -3111,7 +3111,7 @@ reference: "2 Timoteo 3:16"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Tu palabra es verdad.",
@@ -3131,19 +3131,19 @@ reference: "Juan 8:31-32"
 },
 {
 text: "Bienaventurado el varón que no anduvo en consejo de malos, ni estuvo en camino de pecadores.",
-reference: "Salmo 1:1"
+reference: "Salmos 1:1"
 },
 {
 text: "Sino que en la ley de Jehová está su delicia, y en su ley medita de día y de noche.",
-reference: "Salmo 1:2"
+reference: "Salmos 1:2"
 },
 {
 text: "La ley de Jehová es perfecta, que convierte el alma; el testimonio de Jehová es fiel, que hace sabio al sencillo.",
-reference: "Salmo 19:7"
+reference: "Salmos 19:7"
 },
 {
 text: "Jehová cumplirá su propósito en mí; tu misericordia, oh Jehová, es para siempre.",
-reference: "Salmo 138:8"
+reference: "Salmos 138:8"
 },
 {
 text: "El que me ama, mi palabra guardará; y mi Padre le amará, y vendremos a él, y haremos morada con él.",
@@ -3179,7 +3179,7 @@ reference: "Efesios 6:13"
 },
 {
 text: "Estad quietos, y conoced que yo soy Dios.",
-reference: "Salmo 46:10"
+reference: "Salmos 46:10"
 },
 {
 text: "Yo soy el camino, la verdad y la vida; nadie viene al Padre sino por mí.",
@@ -3323,31 +3323,31 @@ reference: "Proverbios 1:7"
 },
 {
 text: "Porque un momento será su ira, pero su favor dura toda la vida. Por la noche durará el lloro, y a la mañana vendrá la alegría.",
-reference: "Salmo 30:5"
+reference: "Salmos 30:5"
 },
 {
 text: "Mi socorro viene de Jehová, que hizo los cielos y la tierra.",
-reference: "Salmo 121:2"
+reference: "Salmos 121:2"
 },
 {
 text: "El que habita al abrigo del Altísimo, morará bajo la sombra del Omnipotente.",
-reference: "Salmo 91:1"
+reference: "Salmos 91:1"
 },
 {
 text: "Jehová es mi fortaleza y mi escudo; en él confió mi corazón.",
-reference: "Salmo 28:7"
+reference: "Salmos 28:7"
 },
 {
 text: "El Señor es mi roca, mi baluarte y mi libertador.",
-reference: "Salmo 18:2"
+reference: "Salmos 18:2"
 },
 {
 text: "Jehová es mi pastor; nada me faltará.",
-reference: "Salmo 23:1"
+reference: "Salmos 23:1"
 },
 {
 text: "Aunque ande en valle de sombra de muerte, no temeré mal alguno, porque tú estarás conmigo.",
-reference: "Salmo 23:4"
+reference: "Salmos 23:4"
 },
 {
 text: "El corazón de muchos amigos se arruina; Pero hay un amigo más unido que un hermano.",
@@ -3483,7 +3483,7 @@ reference: "Proverbios 4:18"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Tu palabra es verdad.",
@@ -3527,7 +3527,7 @@ reference: "Éxodo 20:12"
 },
 {
 text: "Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía.",
-reference: "Salmo 133:1"
+reference: "Salmos 133:1"
 },
 {
 text: "No dejando de congregarnos, como algunos tienen por costumbre, sino exhortándonos; y tanto más, cuanto veis que aquel día se acerca.",
@@ -3763,11 +3763,11 @@ reference: "Hebreos 11:6"
 },
 {
 text: "El Señor es mi luz y mi salvación; ¿de quién temeré?",
-reference: "Salmo 27:1"
+reference: "Salmos 27:1"
 },
 {
 text: "Dios es nuestro amparo y fortaleza, nuestro pronto auxilio en las tribulaciones.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "Todo lo puedo en Cristo que me fortalece.",
@@ -3787,11 +3787,11 @@ reference: "Isaías 41:10"
 },
 {
 text: "El que habita al abrigo del Altísimo, morará bajo la sombra del Omnipotente.",
-reference: "Salmo 91:1"
+reference: "Salmos 91:1"
 },
 {
 text: "Echa sobre Jehová tu carga, y él te sustentará.",
-reference: "Salmo 55:22"
+reference: "Salmos 55:22"
 },
 {
 text: "Porque mis pensamientos no son vuestros pensamientos, ni vuestros caminos mis caminos.",
@@ -3907,7 +3907,7 @@ reference: "Eclesiastés 12:13"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Tu palabra es verdad.",
@@ -3975,19 +3975,19 @@ reference: "Proverbios 16:3"
 },
 {
 text: "Jehová cumplirá su propósito en mí; tu misericordia, oh Jehová, es para siempre.",
-reference: "Salmo 138:8"
+reference: "Salmos 138:8"
 },
 {
 text: "Jehová es mi fortaleza y mi escudo; en él confió mi corazón.",
-reference: "Salmo 28:7"
+reference: "Salmos 28:7"
 },
 {
 text: "El Señor es mi luz y mi salvación; ¿de quién temeré?",
-reference: "Salmo 27:1"
+reference: "Salmos 27:1"
 },
 {
 text: "Aunque ande en valle de sombra de muerte, no temeré mal alguno, porque tú estarás conmigo.",
-reference: "Salmo 23:4"
+reference: "Salmos 23:4"
 },
 {
 text: "No temas, porque yo estoy contigo; no desmayes.",
@@ -3995,7 +3995,7 @@ reference: "Isaías 41:10"
 },
 {
 text: "Dios es nuestro amparo y fortaleza, nuestro pronto auxilio en las tribulaciones.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "Todo lo puedo en Cristo que me fortalece.",
@@ -4071,7 +4071,7 @@ reference: "Isaías 66:1"
 },
 {
 text: "De Jehová es la tierra y su plenitud, el mundo, y los que en él habitan.",
-reference: "Salmo 24:1"
+reference: "Salmos 24:1"
 },
 {
 text: "El Señor, tu Dios, está en medio de ti, guerrero victorioso; se gozará sobre ti con alegría.",
@@ -4127,7 +4127,7 @@ reference: "Números 14:18"
 },
 {
 text: "La misericordia de Jehová es para siempre.",
-reference: "Salmo 136:1"
+reference: "Salmos 136:1"
 },
 {
 text: "Por la misericordia de Jehová no hemos sido consumidos, porque nunca decayeron sus misericordias.",
@@ -4139,7 +4139,7 @@ reference: "Lamentaciones 3:23"
 },
 {
 text: "Como el padre se compadece de los hijos, se compadece Jehová de los que le temen.",
-reference: "Salmo 103:13"
+reference: "Salmos 103:13"
 },
 {
 text: "El amor de Dios ha sido derramado en nuestros corazones por el Espíritu Santo que nos fue dado.",
@@ -4175,15 +4175,15 @@ reference: "Isaías 41:10"
 },
 {
 text: "Mi socorro viene de Jehová, que hizo los cielos y la tierra.",
-reference: "Salmo 121:2"
+reference: "Salmos 121:2"
 },
 {
 text: "Jehová te guardará de todo mal; él guardará tu alma.",
-reference: "Salmo 121:7"
+reference: "Salmos 121:7"
 },
 {
 text: "Estad quietos, y conoced que yo soy Dios.",
-reference: "Salmo 46:10"
+reference: "Salmos 46:10"
 },
 {
 text: "Echad toda vuestra ansiedad sobre él, porque él tiene cuidado de vosotros.",
@@ -4335,27 +4335,27 @@ reference: "Mateo 24:13"
 },
 {
 text: "Jehová cumplirá su propósito en mí; tu misericordia, oh Jehová, es para siempre.",
-reference: "Salmo 138:8"
+reference: "Salmos 138:8"
 },
 {
 text: "Tú me enseñas el camino de la vida; con tu presencia me llenas de alegría.",
-reference: "Salmo 16:11"
+reference: "Salmos 16:11"
 },
 {
 text: "El que habita al abrigo del Altísimo, morará bajo la sombra del Omnipotente.",
-reference: "Salmo 91:1"
+reference: "Salmos 91:1"
 },
 {
 text: "Echa sobre Jehová tu carga, y él te sustentará.",
-reference: "Salmo 55:22"
+reference: "Salmos 55:22"
 },
 {
 text: "No te angusties por los malvados, ni envidies a los que cometen iniquidad.",
-reference: "Salmo 37:1"
+reference: "Salmos 37:1"
 },
 {
 text: "Encomienda a Jehová tu camino, y confía en él; y él hará.",
-reference: "Salmo 37:5"
+reference: "Salmos 37:5"
 },
 {
 text: "El corazón del hombre traza su camino, mas Jehová endereza sus pasos.",
@@ -4523,15 +4523,15 @@ reference: "2 Corintios 1:4"
 },
 {
 text: "Aunque ande en valle de sombra de muerte, no temeré mal alguno, porque tú estarás conmigo.",
-reference: "Salmo 23:4"
+reference: "Salmos 23:4"
 },
 {
 text: "Dios es nuestro amparo y fortaleza, nuestro pronto auxilio en las tribulaciones.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "El que habita al abrigo del Altísimo, morará bajo la sombra del Omnipotente.",
-reference: "Salmo 91:1"
+reference: "Salmos 91:1"
 },
 {
 text: "No temas, porque yo estoy contigo; no desmayes, porque yo soy tu Dios que te esfuerzo.",
@@ -4587,7 +4587,7 @@ reference: "Proverbios 16:9"
 },
 {
 text: "Encomienda a Jehová tu camino, y confía en él; y él hará.",
-reference: "Salmo 37:5"
+reference: "Salmos 37:5"
 },
 {
 text: "Fíate de Jehová de todo tu corazón, y no te apoyes en tu propia prudencia.",
@@ -4803,7 +4803,7 @@ reference: "Proverbios 18:24"
 },
 {
 text: "Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía.",
-reference: "Salmo 133:1"
+reference: "Salmos 133:1"
 },
 {
 text: "No dejando de congregarnos, como algunos tienen por costumbre, sino exhortándonos.",
@@ -4819,7 +4819,7 @@ reference: "2 Timoteo 3:16"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Tu palabra es verdad.",
@@ -4939,11 +4939,11 @@ reference: "Proverbios 28:18"
 },
 {
 text: "Bienaventurado el varón que no anduvo en consejo de malos, ni estuvo en camino de pecadores.",
-reference: "Salmo 1:1"
+reference: "Salmos 1:1"
 },
 {
 text: "Sino que en la ley de Jehová está su delicia, y en su ley medita de día y de noche.",
-reference: "Salmo 1:2"
+reference: "Salmos 1:2"
 },
 {
 text: "El que ama la instrucción, ama el saber; mas el que aborrece la reprensión es ignorante.",
@@ -5003,15 +5003,15 @@ reference: "Filipenses 4:13"
 },
 {
 text: "Dios es nuestro amparo y fortaleza.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "Jehová es mi pastor; nada me faltará.",
-reference: "Salmo 23:1"
+reference: "Salmos 23:1"
 },
 {
 text: "El que habita al abrigo del Altísimo, morará bajo la sombra del Omnipotente.",
-reference: "Salmo 91:1"
+reference: "Salmos 91:1"
 },
 {
 text: "La paz de Dios, que sobrepasa todo entendimiento, guardará vuestros corazones.",
@@ -5111,7 +5111,7 @@ reference: "Mateo 10:8"
 },
 {
 text: "Servid a Jehová con alegría; venid ante su presencia con regocijo.",
-reference: "Salmo 100:2"
+reference: "Salmos 100:2"
 },
 {
 text: "El fin de todo discurso oído es este: Teme a Dios, y guarda sus mandamientos.",
@@ -5212,7 +5212,7 @@ reference: "1 Juan 1:9"
 // VERSÍCULOS SOBRE LA PALABRA DE DIOS Y LA SABIDURÍA (1576-1650)
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Tu palabra es verdad.",
@@ -5236,7 +5236,7 @@ reference: "Santiago 1:22"
 },
 {
 text: "El temor de Jehová es el principio de la sabiduría; buen entendimiento tienen todos los que practican sus mandamientos.",
-reference: "Salmo 111:10"
+reference: "Salmos 111:10"
 },
 {
 text: "El temor de Jehová es el principio de la sabiduría.",
@@ -5360,7 +5360,7 @@ reference: "Colosenses 3:13"
 },
 {
 text: "Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía.",
-reference: "Salmo 133:1"
+reference: "Salmos 133:1"
 },
 {
 text: "No dejando de congregarnos, como algunos tienen por costumbre, sino exhortándonos.",
@@ -5428,7 +5428,7 @@ reference: "Isaías 41:10"
 },
 {
 text: "Dios es nuestro amparo y fortaleza, nuestro pronto auxilio en las tribulaciones.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "Echad toda vuestra ansiedad sobre él, porque él tiene cuidado de vosotros.",
@@ -5532,7 +5532,7 @@ reference: "Proverbios 14:12"
 },
 {
 text: "Encomienda a Jehová tu camino, y confía en él; y él hará.",
-reference: "Salmo 37:5"
+reference: "Salmos 37:5"
 },
 {
 text: "El corazón del hombre traza su camino, mas Jehová endereza sus pasos.",
@@ -5616,23 +5616,23 @@ reference: "2 Corintios 1:4"
 },
 {
 text: "Mi socorro viene de Jehová, que hizo los cielos y la tierra.",
-reference: "Salmo 121:2"
+reference: "Salmos 121:2"
 },
 {
 text: "Jehová te guardará de todo mal; él guardará tu alma.",
-reference: "Salmo 121:7"
+reference: "Salmos 121:7"
 },
 {
 text: "El Señor es mi luz y mi salvación; ¿de quién temeré?",
-reference: "Salmo 27:1"
+reference: "Salmos 27:1"
 },
 {
 text: "Aunque ande en valle de sombra de muerte, no temeré mal alguno, porque tú estarás conmigo.",
-reference: "Salmo 23:4"
+reference: "Salmos 23:4"
 },
 {
 text: "Echa sobre Jehová tu carga, y él te sustentará.",
-reference: "Salmo 55:22"
+reference: "Salmos 55:22"
 },
 {
 text: "Todo lo puedo en Cristo que me fortalece.",
@@ -5724,7 +5724,7 @@ reference: "Proverbios 17:9"
 },
 {
 text: "Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía.",
-reference: "Salmo 133:1"
+reference: "Salmos 133:1"
 },
 {
 text: "Porque por gracia sois salvos por medio de la fe; y esto no de vosotros, pues es don de Dios.",
@@ -5888,15 +5888,15 @@ reference: "Mateo 6:21"
 },
 {
 text: "El Señor es mi luz y mi salvación; ¿de quién temeré?",
-reference: "Salmo 27:1"
+reference: "Salmos 27:1"
 },
 {
 text: "Aunque ande en valle de sombra de muerte, no temeré mal alguno, porque tú estarás conmigo.",
-reference: "Salmo 23:4"
+reference: "Salmos 23:4"
 },
 {
 text: "Dios es nuestro amparo y fortaleza.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "Someteos, pues, a Dios; resistid al diablo, y huirá de vosotros.",
@@ -5940,7 +5940,7 @@ reference: "Hebreos 4:12"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Toda la Escritura es inspirada por Dios, y útil para enseñar.",
@@ -5984,7 +5984,7 @@ reference: "Proverbios 17:9"
 },
 {
 text: "Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía.",
-reference: "Salmo 133:1"
+reference: "Salmos 133:1"
 },
 {
 text: "No dejando de congregarnos, como algunos tienen por costumbre, sino exhortándonos.",
@@ -6060,15 +6060,15 @@ reference: "Isaías 40:31"
 },
 {
 text: "Dios es nuestro amparo y fortaleza.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "Jehová es mi pastor; nada me faltará.",
-reference: "Salmo 23:1"
+reference: "Salmos 23:1"
 },
 {
 text: "El que habita al abrigo del Altísimo, morará bajo la sombra del Omnipotente.",
-reference: "Salmo 91:1"
+reference: "Salmos 91:1"
 },
 {
 text: "Por nada estéis afanosos.",
@@ -6104,7 +6104,7 @@ reference: "Romanos 8:31"
 },
 {
 text: "Jehová cumplirá su propósito en mí; tu misericordia, oh Jehová, es para siempre.",
-reference: "Salmo 138:8"
+reference: "Salmos 138:8"
 },
 {
 text: "Muchos pensamientos hay en el corazón del hombre; mas el consejo de Jehová permanecerá.",
@@ -6136,7 +6136,7 @@ reference: "Sofonías 3:17"
 },
 {
 text: "De Jehová es la tierra y su plenitud, el mundo, y los que en él habitan.",
-reference: "Salmo 24:1"
+reference: "Salmos 24:1"
 },
 {
 text: "El cielo es mi trono, y la tierra el estrado de mis pies.",
@@ -6240,7 +6240,7 @@ reference: "Proverbios 18:22"
 },
 {
 text: "Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía.",
-reference: "Salmo 133:1"
+reference: "Salmos 133:1"
 },
 {
 text: "No dejando de congregarnos.",
@@ -6276,23 +6276,23 @@ reference: "Isaías 40:31"
 },
 {
 text: "Dios es nuestro amparo y fortaleza, nuestro pronto auxilio en las tribulaciones.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "Aunque ande en valle de sombra de muerte, no temeré mal alguno, porque tú estarás conmigo; tu vara y tu cayado me infundirán aliento.",
-reference: "Salmo 23:4"
+reference: "Salmos 23:4"
 },
 {
 text: "El Señor es mi luz y mi salvación; ¿de quién temeré? El Señor es la fortaleza de mi vida; ¿de quién he de atemorizarme?",
-reference: "Salmo 27:1"
+reference: "Salmos 27:1"
 },
 {
 text: "El que habita al abrigo del Altísimo, morará bajo la sombra del Omnipotente.",
-reference: "Salmo 91:1"
+reference: "Salmos 91:1"
 },
 {
 text: "Echa sobre Jehová tu carga, y él te sustentará; no dejará para siempre caído al justo.",
-reference: "Salmo 55:22"
+reference: "Salmos 55:22"
 },
 {
 text: "En el mundo tendréis aflicción; pero confiad, yo he vencido al mundo.",
@@ -6340,7 +6340,7 @@ reference: "1 Pedro 5:6"
 },
 {
 text: "Estad quietos, y conoced que yo soy Dios; seré exaltado entre las naciones; enaltecido seré en la tierra.",
-reference: "Salmo 46:10"
+reference: "Salmos 46:10"
 },
 {
 text: "Regocíjense en la esperanza, sean pacientes en la tribulación, perseveren en la oración.",
@@ -6600,7 +6600,7 @@ reference: "Proverbios 3:6"
 },
 {
 text: "Encomienda a Jehová tu camino, y confía en él; y él hará.",
-reference: "Salmo 37:5"
+reference: "Salmos 37:5"
 },
 {
 text: "El corazón del hombre traza su camino, mas Jehová endereza sus pasos.",
@@ -6616,11 +6616,11 @@ reference: "Isaías 41:10"
 },
 {
 text: "Dios es nuestro amparo y fortaleza, nuestro pronto auxilio en las tribulaciones.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "El Señor es mi luz y mi salvación; ¿de quién temeré?",
-reference: "Salmo 27:1"
+reference: "Salmos 27:1"
 },
 {
 text: "Echad toda vuestra ansiedad sobre él, porque él tiene cuidado de vosotros.",
@@ -6804,7 +6804,7 @@ reference: "Efesios 4:32"
 },
 {
 text: "Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía.",
-reference: "Salmo 133:1"
+reference: "Salmos 133:1"
 },
 {
 text: "No dejando de congregarnos, como algunos tienen por costumbre, sino exhortándonos.",
@@ -6820,7 +6820,7 @@ reference: "2 Timoteo 3:16"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Tu palabra es verdad.",
@@ -6960,11 +6960,11 @@ reference: "Isaías 41:10"
 },
 {
 text: "Dios es nuestro amparo y fortaleza.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "El que habita al abrigo del Altísimo, morará bajo la sombra del Omnipotente.",
-reference: "Salmo 91:1"
+reference: "Salmos 91:1"
 },
 {
 text: "Echad toda vuestra ansiedad sobre él, porque él tiene cuidado de vosotros.",
@@ -7113,7 +7113,7 @@ reference: "Colosenses 3:13"
 },
 {
 text: "Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía.",
-reference: "Salmo 133:1"
+reference: "Salmos 133:1"
 },
 {
 text: "No dejando de congregarnos, como algunos tienen por costumbre, sino exhortándonos.",
@@ -7185,7 +7185,7 @@ reference: "2 Timoteo 3:16"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Tu palabra es verdad.",
@@ -7278,11 +7278,11 @@ reference: "Proverbios 3:6"
 },
 {
 text: "Dios es nuestro amparo y fortaleza.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "El Señor es mi luz y mi salvación.",
-reference: "Salmo 27:1"
+reference: "Salmos 27:1"
 },
 {
 text: "No temas, porque yo estoy contigo.",
@@ -7318,7 +7318,7 @@ reference: "Colosenses 3:14"
 },
 {
 text: "Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía.",
-reference: "Salmo 133:1"
+reference: "Salmos 133:1"
 },
 {
 text: "No dejando de congregarnos, como algunos tienen por costumbre, sino exhortándonos; y tanto más, cuanto veis que aquel día se acerca.",
@@ -7345,7 +7345,7 @@ text: "Sopórtense unos a otros, y perdónense si alguno tiene queja contra otro
 reference: "Colosenses 3:13"
 },
 {
-text: "Y sobre todas estas cosas vestíos de **amor**, que es el vínculo perfecto.",
+text: "Y sobre todas estas cosas vestíos de amor, que es el vínculo perfecto.",
 reference: "Colosenses 3:14"
 },
 {
@@ -7377,7 +7377,7 @@ text: "El amor nunca deja de ser.",
 reference: "1 Corintios 13:8"
 },
 {
-text: "El que no ama no ha conocido a Dios, porque **Dios es amor**.",
+text: "El que no ama no ha conocido a Dios, porque Dios es amor.",
 reference: "1 Juan 4:8"
 },
 {
@@ -7494,19 +7494,19 @@ reference: "Hebreos 13:15"
 },
 {
 text: "Bendeciré a Jehová en todo tiempo; su alabanza estará de continuo en mi boca.",
-reference: "Salmo 34:1"
+reference: "Salmos 34:1"
 },
 {
 text: "Servid a Jehová con alegría; venid ante su presencia con regocijo.",
-reference: "Salmo 100:2"
+reference: "Salmos 100:2"
 },
 {
 text: "Todo lo que respira alabe a JAH. Aleluya.",
-reference: "Salmo 150:6"
+reference: "Salmos 150:6"
 },
 {
 text: "Alaben a Jehová, naciones todas; pueblos todos, alabadle.",
-reference: "Salmo 117:1"
+reference: "Salmos 117:1"
 },
 {
 text: "Mi Dios, pues, suplirá todo lo que os falta conforme a sus riquezas en gloria en Cristo Jesús.",
@@ -7514,11 +7514,11 @@ reference: "Filipenses 4:19"
 },
 {
 text: "El Señor es mi luz y mi salvación; ¿de quién temeré?",
-reference: "Salmo 27:1"
+reference: "Salmos 27:1"
 },
 {
 text: "Dios es nuestro amparo y fortaleza.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "No temas, porque yo estoy contigo; no desmayes.",
@@ -7586,7 +7586,7 @@ reference: "Romanos 10:17"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Toda la Escritura es inspirada por Dios, y útil para enseñar.",
@@ -7609,7 +7609,7 @@ text: "Guarda tu corazón más que otra cosa, Porque de él mana la vida.",
 reference: "Proverbios 4:23"
 },
 {
-text: "Así que, hermanos, os ruego por las misericordias de Dios, que presentéis vuestros cuerpos en **sacrificio vivo**, santo, agradable a Dios.",
+text: "Así que, hermanos, os ruego por las misericordias de Dios, que presentéis vuestros cuerpos en sacrificio vivo, santo, agradable a Dios.",
 reference: "Romanos 12:1"
 },
 {
@@ -7694,7 +7694,7 @@ reference: "Colosenses 3:13"
 },
 {
 text: "Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía.",
-reference: "Salmo 133:1"
+reference: "Salmos 133:1"
 },
 {
 text: "No dejando de congregarnos.",
@@ -7749,7 +7749,7 @@ text: "Someteos, pues, a Dios; resistid al diablo, y huirá de vosotros.",
 reference: "Santiago 4:7"
 },
 {
-text: "Porque la ley por medio de Moisés fue dada, pero la gracia y la verdad vinieron por medio de **Jesucristo**.",
+text: "Porque la ley por medio de Moisés fue dada, pero la gracia y la verdad vinieron por medio de Jesucristo.",
 reference: "Juan 1:17"
 },
 {
@@ -7761,7 +7761,7 @@ text: "Porque vosotros, hermanos, a libertad fuisteis llamados; solamente que no
 reference: "Gálatas 5:13"
 },
 {
-text: "Porque el fin de la ley es **Cristo**, para justicia a todo aquel que cree.",
+text: "Porque el fin de la ley es Cristo, para justicia a todo aquel que cree.",
 reference: "Romanos 10:4"
 },
 {
@@ -7802,7 +7802,7 @@ reference: "Romanos 10:17"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Toda la Escritura es inspirada por Dios, y útil para enseñar.",
@@ -7905,7 +7905,7 @@ text: "No améis al mundo, ni las cosas que están en el mundo.",
 reference: "1 Juan 2:15"
 },
 {
-text: "No os conforméis a este siglo, sino transformaos por medio de la **renovación de vuestro entendimiento**.",
+text: "No os conforméis a este siglo, sino transformaos por medio de la renovación de vuestro entendimiento.",
 reference: "Romanos 12:2"
 },
 {
@@ -7990,7 +7990,7 @@ reference: "Proverbios 18:22"
 },
 {
 text: "Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía.",
-reference: "Salmo 133:1"
+reference: "Salmos 133:1"
 },
 {
 text: "No dejando de congregarnos.",
@@ -8034,7 +8034,7 @@ reference: "Proverbios 1:7"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Toda la Escritura es inspirada por Dios.",
@@ -8046,14 +8046,14 @@ reference: "Santiago 1:22"
 },
 {
 text: "Dios es nuestro amparo y fortaleza.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "No temas, porque yo estoy contigo.",
 reference: "Isaías 41:10"
 },
 {
-text: "Pero el que **persevere hasta el fin**, éste será salvo.",
+text: "Pero el que persevere hasta el fin, éste será salvo.",
 reference: "Mateo 24:13"
 },
 {
@@ -8106,11 +8106,11 @@ reference: "Isaías 41:10"
 },
 {
 text: "Dios es nuestro amparo y fortaleza.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "El Señor es mi luz y mi salvación; ¿de quién temeré?",
-reference: "Salmo 27:1"
+reference: "Salmos 27:1"
 },
 {
 text: "Yo soy la resurrección y la vida; el que cree en mí, aunque esté muerto, vivirá.",
@@ -8162,7 +8162,7 @@ reference: "Proverbios 1:7"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Toda la Escritura es inspirada por Dios.",
@@ -8214,7 +8214,7 @@ reference: "Colosenses 3:14"
 },
 {
 text: "Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía.",
-reference: "Salmo 133:1"
+reference: "Salmos 133:1"
 },
 {
 text: "No dejando de congregarnos.",
@@ -8237,43 +8237,43 @@ text: "Dad gracias en todo.",
 reference: "1 Tesalonicenses 5:18"
 },
 {
-text: "Toda la **Escritura** es inspirada por Dios, y útil para enseñar, para redargüir, para corregir, para instruir en justicia.",
+text: "Toda la Escritura es inspirada por Dios, y útil para enseñar, para redargüir, para corregir, para instruir en justicia.",
 reference: "2 Timoteo 3:16"
 },
 {
-text: "Lámpara es a mis pies tu **palabra**, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
+reference: "Salmos 119:105"
 },
 {
-text: "**Tu palabra es verdad**.",
+text: "Tu palabra es verdad.",
 reference: "Juan 17:17"
 },
 {
-text: "El cielo y la tierra pasarán, pero **mis palabras no pasarán**.",
+text: "El cielo y la tierra pasarán, pero mis palabras no pasarán.",
 reference: "Mateo 24:35"
 },
 {
-text: "De manera que la **fe** es por el oír, y el oír, por la **palabra de Dios**.",
+text: "De manera que la fe es por el oír, y el oír, por la palabra de Dios.",
 reference: "Romanos 10:17"
 },
 {
-text: "Sed, pues, **hacedores de la palabra**, y no tan solamente oidores, engañándoos a vosotros mismos.",
+text: "Sed, pues, hacedores de la palabra, y no tan solamente oidores, engañándoos a vosotros mismos.",
 reference: "Santiago 1:22"
 },
 {
 text: "La ley de Jehová es perfecta, que convierte el alma; el testimonio de Jehová es fiel, que hace sabio al sencillo.",
-reference: "Salmo 19:7"
+reference: "Salmos 19:7"
 },
 {
 text: "Guardo tus dichos en mi corazón para no pecar contra ti.",
-reference: "Salmo 119:11"
+reference: "Salmos 119:11"
 },
 {
-text: "Porque la **palabra de Dios** es viva y eficaz, y más cortante que toda espada de dos filos.",
+text: "Porque la palabra de Dios es viva y eficaz, y más cortante que toda espada de dos filos.",
 reference: "Hebreos 4:12"
 },
 {
-text: "Como hijos obedientes, **no os conforméis** a los deseos que antes teníais estando en vuestra ignorancia.",
+text: "Como hijos obedientes, no os conforméis a los deseos que antes teníais estando en vuestra ignorancia.",
 reference: "1 Pedro 1:14"
 },
 {
@@ -8285,11 +8285,11 @@ text: "No améis al mundo, ni las cosas que están en el mundo.",
 reference: "1 Juan 2:15"
 },
 {
-text: "No os conforméis a este siglo, sino **transformaos por medio de la renovación de vuestro entendimiento**.",
+text: "No os conforméis a este siglo, sino transformaos por medio de la renovación de vuestro entendimiento.",
 reference: "Romanos 12:2"
 },
 {
-text: "Someteos, pues, a Dios; **resistid al diablo**, y huirá de vosotros.",
+text: "Someteos, pues, a Dios; resistid al diablo, y huirá de vosotros.",
 reference: "Santiago 4:7"
 },
 {
@@ -8297,15 +8297,15 @@ text: "Acercaos a Dios, y él se acercará a vosotros.",
 reference: "Santiago 4:8"
 },
 {
-text: "El Señor es fiel; él los fortalecerá y los **protegerá del maligno**.",
+text: "El Señor es fiel; él los fortalecerá y los protegerá del maligno.",
 reference: "2 Tesalonicenses 3:3"
 },
 {
-text: "Por tanto, tomen toda la **armadura de Dios**, para que puedan resistir en el día malo.",
+text: "Por tanto, tomen toda la armadura de Dios, para que puedan resistir en el día malo.",
 reference: "Efesios 6:13"
 },
 {
-text: "Velen y oren, para que **no entren en tentación**; el espíritu a la verdad está dispuesto, pero la carne es débil.",
+text: "Velen y oren, para que no entren en tentación; el espíritu a la verdad está dispuesto, pero la carne es débil.",
 reference: "Mateo 26:41"
 },
 {
@@ -8325,7 +8325,7 @@ text: "Arrepentíos, y bautícese cada uno de vosotros en el nombre de Jesucrist
 reference: "Hechos 2:38"
 },
 {
-text: "Así que, **arrepentíos y convertíos**, para que sean borrados vuestros pecados.",
+text: "Así que, arrepentíos y convertíos, para que sean borrados vuestros pecados.",
 reference: "Hechos 3:19"
 },
 {
@@ -8333,7 +8333,7 @@ text: "Pero Dios, habiendo pasado por alto los tiempos de esta ignorancia, ahora
 reference: "Hechos 17:30"
 },
 {
-text: "Porque la **paga del pecado es muerte**, mas la **dádiva de Dios es vida eterna** en Cristo Jesús Señor nuestro.",
+text: "Porque la paga del pecado es muerte, mas la dádiva de Dios es vida eterna en Cristo Jesús Señor nuestro.",
 reference: "Romanos 6:23"
 },
 {
@@ -8341,7 +8341,7 @@ text: "Por cuanto todos pecaron, y están destituidos de la gloria de Dios.",
 reference: "Romanos 3:23"
 },
 {
-text: "Mas donde abundó el pecado, **sobreabundó la gracia**.",
+text: "Mas donde abundó el pecado, sobreabundó la gracia.",
 reference: "Romanos 5:20"
 },
 {
@@ -8369,27 +8369,27 @@ text: "De cierto, de cierto te digo, que el que no naciere de nuevo, no puede ve
 reference: "Juan 3:3"
 },
 {
-text: "Y de la manera que está establecido para los hombres que mueran una sola vez, y después de esto el **juicio**.",
+text: "Y de la manera que está establecido para los hombres que mueran una sola vez, y después de esto el juicio.",
 reference: "Hebreos 9:27"
 },
 {
-text: "Porque es necesario que todos nosotros comparezcamos ante el **tribunal de Cristo**.",
+text: "Porque es necesario que todos nosotros comparezcamos ante el tribunal de Cristo.",
 reference: "2 Corintios 5:10"
 },
 {
-text: "Pero por tu dureza y por tu corazón no arrepentido, atesoras para ti mismo ira para el día de la ira y de la revelación del **justo juicio de Dios**.",
+text: "Pero por tu dureza y por tu corazón no arrepentido, atesoras para ti mismo ira para el día de la ira y de la revelación del justo juicio de Dios.",
 reference: "Romanos 2:5"
 },
 {
-text: "Porque el Señor mismo con voz de mando, con voz de arcángel, y con trompeta de Dios, descenderá del cielo; y los **muertos en Cristo resucitarán primero**.",
+text: "Porque el Señor mismo con voz de mando, con voz de arcángel, y con trompeta de Dios, descenderá del cielo; y los muertos en Cristo resucitarán primero.",
 reference: "1 Tesalonicenses 4:16"
 },
 {
-text: "El que hace injusticia, **recibirá la injusticia que hiciere**; porque no hay acepción de personas.",
+text: "El que hace injusticia, recibirá la injusticia que hiciere; porque no hay acepción de personas.",
 reference: "Colosenses 3:25"
 },
 {
-text: "Y el mar entregó los muertos que había en él; y la muerte y el Hades entregaron los muertos que había en ellos; y fueron **juzgados** cada uno según sus obras.",
+text: "Y el mar entregó los muertos que había en él; y la muerte y el Hades entregaron los muertos que había en ellos; y fueron juzgados cada uno según sus obras.",
 reference: "Apocalipsis 20:13"
 },
 {
@@ -8401,15 +8401,15 @@ text: "Enjugará Dios toda lágrima de los ojos de ellos; y ya no habrá más mu
 reference: "Apocalipsis 21:4"
 },
 {
-text: "Mas los **cobardes** e incrédulos, los abominables y homicidas, los fornicarios y hechiceros, los idólatras y todos los mentirosos tendrán su parte en el lago que arde con fuego y azufre.",
+text: "Mas los cobardes e incrédulos, los abominables y homicidas, los fornicarios y hechiceros, los idólatras y todos los mentirosos tendrán su parte en el lago que arde con fuego y azufre.",
 reference: "Apocalipsis 21:8"
 },
 {
-text: "El temor de Jehová es **aborrecer el mal**; La soberbia y la arrogancia, el mal camino, y la boca perversa, aborrezco.",
+text: "El temor de Jehová es aborrecer el mal; La soberbia y la arrogancia, el mal camino, y la boca perversa, aborrezco.",
 reference: "Proverbios 8:13"
 },
 {
-text: "El temor de Jehová es **principio de la sabiduría**.",
+text: "El temor de Jehová es principio de la sabiduría.",
 reference: "Proverbios 1:7"
 },
 {
@@ -8417,7 +8417,7 @@ text: "Teme a Dios, y guarda sus mandamientos; porque esto es el todo del hombre
 reference: "Eclesiastés 12:13"
 },
 {
-text: "Y todo lo que hagáis, hacedlo de corazón, **como para el Señor** y no para los hombres.",
+text: "Y todo lo que hagáis, hacedlo de corazón, como para el Señor y no para los hombres.",
 reference: "Colosenses 3:23"
 },
 {
@@ -8445,11 +8445,11 @@ text: "Hagan todo con amor.",
 reference: "1 Corintios 16:14"
 },
 {
-text: "El amor **cubre multitud de pecados**.",
+text: "El amor cubre multitud de pecados.",
 reference: "1 Pedro 4:8"
 },
 {
-text: "El que no ama no ha conocido a Dios, porque **Dios es amor**.",
+text: "El que no ama no ha conocido a Dios, porque Dios es amor.",
 reference: "1 Juan 4:8"
 },
 {
@@ -8466,7 +8466,7 @@ reference: "Colosenses 3:13"
 },
 {
 text: "Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía.",
-reference: "Salmo 133:1"
+reference: "Salmos 133:1"
 },
 {
 text: "No dejando de congregarnos.",
@@ -8510,15 +8510,15 @@ reference: "Isaías 41:10"
 },
 // VERSÍCULOS SOBRE LA SABIDURÍA Y LA INSTRUCCIÓN (3151-3225)
 {
-text: "El **temor de Jehová** es el principio de la **sabiduría**.",
+text: "El temor de Jehová es el principio de la sabiduría.",
 reference: "Proverbios 1:7"
 },
 {
-text: "Si a alguno de ustedes le **falta sabiduría, pídasela a Dios**, y él se la dará, pues Dios da a todos generosamente sin menospreciar a nadie.",
+text: "Si a alguno de ustedes le falta sabiduría, pídasela a Dios, y él se la dará, pues Dios da a todos generosamente sin menospreciar a nadie.",
 reference: "Santiago 1:5"
 },
 {
-text: "Fíate de Jehová de todo tu corazón, y **no te apoyes en tu propia prudencia**.",
+text: "Fíate de Jehová de todo tu corazón, y no te apoyes en tu propia prudencia.",
 reference: "Proverbios 3:5"
 },
 {
@@ -8538,11 +8538,11 @@ text: "Antes de la quiebra viene la arrogancia; antes de la caída, el espíritu
 reference: "Proverbios 16:18"
 },
 {
-text: "La **respuesta suave** quita la ira; mas la palabra áspera hace subir el furor.",
+text: "La respuesta suave quita la ira; mas la palabra áspera hace subir el furor.",
 reference: "Proverbios 15:1"
 },
 {
-text: "El que es **lento para la ira** es mejor que el poderoso; y el que domina su espíritu, mejor que el que toma una ciudad.",
+text: "El que es lento para la ira es mejor que el poderoso; y el que domina su espíritu, mejor que el que toma una ciudad.",
 reference: "Proverbios 16:32"
 },
 {
@@ -8554,11 +8554,11 @@ text: "El que perdona la ofensa cultiva el amor; el que insiste en ella divide a
 reference: "Proverbios 17:9"
 },
 {
-text: "Así que, todas las cosas que queráis que los hombres hagan con vosotros, así también **haced vosotros con ellos**.",
+text: "Así que, todas las cosas que queráis que los hombres hagan con vosotros, así también haced vosotros con ellos.",
 reference: "Mateo 7:12"
 },
 {
-text: "No juzguéis según las apariencias, sino **juzgad con justo juicio**.",
+text: "No juzguéis según las apariencias, sino juzgad con justo juicio.",
 reference: "Juan 7:24"
 },
 {
@@ -8574,7 +8574,7 @@ text: "Hijos, obedezcan a sus padres en el Señor, porque esto es justo.",
 reference: "Efesios 6:1"
 },
 {
-text: "Maridos, **amad a vuestras mujeres**, así como Cristo amó a la iglesia.",
+text: "Maridos, amad a vuestras mujeres, así como Cristo amó a la iglesia.",
 reference: "Efesios 5:25"
 },
 {
@@ -8591,7 +8591,7 @@ reference: "Proverbios 18:24"
 },
 {
 text: "Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía.",
-reference: "Salmo 133:1"
+reference: "Salmos 133:1"
 },
 {
 text: "No dejando de congregarnos, como algunos tienen por costumbre.",
@@ -8658,35 +8658,35 @@ text: "Por sus frutos los conoceréis.",
 reference: "Mateo 7:16"
 },
 {
-text: "En el principio **creó Dios** los cielos y la tierra.",
+text: "En el principio creó Dios los cielos y la tierra.",
 reference: "Génesis 1:1"
 },
 {
-text: "Y **creó Dios al hombre a su imagen**, a imagen de Dios lo creó; varón y hembra los creó.",
+text: "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó.",
 reference: "Génesis 1:27"
 },
 {
-text: "Y vio Dios todo lo que había hecho, y he aquí que era **bueno en gran manera**.",
+text: "Y vio Dios todo lo que había hecho, y he aquí que era bueno en gran manera.",
 reference: "Génesis 1:31"
 },
 {
-text: "Porque en seis días hizo Jehová los cielos y la tierra, el mar, y todas las cosas que en ellos hay, y **reposó en el día séptimo**.",
+text: "Porque en seis días hizo Jehová los cielos y la tierra, el mar, y todas las cosas que en ellos hay, y reposó en el día séptimo.",
 reference: "Éxodo 20:11"
 },
 {
-text: "Porque las **cosas invisibles de él**, su eterno poder y deidad, se hacen claramente visibles desde la creación del mundo, **siendo entendidas por medio de las cosas hechas**.",
+text: "Porque las cosas invisibles de él, su eterno poder y deidad, se hacen claramente visibles desde la creación del mundo, siendo entendidas por medio de las cosas hechas.",
 reference: "Romanos 1:20"
 },
 {
-text: "Tú solo eres Jehová; tú hiciste los cielos, y los cielos de los cielos, con todo su ejército, la tierra y todo lo que está en ella, los mares y todo lo que hay en ellos; y **tú vivificas todas estas cosas**.",
+text: "Tú solo eres Jehová; tú hiciste los cielos, y los cielos de los cielos, con todo su ejército, la tierra y todo lo que está en ella, los mares y todo lo que hay en ellos; y tú vivificas todas estas cosas.",
 reference: "Nehemías 9:6"
 },
 {
-text: "Los cielos cuentan la **gloria de Dios**, y el firmamento anuncia la obra de sus manos.",
-reference: "Salmo 19:1"
+text: "Los cielos cuentan la gloria de Dios, y el firmamento anuncia la obra de sus manos.",
+reference: "Salmos 19:1"
 },
 {
-text: "Porque **de él, y por él, y para él, son todas las cosas**.",
+text: "Porque de él, y por él, y para él, son todas las cosas.",
 reference: "Romanos 11:36"
 },
 {
@@ -8739,19 +8739,19 @@ reference: "Isaías 41:10"
 },
 {
 text: "Dios es nuestro amparo y fortaleza.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "El Señor es mi luz y mi salvación.",
-reference: "Salmo 27:1"
+reference: "Salmos 27:1"
 },
 {
 text: "El que habita al abrigo del Altísimo.",
-reference: "Salmo 91:1"
+reference: "Salmos 91:1"
 },
 {
 text: "Echa sobre Jehová tu carga, y él te sustentará.",
-reference: "Salmo 55:22"
+reference: "Salmos 55:22"
 },
 {
 text: "La fe es la certeza de lo que se espera.",
@@ -8803,7 +8803,7 @@ reference: "Colosenses 3:14"
 },
 {
 text: "Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía.",
-reference: "Salmo 133:1"
+reference: "Salmos 133:1"
 },
 {
 text: "No dejando de congregarnos.",
@@ -8811,7 +8811,7 @@ reference: "Hebreos 10:25"
 },
 // VERSÍCULOS SOBRE LA DISPENSACIÓN Y LOS TIEMPOS FINALES (3301-3375)
 {
-text: "Y será predicado este evangelio del reino en todo el mundo, para testimonio a todas las naciones; y **entonces vendrá el fin**.",
+text: "Y será predicado este evangelio del reino en todo el mundo, para testimonio a todas las naciones; y entonces vendrá el fin.",
 reference: "Mateo 24:14"
 },
 {
@@ -8831,7 +8831,7 @@ text: "Yo soy el Alfa y la Omega, el principio y el fin, el primero y el último
 reference: "Apocalipsis 22:13"
 },
 {
-text: "Ciertamente vengo en breve. **Amén; sí, ven, Señor Jesús**.",
+text: "Ciertamente vengo en breve. Amén; sí, ven, Señor Jesús.",
 reference: "Apocalipsis 22:20"
 },
 {
@@ -8839,11 +8839,11 @@ text: "Pero el día del Señor vendrá como ladrón en la noche.",
 reference: "2 Pedro 3:10"
 },
 {
-text: "Por tanto, también vosotros **estad preparados**; porque el Hijo del Hombre vendrá a la hora que no pensáis.",
+text: "Por tanto, también vosotros estad preparados; porque el Hijo del Hombre vendrá a la hora que no pensáis.",
 reference: "Mateo 24:44"
 },
 {
-text: "Pero el que **persevere hasta el fin**, éste será salvo.",
+text: "Pero el que persevere hasta el fin, éste será salvo.",
 reference: "Mateo 24:13"
 },
 {
@@ -8859,7 +8859,7 @@ text: "Porque la leve tribulación momentánea produce en nosotros un cada vez m
 reference: "2 Corintios 4:17"
 },
 {
-text: "Y sabemos que a los que aman a Dios, **todas las cosas les ayudan a bien**.",
+text: "Y sabemos que a los que aman a Dios, todas las cosas les ayudan a bien.",
 reference: "Romanos 8:28"
 },
 {
@@ -8880,11 +8880,11 @@ reference: "Isaías 41:10"
 },
 {
 text: "Dios es nuestro amparo y fortaleza.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "El que habita al abrigo del Altísimo.",
-reference: "Salmo 91:1"
+reference: "Salmos 91:1"
 },
 {
 text: "Fíate de Jehová de todo tu corazón.",
@@ -8904,7 +8904,7 @@ reference: "Santiago 1:5"
 },
 {
 text: "Lámpara es a mis pies tu palabra.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Toda la Escritura es inspirada por Dios.",
@@ -8955,19 +8955,19 @@ text: "El que no ama no ha conocido a Dios, porque Dios es amor.",
 reference: "1 Juan 4:8"
 },
 {
-text: "Mas el **fruto del Espíritu** es **amor, gozo, paz, paciencia, benignidad, bondad, fe, mansedumbre, templanza**.",
+text: "Mas el fruto del Espíritu es amor, gozo, paz, paciencia, benignidad, bondad, fe, mansedumbre, templanza.",
 reference: "Gálatas 5:22-23"
 },
 {
-text: "Y sobre todas estas cosas vestíos de **amor**, que es el vínculo perfecto.",
+text: "Y sobre todas estas cosas vestíos de amor, que es el vínculo perfecto.",
 reference: "Colosenses 3:14"
 },
 {
-text: "Sed, pues, **imitadores de Dios** como hijos amados. Y **andad en amor**, como también Cristo nos amó.",
+text: "Sed, pues, imitadores de Dios como hijos amados. Y andad en amor, como también Cristo nos amó.",
 reference: "Efesios 5:1-2"
 },
 {
-text: "Antes sed benignos unos con otros, misericordiosos, **perdonándoos unos a otros**.",
+text: "Antes sed benignos unos con otros, misericordiosos, perdonándoos unos a otros.",
 reference: "Efesios 4:32"
 },
 {
@@ -9008,7 +9008,7 @@ reference: "Juan 7:24"
 },
 {
 text: "Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía.",
-reference: "Salmo 133:1"
+reference: "Salmos 133:1"
 },
 {
 text: "No dejando de congregarnos.",
@@ -9072,7 +9072,7 @@ reference: "Santiago 1:5"
 },
 {
 text: "Lámpara es a mis pies tu palabra.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Toda la Escritura es inspirada por Dios.",
@@ -9124,79 +9124,79 @@ reference: "Jeremías 33:3"
 },
 
 {
-text: "Pero tú, Señor, Dios **misericordioso y clemente**, lento para la ira, y grande en **misericordia y verdad**.",
-reference: "Salmo 86:15"
+text: "Pero tú, Señor, Dios misericordioso y clemente, lento para la ira, y grande en misericordia y verdad.",
+reference: "Salmos 86:15"
 },
 {
-text: "Porque **grande es hasta los cielos tu misericordia**, y hasta las nubes tu verdad.",
-reference: "Salmo 57:10"
+text: "Porque grande es hasta los cielos tu misericordia, y hasta las nubes tu verdad.",
+reference: "Salmos 57:10"
 },
 {
-text: "Las **misericordias de Jehová** son nuevas cada mañana; grande es tu **fidelidad**.",
+text: "Las misericordias de Jehová son nuevas cada mañana; grande es tu fidelidad.",
 reference: "Lamentaciones 3:22-23"
 },
 {
-text: "**Jehová es bueno**, fortaleza en el día de la angustia; y conoce a los que en él confían.",
+text: "Jehová es bueno, fortaleza en el día de la angustia; y conoce a los que en él confían.",
 reference: "Nahúm 1:7"
 },
 {
-text: "Si confesamos nuestros pecados, él es **fiel y justo** para perdonar nuestros pecados, y limpiarnos de toda maldad.",
+text: "Si confesamos nuestros pecados, él es fiel y justo para perdonar nuestros pecados, y limpiarnos de toda maldad.",
 reference: "1 Juan 1:9"
 },
 {
-text: "El que encubre sus pecados no prosperará; mas el que los confiesa y se aparta alcanzará **misericordia**.",
+text: "El que encubre sus pecados no prosperará; mas el que los confiesa y se aparta alcanzará misericordia.",
 reference: "Proverbios 28:13"
 },
 {
-text: "Porque **por gracia sois salvos por medio de la fe**; y esto no de vosotros, pues es don de Dios.",
+text: "Porque por gracia sois salvos por medio de la fe; y esto no de vosotros, pues es don de Dios.",
 reference: "Efesios 2:8"
 },
 {
-text: "Mas donde abundó el pecado, **sobreabundó la gracia**.",
+text: "Mas donde abundó el pecado, sobreabundó la gracia.",
 reference: "Romanos 5:20"
 },
 {
-text: "El Señor es lento para la ira y abundante en amor y **fidelidad**.",
+text: "El Señor es lento para la ira y abundante en amor y fidelidad.",
 reference: "Números 14:18"
 },
 {
-text: "La **fidelidad de Dios** permanece, pues no puede negarse a sí mismo.",
+text: "La fidelidad de Dios permanece, pues no puede negarse a sí mismo.",
 reference: "2 Timoteo 2:13"
 },
 {
-text: "No temas, porque yo estoy contigo; no desmayes, porque yo soy tu Dios que te esfuerzo; **siempre te ayudaré**.",
+text: "No temas, porque yo estoy contigo; no desmayes, porque yo soy tu Dios que te esfuerzo; siempre te ayudaré.",
 reference: "Isaías 41:10"
 },
 {
-text: "Dios es nuestro **amparo y fortaleza**, nuestro pronto auxilio en las tribulaciones.",
-reference: "Salmo 46:1"
+text: "Dios es nuestro amparo y fortaleza, nuestro pronto auxilio en las tribulaciones.",
+reference: "Salmos 46:1"
 },
 {
-text: "El que habita al abrigo del Altísimo, morará bajo la **sombra del Omnipotente**.",
-reference: "Salmo 91:1"
+text: "El que habita al abrigo del Altísimo, morará bajo la sombra del Omnipotente.",
+reference: "Salmos 91:1"
 },
 {
-text: "Echad toda vuestra **ansiedad sobre él**, porque él tiene **cuidado de vosotros**.",
+text: "Echad toda vuestra ansiedad sobre él, porque él tiene cuidado de vosotros.",
 reference: "1 Pedro 5:7"
 },
 {
-text: "Todo lo puedo en **Cristo que me fortalece**.",
+text: "Todo lo puedo en Cristo que me fortalece.",
 reference: "Filipenses 4:13"
 },
 {
-text: "Y la paz de Dios, que **sobrepasa todo entendimiento**, guardará vuestros corazones.",
+text: "Y la paz de Dios, que sobrepasa todo entendimiento, guardará vuestros corazones.",
 reference: "Filipenses 4:7"
 },
 {
-text: "Regocíjense en la esperanza, sean **pacientes en la tribulación**, perseveren en la oración.",
+text: "Regocíjense en la esperanza, sean pacientes en la tribulación, perseveren en la oración.",
 reference: "Romanos 12:12"
 },
 {
-text: "Porque la leve tribulación momentánea produce en nosotros un cada vez más excelente y **eterno peso de gloria**.",
+text: "Porque la leve tribulación momentánea produce en nosotros un cada vez más excelente y eterno peso de gloria.",
 reference: "2 Corintios 4:17"
 },
 {
-text: "Y sabemos que a los que aman a Dios, **todas las cosas les ayudan a bien**.",
+text: "Y sabemos que a los que aman a Dios, todas las cosas les ayudan a bien.",
 reference: "Romanos 8:28"
 },
 {
@@ -9229,7 +9229,7 @@ reference: "Romanos 10:17"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Toda la Escritura es inspirada por Dios.",
@@ -9240,7 +9240,7 @@ text: "Sed, pues, hacedores de la palabra, y no tan solamente oidores.",
 reference: "Santiago 1:22"
 },
 {
-text: "El que hace injusticia, **recibirá la injusticia que hiciere**; porque **no hay acepción de personas**.",
+text: "El que hace injusticia, recibirá la injusticia que hiciere; porque no hay acepción de personas.",
 reference: "Colosenses 3:25"
 },
 {
@@ -9248,35 +9248,35 @@ text: "Porque no hay acepción de personas para con Dios.",
 reference: "Romanos 2:11"
 },
 {
-text: "No juzguéis según las apariencias, sino **juzgad con justo juicio**.",
+text: "No juzguéis según las apariencias, sino juzgad con justo juicio.",
 reference: "Juan 7:24"
 },
 {
-text: "Así que, todas las cosas que queráis que los hombres hagan con vosotros, así también **haced vosotros con ellos**; porque esto es la ley y los profetas.",
+text: "Así que, todas las cosas que queráis que los hombres hagan con vosotros, así también haced vosotros con ellos; porque esto es la ley y los profetas.",
 reference: "Mateo 7:12"
 },
 {
-text: "Abre tu boca por el mudo en el **juicio de todos los desamparados**.",
+text: "Abre tu boca por el mudo en el juicio de todos los desamparados.",
 reference: "Proverbios 31:8"
 },
 {
-text: "Jehová es bueno, **fortaleza en el día de la angustia**; y conoce a los que en él confían.",
+text: "Jehová es bueno, fortaleza en el día de la angustia; y conoce a los que en él confían.",
 reference: "Nahúm 1:7"
 },
 {
-text: "El Señor **es justo** en todos sus caminos, y **misericordioso** en todas sus obras.",
-reference: "Salmo 145:17"
+text: "El Señor es justo en todos sus caminos, y misericordioso en todas sus obras.",
+reference: "Salmos 145:17"
 },
 {
-text: "La justicia de Dios es por medio de la fe en Jesucristo, para todos los que creen en él. Porque **no hay diferencia**.",
+text: "La justicia de Dios es por medio de la fe en Jesucristo, para todos los que creen en él. Porque no hay diferencia.",
 reference: "Romanos 3:22"
 },
 {
-text: "Vestíos, pues, como escogidos de Dios, santos y amados, de entrañable **misericordia**, de benignidad, de **humildad**, de mansedumbre, de **paciencia**.",
+text: "Vestíos, pues, como escogidos de Dios, santos y amados, de entrañable misericordia, de benignidad, de humildad, de mansedumbre, de paciencia.",
 reference: "Colosenses 3:12"
 },
 {
-text: "Antes sed benignos unos con otros, **misericordiosos**, **perdonándoos** unos a otros.",
+text: "Antes sed benignos unos con otros, misericordiosos, perdonándoos unos a otros.",
 reference: "Efesios 4:32"
 },
 {
@@ -9284,15 +9284,15 @@ text: "Sopórtense unos a otros, y perdónense si alguno tiene queja contra otro
 reference: "Colosenses 3:13"
 },
 {
-text: "Y sobre todas estas cosas vestíos de **amor**, que es el vínculo perfecto.",
+text: "Y sobre todas estas cosas vestíos de amor, que es el vínculo perfecto.",
 reference: "Colosenses 3:14"
 },
 {
-text: "El amor **cubre multitud de pecados**.",
+text: "El amor cubre multitud de pecados.",
 reference: "1 Pedro 4:8"
 },
 {
-text: "El que no ama no ha conocido a Dios, porque **Dios es amor**.",
+text: "El que no ama no ha conocido a Dios, porque Dios es amor.",
 reference: "1 Juan 4:8"
 },
 {
@@ -9300,7 +9300,7 @@ text: "No améis al mundo, ni las cosas que están en el mundo.",
 reference: "1 Juan 2:15"
 },
 {
-text: "No os conforméis a este siglo, sino **transformaos por medio de la renovación de vuestro entendimiento**.",
+text: "No os conforméis a este siglo, sino transformaos por medio de la renovación de vuestro entendimiento.",
 reference: "Romanos 12:2"
 },
 {
@@ -9308,7 +9308,7 @@ text: "Huyan de la inmoralidad sexual.",
 reference: "1 Corintios 6:18"
 },
 {
-text: "Someteos, pues, a Dios; **resistid al diablo**, y huirá de vosotros.",
+text: "Someteos, pues, a Dios; resistid al diablo, y huirá de vosotros.",
 reference: "Santiago 4:7"
 },
 {
@@ -9373,7 +9373,7 @@ reference: "Santiago 1:5"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Toda la Escritura es inspirada por Dios.",
@@ -9392,39 +9392,39 @@ text: "Todas las cosas por él fueron hechas.",
 reference: "Juan 1:3"
 },
 {
-text: "Por tanto, id, y haced **discípulos a todas las naciones**, bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo.",
+text: "Por tanto, id, y haced discípulos a todas las naciones, bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo.",
 reference: "Mateo 28:19"
 },
 {
-text: "Y me seréis **testigos** en Jerusalén, en toda Judea, en Samaria, y hasta lo último de la tierra.",
+text: "Y me seréis testigos en Jerusalén, en toda Judea, en Samaria, y hasta lo último de la tierra.",
 reference: "Hechos 1:8"
 },
 {
-text: "Id por todo el mundo y predicad el **evangelio** a toda criatura.",
+text: "Id por todo el mundo y predicad el evangelio a toda criatura.",
 reference: "Marcos 16:15"
 },
 {
-text: "No me avergüenzo del **evangelio**, porque es **poder de Dios para salvación** a todo aquel que cree.",
+text: "No me avergüenzo del evangelio, porque es poder de Dios para salvación a todo aquel que cree.",
 reference: "Romanos 1:16"
 },
 {
-text: "De gracia recibisteis, **dad de gracia**.",
+text: "De gracia recibisteis, dad de gracia.",
 reference: "Mateo 10:8"
 },
 {
-text: "En esto conocerán todos que sois mis **discípulos**, si tuviereis **amor** los unos con los otros.",
+text: "En esto conocerán todos que sois mis discípulos, si tuviereis amor los unos con los otros.",
 reference: "Juan 13:35"
 },
 {
-text: "El que me sigue, no andará en tinieblas, sino que tendrá la **luz de la vida**.",
+text: "El que me sigue, no andará en tinieblas, sino que tendrá la luz de la vida.",
 reference: "Juan 8:12"
 },
 {
-text: "Si vosotros permaneciereis en mi palabra, seréis verdaderamente mis discípulos; y **conoceréis la verdad**, y la **verdad os hará libres**.",
+text: "Si vosotros permaneciereis en mi palabra, seréis verdaderamente mis discípulos; y conoceréis la verdad, y la verdad os hará libres.",
 reference: "Juan 8:31-32"
 },
 {
-text: "Yo soy la vid, vosotros los pámpanos; el que **permanece en mí**, y yo en él, éste **lleva mucho fruto**.",
+text: "Yo soy la vid, vosotros los pámpanos; el que permanece en mí, y yo en él, éste lleva mucho fruto.",
 reference: "Juan 15:5"
 },
 {
@@ -9436,11 +9436,11 @@ text: "Mas el fruto del Espíritu es amor, gozo, paz, paciencia, benignidad, bon
 reference: "Gálatas 5:22-23"
 },
 {
-text: "Así que, según tengamos oportunidad, **hagamos bien a todos**, y especialmente a los de la familia de la fe.",
+text: "Así que, según tengamos oportunidad, hagamos bien a todos, y especialmente a los de la familia de la fe.",
 reference: "Gálatas 6:10"
 },
 {
-text: "No te olvides de **hacer el bien y de compartir** lo que tienes, porque esos sacrificios agradan a Dios.",
+text: "No te olvides de hacer el bien y de compartir lo que tienes, porque esos sacrificios agradan a Dios.",
 reference: "Hebreos 13:16"
 },
 {
@@ -9481,7 +9481,7 @@ reference: "Proverbios 18:22"
 },
 {
 text: "Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía.",
-reference: "Salmo 133:1"
+reference: "Salmos 133:1"
 },
 {
 text: "No dejando de congregarnos.",
@@ -9497,7 +9497,7 @@ reference: "Proverbios 3:5"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Toda la Escritura es inspirada por Dios.",
@@ -9528,39 +9528,39 @@ text: "No temas, porque yo estoy contigo.",
 reference: "Isaías 41:10"
 },
 {
-text: "Porque el Señor, al que ama, lo **disciplina**, y azota a todo el que recibe por hijo.",
+text: "Porque el Señor, al que ama, lo disciplina, y azota a todo el que recibe por hijo.",
 reference: "Hebreos 12:6"
 },
 {
-text: "Esfuércense por vivir en **paz con todos** y por alcanzar la **santidad**; sin ella, nadie verá al Señor.",
+text: "Esfuércense por vivir en paz con todos y por alcanzar la santidad; sin ella, nadie verá al Señor.",
 reference: "Hebreos 12:14"
 },
 {
-text: "Toda la Escritura es inspirada por Dios, y útil para enseñar, para redargüir, para **corregir**, para instruir en justicia.",
+text: "Toda la Escritura es inspirada por Dios, y útil para enseñar, para redargüir, para corregir, para instruir en justicia.",
 reference: "2 Timoteo 3:16"
 },
 {
-text: "No menosprecies, hijo mío, el castigo de Jehová, ni te fatigues de su corrección; porque **Jehová al que ama castiga**.",
+text: "No menosprecies, hijo mío, el castigo de Jehová, ni te fatigues de su corrección; porque Jehová al que ama castiga.",
 reference: "Proverbios 3:11-12"
 },
 {
-text: "El que ama la instrucción ama la **sabiduría**; Mas el que aborrece la corrección es **ignorante**.",
+text: "El que ama la instrucción ama la sabiduría; Mas el que aborrece la corrección es ignorante.",
 reference: "Proverbios 12:1"
 },
 {
-text: "El hierro con hierro se aguza; Y así el hombre **aguza el rostro de su amigo**.",
+text: "El hierro con hierro se aguza; Y así el hombre aguza el rostro de su amigo.",
 reference: "Proverbios 27:17"
 },
 {
-text: "Hermanos, si alguno fuere sorprendido en alguna falta, vosotros que sois espirituales, **restauradle con espíritu de mansedumbre**.",
+text: "Hermanos, si alguno fuere sorprendido en alguna falta, vosotros que sois espirituales, restauradle con espíritu de mansedumbre.",
 reference: "Gálatas 6:1"
 },
 {
-text: "Y vosotros, padres, no provoquéis a ira a vuestros hijos, sino **criadlos en disciplina y amonestación del Señor**.",
+text: "Y vosotros, padres, no provoquéis a ira a vuestros hijos, sino criadlos en disciplina y amonestación del Señor.",
 reference: "Efesios 6:4"
 },
 {
-text: "El **castigo** de nuestra paz fue sobre él, y por su llaga fuimos nosotros **curados**.",
+text: "El castigo de nuestra paz fue sobre él, y por su llaga fuimos nosotros curados.",
 reference: "Isaías 53:5"
 },
 {
@@ -9657,7 +9657,7 @@ reference: "Proverbios 18:22"
 },
 {
 text: "Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía.",
-reference: "Salmo 133:1"
+reference: "Salmos 133:1"
 },
 {
 text: "No dejando de congregarnos.",
@@ -9680,51 +9680,51 @@ text: "Honra a Jehová con tus bienes.",
 reference: "Proverbios 3:9"
 },
 {
-text: "Pero recibiréis **poder**, cuando haya venido sobre vosotros el **Espíritu Santo**.",
+text: "Pero recibiréis poder, cuando haya venido sobre vosotros el Espíritu Santo.",
 reference: "Hechos 1:8"
 },
 {
-text: "Y yo rogaré al Padre, y os dará otro **Consolador**, para que esté con vosotros para siempre: el **Espíritu de verdad**.",
+text: "Y yo rogaré al Padre, y os dará otro Consolador, para que esté con vosotros para siempre: el Espíritu de verdad.",
 reference: "Juan 14:16-17"
 },
 {
-text: "Mas el **fruto del Espíritu** es amor, gozo, paz, paciencia, benignidad, bondad, fe, mansedumbre, templanza.",
+text: "Mas el fruto del Espíritu es amor, gozo, paz, paciencia, benignidad, bondad, fe, mansedumbre, templanza.",
 reference: "Gálatas 5:22-23"
 },
 {
-text: "El amor de Dios ha sido derramado en nuestros corazones por el **Espíritu Santo** que nos fue dado.",
+text: "El amor de Dios ha sido derramado en nuestros corazones por el Espíritu Santo que nos fue dado.",
 reference: "Romanos 5:5"
 },
 {
-text: "Y no contristéis al **Espíritu Santo de Dios**, con el cual fuisteis sellados para el día de la redención.",
+text: "Y no contristéis al Espíritu Santo de Dios, con el cual fuisteis sellados para el día de la redención.",
 reference: "Efesios 4:30"
 },
 {
-text: "Hay **diversidad de dones**, pero el **Espíritu** es el mismo.",
+text: "Hay diversidad de dones, pero el Espíritu es el mismo.",
 reference: "1 Corintios 12:4"
 },
 {
-text: "Mas si **por el Espíritu hacéis morir las obras de la carne**, viviréis.",
+text: "Mas si por el Espíritu hacéis morir las obras de la carne, viviréis.",
 reference: "Romanos 8:13"
 },
 {
-text: "Porque todos los que son **guiados por el Espíritu de Dios**, éstos son hijos de Dios.",
+text: "Porque todos los que son guiados por el Espíritu de Dios, éstos son hijos de Dios.",
 reference: "Romanos 8:14"
 },
 {
-text: "El Espíritu mismo da testimonio a nuestro espíritu, de que **somos hijos de Dios**.",
+text: "El Espíritu mismo da testimonio a nuestro espíritu, de que somos hijos de Dios.",
 reference: "Romanos 8:16"
 },
 {
-text: "Y de igual manera el Espíritu nos ayuda en nuestra debilidad; pues qué hemos de pedir como conviene, no lo sabemos, pero el **Espíritu mismo intercede por nosotros**.",
+text: "Y de igual manera el Espíritu nos ayuda en nuestra debilidad; pues qué hemos de pedir como conviene, no lo sabemos, pero el Espíritu mismo intercede por nosotros.",
 reference: "Romanos 8:26"
 },
 {
-text: "No os embriaguéis con vino, en lo cual hay disolución; antes bien **sed llenos del Espíritu**.",
+text: "No os embriaguéis con vino, en lo cual hay disolución; antes bien sed llenos del Espíritu.",
 reference: "Efesios 5:18"
 },
 {
-text: "Yo soy la vid, vosotros los pámpanos; el que permanece en mí, y yo en él, éste **lleva mucho fruto**.",
+text: "Yo soy la vid, vosotros los pámpanos; el que permanece en mí, y yo en él, éste lleva mucho fruto.",
 reference: "Juan 15:5"
 },
 {
@@ -9757,7 +9757,7 @@ reference: "Proverbios 1:7"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Toda la Escritura es inspirada por Dios.",
@@ -9793,7 +9793,7 @@ reference: "Isaías 41:10"
 },
 {
 text: "Dios es nuestro amparo y fortaleza.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "El que es fiel en lo muy poco, también en lo más es fiel.",
@@ -9821,58 +9821,58 @@ reference: "Colosenses 3:14"
 },
 {
 text: "Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía.",
-reference: "Salmo 133:1"
+reference: "Salmos 133:1"
 },
 {
 text: "No dejando de congregarnos.",
 reference: "Hebreos 10:25"
 },
 {
-text: "Más es la **riqueza de la gracia** que la tristeza de la aflicción.",
+text: "Más es la riqueza de la gracia que la tristeza de la aflicción.",
 reference: "Romanos 5:20 (Interpretación libre, enfocada en gracia)"
 },
 {
-text: "Echa sobre Jehová tu carga, y él te sustentará; **no dejará para siempre caído al justo**.",
-reference: "Salmo 55:22"
+text: "Echa sobre Jehová tu carga, y él te sustentará; no dejará para siempre caído al justo.",
+reference: "Salmos 55:22"
 },
 {
-text: "El Señor es mi **pastor**; nada me faltará.",
-reference: "Salmo 23:1"
+text: "El Señor es mi pastor; nada me faltará.",
+reference: "Salmos 23:1"
 },
 {
-text: "Aunque ande en **valle de sombra de muerte**, no temeré mal alguno, porque tú estarás conmigo.",
-reference: "Salmo 23:4"
+text: "Aunque ande en valle de sombra de muerte, no temeré mal alguno, porque tú estarás conmigo.",
+reference: "Salmos 23:4"
 },
 {
-text: "El Señor es mi luz y mi salvación; ¿de quién temeré? El Señor es la **fortaleza de mi vida**; ¿de quién he de atemorizarme?",
-reference: "Salmo 27:1"
+text: "El Señor es mi luz y mi salvación; ¿de quién temeré? El Señor es la fortaleza de mi vida; ¿de quién he de atemorizarme?",
+reference: "Salmos 27:1"
 },
 {
-text: "Crea en mí, oh Dios, un **corazón limpio**, y **renueva un espíritu recto** dentro de mí.",
-reference: "Salmo 51:10"
+text: "Crea en mí, oh Dios, un corazón limpio, y renueva un espíritu recto dentro de mí.",
+reference: "Salmos 51:10"
 },
 {
-text: "Porque tú, Señor, eres **bueno y perdonador**, y grande en misericordia para con todos los que te invocan.",
-reference: "Salmo 86:5"
+text: "Porque tú, Señor, eres bueno y perdonador, y grande en misericordia para con todos los que te invocan.",
+reference: "Salmos 86:5"
 },
 {
-text: "Cuando pases por las aguas, **yo estaré contigo**; y si por los ríos, no te anegarán.",
+text: "Cuando pases por las aguas, yo estaré contigo; y si por los ríos, no te anegarán.",
 reference: "Isaías 43:2"
 },
 {
-text: "Así será **mi palabra** que sale de mi boca; **no volverá a mí vacía**.",
+text: "Así será mi palabra que sale de mi boca; no volverá a mí vacía.",
 reference: "Isaías 55:11"
 },
 {
-text: "Porque no nos ha dado Dios espíritu de **cobardía**, sino de **poder, de amor y de dominio propio**.",
+text: "Porque no nos ha dado Dios espíritu de cobardía, sino de poder, de amor y de dominio propio.",
 reference: "2 Timoteo 1:7"
 },
 {
-text: "Pelea la buena **batalla de la fe**.",
+text: "Pelea la buena batalla de la fe.",
 reference: "1 Timoteo 6:12"
 },
 {
-text: "Humíllense, pues, bajo la poderosa mano de Dios, para que él los **exalte a su debido tiempo**.",
+text: "Humíllense, pues, bajo la poderosa mano de Dios, para que él los exalte a su debido tiempo.",
 reference: "1 Pedro 5:6"
 },
 {
@@ -9937,7 +9937,7 @@ reference: "Proverbios 3:5"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Toda la Escritura es inspirada por Dios.",
@@ -9973,7 +9973,7 @@ reference: "Isaías 41:10"
 },
 {
 text: "Dios es nuestro amparo y fortaleza.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "El que es fiel en lo muy poco, también en lo más es fiel.",
@@ -10001,26 +10001,26 @@ reference: "Colosenses 3:14"
 },
 {
 text: "Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía.",
-reference: "Salmo 133:1"
+reference: "Salmos 133:1"
 },
 {
 text: "No dejando de congregarnos.",
 reference: "Hebreos 10:25"
 },
 {
-text: "Regocíjense en la **esperanza**, sean pacientes en la tribulación, perseveren en la oración.",
+text: "Regocíjense en la esperanza, sean pacientes en la tribulación, perseveren en la oración.",
 reference: "Romanos 12:12"
 },
 {
-text: "Porque la leve tribulación momentánea produce en nosotros un cada vez más excelente y **eterno peso de gloria**.",
+text: "Porque la leve tribulación momentánea produce en nosotros un cada vez más excelente y eterno peso de gloria.",
 reference: "2 Corintios 4:17"
 },
 {
-text: "Pues tengo por cierto que las **aflicciones del tiempo presente** no son comparables con la **gloria venidera** que en nosotros ha de manifestarse.",
+text: "Pues tengo por cierto que las aflicciones del tiempo presente no son comparables con la gloria venidera que en nosotros ha de manifestarse.",
 reference: "Romanos 8:18"
 },
 {
-text: "La **esperanza** no avergüenza; porque el amor de Dios ha sido derramado en nuestros corazones por el Espíritu Santo.",
+text: "La esperanza no avergüenza; porque el amor de Dios ha sido derramado en nuestros corazones por el Espíritu Santo.",
 reference: "Romanos 5:5"
 },
 {
@@ -10028,31 +10028,31 @@ text: "Y vi un cielo nuevo y una tierra nueva; porque el primer cielo y la prime
 reference: "Apocalipsis 21:1"
 },
 {
-text: "Enjugará Dios toda **lágrima** de los ojos de ellos; y ya no habrá más **muerte**, ni habrá más llanto, ni clamor, ni dolor.",
+text: "Enjugará Dios toda lágrima de los ojos de ellos; y ya no habrá más muerte, ni habrá más llanto, ni clamor, ni dolor.",
 reference: "Apocalipsis 21:4"
 },
 {
-text: "He aquí, yo vengo pronto; retén lo que tienes, para que ninguno tome tu **corona**.",
+text: "He aquí, yo vengo pronto; retén lo que tienes, para que ninguno tome tu corona.",
 reference: "Apocalipsis 3:11"
 },
 {
-text: "El que persevere hasta el fin, **éste será salvo**.",
+text: "El que persevere hasta el fin, éste será salvo.",
 reference: "Mateo 24:13"
 },
 {
-text: "Estén alerta, permanezcan **firmes en la fe**, sean valientes, sean fuertes.",
+text: "Estén alerta, permanezcan firmes en la fe, sean valientes, sean fuertes.",
 reference: "1 Corintios 16:13"
 },
 {
-text: "Así que, hermanos míos amados, estad **firmes y constantes**, creciendo en la obra del Señor siempre.",
+text: "Así que, hermanos míos amados, estad firmes y constantes, creciendo en la obra del Señor siempre.",
 reference: "1 Corintios 15:58"
 },
 {
-text: "Por tanto, no desmayamos; antes aunque este nuestro hombre exterior se vaya desgastando, el interior no obstante se **renueva de día en día**.",
+text: "Por tanto, no desmayamos; antes aunque este nuestro hombre exterior se vaya desgastando, el interior no obstante se renueva de día en día.",
 reference: "2 Corintios 4:16"
 },
 {
-text: "Y sabemos que a los que aman a Dios, **todas las cosas les ayudan a bien**.",
+text: "Y sabemos que a los que aman a Dios, todas las cosas les ayudan a bien.",
 reference: "Romanos 8:28"
 },
 {
@@ -10060,11 +10060,11 @@ text: "Si Dios es por nosotros, ¿quién contra nosotros?",
 reference: "Romanos 8:31"
 },
 {
-text: "Todo lo puedo en **Cristo que me fortalece**.",
+text: "Todo lo puedo en Cristo que me fortalece.",
 reference: "Filipenses 4:13"
 },
 {
-text: "Echad toda vuestra **ansiedad sobre él**, porque él tiene cuidado de vosotros.",
+text: "Echad toda vuestra ansiedad sobre él, porque él tiene cuidado de vosotros.",
 reference: "1 Pedro 5:7"
 },
 {
@@ -10073,15 +10073,15 @@ reference: "Isaías 41:10"
 },
 {
 text: "Dios es nuestro amparo y fortaleza.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "El Señor es mi luz y mi salvación; ¿de quién temeré?",
-reference: "Salmo 27:1"
+reference: "Salmos 27:1"
 },
 {
 text: "El que habita al abrigo del Altísimo.",
-reference: "Salmo 91:1"
+reference: "Salmos 91:1"
 },
 {
 text: "Yo soy la resurrección y la vida; el que cree en mí, aunque esté muerto, vivirá.",
@@ -10105,7 +10105,7 @@ reference: "Romanos 10:17"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Toda la Escritura es inspirada por Dios.",
@@ -10128,67 +10128,67 @@ text: "El temor de Jehová es el principio de la sabiduría.",
 reference: "Proverbios 1:7"
 },
 {
-text: "**Honra a tu padre y a tu madre**, para que tus días se alarguen en la tierra que Jehová tu Dios te da.",
+text: "Honra a tu padre y a tu madre, para que tus días se alarguen en la tierra que Jehová tu Dios te da.",
 reference: "Éxodo 20:12"
 },
 {
-text: "Por esto dejará el hombre a su padre y a su madre, y se **unirá a su mujer**, y los dos serán **una sola carne**.",
+text: "Por esto dejará el hombre a su padre y a su madre, y se unirá a su mujer, y los dos serán una sola carne.",
 reference: "Génesis 2:24"
 },
 {
-text: "**Maridos, amad a vuestras mujeres**, así como Cristo amó a la iglesia, y se entregó a sí mismo por ella.",
+text: "Maridos, amad a vuestras mujeres, así como Cristo amó a la iglesia, y se entregó a sí mismo por ella.",
 reference: "Efesios 5:25"
 },
 {
-text: "Vosotros, maridos, igualmente, **vivid con ellas sabiamente**, dando honor a la mujer como a vaso más frágil.",
+text: "Vosotros, maridos, igualmente, vivid con ellas sabiamente, dando honor a la mujer como a vaso más frágil.",
 reference: "1 Pedro 3:7"
 },
 {
-text: "**Mujeres, estad sujetas a vuestros maridos**, como al Señor.",
+text: "Mujeres, estad sujetas a vuestros maridos, como al Señor.",
 reference: "Efesios 5:22"
 },
 {
-text: "El que halla esposa **halla el bien**, y alcanza la benevolencia de Jehová.",
+text: "El que halla esposa halla el bien, y alcanza la benevolencia de Jehová.",
 reference: "Proverbios 18:22"
 },
 {
-text: "Hijos, **obedezcan a sus padres** en el Señor, porque esto es justo.",
+text: "Hijos, obedezcan a sus padres en el Señor, porque esto es justo.",
 reference: "Efesios 6:1"
 },
 {
-text: "Y vosotros, padres, **no provoquéis a ira a vuestros hijos**, sino criadlos en disciplina y amonestación del Señor.",
+text: "Y vosotros, padres, no provoquéis a ira a vuestros hijos, sino criadlos en disciplina y amonestación del Señor.",
 reference: "Efesios 6:4"
 },
 {
-text: "El hijo **sabio** alegra al padre, pero el hijo **necio** es tristeza de su madre.",
+text: "El hijo sabio alegra al padre, pero el hijo necio es tristeza de su madre.",
 reference: "Proverbios 10:1"
 },
 {
-text: "Casa y riquezas son herencia de los padres; Mas de Jehová la **mujer prudente**.",
+text: "Casa y riquezas son herencia de los padres; Mas de Jehová la mujer prudente.",
 reference: "Proverbios 19:14"
 },
 {
-text: "Mirad cuán bueno y cuán delicioso es habitar los **hermanos juntos en armonía**.",
-reference: "Salmo 133:1"
+text: "Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía.",
+reference: "Salmos 133:1"
 },
 {
-text: "En esto conocerán todos que sois mis discípulos, si tuviereis **amor** los unos con los otros.",
+text: "En esto conocerán todos que sois mis discípulos, si tuviereis amor los unos con los otros.",
 reference: "Juan 13:35"
 },
 {
-text: "El amor **cubre multitud de pecados**.",
+text: "El amor cubre multitud de pecados.",
 reference: "1 Pedro 4:8"
 },
 {
-text: "El que no ama no ha conocido a Dios, porque **Dios es amor**.",
+text: "El que no ama no ha conocido a Dios, porque Dios es amor.",
 reference: "1 Juan 4:8"
 },
 {
-text: "Y sobre todas estas cosas vestíos de **amor**, que es el vínculo perfecto.",
+text: "Y sobre todas estas cosas vestíos de amor, que es el vínculo perfecto.",
 reference: "Colosenses 3:14"
 },
 {
-text: "Antes sed benignos unos con otros, misericordiosos, **perdonándoos** unos a otros.",
+text: "Antes sed benignos unos con otros, misericordiosos, perdonándoos unos a otros.",
 reference: "Efesios 4:32"
 },
 {
@@ -10272,47 +10272,47 @@ text: "El temor de Jehová es el principio de la sabiduría.",
 reference: "Proverbios 1:7"
 },
 {
-text: "**Adorad** a Jehová en la hermosura de la **santidad**.",
-reference: "Salmo 29:2"
+text: "Adorad a Jehová en la hermosura de la santidad.",
+reference: "Salmos 29:2"
 },
 {
-text: "**Servid a Jehová con alegría**; Venid ante su presencia con regocijo.",
-reference: "Salmo 100:2"
+text: "Servid a Jehová con alegría; Venid ante su presencia con regocijo.",
+reference: "Salmos 100:2"
 },
 {
-text: "Alabaré a Jehová en mi vida; Cantaré **salmos** a mi Dios mientras viva.",
-reference: "Salmo 146:2"
+text: "Alabaré a Jehová en mi vida; Cantaré Salmoss a mi Dios mientras viva.",
+reference: "Salmos 146:2"
 },
 {
-text: "Ofrezcamos siempre a Dios, por medio de él, **sacrificio de alabanza**, es decir, fruto de labios que confiesan su nombre.",
+text: "Ofrezcamos siempre a Dios, por medio de él, sacrificio de alabanza, es decir, fruto de labios que confiesan su nombre.",
 reference: "Hebreos 13:15"
 },
 {
-text: "Bendeciré a Jehová en todo tiempo; su **alabanza** estará de continuo en mi boca.",
-reference: "Salmo 34:1"
+text: "Bendeciré a Jehová en todo tiempo; su alabanza estará de continuo en mi boca.",
+reference: "Salmos 34:1"
 },
 {
-text: "**Todo lo que respira alabe a JAH**. Aleluya.",
-reference: "Salmo 150:6"
+text: "Todo lo que respira alabe a JAH. Aleluya.",
+reference: "Salmos 150:6"
 },
 {
-text: "El Señor es mi luz y mi salvación; ¿de quién temeré? El Señor es la **fortaleza de mi vida**.",
-reference: "Salmo 27:1"
+text: "El Señor es mi luz y mi salvación; ¿de quién temeré? El Señor es la fortaleza de mi vida.",
+reference: "Salmos 27:1"
 },
 {
-text: "Tuyos son, oh Jehová, la **magnificencia** y el **poder**, la gloria, la victoria y el honor.",
+text: "Tuyos son, oh Jehová, la magnificencia y el poder, la gloria, la victoria y el honor.",
 reference: "1 Crónicas 29:11"
 },
 {
-text: "Porque tú eres grande, y **hacedor de maravillas**; Solo tú eres Dios.",
-reference: "Salmo 86:10"
+text: "Porque tú eres grande, y hacedor de maravillas; Solo tú eres Dios.",
+reference: "Salmos 86:10"
 },
 {
-text: "Y la **paz de Dios**, que sobrepasa todo entendimiento, guardará vuestros corazones y vuestros pensamientos en Cristo Jesús.",
+text: "Y la paz de Dios, que sobrepasa todo entendimiento, guardará vuestros corazones y vuestros pensamientos en Cristo Jesús.",
 reference: "Filipenses 4:7"
 },
 {
-text: "Por nada estéis afanosos, sino sean conocidas vuestras peticiones delante de Dios en toda **oración y ruego**, con acción de gracias.",
+text: "Por nada estéis afanosos, sino sean conocidas vuestras peticiones delante de Dios en toda oración y ruego, con acción de gracias.",
 reference: "Filipenses 4:6"
 },
 {
@@ -10320,7 +10320,7 @@ text: "Orad sin cesar.",
 reference: "1 Tesalonicenses 5:17"
 },
 {
-text: "La **oración eficaz del justo** puede mucho.",
+text: "La oración eficaz del justo puede mucho.",
 reference: "Santiago 5:16"
 },
 {
@@ -10328,7 +10328,7 @@ text: "Echad toda vuestra ansiedad sobre él, porque él tiene cuidado de vosotr
 reference: "1 Pedro 5:7"
 },
 {
-text: "Todo lo puedo en **Cristo que me fortalece**.",
+text: "Todo lo puedo en Cristo que me fortalece.",
 reference: "Filipenses 4:13"
 },
 {
@@ -10337,7 +10337,7 @@ reference: "Isaías 41:10"
 },
 {
 text: "Dios es nuestro amparo y fortaleza.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "Yo soy el camino, la verdad y la vida.",
@@ -10361,7 +10361,7 @@ reference: "Proverbios 1:7"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Toda la Escritura es inspirada por Dios.",
@@ -10385,7 +10385,7 @@ reference: "Colosenses 3:14"
 },
 {
 text: "Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía.",
-reference: "Salmo 133:1"
+reference: "Salmos 133:1"
 },
 {
 text: "El que es fiel en lo muy poco, también en lo más es fiel.",
@@ -10432,31 +10432,31 @@ text: "Por sus frutos los conoceréis.",
 reference: "Mateo 7:16"
 },
 {
-text: "Sométase toda persona a las **autoridades superiores**; porque no hay autoridad sino de parte de Dios.",
+text: "Sométase toda persona a las autoridades superiores; porque no hay autoridad sino de parte de Dios.",
 reference: "Romanos 13:1"
 },
 {
-text: "Debemos **obedecer a Dios antes que a los hombres**.",
+text: "Debemos obedecer a Dios antes que a los hombres.",
 reference: "Hechos 5:29"
 },
 {
-text: "Hijos, **obedezcan a sus padres** en el Señor, porque esto es justo.",
+text: "Hijos, obedezcan a sus padres en el Señor, porque esto es justo.",
 reference: "Efesios 6:1"
 },
 {
-text: "Si me amáis, **guardad mis mandamientos**.",
+text: "Si me amáis, guardad mis mandamientos.",
 reference: "Juan 14:15"
 },
 {
-text: "Si andamos en luz, como él está en luz, tenemos comunión unos con otros, y la sangre de Jesucristo su Hijo nos **limpia de todo pecado**.",
+text: "Si andamos en luz, como él está en luz, tenemos comunión unos con otros, y la sangre de Jesucristo su Hijo nos limpia de todo pecado.",
 reference: "1 Juan 1:7"
 },
 {
-text: "No os conforméis a este siglo, sino **transformaos por medio de la renovación de vuestro entendimiento**.",
+text: "No os conforméis a este siglo, sino transformaos por medio de la renovación de vuestro entendimiento.",
 reference: "Romanos 12:2"
 },
 {
-text: "Y todo lo que hagáis, hacedlo de corazón, **como para el Señor** y no para los hombres.",
+text: "Y todo lo que hagáis, hacedlo de corazón, como para el Señor y no para los hombres.",
 reference: "Colosenses 3:23"
 },
 {
@@ -10501,7 +10501,7 @@ reference: "Santiago 1:5"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Toda la Escritura es inspirada por Dios.",
@@ -10537,7 +10537,7 @@ reference: "Isaías 41:10"
 },
 {
 text: "Dios es nuestro amparo y fortaleza.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "El amor cubre multitud de pecados.",
@@ -10553,7 +10553,7 @@ reference: "Colosenses 3:14"
 },
 {
 text: "Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía.",
-reference: "Salmo 133:1"
+reference: "Salmos 133:1"
 },
 {
 text: "No dejando de congregarnos.",
@@ -10572,43 +10572,43 @@ text: "El que halla esposa halla el bien.",
 reference: "Proverbios 18:22"
 },
 {
-text: "Retén la forma de las **sanas palabras** que de mí oíste, en la fe y amor que es en Cristo Jesús.",
+text: "Retén la forma de las sanas palabras que de mí oíste, en la fe y amor que es en Cristo Jesús.",
 reference: "2 Timoteo 1:13"
 },
 {
-text: "Ten **cuidado de ti mismo y de la doctrina**; persiste en ello, pues haciendo esto, te salvarás a ti mismo y a los que te oyeren.",
+text: "Ten cuidado de ti mismo y de la doctrina; persiste en ello, pues haciendo esto, te salvarás a ti mismo y a los que te oyeren.",
 reference: "1 Timoteo 4:16"
 },
 {
-text: "Procura con diligencia presentarte a Dios aprobado, como obrero que no tiene de qué avergonzarse, que **usa bien la palabra de verdad**.",
+text: "Procura con diligencia presentarte a Dios aprobado, como obrero que no tiene de qué avergonzarse, que usa bien la palabra de verdad.",
 reference: "2 Timoteo 2:15"
 },
 {
-text: "Por tanto, mirad por vosotros, y por todo el rebaño en que el **Espíritu Santo os ha puesto por obispos, para apacentar la iglesia del Señor**.",
+text: "Por tanto, mirad por vosotros, y por todo el rebaño en que el Espíritu Santo os ha puesto por obispos, para apacentar la iglesia del Señor.",
 reference: "Hechos 20:28"
 },
 {
-text: "Pastoreen el rebaño de Dios que está a su cargo, no por obligación, sino **voluntariamente, como Dios quiere**.",
+text: "Pastoreen el rebaño de Dios que está a su cargo, no por obligación, sino voluntariamente, como Dios quiere.",
 reference: "1 Pedro 5:2"
 },
 {
-text: "Y él mismo constituyó a unos, **apóstoles**; a otros, **profetas**; a otros, **evangelistas**; a otros, **pastores y maestros**.",
+text: "Y él mismo constituyó a unos, apóstoles; a otros, profetas; a otros, evangelistas; a otros, pastores y maestros.",
 reference: "Efesios 4:11"
 },
 {
-text: "A fin de perfeccionar a los santos para la obra del ministerio, para la **edificación del cuerpo de Cristo**.",
+text: "A fin de perfeccionar a los santos para la obra del ministerio, para la edificación del cuerpo de Cristo.",
 reference: "Efesios 4:12"
 },
 {
-text: "El amor de Dios ha sido derramado en nuestros corazones por el **Espíritu Santo** que nos fue dado.",
+text: "El amor de Dios ha sido derramado en nuestros corazones por el Espíritu Santo que nos fue dado.",
 reference: "Romanos 5:5"
 },
 {
-text: "Hay diversidad de dones, pero el **Espíritu** es el mismo.",
+text: "Hay diversidad de dones, pero el Espíritu es el mismo.",
 reference: "1 Corintios 12:4"
 },
 {
-text: "Mas el **fruto del Espíritu** es amor, gozo, paz, paciencia, benignidad, bondad, fe, mansedumbre, templanza.",
+text: "Mas el fruto del Espíritu es amor, gozo, paz, paciencia, benignidad, bondad, fe, mansedumbre, templanza.",
 reference: "Gálatas 5:22-23"
 },
 {
@@ -10641,7 +10641,7 @@ reference: "Romanos 10:17"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Toda la Escritura es inspirada por Dios.",
@@ -10685,7 +10685,7 @@ reference: "Isaías 41:10"
 },
 {
 text: "Dios es nuestro amparo y fortaleza.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "El que es fiel en lo muy poco, también en lo más es fiel.",
@@ -10713,34 +10713,34 @@ reference: "Colosenses 3:14"
 },
 {
 text: "Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía.",
-reference: "Salmo 133:1"
+reference: "Salmos 133:1"
 },
 {
-text: "El Señor es mi **pastor**; nada me faltará.",
-reference: "Salmo 23:1"
+text: "El Señor es mi pastor; nada me faltará.",
+reference: "Salmos 23:1"
 },
 {
-text: "Aunque ande en **valle de sombra de muerte**, no temeré mal alguno, porque tú estarás conmigo.",
-reference: "Salmo 23:4"
+text: "Aunque ande en valle de sombra de muerte, no temeré mal alguno, porque tú estarás conmigo.",
+reference: "Salmos 23:4"
 },
 {
-text: "El Señor **peleará por vosotros**, y vosotros estaréis tranquilos.",
+text: "El Señor peleará por vosotros, y vosotros estaréis tranquilos.",
 reference: "Éxodo 14:14"
 },
 {
-text: "Con **cuerdas de amor** los atraje, con cuerdas humanas.",
+text: "Con cuerdas de amor los atraje, con cuerdas humanas.",
 reference: "Oseas 11:4"
 },
 {
-text: "Venid a mí todos los que estáis trabajados y cargados, y **yo os haré descansar**.",
+text: "Venid a mí todos los que estáis trabajados y cargados, y yo os haré descansar.",
 reference: "Mateo 11:28"
 },
 {
-text: "Llevad mi yugo sobre vosotros, y aprended de mí, que soy **manso y humilde de corazón**; y hallaréis descanso para vuestras almas.",
+text: "Llevad mi yugo sobre vosotros, y aprended de mí, que soy manso y humilde de corazón; y hallaréis descanso para vuestras almas.",
 reference: "Mateo 11:29"
 },
 {
-text: "Yo soy la luz del mundo; el que me sigue, no andará en tinieblas, sino que tendrá la **luz de la vida**.",
+text: "Yo soy la luz del mundo; el que me sigue, no andará en tinieblas, sino que tendrá la luz de la vida.",
 reference: "Juan 8:12"
 },
 {
@@ -10748,23 +10748,23 @@ text: "Jesucristo es el mismo ayer, y hoy, y por los siglos.",
 reference: "Hebreos 13:8"
 },
 {
-text: "Crea en mí, oh Dios, un **corazón limpio**, y renueva un espíritu recto dentro de mí.",
-reference: "Salmo 51:10"
+text: "Crea en mí, oh Dios, un corazón limpio, y renueva un espíritu recto dentro de mí.",
+reference: "Salmos 51:10"
 },
 {
-text: "Porque tú, Señor, eres **bueno y perdonador**, y grande en misericordia para con todos los que te invocan.",
-reference: "Salmo 86:5"
+text: "Porque tú, Señor, eres bueno y perdonador, y grande en misericordia para con todos los que te invocan.",
+reference: "Salmos 86:5"
 },
 {
-text: "Porque no nos ha dado Dios espíritu de **cobardía**, sino de **poder, de amor y de dominio propio**.",
+text: "Porque no nos ha dado Dios espíritu de cobardía, sino de poder, de amor y de dominio propio.",
 reference: "2 Timoteo 1:7"
 },
 {
-text: "Pelea la buena **batalla de la fe**.",
+text: "Pelea la buena batalla de la fe.",
 reference: "1 Timoteo 6:12"
 },
 {
-text: "Humíllense, pues, bajo la poderosa mano de Dios, para que él los **exalte a su debido tiempo**.",
+text: "Humíllense, pues, bajo la poderosa mano de Dios, para que él los exalte a su debido tiempo.",
 reference: "1 Pedro 5:6"
 },
 {
@@ -10801,7 +10801,7 @@ reference: "Proverbios 1:7"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Toda la Escritura es inspirada por Dios.",
@@ -10829,7 +10829,7 @@ reference: "Isaías 41:10"
 },
 {
 text: "Dios es nuestro amparo y fortaleza.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "El amor cubre multitud de pecados.",
@@ -10845,7 +10845,7 @@ reference: "Colosenses 3:14"
 },
 {
 text: "Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía.",
-reference: "Salmo 133:1"
+reference: "Salmos 133:1"
 },
 {
 text: "No dejando de congregarnos.",
@@ -10864,75 +10864,75 @@ text: "El que halla esposa halla el bien.",
 reference: "Proverbios 18:22"
 },
 {
-text: "He aquí que viene con las **nubes**, y todo ojo le verá, y los que le traspasaron.",
+text: "He aquí que viene con las nubes, y todo ojo le verá, y los que le traspasaron.",
 reference: "Apocalipsis 1:7"
 },
 {
-text: "Por tanto, también vosotros **estad preparados**; porque el Hijo del Hombre vendrá a la hora que no pensáis.",
+text: "Por tanto, también vosotros estad preparados; porque el Hijo del Hombre vendrá a la hora que no pensáis.",
 reference: "Mateo 24:44"
 },
 {
-text: "Porque el Señor mismo con voz de mando, con voz de arcángel, y con trompeta de Dios, **descenderá del cielo**.",
+text: "Porque el Señor mismo con voz de mando, con voz de arcángel, y con trompeta de Dios, descenderá del cielo.",
 reference: "1 Tesalonicenses 4:16"
 },
 {
-text: "Los **muertos en Cristo resucitarán primero**.",
+text: "Los muertos en Cristo resucitarán primero.",
 reference: "1 Tesalonicenses 4:16"
 },
 {
-text: "Luego nosotros, los que vivimos, los que hayamos quedado, seremos **arrebatados** juntamente con ellos en las nubes para recibir al Señor en el aire.",
+text: "Luego nosotros, los que vivimos, los que hayamos quedado, seremos arrebatados juntamente con ellos en las nubes para recibir al Señor en el aire.",
 reference: "1 Tesalonicenses 4:17"
 },
 {
-text: "El cielo y la tierra pasarán, pero **mis palabras no pasarán**.",
+text: "El cielo y la tierra pasarán, pero mis palabras no pasarán.",
 reference: "Mateo 24:35"
 },
 {
-text: "Pero el día del Señor vendrá **como ladrón en la noche**.",
+text: "Pero el día del Señor vendrá como ladrón en la noche.",
 reference: "2 Pedro 3:10"
 },
 {
-text: "Pero nosotros esperamos, según sus promesas, **cielos nuevos y tierra nueva**, en los cuales mora la justicia.",
+text: "Pero nosotros esperamos, según sus promesas, cielos nuevos y tierra nueva, en los cuales mora la justicia.",
 reference: "2 Pedro 3:13"
 },
 {
-text: "Y vi un **cielo nuevo y una tierra nueva**; porque el primer cielo y la primera tierra pasaron.",
+text: "Y vi un cielo nuevo y una tierra nueva; porque el primer cielo y la primera tierra pasaron.",
 reference: "Apocalipsis 21:1"
 },
 {
-text: "Enjugará Dios toda lágrima de los ojos de ellos; y ya no habrá más **muerte**, ni habrá más llanto, ni clamor, ni dolor.",
+text: "Enjugará Dios toda lágrima de los ojos de ellos; y ya no habrá más muerte, ni habrá más llanto, ni clamor, ni dolor.",
 reference: "Apocalipsis 21:4"
 },
 {
-text: "Yo soy el **Alfa y la Omega**, el principio y el fin, el primero y el último.",
+text: "Yo soy el Alfa y la Omega, el principio y el fin, el primero y el último.",
 reference: "Apocalipsis 22:13"
 },
 {
-text: "Ciertamente **vengo en breve**. Amén; sí, ven, Señor Jesús.",
+text: "Ciertamente vengo en breve. Amén; sí, ven, Señor Jesús.",
 reference: "Apocalipsis 22:20"
 },
 {
-text: "El que persevere hasta el fin, **éste será salvo**.",
+text: "El que persevere hasta el fin, éste será salvo.",
 reference: "Mateo 24:13"
 },
 {
-text: "Estén alerta, permanezcan **firmes en la fe**, sean valientes, sean fuertes.",
+text: "Estén alerta, permanezcan firmes en la fe, sean valientes, sean fuertes.",
 reference: "1 Corintios 16:13"
 },
 {
-text: "Así que, hermanos míos amados, estad **firmes y constantes**, creciendo en la obra del Señor siempre.",
+text: "Así que, hermanos míos amados, estad firmes y constantes, creciendo en la obra del Señor siempre.",
 reference: "1 Corintios 15:58"
 },
 {
-text: "Por nada estéis afanosos, sino sean conocidas vuestras peticiones delante de Dios en toda **oración y ruego**.",
+text: "Por nada estéis afanosos, sino sean conocidas vuestras peticiones delante de Dios en toda oración y ruego.",
 reference: "Filipenses 4:6"
 },
 {
-text: "Echad toda vuestra **ansiedad sobre él**, porque él tiene cuidado de vosotros.",
+text: "Echad toda vuestra ansiedad sobre él, porque él tiene cuidado de vosotros.",
 reference: "1 Pedro 5:7"
 },
 {
-text: "Todo lo puedo en **Cristo que me fortalece**.",
+text: "Todo lo puedo en Cristo que me fortalece.",
 reference: "Filipenses 4:13"
 },
 {
@@ -10941,7 +10941,7 @@ reference: "Isaías 41:10"
 },
 {
 text: "Dios es nuestro amparo y fortaleza.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "Yo soy el camino, la verdad y la vida.",
@@ -10965,7 +10965,7 @@ reference: "Proverbios 3:5"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Toda la Escritura es inspirada por Dios.",
@@ -10976,15 +10976,15 @@ text: "El amor cubre multitud de pecados.",
 reference: "1 Pedro 4:8"
 },
 {
-text: "El que no ama no ha conocido a Dios, porque **Dios es amor**.",
+text: "El que no ama no ha conocido a Dios, porque Dios es amor.",
 reference: "1 Juan 4:8"
 },
 {
-text: "Mas el mayor de vosotros sea vuestro **servidor**.",
+text: "Mas el mayor de vosotros sea vuestro servidor.",
 reference: "Mateo 23:11"
 },
 {
-text: "El Hijo del Hombre no vino para ser servido, sino para **servir**, y para dar su vida en rescate por muchos.",
+text: "El Hijo del Hombre no vino para ser servido, sino para servir, y para dar su vida en rescate por muchos.",
 reference: "Marcos 10:45"
 },
 {
@@ -10992,39 +10992,39 @@ text: "Haced todo sin murmuraciones ni discusiones.",
 reference: "Filipenses 2:14"
 },
 {
-text: "No haciendo las cosas por contienda o por vanagloria, sino con **humildad**, considerando cada uno a los demás como superiores a sí mismo.",
+text: "No haciendo las cosas por contienda o por vanagloria, sino con humildad, considerando cada uno a los demás como superiores a sí mismo.",
 reference: "Filipenses 2:3"
 },
 {
-text: "Humíllense, pues, bajo la poderosa mano de Dios, para que él los **exalte a su debido tiempo**.",
+text: "Humíllense, pues, bajo la poderosa mano de Dios, para que él los exalte a su debido tiempo.",
 reference: "1 Pedro 5:6"
 },
 {
-text: "El que es **fiel en lo muy poco**, también en lo más es fiel.",
+text: "El que es fiel en lo muy poco, también en lo más es fiel.",
 reference: "Lucas 16:10"
 },
 {
-text: "Y todo lo que hagáis, hacedlo de corazón, **como para el Señor** y no para los hombres.",
+text: "Y todo lo que hagáis, hacedlo de corazón, como para el Señor y no para los hombres.",
 reference: "Colosenses 3:23"
 },
 {
-text: "Cada uno ponga al **servicio de los demás el don** que haya recibido.",
+text: "Cada uno ponga al servicio de los demás el don que haya recibido.",
 reference: "1 Pedro 4:10"
 },
 {
-text: "No os conforméis a este siglo, sino **transformaos por medio de la renovación de vuestro entendimiento**.",
+text: "No os conforméis a este siglo, sino transformaos por medio de la renovación de vuestro entendimiento.",
 reference: "Romanos 12:2"
 },
 {
-text: "Así que, según tengamos oportunidad, **hagamos bien a todos**, y especialmente a los de la familia de la fe.",
+text: "Así que, según tengamos oportunidad, hagamos bien a todos, y especialmente a los de la familia de la fe.",
 reference: "Gálatas 6:10"
 },
 {
-text: "No nos cansemos, pues, de **hacer bien**; porque a su tiempo segaremos, si no desmayamos.",
+text: "No nos cansemos, pues, de hacer bien; porque a su tiempo segaremos, si no desmayamos.",
 reference: "Gálatas 6:9"
 },
 {
-text: "Honra a Jehová con tus bienes, y con las **primicias** de todos tus frutos.",
+text: "Honra a Jehová con tus bienes, y con las primicias de todos tus frutos.",
 reference: "Proverbios 3:9"
 },
 {
@@ -11036,15 +11036,15 @@ text: "El que riega será también regado.",
 reference: "Proverbios 11:25"
 },
 {
-text: "Mas buscad primeramente el **reino de Dios y su justicia**.",
+text: "Mas buscad primeramente el reino de Dios y su justicia.",
 reference: "Mateo 6:33"
 },
 {
-text: "Mi Dios, pues, suplirá todo lo que os falta conforme a sus **riquezas en gloria** en Cristo Jesús.",
+text: "Mi Dios, pues, suplirá todo lo que os falta conforme a sus riquezas en gloria en Cristo Jesús.",
 reference: "Filipenses 4:19"
 },
 {
-text: "Donde esté vuestro **tesoro**, allí estará también vuestro corazón.",
+text: "Donde esté vuestro tesoro, allí estará también vuestro corazón.",
 reference: "Mateo 6:21"
 },
 {
@@ -11052,7 +11052,7 @@ text: "Fíate de Jehová de todo tu corazón.",
 reference: "Proverbios 3:5"
 },
 {
-text: "En todos tus caminos reconócelo, y **él enderezará tus veredas**.",
+text: "En todos tus caminos reconócelo, y él enderezará tus veredas.",
 reference: "Proverbios 3:6"
 },
 {
@@ -11060,19 +11060,19 @@ text: "El temor de Jehová es el principio de la sabiduría.",
 reference: "Proverbios 1:7"
 },
 {
-text: "Si a alguno de ustedes le falta **sabiduría**, pídasela a Dios.",
+text: "Si a alguno de ustedes le falta sabiduría, pídasela a Dios.",
 reference: "Santiago 1:5"
 },
 {
-text: "Lámpara es a mis pies tu **palabra**, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
+reference: "Salmos 119:105"
 },
 {
 text: "Toda la Escritura es inspirada por Dios.",
 reference: "2 Timoteo 3:16"
 },
 {
-text: "Sed, pues, **hacedores de la palabra**, y no tan solamente oidores.",
+text: "Sed, pues, hacedores de la palabra, y no tan solamente oidores.",
 reference: "Santiago 1:22"
 },
 {
@@ -11080,7 +11080,7 @@ text: "Si confesamos nuestros pecados, él es fiel y justo.",
 reference: "1 Juan 1:9"
 },
 {
-text: "Someteos, pues, a Dios; **resistid al diablo**.",
+text: "Someteos, pues, a Dios; resistid al diablo.",
 reference: "Santiago 4:7"
 },
 {
@@ -11092,12 +11092,12 @@ text: "El amor cubre multitud de pecados.",
 reference: "1 Pedro 4:8"
 },
 {
-text: "Y sobre todas estas cosas vestíos de **amor**.",
+text: "Y sobre todas estas cosas vestíos de amor.",
 reference: "Colosenses 3:14"
 },
 {
-text: "Mirad cuán bueno y cuán delicioso es habitar los **hermanos juntos en armonía**.",
-reference: "Salmo 133:1"
+text: "Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía.",
+reference: "Salmos 133:1"
 },
 {
 text: "No dejando de congregarnos.",
@@ -11116,43 +11116,43 @@ text: "El que halla esposa halla el bien.",
 reference: "Proverbios 18:22"
 },
 {
-text: "Porque vendrán **falsos cristos, y falsos profetas**, y harán grandes señales y prodigios.",
+text: "Porque vendrán falsos cristos, y falsos profetas, y harán grandes señales y prodigios.",
 reference: "Mateo 24:24"
 },
 {
-text: "Y por haberse multiplicado la **maldad**, el amor de muchos se enfriará.",
+text: "Y por haberse multiplicado la maldad, el amor de muchos se enfriará.",
 reference: "Mateo 24:12"
 },
 {
-text: "Pero el que **persevere hasta el fin**, éste será salvo.",
+text: "Pero el que persevere hasta el fin, éste será salvo.",
 reference: "Mateo 24:13"
 },
 {
-text: "El Señor **no retarda su promesa**, según algunos la tienen por tardanza, sino que es paciente para con nosotros.",
+text: "El Señor no retarda su promesa, según algunos la tienen por tardanza, sino que es paciente para con nosotros.",
 reference: "2 Pedro 3:9"
 },
 {
-text: "Estén alerta, permanezcan **firmes en la fe**, sean valientes, sean fuertes.",
+text: "Estén alerta, permanezcan firmes en la fe, sean valientes, sean fuertes.",
 reference: "1 Corintios 16:13"
 },
 {
-text: "Pelea la buena **batalla de la fe**, echa mano de la vida eterna.",
+text: "Pelea la buena batalla de la fe, echa mano de la vida eterna.",
 reference: "1 Timoteo 6:12"
 },
 {
-text: "No nos ha dado Dios espíritu de **cobardía**, sino de **poder, de amor y de dominio propio**.",
+text: "No nos ha dado Dios espíritu de cobardía, sino de poder, de amor y de dominio propio.",
 reference: "2 Timoteo 1:7"
 },
 {
-text: "Yo soy la luz del mundo; el que me sigue, no andará en tinieblas, sino que tendrá la **luz de la vida**.",
+text: "Yo soy la luz del mundo; el que me sigue, no andará en tinieblas, sino que tendrá la luz de la vida.",
 reference: "Juan 8:12"
 },
 {
-text: "En el mundo tendréis **aflicción**; pero **confiad**, yo he vencido al mundo.",
+text: "En el mundo tendréis aflicción; pero confiad, yo he vencido al mundo.",
 reference: "Juan 16:33"
 },
 {
-text: "Y sabemos que a los que aman a Dios, **todas las cosas les ayudan a bien**.",
+text: "Y sabemos que a los que aman a Dios, todas las cosas les ayudan a bien.",
 reference: "Romanos 8:28"
 },
 {
@@ -11173,11 +11173,11 @@ reference: "Isaías 41:10"
 },
 {
 text: "Dios es nuestro amparo y fortaleza.",
-reference: "Salmo 46:1"
+reference: "Salmos 46:1"
 },
 {
 text: "El Señor es mi pastor; nada me faltará.",
-reference: "Salmo 23:1"
+reference: "Salmos 23:1"
 },
 {
 text: "Yo soy el camino, la verdad y la vida.",
@@ -11197,7 +11197,7 @@ reference: "Romanos 10:17"
 },
 {
 text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",
-reference: "Salmo 119:105"
+reference: "Salmos 119:105"
 },
 {
 text: "Toda la Escritura es inspirada por Dios.",
@@ -11252,27 +11252,27 @@ text: "El que halla esposa halla el bien.",
 reference: "Proverbios 18:22"
 },
 {
-text: "Mas buscad primeramente el **reino de Dios y su justicia**.",
+text: "Mas buscad primeramente el reino de Dios y su justicia.",
 reference: "Mateo 6:33"
 },
 {
-text: "Mi Dios, pues, suplirá **todo lo que os falta** conforme a sus riquezas en gloria en Cristo Jesús.",
+text: "Mi Dios, pues, suplirá todo lo que os falta conforme a sus riquezas en gloria en Cristo Jesús.",
 reference: "Filipenses 4:19"
 },
 {
-text: "Donde esté vuestro **tesoro**, allí estará también vuestro corazón.",
+text: "Donde esté vuestro tesoro, allí estará también vuestro corazón.",
 reference: "Mateo 6:21"
 },
 {
-text: "Sed, pues, **hacedores de la palabra**, y no tan solamente oidores.",
+text: "Sed, pues, hacedores de la palabra, y no tan solamente oidores.",
 reference: "Santiago 1:22"
 },
 {
-text: "No os conforméis a este siglo, sino **transformaos por medio de la renovación de vuestro entendimiento**.",
+text: "No os conforméis a este siglo, sino transformaos por medio de la renovación de vuestro entendimiento.",
 reference: "Romanos 12:2"
 },
 {
-text: "Huyan de la **inmoralidad sexual**.",
+text: "Huyan de la inmoralidad sexual.",
 reference: "1 Corintios 6:18"
 },
 {
@@ -11280,7 +11280,7 @@ text: "No améis al mundo, ni las cosas que están en el mundo.",
 reference: "1 Juan 2:15"
 },
 {
-text: "Someteos, pues, a Dios; **resistid al diablo**, y huirá de vosotros.",
+text: "Someteos, pues, a Dios; resistid al diablo, y huirá de vosotros.",
 reference: "Santiago 4:7"
 },
 {
@@ -11288,147 +11288,147 @@ text: "Acercaos a Dios, y él se acercará a vosotros.",
 reference: "Santiago 4:8"
 },
 {
-text: "Velen y oren, para que **no entren en tentación**.",
+text: "Velen y oren, para que no entren en tentación.",
 reference: "Mateo 26:41"
 },
 {
-text: "Por sus **frutos** los conoceréis.",
+text: "Por sus frutos los conoceréis.",
 reference: "Mateo 7:16"
 },
 {
-text: "Mas el **fruto del Espíritu** es amor, gozo, paz, paciencia, benignidad, bondad, fe, mansedumbre, templanza.",
+text: "Mas el fruto del Espíritu es amor, gozo, paz, paciencia, benignidad, bondad, fe, mansedumbre, templanza.",
 reference: "Gálatas 5:22-23"
 },
 {
-text: "La **respuesta suave** quita la ira; mas la palabra áspera hace subir el furor.",
+text: "La respuesta suave quita la ira; mas la palabra áspera hace subir el furor.",
 reference: "Proverbios 15:1"
 },
 {
-text: "El que es **lento para la ira** es mejor que el poderoso.",
+text: "El que es lento para la ira es mejor que el poderoso.",
 reference: "Proverbios 16:32"
 },
 {
-text: "Toda amargura, enojo, ira, gritería y maledicencia, y toda malicia, sean **quitadas** de entre vosotros.",
+text: "Toda amargura, enojo, ira, gritería y maledicencia, y toda malicia, sean quitadas de entre vosotros.",
 reference: "Efesios 4:31"
 },
 {
-text: "El que **perdona la ofensa** cultiva el amor; el que insiste en ella divide a los amigos.",
+text: "El que perdona la ofensa cultiva el amor; el que insiste en ella divide a los amigos.",
 reference: "Proverbios 17:9"
 },
 {
-text: "El hombre de muchos amigos se arruina; Pero hay un **amigo más unido que un hermano**.",
+text: "El hombre de muchos amigos se arruina; Pero hay un amigo más unido que un hermano.",
 reference: "Proverbios 18:24"
 },
 {
-text: "No juzguéis según las apariencias, sino **juzgad con justo juicio**.",
+text: "No juzguéis según las apariencias, sino juzgad con justo juicio.",
 reference: "Juan 7:24"
 },
 {
-text: "Así que, todas las cosas que queráis que los hombres hagan con vosotros, así también **haced vosotros con ellos**.",
+text: "Así que, todas las cosas que queráis que los hombres hagan con vosotros, así también haced vosotros con ellos.",
 reference: "Mateo 7:12"
 },
 {
-text: "Cada uno ponga al **servicio de los demás** el don que haya recibido.",
+text: "Cada uno ponga al servicio de los demás el don que haya recibido.",
 reference: "1 Pedro 4:10"
 },
 {
-text: "El Señor **es justo** en todos sus caminos, y misericordioso en todas sus obras.",
-reference: "Salmo 145:17"
+text: "El Señor es justo en todos sus caminos, y misericordioso en todas sus obras.",
+reference: "Salmos 145:17"
 },
 {
-text: "El que hace injusticia, **recibirá la injusticia que hiciere**; porque no hay acepción de personas.",
+text: "El que hace injusticia, recibirá la injusticia que hiciere; porque no hay acepción de personas.",
 reference: "Colosenses 3:25"
 },
 {
-text: "La **fidelidad de Dios** permanece, pues no puede negarse a sí mismo.",
+text: "La fidelidad de Dios permanece, pues no puede negarse a sí mismo.",
 reference: "2 Timoteo 2:13"
 },
 {
-text: "Las **misericordias de Jehová** son nuevas cada mañana; grande es tu **fidelidad**.",
+text: "Las misericordias de Jehová son nuevas cada mañana; grande es tu fidelidad.",
 reference: "Lamentaciones 3:22-23"
 },
 {
-text: "Tú solo eres Jehová; tú hiciste los cielos, y los cielos de los cielos... y tú **vivificas todas estas cosas**.",
+text: "Tú solo eres Jehová; tú hiciste los cielos, y los cielos de los cielos... y tú vivificas todas estas cosas.",
 reference: "Nehemías 9:6"
 },
 {
-text: "Los cielos cuentan la **gloria de Dios**.",
-reference: "Salmo 19:1"
+text: "Los cielos cuentan la gloria de Dios.",
+reference: "Salmos 19:1"
 },
 {
-text: "Porque **de él, y por él, y para él, son todas las cosas**.",
+text: "Porque de él, y por él, y para él, son todas las cosas.",
 reference: "Romanos 11:36"
 },
 {
-text: "La oración **eficaz del justo** puede mucho.",
+text: "La oración eficaz del justo puede mucho.",
 reference: "Santiago 5:16"
 },
 {
-text: "Clama a mí, y **yo te responderé**.",
+text: "Clama a mí, y yo te responderé.",
 reference: "Jeremías 33:3"
 },
 {
-text: "Y de igual manera el Espíritu nos ayuda en nuestra debilidad... el **Espíritu mismo intercede por nosotros**.",
+text: "Y de igual manera el Espíritu nos ayuda en nuestra debilidad... el Espíritu mismo intercede por nosotros.",
 reference: "Romanos 8:26"
 },
 {
-text: "Mas si **por el Espíritu hacéis morir las obras de la carne**, viviréis.",
+text: "Mas si por el Espíritu hacéis morir las obras de la carne, viviréis.",
 reference: "Romanos 8:13"
 },
 {
-text: "Y yo rogaré al Padre, y os dará otro **Consolador**, para que esté con vosotros para siempre.",
+text: "Y yo rogaré al Padre, y os dará otro Consolador, para que esté con vosotros para siempre.",
 reference: "Juan 14:16"
 },
 {
-text: "Pero recibiréis **poder**, cuando haya venido sobre vosotros el **Espíritu Santo**.",
+text: "Pero recibiréis poder, cuando haya venido sobre vosotros el Espíritu Santo.",
 reference: "Hechos 1:8"
 },
 {
-text: "Id por todo el mundo y predicad el **evangelio** a toda criatura.",
+text: "Id por todo el mundo y predicad el evangelio a toda criatura.",
 reference: "Marcos 16:15"
 },
 {
-text: "Y me seréis **testigos**... hasta lo último de la tierra.",
+text: "Y me seréis testigos... hasta lo último de la tierra.",
 reference: "Hechos 1:8"
 },
 {
-text: "No me avergüenzo del **evangelio**, porque es poder de Dios para salvación.",
+text: "No me avergüenzo del evangelio, porque es poder de Dios para salvación.",
 reference: "Romanos 1:16"
 },
 {
-text: "El **castigo** de nuestra paz fue sobre él, y por su llaga fuimos nosotros **curados**.",
+text: "El castigo de nuestra paz fue sobre él, y por su llaga fuimos nosotros curados.",
 reference: "Isaías 53:5"
 },
 {
-text: "Por tanto, id, y haced **discípulos a todas las naciones**.",
+text: "Por tanto, id, y haced discípulos a todas las naciones.",
 reference: "Mateo 28:19"
 },
 {
 text: "El Señor es mi luz y mi salvación; ¿de quién temeré?",
-reference: "Salmo 27:1"
+reference: "Salmos 27:1"
 },
 {
 text: "Aunque ande en valle de sombra de muerte, no temeré mal alguno, porque tú estarás conmigo.",
-reference: "Salmo 23:4"
+reference: "Salmos 23:4"
 },
 {
-text: "Echa sobre Jehová tu carga, y él te sustentará; **no dejará para siempre caído al justo**.",
-reference: "Salmo 55:22"
+text: "Echa sobre Jehová tu carga, y él te sustentará; no dejará para siempre caído al justo.",
+reference: "Salmos 55:22"
 },
 {
-text: "Vendrán a mí todos los que estáis trabajados y cargados, y **yo os haré descansar**.",
+text: "Vendrán a mí todos los que estáis trabajados y cargados, y yo os haré descansar.",
 reference: "Mateo 11:28"
 },
 {
-text: "Jesucristo es el **mismo ayer, y hoy, y por los siglos**.",
+text: "Jesucristo es el mismo ayer, y hoy, y por los siglos.",
 reference: "Hebreos 13:8"
 },
 {
-text: "Hay, pues, un **reposo** para el pueblo de Dios.",
+text: "Hay, pues, un reposo para el pueblo de Dios.",
 reference: "Hebreos 4:9"
 },
 {
-text: "Sujetaos a Dios... el **Espíritu Santo** os ha puesto por obispos, para apacentar la iglesia del Señor.",
+text: "Sujetaos a Dios... el Espíritu Santo os ha puesto por obispos, para apacentar la iglesia del Señor.",
 reference: "Hechos 20:28"
 },
 {
@@ -11440,23 +11440,23 @@ text: "El que perseverare hasta el fin, éste será salvo.",
 reference: "Mateo 24:13"
 },
 {
-text: "Y el mar entregó los muertos que había en él... y fueron **juzgados** cada uno según sus obras.",
+text: "Y el mar entregó los muertos que había en él... y fueron juzgados cada uno según sus obras.",
 reference: "Apocalipsis 20:13"
 },
 {
-text: "Porque es necesario que todos nosotros comparezcamos ante el **tribunal de Cristo**.",
+text: "Porque es necesario que todos nosotros comparezcamos ante el tribunal de Cristo.",
 reference: "2 Corintios 5:10"
 },
 {
-text: "De manera que la **fe** es por el oír, y el oír, por la **palabra de Dios**.",
+text: "De manera que la fe es por el oír, y el oír, por la palabra de Dios.",
 reference: "Romanos 10:17"
 },
 {
-text: "El que **naciere de nuevo**, no puede ver el reino de Dios.",
+text: "El que naciere de nuevo, no puede ver el reino de Dios.",
 reference: "Juan 3:3"
 },
 {
-text: "Así que, **arrepentíos y convertíos**, para que sean borrados vuestros pecados.",
+text: "Así que, arrepentíos y convertíos, para que sean borrados vuestros pecados.",
 reference: "Hechos 3:19"
 },
 {
@@ -11464,11 +11464,11 @@ text: "El que tiene el Hijo, tiene la vida; el que no tiene al Hijo de Dios no t
 reference: "1 Juan 5:12"
 },
 {
-text: "El **temor de Jehová** es aborrecer el mal.",
+text: "El temor de Jehová es aborrecer el mal.",
 reference: "Proverbios 8:13"
 },
 {
-text: "Teme a Dios, y **guarda sus mandamientos**; porque esto es el todo del hombre.",
+text: "Teme a Dios, y guarda sus mandamientos; porque esto es el todo del hombre.",
 reference: "Eclesiastés 12:13"
 }
 ];

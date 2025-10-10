@@ -53,10 +53,10 @@
 <meta name="msapplication-config" content="./browserconfig.xml">
 <link href="./css/bootstrap.min.css" rel="stylesheet">
 <link href="./css/bootstrap-icons.css" rel="stylesheet">
-<link href="./css/apierp.min.css?v=5.2.4" rel="stylesheet">
-<link href="./css/apipos.min.css?v=5.2.4" rel="stylesheet">
-<link href="./css/apierp_header.css?v=5.2.4" rel="stylesheet">
-<link href="./css/apipos_login.css?v=5.2.4" rel="stylesheet">
+<link href="./css/apierp.min.css?v=5.2.5" rel="stylesheet">
+<link href="./css/apipos.min.css?v=5.2.5" rel="stylesheet">
+<link href="./css/apierp_header.css?v=5.2.5" rel="stylesheet">
+<link href="./css/apipos_login.css?v=5.2.5" rel="stylesheet">
 <link href="./css/pdf_viewer.min.css" rel="stylesheet">
 <script src="./js/echarts.min.js"></script>
 </head>
@@ -334,11 +334,11 @@ Filtrar
 </div>
 
 <!-- INCOMES GENERAL -->
-<div class="row">
+<div id="divReportGeneral" class="row">
 <div class="col-md-12">
 
 <!-- GRAPHIC INCOMES GENERAL -->
-<div id="divChartIncome" class="m-auto"></div>
+<div id="divChartGeneral" class="m-auto"></div>
 
 <!-- BUTTON EXPORT REPORT -->
 <div class="container-report-buttons">
@@ -364,62 +364,6 @@ Filtrar
 <div id="pagination-income" class="pagination-table mt-4"></div>
 </div>
 </div>
-
-<!-- INCOMES X ITEMS -->
-<div class="row row-report-details bg-blue-transparent">
-<div class="col-md-6 col-xs-12 d-flex flex-column justify-content-center">
-
-<!-- TABLE INCOMES X ITEMS -->
-<div class="table-responsive table-wrapper">
-<table id="reporte-income-products" class="table table-bordered table-hover table-report">
-<thead>
-<tr>
-<th class="th-bg-blue" style="text-align: center;  min-width: 100px;">Producto</th>
-<th class="th-bg-blue" style="text-align: center;  min-width: 100px;">Moneda</th>
-<th class="th-bg-blue" style="text-align: center;  min-width: 100px;">Ventas</th>
-<th class="th-bg-blue" style=" min-width: 200px;">Costo</th>
-<th class="th-bg-blue" style="text-align: center;  min-width: 150px;">Ganancia</th>
-</tr>
-</thead>
-<tbody></tbody>
-</table>
-</div>
-<div id="pagination-products" class="pagination-table mt-4"></div>
-</div>
-<div class="col-md-6 col-xs-12 d-flex flex-column justify-content-center">
-
-<!-- GRAPHIC INCOMES X ITEMS -->
-<div id="divChartItem" class="m-auto"></div>
-</div>
-</div>
-
-<!-- INCOMES X CUSTOMER -->
-<div class="row row-report-details bg-orange-transparent">
-<div class="col-md-6 col-xs-12 d-flex flex-column justify-content-center">
-
-<!-- GRAPHIC INCOMES X CUSTOMER -->
-<div id="divChartCustomer" class="m-auto"></div>
-</div>
-<div class="col-md-6 col-xs-12 d-flex flex-column justify-content-center">
-
-<!-- TABLE INCOMES X CUSTOMER -->
-<div class="table-responsive table-wrapper">
-<table id="reporte-income-customers" class="table table-bordered table-hover table-report">
-<thead>
-<tr>
-<th class="th-bg-orange" style="text-align: center;  min-width: 100px;">Cliente</th>
-<th class="th-bg-orange" style="text-align: center;  min-width: 100px;">Moneda</th>
-<th class="th-bg-orange" style="text-align: center;  min-width: 100px;">Ventas</th>
-<th class="th-bg-orange" style=" min-width: 200px;">Costo</th>
-<th class="th-bg-orange" style="text-align: center;  min-width: 150px;">Ganancia</th>
-</tr>
-</thead>
-<tbody></tbody>
-</table>
-</div>
-<div id="pagination-customers" class="pagination-table mt-4"></div>
-</div>
-</div>
 </section>
 </main>
 
@@ -427,7 +371,7 @@ Filtrar
 <div id="ntf-flotante-container"></div>
 
 <!-- SCRIPTS -->
-<script src="./js/apierp_main.js?v=5.2.4"></script>
+<script src="./js/apierp_main.js?v=5.2.5"></script>
 <script src="./js/bootstrap.bundle.min.js"></script>
 <script src="./js/pos-main.js"></script>
 <script src="./js/setup-pdf-lib.min.js"></script>
@@ -436,8 +380,8 @@ Filtrar
 <script src="./js/qrcode.min.js"></script>
 <script src="./js/app_pdf.min.js"></script>
 <script src="./js/pos.js"></script>
-<script src="./js/apipos_setup.min.js?v=5.2.4"></script>
+<script src="./js/apipos_setup.min.js?v=5.2.5"></script>
 <script src="./js/apierp_header.js"></script>
-<script src="./js/apierp_reports.min.js?v=5.2.4"></script>
+<script src="./js/apierp_reports.min.js?v=5.2.5"></script>
 </body>
 </html>

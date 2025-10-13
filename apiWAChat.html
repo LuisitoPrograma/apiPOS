@@ -53,25 +53,26 @@
 <meta name="msapplication-config" content="./browserconfig.xml">
 <link href="./css/bootstrap.min.css" rel="stylesheet">
 <link href="./css/bootstrap-icons.css" rel="stylesheet">
-<link href="./css/apierp.min.css?v=5.2.5" rel="stylesheet">
-<link href="./css/apipos.min.css?v=5.2.5" rel="stylesheet">
-<link href="./css/apierp_header.css?v=5.2.5" rel="stylesheet">
-<link href="./css/apipos_login.css?v=5.2.5" rel="stylesheet">
-<link href="./css/apiWAChat.min.css?v=5.2.5" rel="stylesheet">
+<link href="./css/apierp.min.css?v=5.2.6" rel="stylesheet">
+<link href="./css/apipos.min.css?v=5.2.6" rel="stylesheet">
+<link href="./css/apierp_header.css?v=5.2.6" rel="stylesheet">
+<link href="./css/apipos_login.css?v=5.2.6" rel="stylesheet">
+<link href="./css/apiWAChat.min.css?v=5.2.6" rel="stylesheet">
 <link href="./css/pdf_viewer.min.css" rel="stylesheet">
 <script src="./js/echarts.min.js"></script>
 </head>
 <body>
 
-<!-- MODAL DETAIL AND NOTIFICATION -->
-<div id="itemModal" class="image-modal">
-<div class="modal-overlay-carousel"></div>
-<div class="modal-content-carousel">
+<!-- MODAL NOTIFICATIONS -->
+<div id="modalOverlayNotifications" class="modalOverlay"></div>
+<div id="detalleModalNotifications" class="modal">
+<div class="modal-content" style="border: none;">
 <div class="container-buttons">
-<button type="button" class="close closeModal modal-close-carousel margin-left-auto">
+<button id="closeModalNotifications" type="button" class="close closeModal margin-left-auto">
 <span>&times;</span>
 </button>
 </div>
+<div class="dynamicContent">
 <div class="carousel">
 <button class="carousel-prev"><img src="./img/icon-arrow-left-blue.svg" alt="icon-arrow-right-blue" class="img-search-more-products"></button>
 <div class="carousel-track-wrapper">
@@ -80,6 +81,7 @@
 <button class="carousel-next"><img src="./img/icon-arrow-left-blue.svg" alt="icon-arrow-right-blue" class="img-search-more-products"></button>
 </div>
 <div id="sectionInfoItem"></div>
+</div>
 </div>
 </div>
 
@@ -113,7 +115,7 @@
 <span id="setPlanName" class="plan-title element-header-response hidden"></span>
 <span id="setCashierName" class="user-name element-header-response hidden"></span>
 
-<!-- Login/QR -->
+<!-- APIWACHAT - LOGIN / QR -->
 <section id="loginPanel" class="login-panel">
 <h2>Inicia sesión</h2>
 <div class="qr-wrapper">
@@ -129,7 +131,7 @@
 </div>
 </section>
 
-<!-- Chats -->
+<!-- APIWACHAT - CHATS -->
 <section id="chatPanel" class="chat-panel">
 <div class="sidebar">
 <select id="setCredentialsApiWAChat"></select>
@@ -149,7 +151,7 @@
 <div id="ntf-flotante-container"></div>
 
 <!-- SCRIPTS -->
-<script src="./js/apierp_main.js?v=5.2.5"></script>
+<script src="./js/apierp_main.js?v=5.2.6"></script>
 <script src="./js/bootstrap.bundle.min.js"></script>
 <script src="./js/pos-main.js"></script>
 <script src="./js/setup-pdf-lib.min.js"></script>
@@ -158,8 +160,8 @@
 <script src="./js/qrcode.min.js"></script>
 <script src="./js/app_pdf.min.js"></script>
 <script src="./js/pos.js"></script>
-<script src="./js/apipos_setup.min.js?v=5.2.5"></script>
+<script src="./js/apipos_setup.min.js?v=5.2.6"></script>
 <script src="./js/apierp_header.js"></script>
-<script src="./js/apiWAChat.min.js?v=5.2.5"></script>
+<script src="./js/apierp_crm.min.js?v=5.2.6"></script>
 </body>
 </html>

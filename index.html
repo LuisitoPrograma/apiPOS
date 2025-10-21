@@ -52,10 +52,10 @@
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/bootstrap-icons.css" rel="stylesheet">
-<link href="css/apierp.min.css?v=5.2.7" rel="stylesheet">
-<link href="css/apipos.min.css?v=5.2.7" rel="stylesheet">
-<link href="css/apipos_header.css?v=5.2.7" rel="stylesheet">
-<link href="css/apipos_login.css?v=5.2.7" rel="stylesheet">
+<link href="css/apierp.min.css?v=5.2.8" rel="stylesheet">
+<link href="css/apipos.min.css?v=5.2.8" rel="stylesheet">
+<link href="css/apipos_header.css?v=5.2.8" rel="stylesheet">
+<link href="css/apipos_login.css?v=5.2.8" rel="stylesheet">
 <link href="css/pdf_viewer.min.css" rel="stylesheet">
 <script src="./js/echarts.min.js"></script>
 </head>
@@ -504,182 +504,6 @@
 </div>
 </div>
 
-<!-- MODAL CREATE ITEM -->
-<div id="modalOverlayCreateItem" class="modalOverlay"></div>
-<div id="detalleModalCreateItem" class="modal">
-<div class="modal-content" style="border: none;">
-<div class="container-buttons">
-<button id="closeModalCreateItem" type="button" class="close closeModal margin-left-auto">
-<img src="./img/icon-close.svg" alt="icon-close" class="icon-close">
-</button>
-</div>
-<div class="shift-open-container">
-<div id="newItem_images_container" class="images_grid productType1"></div>
-<div class="shift-open-rightCol">
-
-<!-- BLOCK -->
-<div class="newItem_section newItem_row">
-<div class="newItem-title">
-<img class="new-item-img" src="./img/icon-product-free-2.svg" alt="Create Item">
-<h2 id="modalProductNewTitle" class="newItem-modal-title"></h2>
-</div>
-</div>
-
-<!-- BLOCK -->
-<div class="newItem_row productType1">
-<div class="newItem_col-inline">
-<label class="newItem-span"><input type="checkbox" id="newItem_chk_buy" checked="checked"> Se compra</label>
-<label class="newItem-span"><input type="checkbox" id="newItem_chk_sell" checked="checked"> Se vende</label>
-</div>
-</div>
-
-<!-- BLOCK -->
-<div class="newItem_section newItem_row productType1">
-<div class="newItem_col">
-<label class="newItem-span" for="inputItemType">Tipo:</label>
-<select class="form-control custom-input-cart-options shift-open-input" id="inputItemType">
-<option value="1">Artículo</option>
-<option value="2">Servicio</option>
-<option value="3">Materia Prima</option>
-<option value="4">Combo</option>
-<option value="5">Fabricado</option>
-</select>
-</div>
-<div class="newItem_col">
-<label class="newItem-span" for="inputItemCode">Código:</label>
-<input class="form-control custom-input-cart-options shift-open-input" type="text" id="inputItemCode" placeholder="SKU:">
-</div>
-</div>
-
-<!-- BLOCK -->
-<div class="newItem_section newItem_row">
-<div class="newItem_col">
-<label class="newItem-span" for="inputItemName">Nombre:</label>
-<input class="form-control custom-input-cart-options shift-open-input" type="text" id="inputItemName" placeholder="Nombre del Producto:">
-<input type="hidden" id="setItemFree">
-</div>
-<div class="newItem_col">
-<label class="newItem-span" for="inputItemTax">Impuesto:</label>
-<select class="form-control custom-input-cart-options shift-open-input" id="inputItemTax"></select>
-</div>
-</div>
-
-<!-- BLOCK -->
-<div class="newItem_section newItem_row productType1">
-<div class="newItem_col">
-<label class="newItem-span" for="inputItemDescription">Descripción:</label>
-<input class="form-control custom-input-cart-options shift-open-input" type="text" id="inputItemDescription" placeholder="Descripción:">
-</div>
-</div>
-
-<!-- BLOCK -->
-<div class="newItem_section newItem_row productType1">
-<div class="newItem_col">
-<label class="newItem-span" for="inputItemDateExpiry">Vencimiento:</label>
-<input class="form-control custom-input-cart-options shift-open-input" type="date" id="inputItemDateExpiry" placeholder="Vencimiento:">
-</div>
-<div class="newItem_col">
-<label class="newItem-span" for="inputItemBarCode">BarCode:</label>
-<input class="form-control custom-input-cart-options shift-open-input" type="text" id="inputItemBarCode" placeholder="BarCode:">
-</div>
-</div>
-
-<!-- BLOCK -->
-<div class="newItem_section newItem_row productType1">
-<div class="newItem_col">
-<label class="newItem-span">Categorías:</label>
-<div class="multi_select" id="newItem_categories_select">
-<input type="text" placeholder="Buscar..." class="ms_input form-control custom-input-cart-options shift-open-input">
-<div class="options_list newItem_hidden"></div>
-<div class="selected_tags"></div>
-</div>
-</div>
-<div class="newItem_col">
-<label class="newItem-span">Marcas:</label>
-<div class="multi_select" id="newItem_brands_select">
-<input type="text" placeholder="Buscar..." class="ms_input form-control custom-input-cart-options shift-open-input">
-<div class="options_list newItem_hidden"></div>
-<div class="selected_tags"></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="newItem_container">
-
-<!-- UNITS -->
-<div class="newItem_section">
-<label class="newItem-label productType1">Unidades de Medida</label>
-<button type="button" id="newItem_btn_addUnit" class="newItem_btn productType1">+</button>
-<div class="newItem_title_table">
-<label class="newItem-span div-width-20">Alias</label>
-<label class="newItem-span div-width-20">Unidad</label>
-<label class="newItem-span div-width-20">Equivalencia</label>
-<label class="newItem-span div-width-20">Precio</label>
-<label class="newItem-span div-width-20">Costo</label>
-</div>
-<div id="newItem_units_container" class="newItem_list"></div>
-</div>
-
-<!-- COMPONENTS -->
-<div class="newItem_section productType1">
-<label class="newItem-label">Componentes</label>
-<button type="button" id="newItem_btn_addProdItem" class="newItem_btn">+</button>
-<div id="newItem_title_table_cp" class="newItem_hidden">
-<label class="newItem-span div-width-70">Item</label>
-<label class="newItem-span div-width-30">Cant</label>
-</div>
-<div id="newItem_proditems_container" class="newItem_list"></div>
-</div>
-
-<!-- WAREHOUSES -->
-<div class="newItem_section productType1">
-<label class="newItem-label">Almacenes</label>
-<div id="newItem_branches_container" class="newItem_list"></div>
-</div>
-
-<!-- VARIANTS -->
-<div class="newItem_section productType1">
-<label class="newItem-label">¿Crear Variantes?</label>
-<button type="button" id="newItem_btn_addVariantGroup" class="newItem_btn">+</button>
-<div id="newItem_variants_config">
-<div id="newItem_variant_groups" class="newItem_list"></div>
-<div id="newItem_variants_forms"></div>
-</div>
-</div>
-
-<!-- SAVE -->
-<div class="shift-open-btnContainer mt-3">
-
-<!-- BLOCK -->
-<div class="newItem_row productType1">
-<div class="newItem_col-inline">
-<label class="newItem-span"><input type="checkbox" id="newItem_addToCart"> ¿Agregar al carrito?</label>
-</div>
-</div>
-
-<button class="shift-open-btn" id="btnItemSave">Guardar</button>
-</div>
-
-<!-- IMPORT CSV -->
-<div id="importNewItems" class="productType1">
-<label class="newItem-label">¿Prefieres Importarlos desde Excel?</label>
-<p class="p-dowload-template-excel mb-0">Descargar Plantilla para importar <a href="./excel/Plantilla-Items.xlsx" download="Plantilla-Items.xlsx">items nuevos</a></p>
-<p class="p-dowload-template-excel">Exportar Plantilla para actualizar <a id="btnExportarItems" href="javascript:void(0)">items existentes</a></p>
-<div class="drop-zone" id="drop-zone">
-<span class="drop-zone__prompt">Arrastra tu Excel aquí o haz clic para seleccionar</span>
-<input type="file" id="file-input" accept=".xlsx,.xls" class="drop-zone__input" />
-<button type="button" id="remove-file" class="drop-zone__remove" hidden>✕</button>
-</div>
-<progress id="progress" value="0" max="100" style="display:none"></progress>
-<div id="status"></div>
-<button type="button" id="upload-btn" disabled>Importar</button>
-</div>
-
-</div>
-</div>
-</div>
-
 <!-- WINDOW ID -->
 <input id="windowId" type="hidden" value="0">
 
@@ -790,18 +614,18 @@
 <div id="ntf-flotante-container"></div>
 
 <!-- SCRIPTS -->
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/pos-main.js"></script>
-<script src="js/setup-pdf-lib.min.js"></script>
-<script src="js/pdf-lib.min.js"></script>
-<script src="js/fontkit.umd.min.js"></script>
-<script src="js/qrcode.min.js"></script>
-<script src="js/JsBarcode.all.min.js"></script>
-<script src="js/app_pdf.min.js"></script>
-<script src="js/pos.js"></script>
-<script src="js/zxing.min.js"></script>
-<script src="js/apipos_setup.min.js?v=5.2.7"></script>
-<script src="js/apierp_item.min.js?v=5.2.7"></script>
-<script src="js/apipos.min.js?v=5.2.7"></script>
+<script src="./js/apierp_main.js?v=5.2.8"></script>
+<script src="./js/bootstrap.bundle.min.js"></script>
+<script src="./js/pos-main.js"></script>
+<script src="./js/setup-pdf-lib.min.js"></script>
+<script src="./js/pdf-lib.min.js"></script>
+<script src="./js/fontkit.umd.min.js"></script>
+<script src="./js/qrcode.min.js"></script>
+<script src="./js/JsBarcode.all.min.js"></script>
+<script src="./js/app_pdf.min.js"></script>
+<script src="./js/pos.js"></script>
+<script src="./js/zxing.min.js"></script>
+<script src="./js/apipos_setup.min.js?v=5.2.8"></script>
+<script src="./js/apipos.min.js?v=5.2.8"></script>
 </body>
 </html>

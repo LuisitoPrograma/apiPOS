@@ -53,115 +53,16 @@
 <meta name="msapplication-config" content="./browserconfig.xml">
 <link href="./css/bootstrap.min.css" rel="stylesheet">
 <link href="./css/bootstrap-icons.css" rel="stylesheet">
-<link href="./css/apierp.min.css?v=5.2.9" rel="stylesheet">
-<link href="./css/apipos.min.css?v=5.2.9" rel="stylesheet">
-<link href="./css/apierp_header.css?v=5.2.9" rel="stylesheet">
-<link href="./css/apipos_login.css?v=5.2.9" rel="stylesheet">
-<link href="./css/apiWAChat.min.css?v=5.2.9" rel="stylesheet">
+<link href="./css/apierp.min.css?v=5.3.0" rel="stylesheet">
+<link href="./css/apipos.min.css?v=5.3.0" rel="stylesheet">
+<link href="./css/apierp_header.css?v=5.3.0" rel="stylesheet">
+<link href="./css/apipos_login.css?v=5.3.0" rel="stylesheet">
+<link href="./css/apiWAChat.min.css?v=5.3.0" rel="stylesheet">
 <link href="./css/pdf_viewer.min.css" rel="stylesheet">
 <script src="./js/echarts.min.js"></script>
+
+<!-- INIT -->
+<script defer src="./js/apierp_main.js?v=5.3.0"></script>
 </head>
-<body>
-
-<!-- MODAL NOTIFICATIONS -->
-<div id="modalOverlayNotifications" class="modalOverlay"></div>
-<div id="detalleModalNotifications" class="modal">
-<div class="modal-content" style="border: none;">
-<div class="container-buttons">
-<button id="closeModalNotifications" type="button" class="close closeModal margin-left-auto">
-<span>&times;</span>
-</button>
-</div>
-<div class="dynamicContent">
-<div class="carousel">
-<button class="carousel-prev"><img src="./img/icon-arrow-left-blue.svg" alt="icon-arrow-right-blue" class="img-search-more-products"></button>
-<div class="carousel-track-wrapper">
-<div class="carousel-track"></div>
-</div>
-<button class="carousel-next"><img src="./img/icon-arrow-left-blue.svg" alt="icon-arrow-right-blue" class="img-search-more-products"></button>
-</div>
-<div id="sectionInfoItem"></div>
-</div>
-</div>
-</div>
-
-<!-- LOGIN -->
-<section id="login" style="padding: 0; margin: 0;"></section>
-
-<!-- HEADER -->
-<header id="header" class="header dark-background d-flex flex-column hidden"></header>
-<header id="topbar" class="topbar hidden"></header>
-
-<!-- MAIN -->
-<main>
-<div id="pos" class="container hidden">
-
-<!-- RESOURCES -->
-<div class="ntf-notification-wrapper hidden">
-<a href="javascript:void(0)" id="tabs-notifications" class="ntf-bell">
-<img src="./img/icon-notification.svg" alt="icon-notifications" class="img-tab-home">
-<span id="ntf-notif-count" class="ntf-badge">0</span>
-</a>
-<div id="ntf-notification-dropdown" class="ntf-dropdown ntf-hidden">
-<ul id="ntf-notifications-list"></ul>
-</div>
-</div>
-<button id="fullscreen-btn" class="custom-input-cart-options form-control hidden" type="button">
-<img src="./img/icon-fullscreen.svg" alt="icon-areas" class="img-tab-home">
-</button>
-<select id="setBranchId" class="hidden"></select>
-<select id="setWarehouseId" class="hidden"></select>
-<select id="setFloorId" class="hidden"></select>
-<span id="setPlanName" class="plan-title element-header-response hidden"></span>
-<span id="setCashierName" class="user-name element-header-response hidden"></span>
-
-<!-- APIWACHAT - LOGIN / QR -->
-<section id="loginPanel" class="login-panel">
-<h2>Inicia sesión</h2>
-<div class="qr-wrapper">
-<img id="qr-img" src="" alt="QR Code">
-<div id="qr-overlay" class="overlay">
-<span>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-<path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6a6 6 0 01-6 6 6 6 0 01-5.65-4H4.07A8 8 0 0012 20a8 8 0 000-16z"/>
-</svg>
-<small>Actualizar QR</small>
-</span>
-</div>
-</div>
-</section>
-
-<!-- APIWACHAT - CHATS -->
-<section id="chatPanel" class="chat-panel">
-<div class="sidebar">
-<select id="setCredentialsApiWAChat"></select>
-<div class="contact"><strong>Juan Pérez</strong><br><small>Hola, ¿cómo estás?</small></div>
-<div class="contact"><strong>María Gómez</strong><br><small>¡Listo para la reunión!</small></div>
-</div>
-<div class="chat-area" id="chat-area">
-<div class="message received">Hola, ¿en qué puedo ayudarte?</div>
-<div class="message sent">Necesito información sobre mi pedido.</div>
-<div class="message received">Claro, déjame verificar.</div>
-</div>
-</section>
-</div>
-</main>
-
-<!-- ALERTS -->
-<div id="ntf-flotante-container"></div>
-
-<!-- SCRIPTS -->
-<script src="./js/apierp_main.js?v=5.2.9"></script>
-<script src="./js/bootstrap.bundle.min.js"></script>
-<script src="./js/pos-main.js"></script>
-<script src="./js/setup-pdf-lib.min.js"></script>
-<script src="./js/pdf-lib.min.js"></script>
-<script src="./js/fontkit.umd.min.js"></script>
-<script src="./js/qrcode.min.js"></script>
-<script src="./js/app_pdf.min.js"></script>
-<script src="./js/pos.js"></script>
-<script src="./js/apipos_setup.min.js?v=5.2.9"></script>
-<script src="./js/apierp_header.js"></script>
-<script src="./js/apierp_crm.min.js?v=5.2.9"></script>
-</body>
+<body></body>
 </html>

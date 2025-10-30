@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WhatsApp Business Web</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css ">
   <style>
     :root {
       --primary-color: #25D366;
@@ -20,6 +20,28 @@
       --message-sent: #DCF8C6;
       --online-status: #00BFA5;
       --offline-status: #939FA4;
+      --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1);
+      --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.15);
+      --radius-small: 6px;
+      --radius-medium: 8px;
+    }
+
+    [data-theme="dark"] {
+      --primary-color: #25D366;
+      --primary-dark: #128C7E;
+      --primary-light: #34B7F1;
+      --background: #0B141A;
+      --header-bg: #1F2C34;
+      --sidebar-bg: #111B21;
+      --text-dark: #E9EDEF;
+      --text-light: #8696A0;
+      --border-color: #2A3942;
+      --message-received: #202C33;
+      --message-sent: #005C4B;
+      --online-status: #00BFA5;
+      --offline-status: #939FA4;
+      --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.3);
+      --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 
     * {
@@ -43,7 +65,7 @@
       max-width: 1400px;
       margin: 0 auto;
       background-color: var(--sidebar-bg);
-      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--shadow-light);
       position: relative;
     }
 
@@ -81,6 +103,11 @@
       color: white;
       font-weight: bold;
       cursor: pointer;
+      transition: var(--shadow-light) 0.2s;
+    }
+
+    .user-avatar:hover {
+      box-shadow: var(--shadow-medium);
     }
 
     .header-title {
@@ -99,10 +126,13 @@
       font-size: 20px;
       cursor: pointer;
       transition: color 0.2s;
+      padding: 4px;
+      border-radius: var(--radius-small);
     }
 
     .header-icon:hover {
       color: var(--primary-dark);
+      background-color: var(--primary-light);
     }
 
     /* Search */
@@ -116,8 +146,9 @@
       display: flex;
       align-items: center;
       background-color: #FFFFFF;
-      border-radius: 8px;
+      border-radius: var(--radius-medium);
       padding: 8px 12px;
+      box-shadow: var(--shadow-light);
     }
 
     .search-icon {
@@ -149,6 +180,11 @@
       font-weight: 500;
       color: var(--text-light);
       position: relative;
+      transition: color 0.2s;
+    }
+
+    .tab:hover {
+      color: var(--primary-dark);
     }
 
     .tab.active {
@@ -164,7 +200,7 @@
       width: 50%;
       height: 3px;
       background-color: var(--primary-dark);
-      border-radius: 3px 3px 0 0;
+      border-radius: var(--radius-small) var(--radius-small) 0 0;
     }
 
     /* Chat list */
@@ -202,6 +238,11 @@
       font-weight: bold;
       font-size: 18px;
       position: relative;
+      transition: var(--shadow-light) 0.2s;
+    }
+
+    .chat-avatar:hover {
+      box-shadow: var(--shadow-medium);
     }
 
     .online-dot {
@@ -307,6 +348,11 @@
       font-weight: bold;
       position: relative;
       cursor: pointer;
+      transition: var(--shadow-light) 0.2s;
+    }
+
+    .chat-avatar-area:hover {
+      box-shadow: var(--shadow-medium);
     }
 
     .chat-info-area {
@@ -335,10 +381,13 @@
       font-size: 20px;
       cursor: pointer;
       transition: color 0.2s;
+      padding: 4px;
+      border-radius: var(--radius-small);
     }
 
     .chat-action-icon:hover {
       color: var(--primary-dark);
+      background-color: var(--primary-light);
     }
 
     /* Messages */
@@ -354,12 +403,17 @@
       max-width: 70%;
       padding: 8px 12px;
       margin-bottom: 10px;
-      border-radius: 8px;
+      border-radius: var(--radius-medium);
       font-size: 15px;
       line-height: 1.4;
       position: relative;
       word-wrap: break-word;
-      box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--shadow-light);
+      transition: var(--shadow-light) 0.2s;
+    }
+
+    .message:hover {
+      box-shadow: var(--shadow-medium);
     }
 
     .message.received {
@@ -402,10 +456,13 @@
     .input-icon {
       cursor: pointer;
       transition: color 0.2s;
+      padding: 4px;
+      border-radius: var(--radius-small);
     }
 
     .input-icon:hover {
       color: var(--primary-dark);
+      background-color: var(--primary-light);
     }
 
     .message-input {
@@ -418,6 +475,7 @@
       margin: 0 10px;
       background-color: white;
       transition: box-shadow 0.2s;
+      box-shadow: var(--shadow-light);
     }
 
     .message-input:focus {
@@ -475,8 +533,8 @@
       top: 100%;
       right: 10px;
       background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      border-radius: var(--radius-medium);
+      box-shadow: var(--shadow-medium);
       z-index: 100;
       min-width: 200px;
       overflow: hidden;
@@ -529,11 +587,22 @@
 
     .modal-content {
       background-color: white;
-      border-radius: 8px;
+      border-radius: var(--radius-medium);
       width: 90%;
-      max-width: 400px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      max-width: 600px; /* Increased for better form layout */
+      box-shadow: var(--shadow-medium);
       overflow: hidden;
+    }
+
+    .modal-body {
+      overflow-y: auto;
+      max-height: 80vh;
+    }
+
+    @media (max-width: 768px) {
+      .modal-content {
+        max-width: 95vw;
+      }
     }
 
     .modal-header {
@@ -556,6 +625,14 @@
       font-size: 20px;
       cursor: pointer;
       color: var(--text-light);
+      padding: 4px;
+      border-radius: var(--radius-small);
+      transition: color 0.2s;
+    }
+
+    .modal-close:hover {
+      color: var(--primary-dark);
+      background-color: var(--primary-light);
     }
 
     .modal-body {
@@ -618,13 +695,14 @@
       align-items: center;
       padding: 12px;
       margin-bottom: 10px;
-      border-radius: 8px;
+      border-radius: var(--radius-medium);
       border: 1px solid var(--border-color);
-      transition: background-color 0.2s;
+      transition: background-color 0.2s, box-shadow 0.2s;
     }
 
     .client-item:hover {
       background-color: #F5F5F5;
+      box-shadow: var(--shadow-light);
     }
 
     .client-info {
@@ -679,16 +757,17 @@
       border: none;
       font-size: 24px;
       cursor: pointer;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: var(--shadow-medium);
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background-color 0.2s;
+      transition: background-color 0.2s, transform 0.2s;
       z-index: 10;
     }
 
     .add-client-btn:hover {
       background-color: var(--primary-color);
+      transform: scale(1.05);
     }
 
     /* Group header */
@@ -714,10 +793,12 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      box-shadow: var(--shadow-light);
     }
 
     .bulk-message-btn:hover {
       background-color: var(--primary-color);
+      box-shadow: var(--shadow-medium);
     }
 
     /* Responsive */
@@ -748,6 +829,14 @@
       font-size: 20px;
       color: var(--text-light);
       cursor: pointer;
+      padding: 4px;
+      border-radius: var(--radius-small);
+      transition: color 0.2s;
+    }
+
+    .back-button:hover {
+      color: var(--primary-dark);
+      background-color: var(--primary-light);
     }
 
     /* Form controls */
@@ -764,38 +853,48 @@
 
     .form-control {
       width: 100%;
-      padding: 8px 12px;
+      padding: 12px 16px; /* Increased padding for better size */
       border: 1px solid var(--border-color);
-      border-radius: 4px;
-      font-size: 14px;
+      border-radius: var(--radius-small);
+      font-size: 16px; /* Larger font */
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .form-control:focus {
+      border-color: var(--primary-dark);
+      box-shadow: 0 0 0 2px var(--primary-light);
     }
 
     .btn-primary {
       background-color: var(--primary-dark);
       color: white;
       border: none;
-      border-radius: 4px;
-      padding: 8px 16px;
+      border-radius: var(--radius-small);
+      padding: 12px 24px; /* Larger button */
       cursor: pointer;
-      transition: background-color 0.2s;
+      transition: background-color 0.2s, box-shadow 0.2s;
+      font-size: 16px;
     }
 
     .btn-primary:hover {
       background-color: var(--primary-color);
+      box-shadow: var(--shadow-light);
     }
 
     .btn-secondary {
       background-color: #F0F2F5;
       color: var(--text-dark);
       border: none;
-      border-radius: 4px;
-      padding: 8px 16px;
+      border-radius: var(--radius-small);
+      padding: 12px 24px; /* Larger button */
       cursor: pointer;
-      transition: background-color 0.2s;
+      transition: background-color 0.2s, box-shadow 0.2s;
+      font-size: 16px;
     }
 
     .btn-secondary:hover {
       background-color: #E5E8EB;
+      box-shadow: var(--shadow-light);
     }
 
     /* Template modal styles */
@@ -813,18 +912,288 @@
       color: var(--text-dark);
       margin-bottom: 4px;
     }
+
+    /* Variable Select */
+    .variable-select-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .variable-select {
+      padding: 8px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-small);
+      background: white;
+      cursor: pointer;
+      font-size: 14px;
+      min-width: 150px;
+    }
+
+    .variable-options {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-small);
+      box-shadow: var(--shadow-medium);
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 10;
+      display: none;
+    }
+
+    .variable-option {
+      padding: 8px 12px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .variable-option:hover {
+      background-color: #F5F5F5;
+    }
+
+    /* Improved Emoji Picker */
+    #emojiPicker {
+      position: absolute;
+      padding: 12px;
+      border-radius: var(--radius-medium);
+      box-shadow: var(--shadow-medium);
+      background: white;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 8px;
+      z-index: 2000;
+      width: 280px;
+      border: 1px solid var(--border-color);
+    }
+
+    .emoji-btn {
+      border: none;
+      background: transparent;
+      font-size: 24px;
+      cursor: pointer;
+      border-radius: var(--radius-small);
+      transition: background-color 0.2s;
+      padding: 4px;
+    }
+
+    .emoji-btn:hover {
+      background-color: var(--primary-light);
+    }
+
+    /* Improved Template Picker */
+    #templatePicker {
+      position: absolute;
+      padding: 12px;
+      border-radius: var(--radius-medium);
+      box-shadow: var(--shadow-medium);
+      background: white;
+      z-index: 2000;
+      min-width: 280px;
+      max-width: 350px;
+      border: 1px solid var(--border-color);
+    }
+
+    .template-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: none;
+      background: transparent;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: var(--radius-small);
+      transition: background-color 0.2s;
+      width: 100%;
+      text-align: left;
+    }
+
+    .template-row:hover {
+      background-color: var(--primary-light);
+    }
+
+    .template-search {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-small);
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .template-header {
+      font-weight: 600;
+      padding: 8px;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 12px;
+    }
+
+    /* Sort select */
+    .sort-select {
+      padding: 8px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-small);
+      background: white;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    /* --- Estilos para el Menú de Adjuntos --- */
+.attach-menu {
+  position: absolute;
+  background-color: #2A2F34; /* Color oscuro como en la imagen */
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-medium);
+  z-index: 2000;
+  padding: 8px;
+  width: 260px; /* Ancho del pop-up */
+  display: none; /* Oculto por defecto */
+  transition: all 0.1s ease-out;
+  transform-origin: bottom left; /* Animación desde el botón */
+}
+
+/* Clase para mostrarlo con animación */
+.attach-menu.show {
+  display: block;
+  animation: pop-up 0.1s ease-out;
+}
+
+@keyframes pop-up {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.attach-item {
+  display: flex;
+  align-items: center;
+  color: #E9EDEF; /* Texto claro */
+  padding: 10px 12px;
+  cursor: pointer;
+  border-radius: var(--radius-small);
+  transition: background-color 0.2s;
+  font-size: 15px;
+}
+
+.attach-item:hover {
+  background-color: #1F2C34; /* Hover más oscuro */
+}
+
+.attach-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  color: white;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* ... al final de tu <style> ... */
+
+/* Estilos para Previsualización de Adjuntos */
+.preview-item {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  border-radius: var(--radius-small);
+  overflow: hidden;
+  background-color: var(--border-color);
+  flex-shrink: 0;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-item img,
+.preview-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.preview-item div {
+  font-size: 11px;
+  padding: 4px;
+  word-break: break-all;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.remove-btn {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 18px;
+  height: 18px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Oculta el contenedor de preview si está vacío */
+#previewList:empty {
+  display: none !important;
+}
+
+/* Añadir esta sección de estilo al final de tu bloque <style> */
+.contact-action-btn-sim {
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--primary-color); /* Color verde de WhatsApp */
+  transition: background-color 0.1s;
+  border-radius: var(--radius-small);
+  display: inline-block;
+  text-align: center;
+  flex: 1; /* Ocupa espacio igual */
+}
+
+.contact-action-btn-sim:hover {
+  background-color: rgba(37, 211, 102, 0.1); /* Sombra ligera al pasar el mouse */
+}
+
+/* Estilo para simular el divisor */
+.contact-actions-sim {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Divisor sutil */
+}
+
   </style>
 </head>
 <body>
-  <div class="app-container">
-    <!-- Sidebar -->
+ <div class="app-container">
     <div class="sidebar">
       <div class="header">
         <div class="user-avatar" id="userAvatar">R</div>
         <div class="header-icons">
-          <i class="fas fa-comment-dots header-icon" id="chatTabButton"></i>
-          <i class="fas fa-users header-icon" id="clientsTabButton"></i>
-          <i class="fas fa-ellipsis-v header-icon" id="menuButton"></i>
+          <span class="header-icon" id="chatTabButton" title="Chats"><i class="fas fa-comment-dots"></i></span>
+          <span class="header-icon" id="contactsTabButton" title="Contactos"><i class="fas fa-address-book"></i></span>
+          <span class="header-icon" id="menuButton"><i class="fas fa-ellipsis-vertical"></i></span>
         </div>
         <div class="dropdown-menu" id="dropdownMenu">
           <div class="dropdown-item" id="newGroupButton">
@@ -836,7 +1205,7 @@
             <div>Nuevo contacto</div>
           </div>
           <div class="dropdown-item" id="settingsButton">
-            <div class="dropdown-icon"><i class="fas fa-cog"></i></div>
+            <div class="dropdown-icon"><i class="fas fa-gear"></i></div>
             <div>Configuración</div>
           </div>
           <div class="dropdown-item" id="logoutButton">
@@ -851,35 +1220,31 @@
       </div>
       <div class="search-container">
         <div class="search-box">
-          <i class="fas fa-search search-icon"></i>
+          <span class="search-icon"><i class="fas fa-search"></i></span>
           <input type="text" class="search-input" id="searchInput" placeholder="Buscar o empezar nuevo chat">
         </div>
       </div>
       
-      <!-- Chats View -->
       <div class="chat-list" id="chatList">
-        <!-- Chats will be loaded here -->
-      </div>
+        </div>
       
-      <!-- Clients View -->
       <div class="client-management" id="clientsView" style="display: none;">
         <div class="filter-section">
           <h3>Filtrar Clientes</h3>
           <div class="filter-options">
-            <label><input type="radio" name="filter" value="all" checked> <i class="fas fa-users"></i> Todos</label>
-            <label><input type="radio" name="filter" value="mayoristas"> <i class="fas fa-building"></i> Mayoristas</label>
-            <label><input type="radio" name="filter" value="minoristas"> <i class="fas fa-user"></i> Minoristas</label>
+            <label><input type="radio" name="filter" value="all" checked=""> <i class="fas fa-users"></i> Todos</label>
+            <label><input type="radio" name="filter" value="clientes"> <i class="fas fa-briefcase"></i> Clientes</label>
+            <label><input type="radio" name="filter" value="proveedores"> <i class="fas fa-truck"></i> Proveedores</label>
+            <label><input type="radio" name="filter" value="colaboradores"> <i class="fas fa-hands-helping"></i> Colaboradores</label>
             <label><input type="radio" name="filter" value="male"> <i class="fas fa-mars"></i> Masculino</label>
             <label><input type="radio" name="filter" value="female"> <i class="fas fa-venus"></i> Femenino</label>
           </div>
         </div>
         <div class="client-list" id="clientList">
-          <!-- Clients will be loaded here -->
-        </div>
+          </div>
       </div>
     </div>
     
-    <!-- Chat area -->
     <div class="chat-area" id="chatArea">
       <div class="chat-header-area">
         <div class="back-button" id="backButton">
@@ -893,67 +1258,96 @@
           <div class="chat-status" id="currentChatStatus">en línea</div>
         </div>
         <div class="chat-actions">
-          <i class="fas fa-search chat-action-icon" id="chatSearchButton"></i>
-          <i class="fas fa-paperclip chat-action-icon" id="attachButton"></i>
-          <i class="fas fa-ellipsis-v chat-action-icon" id="chatMenuButton"></i>
+          <span class="chat-action-icon" id="chatSearchButton"><i class="fas fa-search"></i></span>
+          <span class="chat-action-icon" id="attachButton"><i class="fas fa-paperclip"></i></span>
+          <span class="chat-action-icon" id="chatMenuButton"><i class="fas fa-ellipsis-vertical"></i></span>
         </div>
       </div>
       <div class="messages-container" id="messagesContainer">
         <div class="empty-state">
-          <i class="fas fa-comments empty-icon"></i>
+          <span class="empty-icon"><i class="fas fa-comment-dots"></i></span>
           <div class="empty-text">Selecciona un chat para empezar a conversar</div>
         </div>
       </div>
+      <div class="messages-container" id="messagesContainer">
+        </div>
+      
+      <div id="previewList" style="display: flex; gap: 10px; overflow-x: auto; padding: 8px 16px; background-color: var(--header-bg); border-bottom: 1px solid var(--border-color);">
+        </div>
       <div class="input-area">
         <div class="input-icons">
-          <i class="far fa-smile input-icon" id="emojiButton"></i>
-          <i class="fas fa-plus-circle input-icon" id="moreOptionsButton"></i>
+          <span class="input-icon" id="emojiButton"><i class="far fa-laugh-beam"></i></span>
+          <span class="input-icon" id="moreOptionsButton"><i class="fas fa-plus"></i></span>
         </div>
-        <input type="text" class="message-input" id="messageInput" placeholder="Escribe un mensaje" disabled>
-        <button class="send-button" id="sendButton" disabled>
-          <i class="fas fa-paper-plane"></i>
+        <input type="text" class="message-input" id="messageInput" placeholder="Escribe un mensaje" disabled="">
+        <button class="send-button" id="sendButton" disabled="">
+          <i class="fas fa-microphone"></i>
         </button>
       </div>
     </div>
   </div>
   
-  <!-- Add client button -->
-  <button class="add-client-btn" id="addClientBtn">
-    <i class="fas fa-plus"></i>
-  </button>
   
-  <!-- Modals -->
   <div class="modal" id="clientModal">
     <div class="modal-content">
       <div class="modal-header">
         <div class="modal-title" id="modalTitle">Agregar Nuevo Cliente</div>
-        <button class="modal-close" id="closeClientModal">&times;</button>
+        <button class="modal-close" id="closeClientModal"><i class="fas fa-times"></i></button>
       </div>
       <div class="modal-body">
         <form id="clientForm">
           <input type="hidden" id="clientId">
           <div class="form-group">
             <label for="clientName">Nombre:</label>
-            <input type="text" class="form-control" id="clientName" required>
+            <input type="text" class="form-control" id="clientName" required="">
           </div>
           <div class="form-group">
             <label for="clientCountryCode">Código de País:</label>
-            <input type="text" class="form-control" id="clientCountryCode" required>
+            <input type="text" class="form-control" id="clientCountryCode" required="">
           </div>
           <div class="form-group">
             <label for="clientPhone">Número de WhatsApp:</label>
-            <input type="text" class="form-control" id="clientPhone" required>
+            <input type="text" class="form-control" id="clientPhone" required="">
+          </div>
+          <div class="form-group">
+            <label for="clientDocumentType">Tipo de Documento:</label>
+            <select class="form-control" id="clientDocumentType">
+              <option value="DNI">DNI</option>
+              <option value="RUC">RUC</option>
+              <option value="">Otro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="clientDocumentNumber">Número de Documento:</label>
+            <input type="text" class="form-control" id="clientDocumentNumber">
+          </div>
+          <div class="form-group">
+            <label for="clientEmail">Email:</label>
+            <input type="email" class="form-control" id="clientEmail">
+          </div>
+          <div class="form-group">
+            <label for="clientAddress">Dirección:</label>
+            <input type="text" class="form-control" id="clientAddress">
+          </div>
+          <div class="form-group">
+            <label for="clientUbigeo">Ubigeo:</label>
+            <input type="text" class="form-control" id="clientUbigeo">
+          </div>
+          <div class="form-group">
+            <label for="clientBirthdate">Fecha de Nacimiento:</label>
+            <input type="date" class="form-control" id="clientBirthdate">
           </div>
           <div class="form-group">
             <label for="clientType">Tipo de Cliente:</label>
-            <select class="form-control" id="clientType" required>
-              <option value="mayoristas">Mayorista</option>
-              <option value="minoristas">Minorista</option>
+            <select class="form-control" id="clientType" required="">
+              <option value="clientes">Cliente</option>
+              <option value="proveedores">Proveedor</option>
+              <option value="colaboradores">Colaborador</option>
             </select>
           </div>
           <div class="form-group">
             <label for="clientGender">Sexo:</label>
-            <select class="form-control" id="clientGender" required>
+            <select class="form-control" id="clientGender" required="">
               <option value="male">Masculino</option>
               <option value="female">Femenino</option>
             </select>
@@ -971,27 +1365,31 @@
   <div class="modal-content">
     <div class="modal-header">
       <div class="modal-title">Enviar Mensaje Masivo</div>
-      <button class="modal-close" id="closeBulkMessageModal">&times;</button>
+      <button class="modal-close" id="closeBulkMessageModal"><i class="fas fa-times"></i></button>
     </div>
     <div class="modal-body">
     <div class="form-group">
   <label for="bulkMessageText">Mensaje:</label>
   <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+    <input type="text" id="templateSearchBulk" class="form-control" placeholder="Buscar plantilla..." style="flex: 1;">
+  </div>
+  <div style="display: flex; gap: 10px; margin-bottom: 10px;">
     <select class="form-control" id="templateSelector" style="flex: 1;">
       <option value="">Seleccionar plantilla...</option>
     </select>
     <button type="button" class="btn-secondary" id="loadTemplateBtn" style="white-space: nowrap;">
-      <i class="fas fa-file-alt"></i> Cargar
+      <i class="fas fa-paste"></i> Cargar
     </button>
   </div>
-  <textarea class="form-control" id="bulkMessageText" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+  <textarea class="form-control" id="bulkMessageText" rows="4" placeholder="Escribe tu mensaje aquí..." required=""></textarea>
 </div>
       <div class="form-group">
         <label for="bulkMessageGroup">Enviar a:</label>
         <select class="form-control" id="bulkMessageGroup">
           <option value="all">Todos los clientes</option>
-          <option value="mayoristas">Solo mayoristas</option>
-          <option value="minoristas">Solo minoristas</option>
+          <option value="clientes">Solo clientes</option>
+          <option value="proveedores">Solo proveedores</option>
+          <option value="colaboradores">Solo colaboradores</option>
           <option value="male">Solo hombres</option>
           <option value="female">Solo mujeres</option>
         </select>
@@ -1003,7 +1401,7 @@
       </div>
       <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
         <button type="button" class="btn-secondary" id="cancelBulkMessage">Cancelar</button>
-        <button type="button" class="btn-primary" id="sendBulkMessage" disabled>Enviar</button>
+        <button type="button" class="btn-primary" id="sendBulkMessage" disabled="">Enviar</button>
       </div>
     </div>
   </div>
@@ -1012,13 +1410,13 @@
     <div class="modal-content">
       <div class="modal-header">
         <div class="modal-title">Nuevo grupo</div>
-        <button class="modal-close" id="closeNewGroupModal">&times;</button>
+        <button class="modal-close" id="closeNewGroupModal"><i class="fas fa-times"></i></button>
       </div>
       <div class="modal-body">
         <form id="groupForm">
           <div class="form-group">
             <label for="groupName">Nombre del grupo:</label>
-            <input type="text" class="form-control" id="groupName" required>
+            <input type="text" class="form-control" id="groupName" required="">
           </div>
           <div class="form-group">
             <label>Seleccionar miembros:</label>
@@ -1039,17 +1437,17 @@
     <div class="modal-content">
       <div class="modal-header">
         <div class="modal-title">Nuevo contacto</div>
-        <button class="modal-close" id="closeNewContactModal">&times;</button>
+        <button class="modal-close" id="closeNewContactModal"><i class="fas fa-times"></i></button>
       </div>
       <div class="modal-body">
         <form id="contactForm">
           <div class="form-group">
             <label for="contactName">Nombre:</label>
-            <input type="text" class="form-control" id="contactName" required>
+            <input type="text" class="form-control" id="contactName" required="">
           </div>
           <div class="form-group">
             <label for="contactPhone">Número de teléfono:</label>
-            <input type="text" class="form-control" id="contactPhone" required>
+            <input type="text" class="form-control" id="contactPhone" required="">
           </div>
           <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
             <button type="button" class="btn-secondary" id="cancelContactBtn">Cancelar</button>
@@ -1064,7 +1462,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <div class="modal-title">Configuración</div>
-        <button class="modal-close" id="closeSettingsModal">&times;</button>
+        <button class="modal-close" id="closeSettingsModal"><i class="fas fa-times"></i></button>
       </div>
       <div class="modal-body">
         <div class="settings-section">
@@ -1082,7 +1480,7 @@
           <h4>Preferencias</h4>
           <div class="form-group">
             <label>
-              <input type="checkbox" id="notificationsEnabled" checked> Notificaciones
+              <input type="checkbox" id="notificationsEnabled" checked=""> Notificaciones
             </label>
           </div>
           <div class="form-group">
@@ -1103,7 +1501,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <div class="modal-title">Cerrar sesión</div>
-        <button class="modal-close" id="closeLogoutModal">&times;</button>
+        <button class="modal-close" id="closeLogoutModal"><i class="fas fa-times"></i></button>
       </div>
       <div class="modal-body">
         <p>¿Estás seguro que deseas cerrar sesión?</p>
@@ -1119,21 +1517,36 @@
     <div class="modal-content" style="max-width: 500px;">
       <div class="modal-header">
         <div class="modal-title">Gestionar Plantillas</div>
-        <button class="modal-close" id="closeTemplateModal">&times;</button>
+        <button class="modal-close" id="closeTemplateModal"><i class="fas fa-times"></i></button>
       </div>
       <div class="modal-body">
         <form id="templateForm">
           <input type="hidden" id="templateId">
           <div class="form-group">
             <label for="templateName">Nombre:</label>
-            <input type="text" class="form-control" id="templateName" maxlength="50" required>
+            <input type="text" class="form-control" id="templateName" maxlength="50" required="">
           </div>
           <div class="form-group">
             <label for="templateMessage">Mensaje:</label>
-            <textarea class="form-control" id="templateMessage" rows="4" maxlength="500" required></textarea>
+            <textarea class="form-control" id="templateMessage" rows="4" maxlength="500" required=""></textarea>
           </div>
           <div class="form-group">
-            <button type="button" id="addVariableBtn" class="btn-secondary">Agregar Variable</button>
+            <label for="variableSelect">Agregar Variable:</label>
+            <div class="variable-select-container">
+              <select class="variable-select" id="variableSelect">
+                <option value="">Seleccionar campo...</option>
+                <option value="customer_name">customer_name</option>
+                <option value="customer_phone">customer_phone</option>
+                <option value="customer_email">customer_email</option>
+                <option value="customer_address">customer_address</option>
+                <option value="customer_birthdate">customer_birthdate</option>
+                <option value="supplier_name">supplier_name</option>
+                <option value="supplier_phone">supplier_phone</option>
+                <option value="collaborator_name">collaborator_name</option>
+                <option value="collaborator_phone">collaborator_phone</option>
+              </select>
+              <div class="variable-options" id="variableOptions"></div>
+            </div>
           </div>
           <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
             <button type="button" class="btn-secondary" id="cancelTemplateBtn">Cancelar</button>
@@ -1149,34 +1562,693 @@
       </div>
     </div>
   </div>
+
+  <div class="attach-menu" id="attachMenu">
+  <div class="attach-item" id="attachDocumentButton"> <span class="attach-icon" style="background-color: #7B52FF;"><i class="fas fa-file-alt"></i></span>
+    Documento
+  </div>
+  <div class="attach-item" id="openTemplatePickerButton">
+    <span class="attach-icon" style="background-color: #009688;"><i class="fas fa-paste"></i></span>
+    Plantilla
+  </div>
+  <div class="attach-item" id="attachMediaButton">
+    <span class="attach-icon" style="background-color: #007BFF;"><i class="fas fa-image"></i></span>
+    Fotos y videos
+  </div>
+  <div class="attach-item" id="attachCameraButton">
+    <span class="attach-icon" style="background-color: #FF4081;"><i class="fas fa-camera"></i></span>
+    Cámara
+  </div>
+  <div class="attach-item" id="attachAudioButton">
+    <span class="attach-icon" style="background-color: #FF9800;"><i class="fas fa-headphones"></i></span>
+    Audio
+  </div>
+  <div class="attach-item" id="attachContactButton">
+    <span class="attach-icon" style="background-color: #00BCD4;"><i class="fas fa-user"></i></span>
+    Contacto
+  </div>
+  <div class="attach-item">
+    <span class="attach-icon" style="background-color: #FFC107;"><i class="fas fa-poll"></i></span>
+    Encuesta
+  </div>
+  <div class="attach-item">
+    <span class="attach-icon" style="background-color: #E91E63;"><i class="fas fa-calendar-alt"></i></span>
+    Evento
+  </div>
+  <div class="attach-item">
+    <span class="attach-icon" style="background-color: #4CAF50;"><i class="fas fa-plus-circle"></i></span>
+    Nuevo sticker
+  </div>
+
+  <input type="file" id="waFiles" multiple style="display: none;">
+
+  <div class="modal" id="cameraModal">
+    <div class="modal-content" style="max-width: 640px; background-color: #111B21; padding: 0; overflow: hidden;">
+      
+      <div class="modal-header" style="background-color: #1F2C34; border-bottom: none;">
+        <div class="modal-title" style="color: #E9EDEF;">Tomar foto</div>
+        <button class="modal-close" id="closeCameraModal" style="color: #8696A0;"><i class="fas fa-times"></i></button>
+      </div>
+      
+      <div class="modal-body" style="padding: 0; display: flex; flex-direction: column; align-items: center; background-color: #0B141A;">
+        <video id="cameraPreview" autoplay playsinline style="width: 100%; height: auto; max-height: 60vh; background-color: #000; transform: scaleX(-1);"></video>
+        
+        <div class="shutter-button-container" style="padding: 20px; text-align: center;">
+          <button id="shutterButton" style="width: 60px; height: 60px; border-radius: 50%; background-color: var(--primary-color); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 24px; color: white; transition: background-color 0.2s;">
+            <i class="fas fa-camera"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  
+<div class="modal" id="contactSelectionModal">
+    <div class="modal-content" style="max-width: 400px; padding: 0;">
+        <div class="modal-header">
+            <div class="modal-title">
+                <i class="fas fa-times modal-close" id="closeContactSelectionModal" style="margin-right: 15px; cursor: pointer;"></i>
+                Envía contactos
+            </div>
+            <button class="modal-close" id="closeContactSelectionModal2"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body" style="padding: 0;">
+            <div class="search-container" style="background-color: var(--sidebar-bg); border-bottom: none;">
+                <div class="search-box" style="background-color: var(--header-bg); border: 1px solid var(--border-color);">
+                    <span class="search-icon"><i class="fas fa-search"></i></span>
+                    <input type="text" class="search-input" id="contactSearchInput" placeholder="Buscar un nombre o número">
+                </div>
+            </div>
+            <div id="contactListToSend" style="max-height: 400px; overflow-y: auto; padding-top: 8px;">
+                </div>
+            <div id="contactSelectionFooter" style="background-color: var(--sidebar-bg); border-top: 1px solid var(--border-color); padding: 10px; display: flex; justify-content: space-between; align-items: center; min-height: 50px; display: none;">
+                <span id="selectedContactNameFooter" style="font-size: 14px; font-weight: 500; color: var(--text-dark);"></span>
+                <button class="send-button" id="sendContactButtonFooter" style="background-color: var(--primary-color);">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="contactPreviewModal">
+    <div class="modal-content" style="max-width: 400px; padding: 0; background-color: var(--background);">
+        <div class="modal-header" style="background-color: var(--background); border-bottom: none; padding-top: 10px;">
+            <div class="modal-title" style="display: flex; align-items: center;">
+                <i class="fas fa-arrow-left modal-close" id="backToContactSelection" style="margin-right: 15px; cursor: pointer; color: var(--text-dark);"></i>
+                ¿Deseas enviar 1 contacto a "<span id="targetChatNumber"></span>"?
+            </div>
+        </div>
+        <div class="modal-body" style="padding: 16px; min-height: 150px; display: flex; flex-direction: column;">
+            <div id="contactPreviewContent" style="background-color: #111B21; padding: 16px; border-radius: var(--radius-medium);">
+                </div>
+            <div style="flex: 1;"></div>
+            <div style="display: flex; justify-content: flex-end; margin-top: 20px;">
+                <button class="send-button" id="confirmSendContact" style="background-color: var(--primary-color);">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
   <script>
-    // =============================================
+
+
+const myCompany = {
+
+ 
+  setCredentialsApiWAChat: [
+
+    {
+      setCredentialsApiWAChatAlias: "Whatsapp 1",
+      setCredentialsApiWAChatId: 21,
+      setCredentialsApiWAChatIsChat: 0,
+      setCredentialsApiWAChatPort: 3021,
+      setCredentialsApiWAChatServer: "44.253.164.45",
+      setCredentialsApiWAChatStatus: 1,
+      setCredentialsApiWAChatSubdomain: "instance-01.apierp.dev",
+    }   
+  ],
+
+  
+  
+  setAuthToken: "HV5Teaj66n6sOdpy_z_x0qV3PIm152yiWp5s",
+
+  setCustomers:  [
+  {
+    setCustomerId: 1,
+    setCustomerDocumentNumber: '87654321',
+    setCustomerDocumentType: 'DNI',
+    setCustomerPhone: '916173721',
+    setCustomertype: 1,
+    setCustomerPhoneCountryCode: '51',
+    setCustomerEmail: 'leonardogironvillegas@gmail.com',
+    setCustomerName: 'Juan Luis',
+    setCustomerAddress: 'Jr. Cliente 789, Lima',
+    setCustomerUbigeo: '150101',
+    setCustomerBirthdate: '2000-07-31',
+    setCustomerScoringSystemId: 1,
+    setCustomerScore: 0,
+    setCustomerLocation: 0
+  },
+  {
+    setCustomerId: 2,
+    setCustomerDocumentNumber: '87654321',
+    setCustomerPhone: '916173721',
+    setCustomertype: 1,
+    setCustomerPhoneCountryCode: '51',
+    setCustomerEmail: 'leonardogironvillegas@gmail.com',
+    setCustomerName: 'Josué',
+    setCustomerAddress: 'Jr. Cliente 789, Lima',
+    setCustomerUbigeo: '150101',
+    setCustomerBirthdate: '2000-07-31',
+    setCustomerScoringSystemId: 1,
+    setCustomerScore: 0,
+    setCustomerLocation: 0
+  },
+  {
+    setCustomerId: 3,
+    setCustomerDocumentNumber: '87654321',
+    setCustomerPhone: '916173721',
+    setCustomertype: 2,
+    setCustomerPhoneCountryCode: '51',
+    setCustomerEmail: 'leonardogironvillegas@gmail.com',
+    setCustomerName: 'Pedro',
+    setCustomerAddress: 'Jr. Cliente 789, Lima',
+    setCustomerUbigeo: '150101',
+    setCustomerBirthdate: '2000-07-31',
+    setCustomerScoringSystemId: 1,
+    setCustomerScore: 0,
+    setCustomerLocation: 0
+  },
+  
+],
+  setSuppliers: [
+     {
+    setSupplierId: 4,
+    setSupplierDocumentNumber: "20198765432",
+    setSupplierType: 1,
+    setSupplierPhoneCountryCode: "51",
+    setSupplierDocumentType: "",
+    setSupplierName: "Proveedor Demo SAC",
+    setSupplierAddress: "Av. Proveedor 321, Lima",
+    setSupplierUbigeo: "150102",
+    setSupplierBirthdate: "1990-01-01",
+    setSupplierEmail: "",
+    setSupplierPhone: "908965843",
+    setSupplierLocation: 0
+  }
+  ],
+ 
+
+  setCollaborators: [
+    {
+    setCollaboratorId: 5,
+    setCollaboratorDocNumber: "76543210",
+    setCollaboratorPhone: "987654321",
+    setCollaboratortype: 1,
+    setCollaboratorPhoneCountryCode: "51",
+    setCollaboratorEmail: "rpintado@gmail.com",
+    setCollaboratorFullName: "Colaborador Demo",
+    setCollaboratorAddress: "Jr. Colaborador 654, Lima",
+    setCollaboratorUbigeo: "150103",
+    setCollaboratorBirthdate: "1985-01-01"
+  }
+  ],
+
+  setMessageTemplates: [
+    {
+      setMessageTemplateId: 1,
+      setMessageTemplateName: 'Plantilla de bienvenida',
+      setMessageTemplate: 'Hola {{customer_name}}, bienvenido a nuestra empresa. ¿En qué podemos ayudarte hoy?',
+    },
+    {
+      setMessageTemplateId: 2,
+      setMessageTemplateName: 'Plantilla de despedida',
+      setMessageTemplate: 'Gracias por contactarnos, {{customer_name}}. ¡Que tengas un excelente día!',
+    },
+    {
+      setMessageTemplateId: 3,
+      setMessageTemplateName: 'Plantilla de ventas ',
+      setMessageTemplate: 'Hola {{customer_name}}, tenemos una oferta especial en . ¿Te gustaría saber más?',
+    }
+
+  ],
+
+};
+
+
+
+
+    //APIWACHAT - RETURN CREDENTIALS
+function getCredentialsApiWAChat(setCredentialsApiWAChatId){
+return myCompany.setCredentialsApiWAChat.find(cred => cred.setCredentialsApiWAChatId == setCredentialsApiWAChatId) || null;
+}
+
+//APIWACHAT - SEND MESSAGE
+async function sendMessageApiWAChat(setCredentialsApiWAChatId, to, type, content, caption, filename, mimetype){
+
+// 2) Recupera las credenciales completas
+const creds = getCredentialsApiWAChat(setCredentialsApiWAChatId);
+if(!creds){
+return Promise.reject(new Error("Credenciales no encontradas"));
+}
+
+if (type === 'contact') {
+        type = 'document'; // Enviar como documento vCard
+        mimetype = mimetype || 'text/vcard';
+        filename = filename || 'contact.vcf';
+    }
+// 3) Extrae servidor y puerto
+const apiSubdomain = creds.setCredentialsApiWAChatSubdomain;
+const apiPort   = creds.setCredentialsApiWAChatPort;
+
+// 4) Monta el payload según tu API
+const payload = { type, content };
+if (caption) payload.caption = caption;
+
+// Incluir filename y mimetype si se proporcionan
+if (filename) {
+payload.filename = filename;
+}
+if (mimetype) {
+payload.mimetype = mimetype;
+}
+
+// 5) Llamada Fetch al endpoint POST /wa/send
+const url = `https://${apiSubdomain}/wa/${apiPort}/send`;
+const response = await fetch(url, {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json',
+'x-auth-token': myCompany.setAuthToken,
+},
+body: JSON.stringify({ to, payload })
+});
+
+// 6) Processa respuesta
+if (!response.ok) {
+const err = await response.json().catch(() => ({}));
+throw new Error(err.error || `Error ${response.status}`);
+}
+return response.json();
+}
+
+
+
+
+
+//BANDERA Y CODIGO DE TELEFONO POR PAIS
+let selectedCode = "51";
+const selectedCountry = document.getElementById("selectedCountry");
+const countryList = document.getElementById("countryList");
+
+//BOTONES DE ENVIO
+const sendEmailButton = document.getElementById("sendEmail");
+const sendWhatsAppButton = document.getElementById("sendWhatsApp");
+
+//INICIALIZAR PRIMER INPUT SEND WHATSAPP
+const waContainer = document.getElementById('whatsappRecipients');
+const waTemplate = document.getElementById('wa-recipient-template');
+if(waContainer && waTemplate){
+const clone = waTemplate.content.cloneNode(true);
+const recipientEl = clone.querySelector('.whatsapp-recipient');
+waContainer.appendChild(recipientEl);
+}
+
+//BOTON ENVIAR POR WHATSAPP
+if(sendWhatsAppButton){
+sendWhatsAppButton.addEventListener("click", async function (){
+
+//RECOLECTAR LOS NUMEROS
+const waContainer = document.getElementById('whatsappRecipients');
+const recipientEls = waContainer.querySelectorAll('.whatsapp-recipient');
+const phoneNumbers = [];
+for (const recEl of recipientEls) {
+const selectedCountryEl = recEl.querySelector('.select-button-pais-flag');
+const code = selectedCountryEl.dataset.selectedCode || '';
+const inputTel = recEl.querySelector('.phoneNumber');
+const num = inputTel.value.trim();
+if(!num){
+ntfShow("Por favor, ingrese todos los números o elimine filas vacías.", 2, 1);
+return;
+}
+//NORMALIZAR TEXTO DEL INPUT
+const onlyDigits = num.replace(/\D/g, '');
+phoneNumbers.push(code + onlyDigits);
+}
+if(phoneNumbers.length === 0){
+ntfShow("Por favor, ingrese al menos un número de WhatsApp.", 2, 1);
+return;
+}
+
+//VALIDAR MENSAJE
+let message = document.getElementById('waMessage').value.trim();
+if(!message){
+alert("Escribe un mensaje");
+return;
+}
+
+//OBTENER WHATSAPP CREDENTIALS
+const perm_setCredentialsApiWAChatId = parseInt(31);
+
+//VALIDAR CREDENCIALES
+const emitterId = perm_setCredentialsApiWAChatId != 0 ? perm_setCredentialsApiWAChatId : parseInt(document.getElementById('setCredentialsApiWAChat').value, 10);
+const setCredentialsApiWAChat = getCredentialsApiWAChat(emitterId);
+const setCredentialsApiWAChatStatus = setCredentialsApiWAChat?.setCredentialsApiWAChatStatus ?? 0;
+
+//SI NO HAY CREDENCIALES O NO HA INICIADO WHATSAPP USAR WHATSAP WEB NORMAL
+if(!(setCredentialsApiWAChatStatus == 1 && setCredentialsApiWAChat)){
+
+//ABRIR PARA CADA NUMERO
+for (const phoneNumber of phoneNumbers){
+const encoded = encodeURIComponent(message);
+const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encoded}`;
+window.open(whatsappUrl, "_blank");
+}
+ntfShow("Se abrieron ventanas de WhatsApp Web para cada número.", 1, 2);
+return;
+}
+
+//VALIDAR PDF DE LA OPERACION
+const windowIdInput = document.getElementById('windowId');
+
+//VERIFICAR SI EXISTE
+let windowId;
+if(windowIdInput){
+windowId = windowIdInput.value;
+} else {
+windowId = 1;
+}
+
+const { pdfGlobalPayload, pdfGlobalBlob, pdfGlobalName } = getLastOperationGlobalData(windowId);
+if(!pdfGlobalBlob){
+hideLoadingModal();
+showModal();
+ntfShow("No hay comprobante generado para enviar.", 2, 1);
+return;
+}
+
+//EXTRAER SUBDOMINIO Y PUERTO PARA CONSTRUIR URL DEL API
+const apiSubdomain = setCredentialsApiWAChat.setCredentialsApiWAChatSubdomain;
+const apiPort = setCredentialsApiWAChat.setCredentialsApiWAChatPort;
+const baseApiUrl = `https://${apiSubdomain}/wa/${apiPort}`;
+
+//ARRAY DE ARCHIVOS A SUBIR
+const filesToUpload = [];
+
+//PDF GLOBAL
+const pdfFile = new File([pdfGlobalBlob], pdfGlobalName, { type: 'application/pdf' });
+filesToUpload.push(pdfFile);
+
+//ADJUNTOS
+for(const att of attachments){
+filesToUpload.push(att.file);
+}
+
+//TRY CATCH FINALLY
+try {
+
+//HIDE MODAL PDF
+hideModal();
+
+//SHOW LOADING MODAL
+showLoadingModal();
+
+//ENVIAR TEXTOS PRIMERO
+if(message){
+for(const phoneNumber of phoneNumbers){
+const toJid = phoneNumber + "@s.whatsapp.net";
+await sendMessageApiWAChat(emitterId, toJid, 'text', message);
+}
+}
+
+//SUBIR CADA ARCHIVO UNA SOLA VEZ
+const mediaList = [];
+for(const file of filesToUpload){
+const formFile = new FormData();
+formFile.append('file', file);
+const uploadResp = await fetch(`${baseApiUrl}/upload`, {
+method: 'POST',
+headers: {
+'x-auth-token': myCompany.setAuthToken
+},
+body: formFile
+});
+if(!uploadResp.ok){
+const err = await uploadResp.json().catch(() => ({}));
+throw new Error(err.error || `Error subiendo ${file.name} a S3`);
+}
+const { url } = await uploadResp.json();
+// Determinar tipo de media para enviar:
+let mediaType;
+if(file.type.startsWith('image/')){
+mediaType = 'image';
+} else if(file.type.startsWith('video/')){
+mediaType = 'video';
+} else if(file.type.startsWith('audio/')){
+mediaType = 'audio';
+} else {
+mediaType = 'document';
+}
+mediaList.push({
+url,
+name: file.name,
+mediaType,
+mimeType: file.type
+});
+}
+
+//ENVIAR MEDIA A CADA NUMERO CON LOS MISMOS URLS
+for(const phoneNumber of phoneNumbers){
+const toJid = phoneNumber + "@s.whatsapp.net";
+for (const media of mediaList) {
+await sendMessageApiWAChat(
+emitterId,
+toJid,
+media.mediaType,
+media.url,
+'',           // caption
+media.name,
+media.mimeType
+);
+}
+}
+
+// Mensaje único de éxito
+ntfShow("Mensaje(s) enviado(s) correctamente.", 1, 2);
+} catch (err){
+
+//MOSTRAR ERROR
+console.error("Error en envío WhatsApp API:", err);
+ntfShow(err.message || "Error enviando mensaje", 2, 2);
+} finally {
+
+//LIMPIAR FORM
+//document.querySelectorAll('#whatsappRecipients .phoneNumber').forEach(inp => inp.value = '');
+//document.getElementById('waMessage').value = '';
+//attachments = [];
+//const previewListEl = document.getElementById('previewList');
+//if(previewListEl){
+//previewListEl.innerHTML = '';
+//}
+
+//HIDE LOADING MODAL
+hideLoadingModal();
+
+//SHOW MODAL PDF
+showModal();
+}
+});
+}
+
+
+const categoryFields = {
+  clientes: {
+    id: 'setCustomerId',
+    name: 'setCustomerName',
+    phone: 'setCustomerPhone',
+    country: 'setCustomerPhoneCountryCode',
+    type: 'setCustomertype',
+    documentType: 'setCustomerDocumentType',
+    documentNumber: 'setCustomerDocumentNumber',
+    email: 'setCustomerEmail',
+    address: 'setCustomerAddress',
+    ubigeo: 'setCustomerUbigeo',
+    birthdate: 'setCustomerBirthdate'
+  },
+  proveedores: {
+    id: 'setSupplierId',
+    name: 'setSupplierName',
+    phone: 'setSupplierPhone',
+    country: 'setSupplierPhoneCountryCode',
+    type: 'setSupplierType',
+    documentType: 'setSupplierDocumentType',
+    documentNumber: 'setSupplierDocumentNumber',
+    email: 'setSupplierEmail',
+    address: 'setSupplierAddress',
+    ubigeo: 'setSupplierUbigeo',
+    birthdate: 'setSupplierBirthdate'
+  },
+  colaboradores: {
+    id: 'setCollaboratorId',
+    name: 'setCollaboratorFullName',
+    phone: 'setCollaboratorPhone',
+    country: 'setCollaboratorPhoneCountryCode',
+    type: 'setCollaboratortype',
+    documentType: '', // No aplica
+    documentNumber: 'setCollaboratorDocNumber',
+    email: 'setCollaboratorEmail',
+    address: 'setCollaboratorAddress',
+    ubigeo: 'setCollaboratorUbigeo',
+    birthdate: 'setCollaboratorBirthdate'
+  }
+};
+
+const defaults = {
+  clientes: {
+    setCustomerScoringSystemId: 1,
+    setCustomerScore: 0,
+    setCustomerLocation: 0
+  },
+  proveedores: {
+    setSupplierLocation: 0
+  },
+  colaboradores: {
+  }
+};
+
+const arrayKeys = {
+  clientes: 'setCustomers',
+  proveedores: 'setSuppliers',
+  colaboradores: 'setCollaborators'
+};
+
+function getMyCompanyArray(category) {
+  const key = arrayKeys[category];
+  return myCompany[key];
+}
+
+function getCategoryFromId(id) {
+  if (id < 1000) return 'clientes';
+  if (id < 2000) return 'proveedores';
+  return 'colaboradores';
+}
+
+function getOriginalId(id) {
+  if (id < 1000) return id;
+  if (id < 2000) return id - 1000;
+  return id - 2000;
+}
+
+function getDisplayId(category, origId) {
+  if (category === 'clientes') return origId;
+  if (category === 'proveedores') return origId + 1000;
+  return origId + 2000;
+}
+
+// Initialize 'clientes' from myCompany data
+let clientes = {
+  grupos: [],  // Empty for now; add your groups here if needed
+  clientes: myCompany.setCustomers
+    .map(c => ({
+      id: c.setCustomerId,
+      nombre: c.setCustomerName,
+      codigoPais: c.setCustomerPhoneCountryCode,
+      numeroWhatsApp: c.setCustomerPhone,
+      sexo: c.setCustomertype === 1 ? 'male' : 'female',  // 1 = male, 2 = female
+      type: 'clientes'
+    })),
+  proveedores: myCompany.setSuppliers
+    .map(p => ({
+      id: p.setSupplierId + 1000,
+      nombre: p.setSupplierName,
+      codigoPais: p.setSupplierPhoneCountryCode,
+      numeroWhatsApp: p.setSupplierPhone,
+      sexo: p.setSupplierType === 1 ? 'male' : 'female',  // Assume 1 = male, 2 = female
+      type: 'proveedores'
+    })),
+  colaboradores: myCompany.setCollaborators
+    .map(c => ({
+      id: c.setCollaboratorId + 2000,
+      nombre: c.setCollaboratorFullName,
+      codigoPais: c.setCollaboratorPhoneCountryCode,
+      numeroWhatsApp: c.setCollaboratorPhone,
+      sexo: c.setCollaboratortype === 1 ? 'male' : 'female',  // 1 = male, 2 = female
+      type: 'colaboradores'
+    }))
+};
+
+function refreshClientes() {
+  clientes = {
+    grupos: clientes.grupos || [],
+    clientes: myCompany.setCustomers.map(c => ({
+      id: c.setCustomerId,
+      nombre: c.setCustomerName,
+      codigoPais: c.setCustomerPhoneCountryCode,
+      numeroWhatsApp: c.setCustomerPhone,
+      sexo: c.setCustomertype === 1 ? 'male' : 'female',
+      type: 'clientes'
+    })),
+    proveedores: myCompany.setSuppliers.map(p => ({
+      id: p.setSupplierId + 1000,
+      nombre: p.setSupplierName,
+      codigoPais: p.setSupplierPhoneCountryCode,
+      numeroWhatsApp: p.setSupplierPhone,
+      sexo: p.setSupplierType === 1 ? 'male' : 'female',
+      type: 'proveedores'
+    })),
+    colaboradores: myCompany.setCollaborators.map(c => ({
+      id: c.setCollaboratorId + 2000,
+      nombre: c.setCollaboratorFullName,
+      codigoPais: c.setCollaboratorPhoneCountryCode,
+      numeroWhatsApp: c.setCollaboratorPhone,
+      sexo: c.setCollaboratortype === 1 ? 'male' : 'female',
+      type: 'colaboradores'
+    }))
+  };
+
+  // Re-link groups
+  if (clientes.grupos && clientes.grupos.length > 0) {
+    const all = [...clientes.clientes, ...clientes.proveedores, ...clientes.colaboradores];
+    clientes.grupos.forEach(grupo => {
+      grupo.miembros = grupo.miembros
+        .map(oldM => {
+          const newM = all.find(n => n.id === oldM.id);
+          return newM ? { ...newM } : null;
+        })
+        .filter(Boolean);
+    });
+  }
+}
+
+// Log for debugging
+console.log('Initialized clientes:', clientes);
+
+   
     // DATA AND STATE MANAGEMENT
-    // =============================================
+   
     
     // Sample data
     const user = {
-      name: "ronaldinho ",
+      name: "RONALDINHO ",
       avatarText: "R",
       color: "#25D366",
       online: true
     };
     
-    // Clientes data
-    let clientes = {
-      mayoristas: [
-        { id: Date.now() + 1, nombre: "Josue Sandoval", codigoPais: "51", numeroWhatsApp: "942360587", sexo: "male" },
-        { id: Date.now() + 2, nombre: "Erwin Riofrio", codigoPais: "51", numeroWhatsApp: "947339263", sexo: "male" }
-      ],
-      minoristas: [
-        { id: Date.now() + 3, nombre: "Leonardo Giron", codigoPais: "51", numeroWhatsApp: "920392176", sexo: "male" },
-        { id: Date.now() + 4, nombre: "Ronaldinho Pintado", codigoPais: "51", numeroWhatsApp: "916173721", sexo: "male" }
-      ],
-      grupos: [] // Array para almacenar grupos
-    };
-    
     // Templates data
-    let templates = JSON.parse(localStorage.getItem('whatsappTemplates')) || [];
+    let templates = myCompany.setMessageTemplates.map(t => ({
+      id: t.setMessageTemplateId,
+      name: t.setMessageTemplateName,
+      message: t.setMessageTemplate
+    }));
+    // Si no hay plantillas guardadas, cargar estas por defecto
+
     let currentTemplateId = null;
     
     // Current state
@@ -1186,10 +2258,22 @@
     let messages = {};
     let currentClientId = null;
     let isEditing = false;
+    let editingCategory = null;
+    let editingOriginalId = null;
+    let attachments = [];
+    let currentCameraStream = null; // <--- AÑADE ESTA LÍNEA
+    let mediaRecorder = null;
+    let audioChunks = [];
+    let isRecording = false;
+    let selectedContactToSend = null;
+   
     
-    // =============================================
+   
     // DOM ELEMENTS
-    // =============================================
+    
+   
+    // DOM ELEMENTS
+   
     
     // Main elements
     const chatList = document.getElementById('chatList');
@@ -1206,7 +2290,7 @@
     
     // Tab buttons
     const chatTabButton = document.getElementById('chatTabButton');
-    const clientsTabButton = document.getElementById('clientsTabButton');
+    const contactsTabButton = document.getElementById('contactsTabButton');
     const menuButton = document.getElementById('menuButton');
     const dropdownMenu = document.getElementById('dropdownMenu');
     
@@ -1235,6 +2319,13 @@
     const closeLogoutModal = document.getElementById('closeLogoutModal');
     const closeTemplateModal = document.getElementById('closeTemplateModal');
     
+    // Elementos de la Cámara (PEGAR AQUÍ)
+    const cameraModal = document.getElementById('cameraModal');
+    const closeCameraModalBtn = document.getElementById('closeCameraModal');
+    const cameraPreview = document.getElementById('cameraPreview');
+    const shutterButton = document.getElementById('shutterButton');
+    const attachCameraButton = document.getElementById('attachCameraButton'); // El botón del menú
+    
     // Form buttons
     const cancelClientBtn = document.getElementById('cancelClientBtn');
     const cancelBulkMessage = document.getElementById('cancelBulkMessage');
@@ -1251,7 +2342,6 @@
     const chatMenuButton = document.getElementById('chatMenuButton');
     const emojiButton = document.getElementById('emojiButton');
     const moreOptionsButton = document.getElementById('moreOptionsButton');
-    const addClientBtn = document.getElementById('addClientBtn');
     
     // Forms
     const clientForm = document.getElementById('clientForm');
@@ -1270,9 +2360,31 @@
     const templateSelector = document.getElementById('templateSelector');
     const loadTemplateBtn = document.getElementById('loadTemplateBtn');
     
-    // =============================================
+    // Variable select elements
+    const variableSelect = document.getElementById('variableSelect');
+    const variableOptions = document.getElementById('variableOptions');
+
+// Elementos de Contacto (Nuevos)
+// Línea ~1300
+// Elementos de Contacto (Nuevos)
+const attachContactButton = document.getElementById('attachContactButton'); // USAR EL ID ÚNICO
+const contactSelectionModal = document.getElementById('contactSelectionModal');
+// ...
+const closeContactSelectionModal = document.getElementById('closeContactSelectionModal');
+const closeContactSelectionModal2 = document.getElementById('closeContactSelectionModal2');
+const contactSearchInput = document.getElementById('contactSearchInput');
+const contactListToSend = document.getElementById('contactListToSend');
+const contactSelectionFooter = document.getElementById('contactSelectionFooter');
+const selectedContactNameFooter = document.getElementById('selectedContactNameFooter');
+const sendContactButtonFooter = document.getElementById('sendContactButtonFooter');
+const contactPreviewModal = document.getElementById('contactPreviewModal');
+const backToContactSelection = document.getElementById('backToContactSelection');
+const confirmSendContact = document.getElementById('confirmSendContact');
+const targetChatNumber = document.getElementById('targetChatNumber');
+
+
     // INITIALIZATION
-    // =============================================
+   
     
     // Initialize the app
     function init() {
@@ -1285,10 +2397,8 @@
       renderTemplateList();
     }
     
-    // =============================================
+   
     // RENDER FUNCTIONS
-    // =============================================
-    
     // Render user avatar
     function renderUserAvatar() {
       userAvatar.textContent = user.avatarText;
@@ -1300,7 +2410,7 @@
       chatList.innerHTML = '';
       
       // Render grupos primero
-      if (clientes.grupos.length > 0) {
+      if (clientes.grupos && clientes.grupos.length > 0) {
         const groupHeader = document.createElement('div');
         groupHeader.className = 'group-header';
         groupHeader.textContent = 'Grupos';
@@ -1312,14 +2422,14 @@
         });
       }
       
-      // Render mayoristas
-      if (clientes.mayoristas.length > 0) {
+      // Render clientes
+      if (clientes.clientes && clientes.clientes.length > 0) {
         const groupHeader = document.createElement('div');
         groupHeader.className = 'group-header';
-        groupHeader.textContent = 'Mayoristas';
+        groupHeader.textContent = 'Clientes';
         chatList.appendChild(groupHeader);
         
-        clientes.mayoristas.forEach(cliente => {
+        clientes.clientes.forEach(cliente => {
           if (filter === '' || cliente.nombre.toLowerCase().includes(filter.toLowerCase())) {
             const chatElement = createChatElement(cliente);
             chatList.appendChild(chatElement);
@@ -1327,35 +2437,58 @@
         });
       }
       
-      // Render minoristas
-      if (clientes.minoristas.length > 0) {
+      // Render proveedores
+      if (clientes.proveedores && clientes.proveedores.length > 0) {
         const groupHeader = document.createElement('div');
         groupHeader.className = 'group-header';
-        groupHeader.textContent = 'Minoristas';
+        groupHeader.textContent = 'Proveedores';
         chatList.appendChild(groupHeader);
         
-        clientes.minoristas.forEach(cliente => {
-          if (filter === '' || cliente.nombre.toLowerCase().includes(filter.toLowerCase())) {
-            const chatElement = createChatElement(cliente);
+        clientes.proveedores.forEach(persona => {
+          if (filter === '' || persona.nombre.toLowerCase().includes(filter.toLowerCase())) {
+            const chatElement = createChatElement(persona);
             chatList.appendChild(chatElement);
           }
         });
       }
       
-      if (clientes.mayoristas.length === 0 && clientes.minoristas.length === 0 && clientes.grupos.length === 0) {
+      // Render colaboradores
+      if (clientes.colaboradores && clientes.colaboradores.length > 0) {
+        const groupHeader = document.createElement('div');
+        groupHeader.className = 'group-header';
+        groupHeader.textContent = 'Colaboradores';
+        chatList.appendChild(groupHeader);
+        
+        clientes.colaboradores.forEach(persona => {
+          if (filter === '' || persona.nombre.toLowerCase().includes(filter.toLowerCase())) {
+            const chatElement = createChatElement(persona);
+            chatList.appendChild(chatElement);
+          }
+        });
+      }
+      
+      if ((!clientes.clientes || clientes.clientes.length === 0) && 
+          (!clientes.proveedores || clientes.proveedores.length === 0) && 
+          (!clientes.colaboradores || clientes.colaboradores.length === 0) && 
+          (!clientes.grupos || clientes.grupos.length === 0)) {
         chatList.innerHTML = '<div class="empty-state">No hay contactos disponibles</div>';
       }
     }
     
     // Cargar plantillas en el selector
-    function loadTemplatesIntoSelector() {
-      templateSelector.innerHTML = '<option value="">Seleccionar plantilla...</option>';
+    function loadTemplatesIntoSelector(filter = '', selectorId = 'templateSelector') {
+      const selector = document.getElementById(selectorId);
+      selector.innerHTML = '<option value="">Seleccionar plantilla...</option>';
       
-      templates.forEach(template => {
+      const filteredTemplates = templates.filter(template => 
+        template.name.toLowerCase().includes(filter.toLowerCase())
+      );
+
+      filteredTemplates.forEach(template => {
         const option = document.createElement('option');
         option.value = template.id;
         option.textContent = template.name;
-        templateSelector.appendChild(option);
+        selector.appendChild(option);
       });
     }
     
@@ -1410,7 +2543,7 @@
       
       chatElement.innerHTML = `
         <div class="chat-avatar group-avatar" style="background-color: ${getAvatarColor(grupo.nombre)}">
-          <i class="fas fa-users"></i>
+          <span>👥</span>
         </div>
         <div class="chat-info">
           <div class="chat-header">
@@ -1443,7 +2576,7 @@
       
       if (contacto.miembros) {
         // Es un grupo
-        currentChatAvatar.innerHTML = '<i class="fas fa-users"></i>';
+        currentChatAvatar.innerHTML = '<span>👥</span>';
         currentChatAvatar.style.backgroundColor = getAvatarColor(contacto.nombre);
         currentChatStatus.textContent = `${contacto.miembros.length} miembros`
       } else {
@@ -1474,7 +2607,7 @@
       if (!currentChat || !messages[currentChat.id] || messages[currentChat.id].length === 0) {
         messagesContainer.innerHTML = `
           <div class="empty-state">
-            <i class="fas fa-comment-slash empty-icon"></i>
+            <span class="empty-icon">💬/</span>
             <div class="empty-text">No hay mensajes en este chat</div>
           </div>
         `;
@@ -1518,7 +2651,7 @@
       
       const bulkButton = document.createElement('button');
       bulkButton.className = 'bulk-message-btn';
-      bulkButton.innerHTML = '<i class="fas fa-bullhorn"></i> Enviar Mensaje Masivo';
+      bulkButton.innerHTML = '<span>📣</span> Enviar Mensaje Masivo';
       bulkButton.addEventListener('click', () => {
         bulkMessageModal.classList.add('show');
         loadTemplatesIntoSelector();
@@ -1528,14 +2661,11 @@
       clientList.appendChild(bulkButtonContainer);
       
       // Get filtered clients
-      let todosClientes = [];
-      if (filter === 'all') {
-        todosClientes = [...clientes.mayoristas, ...clientes.minoristas];
-      } else if (filter === 'mayoristas' || filter === 'minoristas') {
+      let todosClientes = [...clientes.clientes, ...clientes.proveedores, ...clientes.colaboradores];
+      if (filter === 'clientes' || filter === 'proveedores' || filter === 'colaboradores') {
         todosClientes = [...clientes[filter]];
-      } else {
-        // Filter by gender
-        todosClientes = [...clientes.mayoristas, ...clientes.minoristas].filter(
+      } else if (filter !== 'all') {
+        todosClientes = todosClientes.filter(
           cliente => cliente.sexo === filter
         );
       }
@@ -1556,10 +2686,10 @@
           </div>
           <div class="client-actions">
             <button class="client-action-btn edit-client" data-id="${cliente.id}" title="Editar">
-              <i class="fas fa-edit"></i>
+              <span>✏️</span>
             </button>
             <button class="client-action-btn delete-client" data-id="${cliente.id}" title="Eliminar">
-              <i class="fas fa-trash-alt"></i>
+              <span>🗑️</span>
             </button>
           </div>
         `;
@@ -1584,28 +2714,232 @@
       });
     }
     
+    function renderContactSections() {
+  clientList.innerHTML = '';
+
+  // Título general
+  const title = document.createElement('h3');
+  title.textContent = 'Contactos';
+  title.style.marginBottom = '20px';
+  clientList.appendChild(title);
+
+  // 🔹 Clientes
+  const clientesSection = document.createElement('div');
+  clientesSection.innerHTML = `<h4 style="margin-bottom:10px;">Clientes</h4>`;
+  myCompany.setCustomers.forEach(c => {
+    if (!c.setCustomerPhone) return;  // Skip if no phone
+    const item = document.createElement('div');
+    item.className = 'client-item';
+    item.dataset.id = c.setCustomerId;
+    item.dataset.type = 'clientes';
+    item.innerHTML = `
+      <div class="client-info">
+        <strong>${c.setCustomerName}</strong>
+        <small>${c.setCustomerPhoneCountryCode}${c.setCustomerPhone} - ${c.setCustomerEmail}</small>
+      </div>
+      <div class="client-actions">
+        <button class="client-action-btn chat-client" data-id="${c.setCustomerId}" data-type="clientes" title="Chat">
+          <span>💬</span>
+        </button>
+        <button class="client-action-btn edit-client" data-id="${c.setCustomerId}" data-type="clientes" title="Editar">
+          <span>✏️</span>
+        </button>
+        <button class="client-action-btn delete-client" data-id="${c.setCustomerId}" data-type="clientes" title="Eliminar">
+          <span>🗑️</span>
+        </button>
+      </div>
+    `;
+    clientesSection.appendChild(item);
+  });
+  clientList.appendChild(clientesSection);
+
+  // 🔹 Proveedores
+  const proveedoresSection = document.createElement('div');
+  proveedoresSection.innerHTML = `<h4 style="margin-top:20px; margin-bottom:10px;">Proveedores</h4>`;
+  myCompany.setSuppliers.forEach(p => {
+    if (!p.setSupplierPhone) return;  // Skip if no phone
+    const item = document.createElement('div');
+    item.className = 'client-item';
+    item.dataset.id = p.setSupplierId + 1000;
+    item.dataset.type = 'proveedores';
+    item.innerHTML = `
+      <div class="client-info">
+        <strong>${p.setSupplierName}</strong>
+        <small>${p.setSupplierDocumentNumber} - ${p.setSupplierAddress}</small>
+      </div>
+      <div class="client-actions">
+        <button class="client-action-btn chat-client" data-id="${p.setSupplierId + 1000}" data-type="proveedores" title="Chat">
+          <span>💬</span>
+        </button>
+        <button class="client-action-btn edit-client" data-id="${p.setSupplierId + 1000}" data-type="proveedores" title="Editar">
+          <span>✏️</span>
+        </button>
+        <button class="client-action-btn delete-client" data-id="${p.setSupplierId + 1000}" data-type="proveedores" title="Eliminar">
+          <span>🗑️</span>
+        </button>
+      </div>
+    `;
+    proveedoresSection.appendChild(item);
+  });
+  clientList.appendChild(proveedoresSection);
+
+  // 🔹 Colaboradores
+  const colaboradoresSection = document.createElement('div');
+  colaboradoresSection.innerHTML = `<h4 style="margin-top:20px; margin-bottom:10px;">Colaboradores</h4>`;
+  myCompany.setCollaborators.forEach(c => {
+    if (!c.setCollaboratorPhone) return;  // Skip if no phone
+    const item = document.createElement('div');
+    item.className = 'client-item';
+    item.dataset.id = c.setCollaboratorId + 2000;
+    item.dataset.type = 'colaboradores';
+    item.innerHTML = `
+      <div class="client-info">
+        <strong>${c.setCollaboratorFullName}</strong>
+        <small>${c.setCollaboratorPhoneCountryCode}${c.setCollaboratorPhone} - ${c.setCollaboratorEmail}</small>
+      </div>
+      <div class="client-actions">
+        <button class="client-action-btn chat-client" data-id="${c.setCollaboratorId + 2000}" data-type="colaboradores" title="Chat">
+          <span>💬</span>
+        </button>
+        <button class="client-action-btn edit-client" data-id="${c.setCollaboratorId + 2000}" data-type="colaboradores" title="Editar">
+          <span>✏️</span>
+        </button>
+        <button class="client-action-btn delete-client" data-id="${c.setCollaboratorId + 2000}" data-type="colaboradores" title="Eliminar">
+          <span>🗑️</span>
+        </button>
+      </div>
+    `;
+    colaboradoresSection.appendChild(item);
+  });
+  clientList.appendChild(colaboradoresSection);
+
+  // Add event listeners for chat buttons
+  document.querySelectorAll('.chat-client').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const id = parseInt(e.target.closest('.chat-client').dataset.id);
+      const type = e.target.closest('.chat-client').dataset.type;
+      const contact = clientes[type].find(c => c.id === id);
+      if (contact) {
+        selectChat(contact);
+      }
+    });
+  });
+
+  // Reuse edit and delete listeners from renderClientList
+  document.querySelectorAll('.edit-client').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const id = parseInt(e.target.closest('.edit-client').dataset.id);
+      editClient(id);
+    });
+  });
+
+  document.querySelectorAll('.delete-client').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const id = parseInt(e.target.closest('.delete-client').dataset.id);
+      deleteClient(id);
+    });
+  });
+}
     // Render group member list for group creation
-    function renderGroupMemberList() {
+    function renderGroupMemberList(sortOrder = 'asc') {
       groupMemberList.innerHTML = '';
       
-      const allClients = [...clientes.mayoristas, ...clientes.minoristas];
-      
+      const allClients = [...clientes.clientes, ...clientes.proveedores, ...clientes.colaboradores];
+
       if (allClients.length === 0) {
         groupMemberList.innerHTML = '<p>No hay contactos disponibles para agregar al grupo</p>';
         return;
       }
-      
-      allClients.forEach(cliente => {
-        const memberItem = document.createElement('div');
-        memberItem.className = 'member-item';
-        memberItem.innerHTML = `
-          <label>
-            <input type="checkbox" name="groupMembers" value="${cliente.id}">
-            ${cliente.nombre} (${cliente.codigoPais}${cliente.numeroWhatsApp})
-          </label>
-        `;
-        groupMemberList.appendChild(memberItem);
+
+      // Add sort select
+      const sortContainer = document.createElement('div');
+      sortContainer.innerHTML = `
+        <label for="memberSort">Ordenar por:</label>
+        <select id="memberSort" class="sort-select">
+          <option value="asc" ${sortOrder === 'asc' ? 'selected' : ''}>Nombre ascendente</option>
+          <option value="desc" ${sortOrder === 'desc' ? 'selected' : ''}>Nombre descendente</option>
+        </select>
+      `;
+      groupMemberList.appendChild(sortContainer);
+
+      document.getElementById('memberSort').addEventListener('change', (e) => {
+        renderGroupMemberList(e.target.value);
       });
+
+      function sortArray(array) {
+        return array.slice().sort((a, b) => {
+          const nameA = a.nombre.toLowerCase();
+          const nameB = b.nombre.toLowerCase();
+          if (sortOrder === 'asc') {
+            return nameA.localeCompare(nameB);
+          } else {
+            return nameB.localeCompare(nameA);
+          }
+        });
+      }
+      
+      // Section for Clientes
+      if (clientes.clientes.length > 0) {
+        const sectionHeader = document.createElement('h5');
+        sectionHeader.textContent = 'Clientes';
+        groupMemberList.appendChild(sectionHeader);
+        
+        const sortedClientes = sortArray(clientes.clientes);
+        sortedClientes.forEach(cliente => {
+          const memberItem = document.createElement('div');
+          memberItem.className = 'member-item';
+          memberItem.innerHTML = `
+            <label>
+              <input type="checkbox" name="groupMembers" value="${cliente.id}">
+              ${cliente.nombre} (${cliente.codigoPais}${cliente.numeroWhatsApp})
+            </label>
+          `;
+          groupMemberList.appendChild(memberItem);
+        });
+      }
+      
+      // Section for Proveedores
+      if (clientes.proveedores.length > 0) {
+        const sectionHeader = document.createElement('h5');
+        sectionHeader.textContent = 'Proveedores';
+        groupMemberList.appendChild(sectionHeader);
+        
+        const sortedProveedores = sortArray(clientes.proveedores);
+        sortedProveedores.forEach(persona => {
+          const memberItem = document.createElement('div');
+          memberItem.className = 'member-item';
+          memberItem.innerHTML = `
+            <label>
+              <input type="checkbox" name="groupMembers" value="${persona.id}">
+              ${persona.nombre} (${persona.codigoPais}${persona.numeroWhatsApp})
+            </label>
+          `;
+          groupMemberList.appendChild(memberItem);
+        });
+      }
+      
+      // Section for Colaboradores
+      if (clientes.colaboradores.length > 0) {
+        const sectionHeader = document.createElement('h5');
+        sectionHeader.textContent = 'Colaboradores';
+        groupMemberList.appendChild(sectionHeader);
+        
+        const sortedColaboradores = sortArray(clientes.colaboradores);
+        sortedColaboradores.forEach(persona => {
+          const memberItem = document.createElement('div');
+          memberItem.className = 'member-item';
+          memberItem.innerHTML = `
+            <label>
+              <input type="checkbox" name="groupMembers" value="${persona.id}">
+              ${persona.nombre} (${persona.codigoPais}${persona.numeroWhatsApp})
+            </label>
+          `;
+          groupMemberList.appendChild(memberItem);
+        });
+      }
     }
     
     // Render template list
@@ -1613,8 +2947,8 @@
       templateList.innerHTML = '';
       
       const filteredTemplates = templates.filter(template => 
-        template.name.toLowerCase().includes(filter.toLowerCase()) || 
-        template.message.toLowerCase().includes(filter.toLowerCase())
+        String(template.name).toLowerCase().includes(filter.toLowerCase()) || 
+        String(template.message).toLowerCase().includes(filter.toLowerCase())
       );
       
       if (filteredTemplates.length === 0) {
@@ -1635,18 +2969,18 @@
           <div style="flex: 1;">
             <div style="font-weight: 500;">${template.name}</div>
             <div style="font-size: 13px; color: var(--text-light);">
-              ${template.message.substring(0, 50)}${template.message.length > 50 ? '...' : ''}
+            ${String(template.message).substring(0, 50)}${String(template.message).length > 50 ? '...' : ''}
             </div>
           </div>
           <div style="display: flex; gap: 5px;">
             <button class="client-action-btn use-template" data-id="${template.id}" title="Usar">
-              <i class="fas fa-paper-plane"></i>
+              <span>📤</span>
             </button>
             <button class="client-action-btn edit-template" data-id="${template.id}" title="Editar">
-              <i class="fas fa-edit"></i>
+              <span>✏️</span>
             </button>
             <button class="client-action-btn delete-template" data-id="${template.id}" title="Eliminar">
-              <i class="fas fa-trash-alt"></i>
+              <span>🗑️</span>
             </button>
           </div>
         `;
@@ -1677,73 +3011,158 @@
       });
     }
     
-    // =============================================
+   
     // MESSAGE FUNCTIONS
-    // =============================================
+   
     
     // Send message
-    function sendMessage() {
+// REEMPLAZA la función 'sendMessage' (línea 2209) con esta versión
+    async function sendMessage() {
       const text = messageInput.value.trim();
-      if (!text || !currentChat) return;
+      const hasText = text.length > 0;
+      const hasAttachments = attachments.length > 0;
       
-      // Add to messages
-      if (!messages[currentChat.id]) {
-        messages[currentChat.id] = [];
+      // 1. Validar que haya algo que enviar
+      if ((!hasText && !hasAttachments) || !currentChat) {
+        return; // No hay nada que enviar
       }
       
-      const newMessage = {
-        text: text,
-        type: 'sent',
-        timestamp: new Date()
-      };
+      // 2. Obtener credenciales de la API (asumiendo que usamos la primera)
+      const apiCreds = myCompany.setCredentialsApiWAChat[0];
+      const emitterId = apiCreds.setCredentialsApiWAChatId;
+
+      // 3. Determinar los destinatarios (JIDs)
+      let jids = [];
+      let contactName = currentChat.nombre; // Para logs
       
-      messages[currentChat.id].push(newMessage);
-      
-      // Re-render
-      renderMessages();
-      // Clear input
-      messageInput.value = '';
-      
-      // Send via WhatsApp API
       if (currentChat.miembros) {
-        // Es un grupo - enviar a todos los miembros
-        currentChat.miembros.forEach(miembro => {
-          const numero = `${miembro.codigoPais}${miembro.numeroWhatsApp}@s.whatsapp.net`;
-          enviarMensajeWhatsApp(numero, text, miembro.nombre);
-        });
+        // Es un grupo
+        jids = currentChat.miembros.map(miembro => `${miembro.codigoPais}${miembro.numeroWhatsApp}@s.whatsapp.net`);
       } else {
         // Es un contacto individual
-        const numero = `${currentChat.codigoPais}${currentChat.numeroWhatsApp}@s.whatsapp.net`;
-        enviarMensajeWhatsApp(numero, text, currentChat.nombre);
+        jids = [`${currentChat.codigoPais}${currentChat.numeroWhatsApp}@s.whatsapp.net`];
       }
-    }
-    
-    // Function to send message via WhatsApp API (from your code)
-    async function enviarMensajeWhatsApp(numero, mensaje, nombre) {
+
+      // 4. Preparar los datos de envío
+      const filesToSend = [...attachments]; // Copiar los adjuntos
+
+      // 5. Limpiar la UI inmediatamente
+      messageInput.value = '';
+      messageInput.dispatchEvent(new Event('input'));
+      attachments = []; // Limpiar array global
+      document.getElementById('previewList').innerHTML = ''; // Limpiar DOM
+
+      // 6. Enviar todo
       try {
-        const response = await fetch('https://apiwachat-1.apierp.dev/wa/3021/send', {
-          method: 'POST',
-          headers: {
-            'x-auth-token': 'HVp5s',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            to: numero,
-            payload: {
-              type: 'text',
-              content: mensaje
+        // Bucle por cada destinatario
+        for (const jid of jids) {
+          
+          // 6a. Enviar el mensaje de texto (si hay)
+          // Si hay adjuntos, el texto irá como "caption" del primer adjunto,
+          // no como un mensaje separado (para imitar a WhatsApp).
+          let caption = '';
+          if (hasText) {
+            caption = text;
+            
+            // Solo envía texto por separado si NO hay adjuntos
+            if (!hasAttachments) {
+              if (!messages[currentChat.id]) messages[currentChat.id] = [];
+              messages[currentChat.id].push({
+                text: text,
+                type: 'sent',
+                timestamp: new Date()
+              });
+              await sendMessageApiWAChat(emitterId, jid, 'text', text);
             }
-          })
-        });
-        const data = await response.json();
-        console.log(`✅ Enviado a ${nombre}:`, data);
-        mostrarToast('Mensaje enviado');
+          }
+
+
+          // 6b. Enviar los archivos (si hay)
+          for (const att of filesToSend) {
+            const file = att.file;
+            
+            // Subir el archivo (lógica de 'sendWhatsAppButton')
+            const baseApiUrl = `https://${apiCreds.setCredentialsApiWAChatSubdomain}/wa/${apiCreds.setCredentialsApiWAChatPort}`;
+            const formFile = new FormData();
+            formFile.append('file', file);
+            const uploadResp = await fetch(`${baseApiUrl}/upload`, {
+              method: 'POST',
+              headers: { 'x-auth-token': myCompany.setAuthToken },
+              body: formFile
+            });
+
+            if (!uploadResp.ok) {
+               throw new Error(`Error subiendo ${file.name}`);
+            }
+            
+            const { url } = await uploadResp.json();
+            
+            // Determinar tipo de media
+            let mediaType;
+            if (file.type.startsWith('image/')) mediaType = 'image';
+            else if (file.type.startsWith('video/')) mediaType = 'video';
+            else if (file.type.startsWith('audio/')) mediaType = 'audio';
+            else mediaType = 'document';
+
+            // Asignar el caption solo al primer archivo (si es imagen/video)
+            let fileCaption = '';
+            // REEMPLAZAR CON ESTA LÍNEA
+            if (caption && (mediaType === 'image' || mediaType === 'video' || mediaType === 'audio') && filesToSend.indexOf(att) === 0) {
+               fileCaption = caption;
+            }
+
+            // Enviar el archivo usando la función de API correcta
+            await sendMessageApiWAChat(
+              emitterId,
+              jid,
+              mediaType,
+              url,
+              fileCaption,
+              file.name,
+              file.type
+            );
+            
+            // Añadir al historial local de mensajes
+            if (!messages[currentChat.id]) messages[currentChat.id] = [];
+            let previewLabel = 'Documento';
+if (mediaType === 'image') previewLabel = 'Imagen';
+else if (mediaType === 'video') previewLabel = 'Video';
+else if (mediaType === 'audio') previewLabel = 'Audio';
+const previewText = `[${previewLabel}: ${file.name}]`;
+            
+            // Si es el primer archivo y tiene caption, lo añadimos
+            let messageText = (fileCaption) ? `${previewText}<br>${fileCaption}` : previewText;
+            
+            messages[currentChat.id].push({
+              text: messageText,
+              type: 'sent',
+              timestamp: new Date()
+            });
+            
+            // Si el texto se envió como caption, añadirlo también al chat
+            if (fileCaption && hasText) {
+                 if (!messages[currentChat.id]) messages[currentChat.id] = [];
+                  messages[currentChat.id].push({
+                    text: text, // Añade el texto como mensaje separado
+                    type: 'sent',
+                    timestamp: new Date()
+                });
+            }
+          }
+        }
+        
+        // 7. Re-renderizar el chat y mostrar éxito
+        renderMessages();
+        mostrarToast('Mensaje(s) enviado(s)');
+
       } catch (error) {
-        console.error(`❌ Error al enviar a ${nombre}:`, error);
+        console.error('Error al enviar mensaje:', error);
         mostrarToast('Error al enviar mensaje', true);
+        // Opcional: Devolver los archivos a la cola si falla
       }
     }
-    
+
+
     // Send bulk message
     function sendBulkMessageFunc() {
       const message = bulkMessageText.value.trim();
@@ -1754,11 +3173,11 @@
       
       // Filter clients based on selection
       if (groupFilter === 'all') {
-        clientsToSend = [...clientes.mayoristas, ...clientes.minoristas];
-      } else if (groupFilter === 'mayoristas' || groupFilter === 'minoristas') {
+        clientsToSend = [...clientes.clientes, ...clientes.proveedores, ...clientes.colaboradores];
+      } else if (groupFilter === 'clientes' || groupFilter === 'proveedores' || groupFilter === 'colaboradores') {
         clientsToSend = [...clientes[groupFilter]];
       } else {
-        clientsToSend = [...clientes.mayoristas, ...clientes.minoristas].filter(
+        clientsToSend = [...clientes.clientes, ...clientes.proveedores, ...clientes.colaboradores].filter(
           cliente => cliente.sexo === groupFilter
         );
       }
@@ -1770,13 +3189,11 @@
       
       // Send to each client
       clientsToSend.forEach(cliente => {
-        let personalizedMessage = message;
-        
-        // Reemplazar variables en el mensaje
-        personalizedMessage = personalizedMessage.replace(/{nombre}/g, cliente.nombre);
-        personalizedMessage = personalizedMessage.replace(/{telefono}/g, cliente.numeroWhatsApp);
-        personalizedMessage = personalizedMessage.replace(/{tipo}/g, 
-          clientes.mayoristas.some(c => c.id === cliente.id) ? 'mayorista' : 'minorista');
+        const category = cliente.type;
+        const origId = getOriginalId(cliente.id);
+        const arrayKey = arrayKeys[category];
+        const obj = myCompany[arrayKey].find(o => o[categoryFields[category].id] === origId);
+        let personalizedMessage = fillTemplate({message: message}, obj);
         
         const numero = `${cliente.codigoPais}${cliente.numeroWhatsApp}@s.whatsapp.net`;
         enviarMensajeWhatsApp(numero, personalizedMessage, cliente.nombre);
@@ -1789,26 +3206,59 @@
       mostrarToast(`Mensaje enviado a ${clientsToSend.length} clientes`);
     }
     
-    // =============================================
-    // CLIENT MANAGEMENT FUNCTIONS
-    // =============================================
+   
+    // CLIENT MANAGEMENT FUNCTIONS - CORREGIDAS
+   
     
-    // Open client modal
+    // Open client modal - CORREGIDA
     function openClientModal(editing = false, clientData = null) {
       isEditing = editing;
       if (editing && clientData) {
-        document.getElementById('modalTitle').textContent = 'Editar Cliente';
+        document.getElementById('modalTitle').textContent = 'Editar Contacto';
         currentClientId = clientData.id;
         document.getElementById('clientId').value = clientData.id;
         document.getElementById('clientName').value = clientData.nombre;
         document.getElementById('clientCountryCode').value = clientData.codigoPais;
         document.getElementById('clientPhone').value = clientData.numeroWhatsApp;
-        document.getElementById('clientType').value = 
-          clientes.mayoristas.some(c => c.id === clientData.id) ? 'mayoristas' : 'minoristas';
+        
+        // CORRECCIÓN: Determinar correctamente el tipo de contacto
+        let tipo = getCategoryFromId(clientData.id);
+        
+        editingCategory = tipo;
+        editingOriginalId = getOriginalId(clientData.id);
+        
+        document.getElementById('clientType').value = tipo;
         document.getElementById('clientGender').value = clientData.sexo || 'male';
+
+        const obj = myCompany[arrayKeys[tipo]].find(o => o[categoryFields[tipo].id] === editingOriginalId);
+
+        if (tipo === 'clientes') {
+          document.getElementById('clientDocumentType').value = obj.setCustomerDocumentType;
+          document.getElementById('clientDocumentNumber').value = obj.setCustomerDocumentNumber;
+          document.getElementById('clientEmail').value = obj.setCustomerEmail;
+          document.getElementById('clientAddress').value = obj.setCustomerAddress;
+          document.getElementById('clientUbigeo').value = obj.setCustomerUbigeo;
+          document.getElementById('clientBirthdate').value = obj.setCustomerBirthdate;
+        } else if (tipo === 'proveedores') {
+          document.getElementById('clientDocumentType').value = obj.setSupplierDocumentType;
+          document.getElementById('clientDocumentNumber').value = obj.setSupplierDocumentNumber;
+          document.getElementById('clientEmail').value = obj.setSupplierEmail;
+          document.getElementById('clientAddress').value = obj.setSupplierAddress;
+          document.getElementById('clientUbigeo').value = obj.setSupplierUbigeo;
+          document.getElementById('clientBirthdate').value = obj.setSupplierBirthdate;
+        } else if (tipo === 'colaboradores') {
+          document.getElementById('clientDocumentType').value = '';
+          document.getElementById('clientDocumentNumber').value = obj.setCollaboratorDocNumber;
+          document.getElementById('clientEmail').value = obj.setCollaboratorEmail;
+          document.getElementById('clientAddress').value = obj.setCollaboratorAddress;
+          document.getElementById('clientUbigeo').value = obj.setCollaboratorUbigeo;
+          document.getElementById('clientBirthdate').value = obj.setCollaboratorBirthdate;
+        }
       } else {
-        document.getElementById('modalTitle').textContent = 'Agregar Nuevo Cliente';
+        document.getElementById('modalTitle').textContent = 'Agregar Nuevo Contacto';
         currentClientId = null;
+        editingCategory = null;
+        editingOriginalId = null;
         clientForm.reset();
       }
       clientModal.classList.add('show');
@@ -1820,18 +3270,23 @@
       clientForm.reset();
       currentClientId = null;
       isEditing = false;
+      editingCategory = null;
+      editingOriginalId = null;
     }
     
-    // Edit client
+    // Edit client - CORREGIDA
     function editClient(clientId) {
       let clienteEncontrado = null;
-      for (const tipo in clientes) {
-        const cliente = clientes[tipo].find(c => c.id == clientId);
-        if (cliente) {
-          clienteEncontrado = cliente;
-          break;
-        }
+      
+      // Buscar en todas las categorías CORRECTAMENTE
+      if (clientes.clientes.some(c => c.id == clientId)) {
+        clienteEncontrado = clientes.clientes.find(c => c.id == clientId);
+      } else if (clientes.proveedores.some(c => c.id == clientId)) {
+        clienteEncontrado = clientes.proveedores.find(c => c.id == clientId);
+      } else if (clientes.colaboradores.some(c => c.id == clientId)) {
+        clienteEncontrado = clientes.colaboradores.find(c => c.id == clientId);
       }
+      
       if (clienteEncontrado) {
         openClientModal(true, clienteEncontrado);
       }
@@ -1840,17 +3295,20 @@
     // Delete client
     function deleteClient(clientId) {
       if (confirm('¿Estás seguro de que quieres eliminar este cliente?')) {
-        // Remove from both categories
-        clientes.mayoristas = clientes.mayoristas.filter(c => c.id != clientId);
-        clientes.minoristas = clientes.minoristas.filter(c => c.id != clientId);
+        const category = getCategoryFromId(clientId);
+        const origId = getOriginalId(clientId);
+        const key = arrayKeys[category];
+        const fields = categoryFields[category];
+        myCompany[key] = myCompany[key].filter(o => o[fields.id] !== origId);
         
         // Remove from any groups
         clientes.grupos.forEach(grupo => {
           grupo.miembros = grupo.miembros.filter(m => m.id != clientId);
         });
         
-        renderClientList(document.querySelector('input[name="filter"]:checked').value);
-        renderChatList();
+        refreshClientes();
+        renderClientList(document.querySelector('input[name="filter"]:checked')?.value || 'all');
+        renderChatList(searchInput.value || '');
         mostrarToast('Cliente eliminado correctamente');
       }
     }
@@ -1858,40 +3316,113 @@
     // Handle client form submit
     function handleClientFormSubmit(e) {
       e.preventDefault();
-      const clientData = {
-        id: isEditing ? currentClientId : Date.now(),
-        nombre: document.getElementById('clientName').value,
-        codigoPais: document.getElementById('clientCountryCode').value,
-        numeroWhatsApp: document.getElementById('clientPhone').value,
-        sexo: document.getElementById('clientGender').value
-      };
-      const clientType = document.getElementById('clientType').value;
-      
+      const newName = document.getElementById('clientName').value.trim();
+      const newCode = document.getElementById('clientCountryCode').value.trim();
+      const newPhone = document.getElementById('clientPhone').value.trim();
+      const newCategory = document.getElementById('clientType').value;
+      const newGender = document.getElementById('clientGender').value;
+      const genderType = newGender === 'male' ? 1 : 2;
+      const newDocumentType = document.getElementById('clientDocumentType').value;
+      const newDocumentNumber = document.getElementById('clientDocumentNumber').value.trim();
+      const newEmail = document.getElementById('clientEmail').value.trim();
+      const newAddress = document.getElementById('clientAddress').value.trim();
+      const newUbigeo = document.getElementById('clientUbigeo').value.trim();
+      const newBirthdate = document.getElementById('clientBirthdate').value;
+
+      if (!newName || !newCode || !newPhone) {
+        mostrarToast('Todos los campos son requeridos', true);
+        return;
+      }
+
+      let newOrigId;
+      let updatedInPlace = false;
+
       if (isEditing) {
-        // Remove from previous category
-        clientes.mayoristas = clientes.mayoristas.filter(c => c.id != currentClientId);
-        clientes.minoristas = clientes.minoristas.filter(c => c.id != currentClientId);
-        
-        // Update in groups if exists
+        if (editingCategory === newCategory) {
+          // Update in place
+          const key = arrayKeys[newCategory];
+          const fields = categoryFields[newCategory];
+          const obj = myCompany[key].find(o => o[fields.id] === editingOriginalId);
+          if (obj) {
+            obj[fields.name] = newName;
+            obj[fields.phone] = newPhone;
+            obj[fields.country] = newCode;
+            obj[fields.type] = genderType;
+            obj[fields.documentType] = newDocumentType;
+            obj[fields.documentNumber] = newDocumentNumber;
+            obj[fields.email] = newEmail;
+            obj[fields.address] = newAddress;
+            obj[fields.ubigeo] = newUbigeo;
+            obj[fields.birthdate] = newBirthdate;
+            updatedInPlace = true;
+          }
+        } else {
+          // Remove from old category
+          const oldKey = arrayKeys[editingCategory];
+          const oldFields = categoryFields[editingCategory];
+          myCompany[oldKey] = myCompany[oldKey].filter(o => o[oldFields.id] !== editingOriginalId);
+        }
+      }
+
+      // Add new or continue if moved
+      if (!updatedInPlace) {
+        const key = arrayKeys[newCategory];
+        const fields = categoryFields[newCategory];
+        const currentArray = myCompany[key];
+        const maxId = currentArray.length > 0 ? Math.max(...currentArray.map(o => o[fields.id])) : 0;
+        newOrigId = maxId + 1;
+
+        const newObj = {
+          ...defaults[newCategory],
+          [fields.id]: newOrigId,
+          [fields.name]: newName,
+          [fields.phone]: newPhone,
+          [fields.country]: newCode,
+          [fields.type]: genderType,
+          [fields.documentType]: newDocumentType,
+          [fields.documentNumber]: newDocumentNumber,
+          [fields.email]: newEmail,
+          [fields.address]: newAddress,
+          [fields.ubigeo]: newUbigeo,
+          [fields.birthdate]: newBirthdate
+        };
+
+        myCompany[key].push(newObj);
+      } else {
+        newOrigId = editingOriginalId;
+      }
+
+      // Update groups if editing
+      if (isEditing) {
+        const oldDisplayId = currentClientId;
+        const newDisplayId = getDisplayId(newCategory, newOrigId);
         clientes.grupos.forEach(grupo => {
-          const miembroIndex = grupo.miembros.findIndex(m => m.id == currentClientId);
-          if (miembroIndex !== -1) {
-            grupo.miembros[miembroIndex] = clientData;
+          for (let i = 0; i < grupo.miembros.length; i++) {
+            if (grupo.miembros[i].id === oldDisplayId) {
+              grupo.miembros[i] = {
+                id: newDisplayId,
+                nombre: newName,
+                codigoPais: newCode,
+                numeroWhatsApp: newPhone,
+                sexo: newGender,
+                type: newCategory
+              };
+            }
           }
         });
       }
-      
-      // Add to new category
-      clientes[clientType].push(clientData);
-      renderClientList(document.querySelector('input[name="filter"]:checked').value);
-      renderChatList();
+
+      refreshClientes();
+      const currentFilter = document.querySelector('input[name="filter"]:checked')?.value || 'all';
+      renderClientList(currentFilter);
+      renderChatList(searchInput.value || '');
       closeClientModalFunc();
-      mostrarToast(isEditing ? 'Cliente actualizado correctamente' : 'Cliente agregado correctamente');
+      mostrarToast(isEditing ? 'Contacto actualizado correctamente' : 'Contacto agregado correctamente');
     }
     
-    // =============================================
+   
     // GROUP MANAGEMENT FUNCTIONS
-    // =============================================
+   
     
     // Handle group form submit
     function handleGroupFormSubmit(e) {
@@ -1905,7 +3436,7 @@
       }
       
       // Get full member data
-      const allClients = [...clientes.mayoristas, ...clientes.minoristas];
+      const allClients = [...clientes.clientes, ...clientes.proveedores, ...clientes.colaboradores];
       const miembros = allClients.filter(cliente => selectedMembers.includes(cliente.id.toString()));
       
       const newGroup = {
@@ -1931,9 +3462,9 @@
       mostrarToast('Grupo creado correctamente');
     }
     
-    // =============================================
-    // TEMPLATE MANAGEMENT FUNCTIONS
-    // =============================================
+   
+    // TEMPLATE MANAGEMENT FUNCTIONS - CORREGIDAS
+   
     
     // Use template
     function useTemplate(templateId) {
@@ -1961,55 +3492,88 @@
     // Delete template
     function deleteTemplate(templateId) {
       if (confirm('¿Estás seguro de que quieres eliminar esta plantilla?')) {
+        myCompany.setMessageTemplates = myCompany.setMessageTemplates.filter(t => t.setMessageTemplateId !== templateId);
         templates = templates.filter(t => t.id !== templateId);
-        localStorage.setItem('whatsappTemplates', JSON.stringify(templates));
         renderTemplateList(templateSearch.value);
+        loadTemplatesIntoSelector(); // Actualizar también el selector
         mostrarToast('Plantilla eliminada');
       }
     }
     
-    // Handle template form submit
-    function handleTemplateFormSubmit(e) {
-      e.preventDefault();
-      
-      const templateData = {
-        id: currentTemplateId || Date.now(),
-        name: document.getElementById('templateName').value.trim(),
-        message: document.getElementById('templateMessage').value.trim(),
-        createdAt: new Date().toISOString()
-      };
-      
-      if (!templateData.name || !templateData.message) {
-        mostrarToast('Nombre y mensaje son requeridos', true);
-        return;
-      }
-      
-      if (currentTemplateId) {
-        // Editar plantilla existente
-        const index = templates.findIndex(t => t.id === currentTemplateId);
-        if (index !== -1) {
-          templates[index] = templateData;
-        }
-      } else {
-        // Crear nueva plantilla
-        templates.unshift(templateData);
-      }
-      
-      localStorage.setItem('whatsappTemplates', JSON.stringify(templates));
-      renderTemplateList(templateSearch.value);
-      templateForm.reset();
-      currentTemplateId = null;
-      mostrarToast(`Plantilla ${currentTemplateId ? 'actualizada' : 'guardada'}`);
+    // Handle template form submit - CORREGIDA Y COMPLETA
+function handleTemplateFormSubmit(e) {
+  e.preventDefault();
+
+  const templateData = {
+    id: currentTemplateId || Date.now(),
+    name: document.getElementById('templateName').value.trim(),
+    message: document.getElementById('templateMessage').value.trim()
+  };
+
+  if (!templateData.name || !templateData.message) {
+    mostrarToast('Nombre y mensaje son requeridos', true);
+    return;
+  }
+
+  const originalTemplate = {
+    setMessageTemplateId: templateData.id,
+    setMessageTemplateName: templateData.name,
+    setMessageTemplate: templateData.message
+  };
+
+  const isEditing = !!currentTemplateId; // Guardamos si estábamos editando
+
+  if (currentTemplateId) {
+    // Editar plantilla existente
+    const index = templates.findIndex(t => t.id === currentTemplateId);
+    if (index !== -1) {
+      templates[index] = templateData;
     }
-    
-    // Add variable to template
+    const originalIndex = myCompany.setMessageTemplates.findIndex(t => t.setMessageTemplateId === currentTemplateId);
+    if (originalIndex !== -1) {
+      myCompany.setMessageTemplates[originalIndex] = originalTemplate;
+    }
+  } else {
+    // Crear nueva plantilla
+    templates.unshift(templateData);
+    myCompany.setMessageTemplates.unshift(originalTemplate);
+  }
+
+  // Ordenar ambos arrays por ID ascendente
+  templates.sort((a, b) => a.id - b.id);
+  myCompany.setMessageTemplates.sort((a, b) => a.setMessageTemplateId - b.setMessageTemplateId);
+
+  renderTemplateList(templateSearch.value);
+  loadTemplatesIntoSelector(); // Actualizar también el selector
+
+  // --- INICIO DE LA CORRECCIÓN ---
+  // Si el templatePicker (el modal del attach-menu) ya fue creado,
+  // necesitamos destruirlo para que se vuelva a crear con la lista actualizada.
+  if (window._templatePicker) {
+    // Asegurarnos de que el handler para cerrarlo no quede "huérfano"
+    if (window._templatePicker.outsideHandler) {
+        document.removeEventListener('click', window._templatePicker.outsideHandler);
+    }
+    window._templatePicker.picker.remove(); // Elimina el elemento del DOM
+    window._templatePicker = null; // Borra la referencia
+  }
+  // --- FIN DE LA CORRECCIÓN ---
+
+  templateForm.reset();
+  currentTemplateId = null; // Resetear ID
+  templateModal.classList.remove('show');
+  mostrarToast(`Plantilla ${isEditing ? 'actualizada' : 'guardada'}`); // Usar el flag
+}
+
+
+    // Add variable to template - MODIFICADA CON SELECT
     function addVariable() {
-      const variableName = prompt("Ingrese el nombre de la variable (ej: nombre):");
-      if (variableName) {
+      const selectedValue = variableSelect.value;
+      if (selectedValue) {
+        const variableText = `{{${selectedValue}}}`;
         const textarea = document.getElementById('templateMessage');
         const startPos = textarea.selectionStart;
         const endPos = textarea.selectionEnd;
-        const variableText = `{${variableName}}`;
         
         textarea.value = textarea.value.substring(0, startPos) + 
                          variableText + 
@@ -2019,12 +3583,16 @@
         textarea.focus();
         textarea.selectionStart = startPos + variableText.length;
         textarea.selectionEnd = startPos + variableText.length;
+        variableSelect.value = ''; // Reset select
       }
     }
     
-    // =============================================
+    // Event for variable select change
+    variableSelect.addEventListener('change', addVariable);
+    
+   
     // OTHER FUNCTIONS
-    // =============================================
+   
     
     // Handle contact form submit
     function handleContactFormSubmit(e) {
@@ -2061,14 +3629,14 @@
         document.getElementById('chatList').style.display = 'block';
         clientsView.style.display = 'none';
         chatTabButton.style.color = 'var(--primary-dark)';
-        clientsTabButton.style.color = 'var(--text-light)';
-      } else if (tab === 'clients') {
-        document.getElementById('chatList').style.display = 'none';
-        clientsView.style.display = 'block';
-        chatTabButton.style.color = 'var(--text-light)';
-        clientsTabButton.style.color = 'var(--primary-dark)';
-        renderClientList(document.querySelector('input[name="filter"]:checked')?.value || 'all');
-      }
+        contactsTabButton.style.color = 'var(--text-light)';
+      } else if (tab === 'contacts') {
+  document.getElementById('chatList').style.display = 'none';
+  clientsView.style.display = 'block';
+  chatTabButton.style.color = 'var(--text-light)';
+  contactsTabButton.style.color = 'var(--primary-dark)';
+  renderContactSections(); // Nueva función
+}
     }
     
     // Check if mobile view
@@ -2111,7 +3679,7 @@
     // Load sample messages (from your code)
     function loadSampleMessages() {
       // For individual contacts
-      [...clientes.mayoristas, ...clientes.minoristas].forEach(cliente => {
+      [...clientes.clientes, ...clientes.proveedores, ...clientes.colaboradores].forEach(cliente => {
         messages[cliente.id] = [
           {
             type: 'received',
@@ -2149,9 +3717,9 @@
       });
     }
     
-    // =============================================
+   
     // HELPER FUNCTIONS
-    // =============================================
+   
     
     // Helper functions (from your code)
     function getAvatarColor(name) {
@@ -2183,21 +3751,639 @@
       }) + ' -05';
     }
     
-    // =============================================
-    // EVENT LISTENERS
-    // =============================================
+    function fillTemplate(template, customer) {
+  const templateText = template.message || '';
+
+  const valueMap = {};
+
+  for (const key of Object.keys(customer)) {
+    const val = customer[key];
+
+    valueMap[key.toLowerCase()] = val;
+
+    if (/^set[A-Z]/.test(key)) {
+      const withoutSet = key.replace(/^set/, '');
+
+      const camel = withoutSet[0].toLowerCase() + withoutSet.slice(1);
+      valueMap[camel.toLowerCase()] = val;
+
+      const snake = withoutSet.replace(/([A-Z])/g, '_$1').replace(/^_/, '').toLowerCase();
+      valueMap[snake] = val;
+    }
+  }
+
+  const placeholderRegex = /\{\{\s*([\w_]+)\s*\}\}/g;
+
+  const filled = templateText.replace(placeholderRegex, (match, p1) => {
+    const lookup = p1.toLowerCase();
+
+    if (lookup in valueMap) {
+      return valueMap[lookup] ?? '';
+    }
+
+    return '';
+  });
+
+  return filled;
+}
+
+
+// ... después del cierre de la función fillTemplate }
+
+// --- FUNCIONES PARA LA CÁMARA ---
+
+/**
+ * Pide permiso, inicia la cámara web y muestra el modal.
+ */
+async function openCamera() {
+  const cameraModal = document.getElementById('cameraModal');
+  const cameraPreview = document.getElementById('cameraPreview');
+  if (!cameraModal || !cameraPreview) return;
+
+  try {
+    // 1. Pedir permiso para el video
+    currentCameraStream = await navigator.mediaDevices.getUserMedia({ 
+      video: { facingMode: "user" }, // Pedir cámara frontal
+      audio: false 
+    });
+    
+    // 2. Asignar el stream al elemento <video>
+    cameraPreview.srcObject = currentCameraStream;
+    
+    // 3. Mostrar el modal
+    cameraModal.classList.add('show');
+    
+  } catch (err) {
+    console.error("Error al acceder a la cámara:", err);
+    // Mostrar error si el usuario no dio permiso
+    mostrarToast('No se pudo acceder a la cámara. Revisa los permisos.', true);
+  }
+}
+
+/**
+ * Detiene la cámara web y cierra el modal.
+ */
+function closeCamera() {
+  const cameraModal = document.getElementById('cameraModal');
+  if (cameraModal) cameraModal.classList.remove('show');
+  
+  // 1. Detener todas las pistas de video (apaga la luz de la cámara)
+  if (currentCameraStream) {
+    currentCameraStream.getTracks().forEach(track => {
+      track.stop();
+    });
+    currentCameraStream = null;
+  }
+  
+  // 2. Limpiar el visor
+  const cameraPreview = document.getElementById('cameraPreview');
+  if (cameraPreview) cameraPreview.srcObject = null;
+}
+
+/**
+ * Captura una foto desde el stream de video.
+ */
+function takePhoto() {
+  const cameraPreview = document.getElementById('cameraPreview');
+  const previewList = document.getElementById('previewList');
+  if (!cameraPreview || !previewList || !currentCameraStream) return;
+
+  // 1. Crear un canvas temporal para "dibujar" la foto
+  const canvas = document.createElement('canvas');
+  canvas.width = cameraPreview.videoWidth;
+  canvas.height = cameraPreview.videoHeight;
+  const ctx = canvas.getContext('2d');
+  
+  // 2. Dibujar el fotograma actual del video en el canvas
+  // (Invertimos el dibujo horizontalmente para que coincida con el "espejo")
+  ctx.translate(canvas.width, 0);
+  ctx.scale(-1, 1);
+  ctx.drawImage(cameraPreview, 0, 0, canvas.width, canvas.height);
+
+  // 3. Convertir el canvas a un archivo de imagen (Blob)
+  canvas.toBlob(blob => {
+    const id = Date.now() + Math.random();
+    // Creamos un objeto File, como si lo hubiéramos subido
+    const file = new File([blob], `captura_${id}.jpg`, { type: 'image/jpeg' });
+    
+    // 4. Añadir a la lista global de 'attachments'
+    attachments.push({ file, id }); 
+
+    // 5. Reutilizar la lógica de previsualización (la misma que usas al subir archivos)
+    const item = document.createElement('div');
+    item.className = 'preview-item';
+    item.dataset.id = id;
+    
+    const img = document.createElement('img');
+    img.src = URL.createObjectURL(file); // Usar la URL del archivo
+    item.appendChild(img);
+    
+    const btn = document.createElement('button');
+    btn.textContent = '×';
+    btn.className = 'remove-btn';
+    btn.onclick = () => {
+      const idx = attachments.findIndex(a => a.id == id);
+      if (idx > -1) attachments.splice(idx, 1);
+      previewList.removeChild(item);
+      URL.revokeObjectURL(img.src); // Liberar memoria
+      updateSendButtonState(); // nuevo
+    };
+    item.appendChild(btn);
+    previewList.appendChild(item);
+    // --- Fin de la lógica de previsualización ---
+
+  }, 'image/jpeg', 0.9); // Calidad JPEG al 90%
+
+  // 6. Cerrar el modal de la cámara
+  closeCamera();
+}
+// --- FIN DE FUNCIONES PARA LA CÁMARA ---
+
+// ... (después del cierre de la función takePhoto)
+
+
+// --- FUNCIONES PARA GRABAR AUDIO ---
+
+/**
+ * Pide permiso, inicia el micrófono y comienza a grabar.
+ */
+async function startAudioRecording() {
+  if (isRecording) return; // Ya está grabando
+
+  try {
+    // 1. Pedir permiso para el audio
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    
+    // 2. Inicializar MediaRecorder
+    mediaRecorder = new MediaRecorder(stream);
+    audioChunks = []; // Limpiar audios anteriores
+    
+    // 3. Definir qué hacer cuando hay datos de audio
+    mediaRecorder.ondataavailable = event => {
+      audioChunks.push(event.data);
+    };
+    
+    // 4. Definir qué hacer cuando la grabación se detiene
+    mediaRecorder.onstop = () => {
+     // ... dentro de mediaRecorder.onstop ...
+
+      // REEMPLAZAR CON ESTAS LÍNEAS
+      // 1. Cambiamos el tipo de MIME a audio/ogg, que es el estándar de WhatsApp
+      const audioBlob = new Blob(audioChunks, { type: 'audio/ogg;codecs=opus' });
+      // 2. Cambiamos la extensión del archivo a .ogg para que coincida
+      // ESTE ES EL CÓDIGO CORREGIDO:
+      // 2. Cambiamos la extensión del archivo a .ogg para que coincida
+      const id = Date.now() + Math.random(); // <-- 1. CREAR EL ID PRIMERO
+      const file = new File([audioBlob], `audio_${id}.ogg`, { type: 'audio/ogg' }); // <-- 2. USAR EL ID DESPUÉS
+
+      // 5. Añadir a la lista global de 'attachments'
+      attachments.push({ file, id }); 
+
+      // 6. Reutilizar la lógica de previsualización
+      const previewList = document.getElementById('previewList');
+      const item = document.createElement('div');
+      item.className = 'preview-item';
+      item.dataset.id = id;
+      
+      // Vista para audio
+      item.innerHTML += `<div style="margin-top:5px;"><i class="fas fa-headphones" style="font-size: 24px; margin-bottom: 5px;"></i><br>Audio</div>`;
+      
+      // botón eliminar
+      const btn = document.createElement('button');
+      btn.textContent = '×';
+      btn.className = 'remove-btn';
+      btn.onclick = () => {
+        const idx = attachments.findIndex(a => a.id == id);
+        if (idx > -1) attachments.splice(idx, 1);
+        previewList.removeChild(item);
+        updateSendButtonState(); //
+      };
+      item.appendChild(btn);
+      previewList.appendChild(item);
+      updateSendButtonState(); //
+      // --- Fin de la lógica de previsualización ---
+      
+      // 7. Limpiar el stream (apagar el micrófono)
+      stream.getTracks().forEach(track => track.stop());
+      mediaRecorder = null;
+    };
+    
+    // 8. Iniciar la grabación
+    mediaRecorder.start();
+    isRecording = true;
+    
+    // 9. Actualizar la UI para mostrar que está grabando
+    messageInput.dispatchEvent(new Event('input')); // Dispara el evento 'input' para actualizar el icono
+    mostrarToast("Grabación iniciada...", false);
+
+  } catch (err) {
+    console.error("Error al acceder al micrófono:", err);
+    mostrarToast("No se pudo acceder al micrófono. Revisa los permisos.", true);
+    isRecording = false; // Asegurar que el estado es correcto
+    messageInput.dispatchEvent(new Event('input')); // Actualizar UI
+  }
+}
+
+/**
+ * Detiene la grabación de audio.
+ */
+function stopAudioRecording() {
+  if (mediaRecorder && mediaRecorder.state === "recording") {
+    mediaRecorder.stop(); // El evento 'onstop' se encargará del resto
+    isRecording = false;
+    
+    // Actualizar la UI
+    messageInput.dispatchEvent(new Event('input'));
+    mostrarToast("Grabación finalizada.", false);
+  }
+}
+// --- FIN DE FUNCIONES DE AUDIO ---
+
+function updateSendButtonState() {
+      const icon = sendButton.querySelector('i');
+      if (!icon) return; // Seguridad
+      
+      const hasText = messageInput.value.trim() !== '';
+      const hasAttachments = attachments.length > 0; // Comprueba los adjuntos
+
+      if (hasText || hasAttachments) {
+        // 1. Hay algo que enviar (texto O adjuntos): Mostrar avión
+        icon.className = 'fas fa-paper-plane';
+        sendButton.style.backgroundColor = ''; // Resetear color
+        
+        // Si el usuario empieza a escribir O adjunta algo MIENTRAS graba, detenemos.
+        if (isRecording) {
+          stopAudioRecording();
+          isRecording = false; // Forzar estado
+        }
+        
+      } else {
+        // 2. No hay nada que enviar: Mostrar Micrófono o Detener
+        if (isRecording) {
+          // Está grabando: Mostrar icono de "stop" y color rojo
+          icon.className = 'fas fa-stop';
+          sendButton.style.backgroundColor = '#FF4136'; // Rojo para grabar
+        } else {
+          // No está grabando: Mostrar micrófono
+          icon.className = 'fas fa-microphone';
+          sendButton.style.backgroundColor = ''; // Resetear color
+        }
+      }
+    }
+
+// EVENT LISTENERS - CORREGIDAS
+
+
+
+    
+   
+    // EVENT LISTENERS - CORREGIDAS
+
+// ... (Tus otros listeners)
+
+// --- LISTENERS ENVIAR CONTACTO (Nuevos) ---
+
+// 1. Abrir modal de selección al hacer clic en 'Contacto' en el attachMenu
+attachContactButton.addEventListener('click', () => {
+    // Si no hay chat seleccionado, no permitir
+    if (messageInput.disabled) {
+        mostrarToast && mostrarToast('Selecciona un chat primero para enviar un contacto', true);
+        hideAttachMenu();
+        return;
+    }
+    
+    selectedContactToSend = null; // Reiniciar
+    contactSearchInput.value = '';
+    renderContactListToSend();
+    contactSelectionFooter.style.display = 'none'; // Ocultar footer inicialmente
+    contactSelectionModal.classList.add('show');
+    hideAttachMenu();
+});
+
+// 2. Cerrar el modal de selección
+closeContactSelectionModal.addEventListener('click', () => {
+    contactSelectionModal.classList.remove('show');
+});
+
+closeContactSelectionModal2.addEventListener('click', () => {
+    contactSelectionModal.classList.remove('show');
+});
+
+// 3. Filtrar la lista de contactos
+contactSearchInput.addEventListener('input', () => {
+    renderContactListToSend(contactSearchInput.value);
+});
+
+// 4. Pasar de selección a previsualización (botón 'Enviar' del footer)
+sendContactButtonFooter.addEventListener('click', () => {
+    if (selectedContactToSend) {
+        showContactPreview(selectedContactToSend); // Pasa al paso 3
+    }
+});
+
+// 5. Botón 'Atrás' de la previsualización (paso 3 a paso 1)
+backToContactSelection.addEventListener('click', () => {
+    contactPreviewModal.classList.remove('show');
+    contactSelectionModal.classList.add('show');
+    updateContactSelectionState(); // Asegura que se mantenga el contacto seleccionado
+});
+
+// 6. Botón 'Enviar' de la previsualización (paso 3 a paso 4)
+confirmSendContact.addEventListener('click', sendContactFinal);
+
+// ... (Resto de tu setupEventListeners)
+
+
+   // --- ATTACH MENU: inicio ---
+function createAttachMenu() {
+  // El HTML ya está en el body, solo necesitamos encontrarlo.
+  const picker = document.getElementById('attachMenu');
+  
+  // --- 1. Lógica para el botón de Plantillas ---
+  const templateButton = picker.querySelector('#openTemplatePickerButton');
+  if (templateButton) {
+    templateButton.addEventListener('click', (e) => {
+      e.stopPropagation(); // Detener el clic
+      
+      // Reutilizar la lógica que teníamos antes para abrir el modal de plantillas
+      if (messageInput.disabled) {
+         mostrarToast && mostrarToast('Selecciona un chat primero', true);
+         return;
+      }
+      if (!window._templatePicker) createTemplatePicker();
+      toggleTemplatePicker();
+      
+      hideAttachMenu(); // Ocultar el menú de adjuntos
+    });
+  }
+
+  
+
+  // --- 3. Lógica para cerrar el menú (sin cambios) ---
+  const outsideHandler = (ev) => {
+    // Cierra si se hace clic fuera del menú Y fuera del botón que lo abre
+    if (!picker.contains(ev.target) && ev.target !== moreOptionsButton && !moreOptionsButton.contains(ev.target)) {
+      hideAttachMenu();
+    }
+  };
+
+  // Guardamos la referencia en window, igual que los otros pickers
+  window._attachMenu = { picker, outsideHandler };
+}
+
+function positionAttachMenu() {
+  const { picker } = window._attachMenu;
+  const rect = moreOptionsButton.getBoundingClientRect();
+  
+  // Posicionar *arriba* del botón
+  picker.style.top = (window.scrollY + rect.top - picker.offsetHeight - 8) + 'px';
+  // Centrarlo con el botón
+  let leftPos = (window.scrollX + rect.left + (rect.width / 2) - (picker.offsetWidth / 2));
+  
+  // Ajustar si se sale de la pantalla (simple)
+  if(leftPos < 8) leftPos = 8;
+  
+  picker.style.left = leftPos + 'px';
+}
+
+function toggleAttachMenu() {
+  const obj = window._attachMenu;
+  if (!obj) return;
+  const { picker, outsideHandler } = obj;
+  
+  if (picker.style.display === 'none' || getComputedStyle(picker).display === 'none') {
+    picker.style.display = 'block';
+    picker.style.visibility = 'hidden'; // Ocultar para calcular
+    requestAnimationFrame(() => {
+      picker.style.visibility = ''; // Mostrar
+      positionAttachMenu(); // Ahora posicionar
+      picker.classList.add('show');
+      setTimeout(() => document.addEventListener('click', outsideHandler), 0);
+    });
+  } else {
+    hideAttachMenu();
+  }
+}
+
+function hideAttachMenu() {
+  const obj = window._attachMenu;
+  if (!obj) return;
+  const { picker, outsideHandler } = obj;
+  picker.classList.remove('show');
+  // Esperar a que termine la animación para ocultarlo
+  setTimeout(() => {
+     picker.style.display = 'none';
+  }, 100); // 100ms (igual que la animación)
+  document.removeEventListener('click', outsideHandler);
+}
+// --- ATTACH MENU: fin ---
+
+// --- TEMPLATE PICKER: inicio - MEJORADO ---
+      function createTemplatePicker() {
+        const picker = document.createElement('div');
+        picker.id = 'templatePicker';
+        picker.style.position = 'absolute';
+        picker.style.padding = '12px';
+        picker.style.borderRadius = 'var(--radius-medium)';
+        picker.style.boxShadow = 'var(--shadow-medium)';
+        picker.style.background = 'white';
+        picker.style.display = 'block';
+        picker.style.zIndex = 2000;
+        picker.style.minWidth = '280px';
+        picker.style.maxWidth = '350px';
+        picker.style.userSelect = 'none';
+        picker.style.paddingBottom = '10px';
+        picker.style.border = '1px solid var(--border-color)';
+
+        // header
+        const header = document.createElement('div');
+        header.className = 'template-header';
+        header.textContent = 'Plantillas';
+        picker.appendChild(header);
+
+        const search = document.createElement('input');
+        search.type = 'text';
+        search.placeholder = 'Buscar plantilla...';
+        search.className = 'template-search';
+        picker.appendChild(search);
+
+        const list = document.createElement('div');
+        list.style.display = 'flex';
+        list.style.flexDirection = 'column';
+        list.style.padding = '8px';
+        list.style.gap = '6px';
+        picker.appendChild(list);
+
+        // Render plantillas actuales (usa el array templates)
+        templates.forEach(t => {
+          const row = document.createElement('button');
+          row.type = 'button';
+          row.className = 'template-row';
+          row.style.display = 'flex';
+          row.style.justifyContent = 'space-between';
+          row.style.alignItems = 'center';
+          row.style.border = 'none';
+          row.style.background = 'transparent';
+          row.style.padding = '10px';
+          row.style.cursor = 'pointer';
+          row.style.borderRadius = 'var(--radius-small)';
+          row.style.transition = 'background-color 0.2s';
+          row.style.width = '100%';
+          row.style.textAlign = 'left';
+
+          const name = (t.setMessageTemplateName || t.name || 'Plantilla').toString();
+          const msg = (t.setMessageTemplate || t.message || '').toString();
+
+          const left = document.createElement('div');
+          left.style.textAlign = 'left';
+          left.innerHTML = `
+            <div style="font-weight:500">${name}</div>
+            <div style="font-size:12px;color:#667781">${msg.substring(0,60)}${msg.length > 60 ? '...' : ''}</div>
+          `;
+
+          const icon = document.createElement('div');
+          icon.innerHTML = '<span>📤</span>';
+
+          row.appendChild(left);
+          row.appendChild(icon);
+
+          row.addEventListener('click', (ev) => {
+            ev.stopPropagation();
+            handleTemplateSelection(t);
+          });
+
+          list.appendChild(row);
+        });
+
+        document.body.appendChild(picker);
+
+        const outsideHandler = (ev) => {
+          if (!picker.contains(ev.target) && ev.target !== moreOptionsButton) {
+            hideTemplatePicker();
+          }
+        };
+
+        search.addEventListener('input', () => {
+          const rows = list.querySelectorAll('.template-row');
+          rows.forEach(row => {
+            const name = row.querySelector('div').textContent.toLowerCase();
+            row.style.display = name.includes(search.value.toLowerCase()) ? 'flex' : 'none';
+          });
+        });
+
+        window._templatePicker = { picker, outsideHandler };
+      }
+
+      function positionTemplatePicker() {
+        const { picker } = window._templatePicker;
+        const rect = moreOptionsButton.getBoundingClientRect();
+        const preferTop = (rect.top > 260);
+        if (preferTop) {
+          picker.style.top = (window.scrollY + rect.top - picker.offsetHeight - 8) + 'px';
+        } else {
+          picker.style.top = (window.scrollY + rect.bottom + 8) + 'px';
+        }
+        picker.style.left = Math.max(8, window.scrollX + rect.left - (picker.offsetWidth - rect.width) / 2) + 'px';
+      }
+
+      function toggleTemplatePicker() {
+        const obj = window._templatePicker;
+        if (!obj) return;
+        const { picker, outsideHandler } = obj;
+        if (picker.style.display === 'none' || getComputedStyle(picker).display === 'none') {
+          picker.style.display = 'block';
+          picker.style.visibility = 'hidden';
+          requestAnimationFrame(() => {
+            picker.style.visibility = '';
+            positionTemplatePicker();
+            setTimeout(() => document.addEventListener('click', outsideHandler), 0);
+          });
+        } else {
+          hideTemplatePicker();
+        }
+      }
+
+      function hideTemplatePicker() {
+        const obj = window._templatePicker;
+        if (!obj) return;
+        const { picker, outsideHandler } = obj;
+        picker.style.display = 'none';
+        document.removeEventListener('click', outsideHandler);
+      }
+
+      // --- Maneja selección de plantilla ---
+      function handleTemplateSelection(template) {
+        if (!currentChat) {
+          mostrarToast && mostrarToast('Selecciona un chat primero', true);
+          hideTemplatePicker();
+          return;
+        }
+
+        let texto = template.setMessageTemplate || template.message || template.template || '';
+
+        if (currentChat.miembros) {
+          // for group, no replace
+          texto = texto;
+        } else {
+          const category = currentChat.type;
+          const origId = getOriginalId(currentChat.id);
+          const arrayKey = arrayKeys[category];
+          const obj = myCompany[arrayKey].find(o => o[categoryFields[category].id] === origId);
+          if (obj) {
+            texto = fillTemplate(template, obj);
+          }
+        }
+
+        // Pone el mensaje en el input y lo envía
+        messageInput.value = texto;
+        if (typeof sendMessage === 'function') sendMessage();
+
+        hideTemplatePicker();
+      }
+      // --- TEMPLATE PICKER: fin ---
     
     // Setup event listeners
     function setupEventListeners() {
       // Send message on button click
-      sendButton.addEventListener('click', sendMessage);
-      
-      // Send message on Enter key
-      messageInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
+      // Send message on button click OR handle recording
+      // Send message on button click OR handle recording
+      // REEMPLAZA el listener de 'sendButton' (línea 3302) con esto:
+
+      sendButton.addEventListener('click', () => {
+        const text = messageInput.value.trim();
+        const hasText = text.length > 0;
+        const hasAttachments = attachments.length > 0;
+        
+        // 1. Si hay adjuntos O texto, SIEMPRE es "enviar"
+        if (hasAttachments || hasText) {
           sendMessage();
+          // Limpia y actualiza el botón DESPUÉS de enviar
+          attachments = [];
+          document.getElementById('previewList').innerHTML = '';
+          updateSendButtonState();
+          return;
+        }
+        
+        // 2. Si no hay adjuntos NI hay texto, es "grabar"
+        if (isRecording) {
+          // Estaba grabando, ahora "detener"
+          stopAudioRecording();
+        } else {
+          // No estaba grabando, ahora "iniciar"
+          startAudioRecording();
         }
       });
+      
+// Actualiza el icono del botón de enviar (micrófono/avión/detener)
+     // REEMPLAZA el listener de 'messageInput' (línea 3326) con esta función:
+
+    // Función centralizada para actualizar el estado del botón de enviar
+    
+
+// ... en setupEventListeners() ...
+
+      // Ahora, usa la nueva función en el listener
+      messageInput.addEventListener('input', updateSendButtonState);
       
       // Search chats
       searchInput.addEventListener('input', () => {
@@ -2221,8 +4407,8 @@
         dropdownMenu.classList.remove('show');
       });
       
-      clientsTabButton.addEventListener('click', () => {
-        switchTab('clients');
+      contactsTabButton.addEventListener('click', () => {
+        switchTab('contacts');
         dropdownMenu.classList.remove('show');
       });
       
@@ -2234,17 +4420,13 @@
       });
       
       
-      newContactButton.addEventListener('click', () => {
-        newContactModal.classList.add('show');
-        dropdownMenu.classList.remove('show');
-      });
+newContactButton.addEventListener('click', () => {
+openClientModal(false); 
+dropdownMenu.classList.remove('show');
+});
       
       settingsButton.addEventListener('click', () => {
         // Cargar la configuración actual
-        document.getElementById('bulkMessageBtn').addEventListener('click', () => {
-        bulkMessageModal.classList.add('show');
-        loadTemplatesIntoSelector(); // Cargar plantillas cuando se abre el modal
-      });
         document.getElementById('userDisplayName').value = user.name;
         document.getElementById('userAvatarColor').value = user.color;
         settingsModal.classList.add('show');
@@ -2295,7 +4477,7 @@
         currentTemplateId = null;
       });
       
-      // Envíos de formularios
+      // Envíos de formularios - CORREGIDO: agregar handleTemplateFormSubmit
       clientForm.addEventListener('submit', handleClientFormSubmit);
       groupForm.addEventListener('submit', handleGroupFormSubmit);
       contactForm.addEventListener('submit', handleContactFormSubmit);
@@ -2328,17 +4510,173 @@
       chatMenuButton.addEventListener('click', () => {
         alert('Menú de opciones del chat aparecería aquí');
       });
+
+      // ... (después de la alerta de 'chatMenuButton')
+
+// --- Listeners de la Cámara (AÑADE ESTE BLOQUE) ---
+if (attachCameraButton) {
+  attachCameraButton.addEventListener('click', () => {
+    // No abrir si no hay un chat seleccionado
+    if (messageInput.disabled) {
+      mostrarToast && mostrarToast('Selecciona un chat primero', true);
+      return;
+    }
+    openCamera(); // Llama a la función que creamos
+
+    // Oculta el menú de adjuntos
+    if (typeof hideAttachMenu === 'function') {
+      hideAttachMenu();
+    }
+  });
+}
+
+// Listener para el botón de cerrar (X) del modal de cámara
+if (closeCameraModalBtn) {
+  closeCameraModalBtn.addEventListener('click', closeCamera);
+}
+
+// Listener para el botón de tomar foto (obturador)
+if (shutterButton) {
+  shutterButton.addEventListener('click', takePhoto);
+}
+// --- Fin de listeners de cámara ---
+
+// --- EMOJI PICKER: inicio - MEJORADO ---
+// ...
       
-      emojiButton.addEventListener('click', () => {
-        alert('Selector de emojis aparecería aquí');
+      // --- EMOJI PICKER: inicio - MEJORADO ---
+      // Reemplaza el listener antiguo por este
+      emojiButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        // si el input está deshabilitado, avisar
+        if (messageInput.disabled) {
+          mostrarToast && mostrarToast('Selecciona un chat primero', true);
+          return;
+        }
+        // crear picker si no existe (lazy)
+        if (!window._emojiPicker) createEmojiPicker();
+        toggleEmojiPicker();
       });
+
+      function createEmojiPicker() {
+        const emojis = [
+          '😀','😃','😄','😁','😆','😅','😂','🤣','😊','😉','😍','😘','😜','🤩','😎','🥳','🤗','🤔','😴','😇','😬','🤤','🤯','🙌','👏','🙏','👍','👎','💪','🔥','✨',
+          '❤️','💙','💜','🧡','💚','😢','😭','😡','😠','😤','🤬','😳','🥺','😏','🙄','😬','🤐','😶','🤯','💥','⭐','🌟','💫','🔥','💧','🌈','☀️','🌙','⭐'
+        ];
+        const picker = document.createElement('div');
+        picker.id = 'emojiPicker';
+        picker.style.position = 'absolute';
+        picker.style.padding = '12px';
+        picker.style.borderRadius = 'var(--radius-medium)';
+        picker.style.boxShadow = 'var(--shadow-medium)';
+        picker.style.background = 'white';
+        picker.style.display = 'grid';
+        picker.style.gridTemplateColumns = 'repeat(8, 1fr)';
+        picker.style.gap = '8px';
+        picker.style.zIndex = 2000;
+        picker.style.width = '390px';
+        picker.style.userSelect = 'none';
+        picker.style.border = '1px solid var(--border-color)';
+
+        emojis.forEach(emo => {
+          const b = document.createElement('button');
+          b.type = 'button';
+          b.className = 'emoji-btn';
+          b.style.border = 'none';
+          b.style.background = 'transparent';
+          b.style.fontSize = '24px';
+          b.style.cursor = 'pointer';
+          b.style.borderRadius = 'var(--radius-small)';
+          b.style.transition = 'background-color 0.2s';
+          b.style.padding = '4px';
+          b.textContent = emo;
+          b.addEventListener('click', (ev) => {
+            ev.stopPropagation();
+            insertAtCursor(messageInput, emo);
+            messageInput.focus();
+            // Si quieres que cierre al insertar, descomenta:
+            // hideEmojiPicker();
+          });
+          picker.appendChild(b);
+        });
+
+        document.body.appendChild(picker);
+
+        const outsideHandler = (ev) => {
+          if (!picker.contains(ev.target) && ev.target !== emojiButton) {
+            hideEmojiPicker();
+          }
+        };
+
+        window._emojiPicker = { picker, outsideHandler };
+      }
+
+      function positionEmojiPicker() {
+        const { picker } = window._emojiPicker;
+        const rect = emojiButton.getBoundingClientRect();
+        const preferTop = (rect.top > 260);
+        if (preferTop) {
+          picker.style.top = (window.scrollY + rect.top - picker.offsetHeight - 8) + 'px';
+        } else {
+          picker.style.top = (window.scrollY + rect.bottom + 8) + 'px';
+        }
+        picker.style.left = Math.max(8, window.scrollX + rect.left - (picker.offsetWidth - rect.width) / 2) + 'px';
+      }
+
+      function toggleEmojiPicker() {
+        const obj = window._emojiPicker;
+        if (!obj) return;
+        const { picker, outsideHandler } = obj;
+        if (picker.style.display === 'none' || getComputedStyle(picker).display === 'none') {
+          picker.style.display = 'grid';
+          picker.style.visibility = 'hidden';
+          requestAnimationFrame(() => {
+            picker.style.visibility = '';
+            positionEmojiPicker();
+            setTimeout(() => document.addEventListener('click', outsideHandler), 0);
+          });
+        } else {
+          hideEmojiPicker();
+        }
+      }
+
+      function hideEmojiPicker() {
+        const obj = window._emojiPicker;
+        if (!obj) return;
+        const { picker, outsideHandler } = obj;
+        picker.style.display = 'none';
+        document.removeEventListener('click', outsideHandler);
+      }
+
+      function insertAtCursor(input, text) {
+        const start = typeof input.selectionStart === 'number' ? input.selectionStart : input.value.length;
+        const end = typeof input.selectionEnd === 'number' ? input.selectionEnd : start;
+        const value = input.value || '';
+        input.value = value.slice(0, start) + text + value.slice(end);
+        const caret = start + text.length;
+        input.setSelectionRange(caret, caret);
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+      // --- EMOJI PICKER: fin ---
+
+      // ESTE ES EL BLOQUE CORRECTO
+moreOptionsButton.addEventListener('click', (e) => {
+  e.stopPropagation();
+
+  // Si el input está deshabilitado, no hacer nada
+  if (messageInput.disabled) {
+    mostrarToast && mostrarToast('Selecciona un chat primero', true);
+    return;
+  }
+
+  // Llama a las nuevas funciones del menú de adjuntos
+  if (!window._attachMenu) createAttachMenu();
+  toggleAttachMenu();
+});
+
       
-      moreOptionsButton.addEventListener('click', () => {
-        alert('Más opciones aparecerían aquí');
-      });
-      
-      // botón Agregar cliente
-      addClientBtn.addEventListener('click', () => openClientModal(false));
+
+  
       
       // Filtrar clientes
       document.querySelectorAll('input[name="filter"]').forEach(radio => {
@@ -2352,8 +4690,7 @@
         renderTemplateList(templateSearch.value);
       });
       
-      // botón Agregar variable
-      addVariableBtn.addEventListener('click', addVariable);
+      // botón Agregar variable - ELIMINADO PORQUE YA NO EXISTE, USAR SELECT
       
       // Editar contacto al hacer clic en el encabezado del chat
       currentChatAvatar.addEventListener('click', () => {
@@ -2377,23 +4714,469 @@
       bulkMessageModal.addEventListener('click', () => {
         loadTemplatesIntoSelector();
       });
+
+      // ... (otros listeners) ...
+
+      // --- Lógica completa para Adjuntar Archivos ---
+      const fileInput = document.getElementById('waFiles');
+      const previewList = document.getElementById('previewList');
+      const attachDocumentButton = document.getElementById('attachDocumentButton');
+      const attachMediaButton = document.getElementById('attachMediaButton');
+      const attachAudioButton = document.getElementById('attachAudioButton');
+
+      // Verificamos que todos los elementos existan
+      // **** CORRECCIÓN 1: El 'if' debe incluir attachMediaButton Y envolver A TODOS los listeners de archivos ****
+      if (fileInput && previewList && attachDocumentButton && attachMediaButton) {
+
+        // **** CORRECCIÓN 2: Este bloque faltaba. Lo restauramos ****
+        // 1. Conectar el botón "Documento" al input de archivos
+        attachDocumentButton.addEventListener('click', () => {
+          // Si el input está deshabilitado (no hay chat), no hacer nada
+          if (messageInput.disabled) {
+            mostrarToast && mostrarToast('Selecciona un chat primero', true);
+            return;
+          }
+          
+          fileInput.click(); // Dispara el input oculto
+          
+          // Oculta el menú de adjuntos
+          if (typeof hideAttachMenu === 'function') {
+            hideAttachMenu();
+          }
+        });
+
+        // 2. Conectar el botón "Fotos y videos" al MISMO input
+        attachMediaButton.addEventListener('click', () => {
+          // Si el input está deshabilitado (no hay chat), no hacer nada
+          if (messageInput.disabled) {
+            mostrarToast && mostrarToast('Selecciona un chat primero', true);
+            return;
+          }
+          
+          fileInput.click(); // Dispara el input oculto
+          
+          // Oculta el menú de adjuntos
+          if (typeof hideAttachMenu === 'function') {
+            hideAttachMenu();
+          }
+        });
+
+
+        // 3. Conectar el botón "Audio" al MISMO input**
+        attachAudioButton.addEventListener('click', () => {
+          // Si el input está deshabilitado (no hay chat), no hacer nada**
+          if (messageInput.disabled) {
+            mostrarToast && mostrarToast('Selecciona un chat primero', true);
+            return;
+          }
+          
+          fileInput.click(); // Dispara el input oculto**
+          
+          // Oculta el menú de adjuntos**
+          if (typeof hideAttachMenu === 'function') {
+            hideAttachMenu();
+          }
+        });
+
+        // 3. Lógica para manejar la selección de archivos (tu código original)
+        fileInput.addEventListener('change', () => {
+          Array.from(fileInput.files).forEach(file => {
+            const id = Date.now() + Math.random();
+            // 'attachments' fue declarado globalmente (línea 1259), así que podemos usarlo
+            attachments.push({ file, id }); 
+            const item = document.createElement('div');
+            item.className = 'preview-item';
+            item.dataset.id = id;
+            
+            // generar vista según tipo
+            if (file.type.startsWith('image/')) {
+              const img = document.createElement('img');
+              img.src = URL.createObjectURL(file);
+              item.appendChild(img);
+            } else if (file.type.startsWith('video/')) {
+              const vid = document.createElement('video');
+              vid.src = URL.createObjectURL(file);
+              vid.controls = true;
+              item.appendChild(vid);
+            } else {
+              // Vista para documentos
+              item.innerHTML += `<div style="margin-top:5px;"><i class="fas fa-file-alt" style="font-size: 24px; margin-bottom: 5px;"></i><br>${file.name}</div>`;
+            }
+            
+            // botón eliminar
+            const btn = document.createElement('button');
+            btn.textContent = '×';
+            btn.className = 'remove-btn';
+            btn.onclick = () => {
+              // quitar de array y del DOM
+              const idx = attachments.findIndex(a => a.id == id);
+              if (idx > -1) attachments.splice(idx, 1);
+              previewList.removeChild(item);
+              updateSendButtonState(); //
+            };
+            item.appendChild(btn);
+            previewList.appendChild(item);
+          });
+          // reset input para poder volver a seleccionar el mismo archivo si se quiere
+          fileInput.value = '';
+          updateSendButtonState();
+        });
+      } // **** CORRECCIÓN 3: La llave '}' de la línea 4377 se movió aquí, para cerrar el 'if' correctamente.
+      // --- Fin de la lógica de Adjuntar Archivos ---
+
+      // ... (resto de setupEventListeners) ...
       
       // Botón para cargar plantilla seleccionada
+      // **** CORRECCIÓN 4: El contenido de esta función faltaba ****
       loadTemplateBtn.addEventListener('click', () => {
         const templateId = parseInt(templateSelector.value);
         if (!templateId) return;
         
+        // --- INICIO DE CÓDIGO RESTAURADO ---
         const template = templates.find(t => t.id === templateId);
         if (template) {
           bulkMessageText.value = template.message;
           mostrarToast(`Plantilla "${template.name}" cargada`);
         }
+        // --- FIN DE CÓDIGO RESTAURADO ---
       });
+
+      // Search for templates in bulk modal
+      const templateSearchBulk = document.getElementById('templateSearchBulk');
+      templateSearchBulk.addEventListener('input', () => {
+        loadTemplatesIntoSelector(templateSearchBulk.value);
+      });
+
+
+bulkMessageText.addEventListener('contextmenu', (e) => {
+  e.preventDefault();
+  if (!window._bulkContextMenu) createBulkContextMenu();
+  showBulkContextMenu(e);
+});
+
+
+function createBulkContextMenu() {
+  const menu = document.createElement('div');
+  menu.id = 'bulkContextMenu';
+  menu.style.position = 'absolute';
+  menu.style.background = 'white';
+  menu.style.border = '1px solid var(--border-color)';
+  menu.style.borderRadius = 'var(--radius-small)';
+  menu.style.boxShadow = 'var(--shadow-medium)';
+  menu.style.zIndex = 3000;
+  menu.style.minWidth = '180px';
+  menu.style.padding = '4px 0';
+
+  const variables = [
+    {label: 'Nombre del cliente', value: 'customer_name'},
+    {label: 'Teléfono', value: 'customer_phone'},
+    {label: 'Email', value: 'customer_email'},
+    {label: 'Dirección', value: 'customer_address'},
+    {label: 'Fecha de nacimiento', value: 'customer_birthdate'}
+  ];
+
+  variables.forEach(v => {
+    const item = document.createElement('div');
+    item.className = 'menu-item';
+    item.style.padding = '8px 16px';
+    item.style.cursor = 'pointer';
+    item.style.transition = 'background 0.2s';
+    item.textContent = v.label;
+    item.addEventListener('click', () => {
+      insertAtCursor(bulkMessageText, ` {{${v.value}}} `);
+      hideBulkContextMenu();
+    });
+    item.addEventListener('mouseenter', () => {
+      item.style.backgroundColor = '#f0f0f0';
+    });
+    item.addEventListener('mouseleave', () => {
+      item.style.backgroundColor = '';
+    });
+    menu.appendChild(item);
+  });
+
+  document.body.appendChild(menu);
+
+  const outsideHandler = (ev) => {
+    if (!menu.contains(ev.target)) {
+      hideBulkContextMenu();
+    }
+  };
+
+  window._bulkContextMenu = { menu, outsideHandler };
+}
+
+function showBulkContextMenu(e) {
+  const obj = window._bulkContextMenu;
+  if (!obj) return;
+  const { menu, outsideHandler } = obj;
+  menu.style.display = 'block';
+  menu.style.left = `${e.pageX}px`;
+  menu.style.top = `${e.pageY}px`;
+  document.addEventListener('click', outsideHandler);
+}
+
+function hideBulkContextMenu() {
+  const obj = window._bulkContextMenu;
+  if (!obj) return;
+  const { menu, outsideHandler } = obj;
+  menu.style.display = 'none';
+  document.removeEventListener('click', outsideHandler);
+}
+
     }
 
-    // =============================================
+    // --- FUNCIONES PARA ENVIAR CONTACTO ---
+
+// Helper para crear el elemento de contacto en el modal de selección
+function createContactSelectionItem(contacto, isChecked) {
+    const item = document.createElement('div');
+    item.className = 'chat-item';
+    item.style.padding = '10px 16px';
+    item.style.cursor = 'pointer';
+    item.style.alignItems = 'center';
+    item.style.display = 'flex';
+    item.dataset.id = contacto.id;
+
+    const initials = contacto.nombre.split(' ').map(n => n[0]).join('');
+    const avatar = contacto.type === 'grupos' 
+        ? `<div class="chat-avatar group-avatar" style="background-color: ${getAvatarColor(contacto.nombre)}; margin-right: 15px;"><span>👥</span></div>`
+        : `<div class="chat-avatar" style="background-color: ${getAvatarColor(contacto.nombre)}; margin-right: 15px;">${initials}</div>`;
+
+    // Asumimos que la primera imagen (image_e7663f.png) no usa el avatar circular real de tu HTML, sino uno simple.
+    // Usaremos un estilo simplificado para imitar la imagen, pero con la info real:
+    const simpleAvatar = contacto.type === 'grupos'
+        ? `<div style="width: 40px; height: 40px; border-radius: 50%; background-color: #667781; display: flex; align-items: center; justify-content: center; color: white; margin-right: 15px;"><i class="fas fa-users"></i></div>`
+        : `<div style="width: 40px; height: 40px; border-radius: 50%; background-color: #667781; display: flex; align-items: center; justify-content: center; color: white; margin-right: 15px;"><i class="fas fa-user"></i></div>`;
+
+    item.innerHTML = `
+        <input type="checkbox" name="contactToSend" value="${contacto.id}" style="margin-right: 15px; width: 20px; height: 20px;" ${isChecked ? 'checked' : ''}>
+        ${simpleAvatar}
+        <div class="chat-info" style="flex: 1; min-width: 0;">
+            <div class="chat-name" style="font-weight: 500; font-size: 16px;">${contacto.nombre}</div>
+            <div class="chat-message" style="font-size: 13px; color: var(--text-light); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${contacto.type === 'grupos' ? `${contacto.miembros.length} miembros` : contacto.codigoPais + contacto.numeroWhatsApp}</div>
+        </div>
+    `;
+    
+    // Simular el clic en toda la fila para marcar el checkbox
+    item.addEventListener('click', (e) => {
+        // Ignorar clic si fue en el checkbox o el avatar
+        if (e.target.tagName !== 'INPUT' && e.target.closest('input')) return;
+
+        const checkbox = item.querySelector('input[type="checkbox"]');
+        
+        // **IMPORTANTE**: En WhatsApp solo se puede seleccionar UN contacto.
+        // Deseleccionar todos los demás
+        document.querySelectorAll('#contactListToSend input[type="checkbox"]').forEach(cb => {
+            if (cb !== checkbox) cb.checked = false;
+        });
+
+        // Toggle el actual
+        checkbox.checked = !checkbox.checked;
+
+        // Actualizar el estado y el footer
+        updateContactSelectionState();
+    });
+
+    // Asegurar que el checkbox funcione independientemente de la fila
+    item.querySelector('input[type="checkbox"]').addEventListener('change', updateContactSelectionState);
+    
+    return item;
+}
+
+// Renderiza la lista de contactos para la selección (paso 1)
+function renderContactListToSend(filter = '') {
+    contactListToSend.innerHTML = '';
+    
+    let allContacts = [
+        ...(clientes.clientes || []), 
+        ...(clientes.proveedores || []), 
+        ...(clientes.colaboradores || []),
+        ...(clientes.grupos || []).map(g => ({...g, type: 'grupos'}))
+    ];
+
+    if (filter) {
+        allContacts = allContacts.filter(c => 
+            c.nombre.toLowerCase().includes(filter.toLowerCase()) || 
+            (c.numeroWhatsApp && c.numeroWhatsApp.includes(filter))
+        );
+    }
+    
+    // Renderizar
+    const checkedId = selectedContactToSend ? selectedContactToSend.id : null;
+    allContacts.forEach(contacto => {
+        if (contacto.id === currentChat?.id) return; // No se puede enviar el contacto a sí mismo
+        const isChecked = contacto.id === checkedId;
+        const item = createContactSelectionItem(contacto, isChecked);
+        contactListToSend.appendChild(item);
+    });
+
+    if (allContacts.length === 0) {
+        contactListToSend.innerHTML = '<div class="empty-state">No hay contactos disponibles</div>';
+    }
+}
+
+// Actualiza el estado del footer de selección (paso 1.5)
+function updateContactSelectionState() {
+    const selectedCheckbox = document.querySelector('#contactListToSend input[type="checkbox"]:checked');
+    if (selectedCheckbox) {
+        const contactId = parseInt(selectedCheckbox.value);
+        
+        // Obtener el objeto de contacto completo
+        let allContacts = [
+            ...(clientes.clientes || []), 
+            ...(clientes.proveedores || []), 
+            ...(clientes.colaboradores || []),
+            ...(clientes.grupos || []).map(g => ({...g, type: 'grupos'}))
+        ];
+        selectedContactToSend = allContacts.find(c => c.id === contactId);
+        
+        selectedContactNameFooter.textContent = selectedContactToSend.nombre;
+        contactSelectionFooter.style.display = 'flex';
+    } else {
+        selectedContactToSend = null;
+        contactSelectionFooter.style.display = 'none';
+    }
+}
+
+// Muestra la previsualización del contacto (paso 3)
+function showContactPreview(contactToSend) {
+    if (!contactToSend || !currentChat) return;
+
+    // Obtener datos detallados
+    const category = contactToSend.type;
+    const origId = getOriginalId(contactToSend.id);
+    const arrayKey = arrayKeys[category];
+    const fields = categoryFields[category];
+    const obj = myCompany[arrayKey].find(o => o[fields.id] === origId);
+
+    let displayPhone = obj ? `${obj[fields.country]}${obj[fields.phone]}` : '';
+    let displayEmail = obj ? obj[fields.email] : '';
+    let displayAddress = obj ? obj[fields.address] : '';
+
+    targetChatNumber.textContent = currentChat.nombre;
+
+    const initials = contactToSend.nombre.split(' ').map(n => n[0]).join('');
+    const avatar = `<div class="chat-avatar" style="background-color: ${getAvatarColor(contactToSend.nombre)}; width: 50px; height: 50px; margin-right: 15px;">${initials}</div>`;
+
+    document.getElementById('contactPreviewContent').innerHTML = `
+        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+            ${avatar}
+            <div style="font-size: 16px; font-weight: 500; color: var(--text-dark);">${contactToSend.nombre}</div>
+        </div>
+        <div style="font-size: 14px; color: var(--primary-color); font-weight: 500;">${displayPhone}</div>
+        <div style="font-size: 11px; color: var(--text-light);">TEL</div>
+        ${displayEmail ? `<div style="font-size: 14px; color: var(--primary-color); font-weight: 500;">${displayEmail}</div><div style="font-size: 11px; color: var(--text-light);">EMAIL</div>` : ''}
+        ${displayAddress ? `<div style="font-size: 14px; color: var(--primary-color); font-weight: 500;">${displayAddress}</div><div style="font-size: 11px; color: var(--text-light);">DIRECCIÓN</div>` : ''}
+    `;
+
+    contactSelectionModal.classList.remove('show');
+    contactPreviewModal.classList.add('show');
+}
+// Función final de envío (paso 4) - SIMULACIÓN COMPLETA
+async function sendContactFinal() {
+    if (!currentChat || !selectedContactToSend) return;
+
+    // Cierre el modal de previsualización
+    contactPreviewModal.classList.remove('show');
+
+    // 1. Obtener los datos del contacto (extiende con más campos si necesitas)
+    let contactName = selectedContactToSend.nombre;
+    let contactPhone = `${selectedContactToSend.codigoPais}${selectedContactToSend.numeroWhatsApp}`;
+    let contactEmail = ''; // Agrega si existe en el objeto (e.g., desde myCompany arrays)
+    let contactAddress = ''; // Similar
+
+    // 2. Generar vCard (formato estándar para contactos en WhatsApp)
+    const vCard = `BEGIN:VCARD\nVERSION:3.0\nFN:${contactName}\nTEL;TYPE=CELL:${contactPhone}\nEMAIL:${contactEmail}\nADR:${contactAddress}\nEND:VCARD`;
+
+    // 3. Obtener credenciales API (asumiendo la primera)
+    const apiCreds = myCompany.setCredentialsApiWAChat[0];
+    const emitterId = apiCreds.setCredentialsApiWAChatId;
+
+    // 4. Determinar JID del destinatario (chat actual)
+    const toJid = `${currentChat.codigoPais}${currentChat.numeroWhatsApp}@s.whatsapp.net`; // Ajusta si es grupo
+
+    try {
+        // 5. Crear un File desde la vCard string (como un adjunto)
+        const vCardBlob = new Blob([vCard], { type: 'text/vcard' });
+        const vCardFile = new File([vCardBlob], `${contactName}.vcf`, { type: 'text/vcard' });
+
+        // 6. Subir el File a /upload para obtener URL (igual que attachments)
+        const baseApiUrl = `https://${apiCreds.setCredentialsApiWAChatSubdomain}/wa/${apiCreds.setCredentialsApiWAChatPort}`;
+        const formFile = new FormData();
+        formFile.append('file', vCardFile);
+        const uploadResp = await fetch(`${baseApiUrl}/upload`, {
+            method: 'POST',
+            headers: { 'x-auth-token': myCompany.setAuthToken },
+            body: formFile
+        });
+
+        if (!uploadResp.ok) {
+            throw new Error(`Error subiendo vCard: ${uploadResp.statusText}`);
+        }
+
+        const { url } = await uploadResp.json();
+
+        // 7. Enviar usando la API como 'document'
+        await sendMessageApiWAChat(emitterId, toJid, 'document', url, '', `${contactName}.vcf`, 'text/vcard');
+
+        // 8. Añadir al historial local (simulación como antes)
+        if (!messages[currentChat.id]) messages[currentChat.id] = [];
+        const initials = contactName.split(' ').map(n => n[0]).join('');
+        const chatDisplay = `
+            <div style="padding: 10px; border-radius: 8px; background-color: var(--message-sent);">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                    <div style="display: flex; align-items: center;">
+                        <div style="width: 40px; height: 40px; border-radius: 50%; background-color: ${getAvatarColor(contactName)}; display: flex; align-items: center; justify-content: center; color: white; margin-right: 10px; overflow: hidden;">
+                            <img src="${getAvatarUrl(contactName)}" alt="Avatar" style="width: 100%; height: 100%; object-fit: cover; display: ${hasAvatar(contactName) ? 'block' : 'none'};">
+                            <span style="display: ${hasAvatar(contactName) ? 'none' : 'block'}; font-size: 18px;">${initials}</span>
+                        </div>
+                        <div style="font-weight: 600; font-size: 16px; color: var(--text-dark);">${contactName}</div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: flex-end; color: rgba(0, 0, 0, 0.45); font-size: 11px;">
+                        <span>${formatTime(new Date()).replace(' -05', '')}</span>
+                        <i class="fas fa-check-double" style="color: var(--primary-dark); margin-left: 3px;"></i>
+                    </div>
+                </div>
+                <div class="contact-actions-sim">
+                    <span class="contact-action-btn-sim" title="Simular chat">Mensaje</span>
+                    <span style="width: 1px; background-color: rgba(0, 0, 0, 0.1);"></span>
+                    <span class="contact-action-btn-sim" title="Simular añadir a grupo">Añadir a un grupo</span>
+                </div>
+            </div>
+        `;
+        messages[currentChat.id].push({
+            text: chatDisplay,
+            type: 'sent',
+            timestamp: new Date()
+        });
+
+        renderMessages();
+        mostrarToast(`Contacto "${contactName}" enviado a ${currentChat.nombre}`);
+
+    } catch (error) {
+        console.error('Error enviando contacto:', error);
+        mostrarToast('Error al enviar contacto: ' + error.message, true);
+    }
+
+    // Resetear el estado de selección
+    selectedContactToSend = null;
+    updateSendButtonState();
+}
+// Añadir estas funciones si no existen, o verificar que existan
+function getAvatarUrl(name) {
+    // Simulación: Si no usas URLs de avatares, devuelve una cadena vacía
+    return ''; 
+}
+
+function hasAvatar(name) {
+    // Simulación: Asumimos que no hay avatares reales en la simulación, siempre false
+    // Si tienes un sistema de avatares, modifícalo.
+    return false;
+}
+   
     // INITIALIZE THE APP
-    // =============================================
+   
     
     init();
   </script>

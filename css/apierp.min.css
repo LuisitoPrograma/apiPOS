@@ -3,7 +3,7 @@ Name: apiERP
 Author: Luisito Programa
 Website 1: luisitoprograma.com
 Website 2: apiERP.dev
-version: 5.3.9
+version: 5.4.0
 */
 
 /* SETUP */
@@ -483,10 +483,6 @@ border-left: 0;
 padding-left: 10px;          /* un poco menos a la izquierda si quieres */
 border-radius: 0 6px 6px 0;
 justify-content: center;
-}
-.bi-file-earmark-excel-fill{
-font-size: 15px;
-color: green;
 }
 .export-label { display: inline-block; }
 .export-menu {

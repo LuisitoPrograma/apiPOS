@@ -3,7 +3,7 @@ Name: apiPOS
 Author: Luisito Programa
 Website 1: luisitoprograma.com
 Website 2: apiERP.dev
-version: 5.4.1
+version: 5.4.2
 */
 
 /* Fonts */
@@ -1457,12 +1457,16 @@ background: #fff;
 font-size: 11px;
 }
 .cart-item-options{
-display: flex;
 justify-content: space-between;
 align-items: center;
 background: #fff;
 font-size: 11px;
 padding-bottom: 10px;
+}
+.a_cart_setAdd{
+display: block;
+font-size: 11px;
+cursor: pointer;
 }
 .label-cart{
 color: #888;

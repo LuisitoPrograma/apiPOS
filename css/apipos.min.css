@@ -3,7 +3,7 @@ Name: apiPOS
 Author: Luisito Programa
 Website 1: luisitoprograma.com
 Website 2: apiERP.dev
-version: 5.5.0
+version: 5.5.1
 */
 
 /* Fonts */
@@ -3280,12 +3280,74 @@ gap: 1rem;
 .newItem_col-inline label {
 margin-right: 1rem;
 }
-.newItem_list > div {
+.newItem_list > div{
 display: flex;
 gap: .5rem;
 margin-top: .5rem;
 align-items: center;
 }
+
+/* Item Units */
+.newItem_list > div.unit_card {
+display: flex;
+flex-direction: column;
+gap: .35rem;
+margin-top: .5rem;
+padding: .6rem .8rem;
+border: 1px solid #e0e0e0;
+border-radius: 8px;
+background: #fff;
+align-items: normal;
+}
+.unit_row {
+display: flex;
+flex-wrap: wrap;
+gap: .5rem;
+}
+.unit_col {
+flex: 1 1 0;
+min-width: 140px;
+}
+.unit_gain_info {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+gap: .25rem;
+margin-top: .15rem;
+font-size: .75rem;
+opacity: .9;
+}
+.unit_gain_info .gainMode {
+border: none;
+background: transparent;
+padding: 0 .3rem;
+font-size: .7rem;
+cursor: pointer;
+opacity: .5;
+}
+.unit_gain_info .gainMode.active {
+opacity: 1;
+font-weight: 600;
+background: var(--orange);
+color: white;
+border-radius: 5px;
+}
+.unit_gain_info .gainInput {
+width: 4rem;
+border: none;
+background: transparent;
+font-size: .75rem;
+padding: 0 2px;
+}
+.unit_gain_info .gainText {
+white-space: nowrap;
+color: var(--orange);
+font-weight: bold;
+}
+.newItem-span-min {
+font-size: .78rem;
+}
+
 .multi_select {
 position: relative;
 }

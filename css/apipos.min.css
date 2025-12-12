@@ -3,7 +3,7 @@ Name: apiPOS
 Author: Luisito Programa
 Website 1: luisitoprograma.com
 Website 2: apiERP.dev
-version: 5.5.9
+version: 5.6.0
 */
 
 /* Fonts */
@@ -2841,6 +2841,7 @@ height: 20px;
 }
 .shift-open-btnContainer{
 text-align: center;
+margin-top: 20px;
 }
 .shift-open-btn{
 background-color: #FF5900;
@@ -3015,6 +3016,61 @@ padding-right: 10px;
 border: none;
 border-radius: 5px;
 font-size: 13px;
+}
+.shift-count-grid{
+display: grid !important;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 12px;
+width: 100%;
+margin-top: 10px;
+}
+.shift-count-grid{
+display: grid !important;
+grid-template-columns: repeat(3, minmax(0, 1fr)); /* máximo 3 */
+gap: 8px;                /* menos espacio */
+width: 100%;
+margin-top: 6px;
+align-items: stretch;
+}
+@media (max-width: 900px){
+.shift-count-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px){
+.shift-count-grid{ grid-template-columns: 1fr; }
+}
+.shift-count-card{
+background: #fff;
+border: 1px solid rgba(0,0,0,.08);
+border-radius: 10px;
+padding: 8px 10px;          /* menor */
+box-shadow: 0 1px 6px rgba(0,0,0,.04);
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 8px;
+min-width: 0;
+}
+.shift-count-title{
+white-space: normal;
+font-size: 11px;
+}
+.shift-count-input-ui{
+width: 88px;
+max-width: 88px;
+text-align: center;
+height: 20px;
+border-radius: 8px;
+padding: 4px 8px;
+flex: 0 0 auto;
+}
+@media (max-width: 420px){
+.shift-count-card{
+flex-direction: column;
+align-items: stretch;
+}
+.shift-count-input-ui{
+width: 100%;
+}
 }
 
 /* CSS APIERP */

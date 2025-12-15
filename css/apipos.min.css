@@ -3,7 +3,7 @@ Name: apiPOS
 Author: Luisito Programa
 Website 1: luisitoprograma.com
 Website 2: apiERP.dev
-version: 5.6.0
+version: 5.6.1
 */
 
 /* Fonts */
@@ -2854,7 +2854,113 @@ border-radius: 5px;
 font-size: 13px;
 white-space: nowrap;
 }
-
+.shift-open-payments-panel{
+  width:100%;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:14px;
+  padding:12px;
+  background:#fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+}
+.shift-open-payments-header{
+  margin-bottom:10px;
+}
+.shift-open-payments-title{
+  font-weight:700;
+  font-size:14px;
+  color:#222;
+  letter-spacing:.2px;
+}
+.shift-open-payments-controls{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-bottom:10px;
+}
+.shift-open-payments-select{
+  flex: 1 1 220px;
+  min-width: 200px;
+  height: 40px;
+  border-radius:12px;
+}
+.shift-open-payments-addBtn{
+  flex: 0 0 auto;
+  height: 40px;
+  padding: 0 14px;
+  border: none;
+  border-radius:12px;
+  color:#fff;
+  background: var(--blue);
+  font-weight:700;
+  cursor:pointer;
+  transition: transform .08s ease, filter .15s ease;
+}
+.shift-open-payments-addBtn:active{ transform: scale(.98); }
+.shift-open-payments-addBtn:hover{ filter: brightness(.98); }
+.shift-open-payments-list{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap:10px;
+}
+@media (max-width: 640px){
+  .shift-open-payments-list{ grid-template-columns: 1fr; }
+}
+.shift-open-payment-card{
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:14px;
+  padding:10px;
+  background: linear-gradient(180deg, rgba(0,0,0,.01), rgba(0,0,0,0));
+}
+.shift-open-payment-cardHead{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:8px;
+}
+.shift-open-payment-name{
+  font-weight:700;
+  font-size:13px;
+  color:#222;
+}
+.shift-open-payment-removeBtn{
+  width:34px;
+  height:34px;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,.08);
+  background:#fff;
+  cursor:pointer;
+  transition: transform .08s ease, background .15s ease;
+}
+.shift-open-payment-removeBtn:hover{
+  background: rgba(255,89,0,.08);
+  border-color: rgba(255,89,0,.25);
+}
+.shift-open-payment-removeBtn:active{ transform: scale(.98); }
+.shift-open-payment-field{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.shift-open-payment-prefix{
+  flex: 0 0 auto;
+  font-weight:800;
+  color: var(--orange);
+  font-size:13px;
+  padding: 0 6px;
+  border-radius:10px;
+  background: rgba(255,89,0,.08);
+  border:1px solid rgba(255,89,0,.18);
+  height: 38px;
+  display:flex;
+  align-items:center;
+}
+.shift-open-payment-input{
+  flex: 1 1 auto;
+  height: 40px;
+  border-radius:12px;
+}
 
 /* Shift Close */
 .shift-close-container {
@@ -2865,7 +2971,6 @@ padding: 15px;
 }
 .shift-close-row1,
 .shift-close-row2,
-.shift-close-infoRow,
 .shift-close-btnRow {
 display: flex;
 justify-content: space-between;
@@ -2937,11 +3042,6 @@ padding: 5px;
 text-align: center;
 font-size: 13px;
 color: #888;
-}
-.shift-close-infoRow {
-display: flex;
-justify-content: space-between;
-align-items: center;
 }
 .shift-close-info-col {
 flex: 1;
@@ -3054,22 +3154,10 @@ min-width: 0;
 white-space: normal;
 font-size: 11px;
 }
-.shift-count-input-ui{
-width: 88px;
-max-width: 88px;
-text-align: center;
-height: 20px;
-border-radius: 8px;
-padding: 4px 8px;
-flex: 0 0 auto;
-}
 @media (max-width: 420px){
 .shift-count-card{
 flex-direction: column;
 align-items: stretch;
-}
-.shift-count-input-ui{
-width: 100%;
 }
 }
 

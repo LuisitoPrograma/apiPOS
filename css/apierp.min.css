@@ -3,7 +3,7 @@ Name: apiERP
 Author: Luisito Programa
 Website 1: luisitoprograma.com
 Website 2: apiERP.dev
-version: 5.6.3
+version: 5.6.4
 */
 
 /* SETUP */
@@ -80,6 +80,50 @@ text-decoration: none;
 h1, h2, h3, h4, h5, h6 {
 color: var(--blue);
 }
+
+/* NEW YEAR EFFECT */
+#snow-layer{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2147483647;
+  opacity: .75;
+  animation: snow-fall 10s linear infinite; /* más rápido */
+  will-change: transform;
+
+  /* Copos con núcleo + halo (menos círculo perfecto) */
+  background-image:
+    radial-gradient(circle,
+      rgba(170,215,255,.95) 0px,
+      rgba(170,215,255,.95) 2px,
+      rgba(170,215,255,.45) 3.6px,
+      rgba(170,215,255,.15) 5.4px,
+      transparent 6.8px
+    ),
+    radial-gradient(circle,
+      rgba(200,235,255,.85) 0px,
+      rgba(200,235,255,.85) 1.6px,
+      rgba(200,235,255,.35) 3px,
+      rgba(200,235,255,.12) 4.8px,
+      transparent 6px
+    ),
+    radial-gradient(circle,
+      rgba(150,205,255,.75) 0px,
+      rgba(150,205,255,.75) 2.6px,
+      rgba(150,205,255,.30) 4.6px,
+      rgba(150,205,255,.10) 6.6px,
+      transparent 8px
+    );
+
+  background-size: 260px 260px, 420px 420px, 620px 620px;
+  background-position: 0 0, 140px 80px, 300px 160px;
+}
+
+@keyframes snow-fall {
+  from { transform: translateY(-160px); }
+  to   { transform: translateY(120vh); }
+}
+
 
 /* MAIN */
 main{

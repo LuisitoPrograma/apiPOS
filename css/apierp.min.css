@@ -3,7 +3,7 @@ Name: apiERP
 Author: Luisito Programa
 Website 1: luisitoprograma.com
 Website 2: apiERP.dev
-version: 5.7.7
+version: 5.7.8
 */
 
 /* SETUP */
@@ -284,82 +284,96 @@ color: var(--white);
 }
 
 /* ALERTS */
-#ntf-flotante-container{
+#ntf-flotante-container {
 position: fixed;
 left: 50%;
 transform: translateX(-50%);
 z-index: 9999999;
 pointer-events: none;
 text-align: center;
+width: auto;
+max-width: 420px;
+padding: 10px;
+box-sizing: border-box;
+font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
-.ntf-flotante-container-top{
-top: 10%;
+.ntf-flotante-container-top {
+top: 18px;
 }
-.ntf-flotante-container-bottom{
-bottom: 10%;
+.ntf-flotante-container-bottom {
+bottom: 18px;
 }
-.ntf-flotante-orange{
-background: var(--orange);
-color: #fff;
+.ntf-flotante-message-wrapper {
+pointer-events: auto;
+display: flex;
+align-items: flex-start;
+gap: 10px;
+background: #fff;
+color: #07122a;
+padding: 12px 14px;
+border-radius: 12px;
+box-shadow: 0 8px 28px rgba(15, 23, 42, 0.12);
+border: 1px solid rgba(11,18,32,0.05);
+margin-bottom: 10px;
+width: 100%;
+box-sizing: border-box;
+opacity: 0;
+transform: translateY(-8px) scale(0.995);
+transition: transform 220ms cubic-bezier(.2,.8,.2,1), opacity 220ms ease;
+line-height: 1.25;
+font-size: 14px;
 }
-.ntf-flotante-blue{
-background: var(--blue);
-color: #fff;
+.ntf-flotante-message-wrapper.ntf-visible {
+opacity: 1;
+transform: translateY(0) scale(1);
 }
-.ntf-flotante-green{
-background: var(--green);
-color: #fff;
+.ntf-flotante-message-wrapper.ntf-hide {
+opacity: 0;
+transform: translateY(-8px) scale(0.995);
 }
-.ntf-flotante-message{
-padding: 5px 10px;
+.ntf-green   { background: var(--green, #ecfdf5); color: #03422a; border-color: rgba(16,185,129,0.08); }
+.ntf-orange  { background: var(--orange, #fff7ed); color: #7a3500; border-color: rgba(249,115,22,0.08); }
+.ntf-blue    { background: var(--blue, #eff6ff);  color: #05325f; border-color: rgba(59,130,246,0.06); }
+.ntf-inner {
+flex: 1 1 auto;
+font-size: 14px;
+text-align: left;
+word-break: break-word;
+color: var(--white);
+}
+.ntf-close-btn {
+background: transparent;
+border: none;
+color: var(--white);
+font-size: 20px;
+line-height: 1;
+cursor: pointer;
+padding: 0 6px;
+margin-left: 8px;
+border-radius: 6px;
+}
+.ntf-close-btn:hover { color: rgba(7,18,42,0.9); }
+.ntf-flotante-message {
+/* mantener por compatibilidad: convertimos a un estilo neutro para evitar conflictos */
+padding: 8px 10px;
 margin-top: 10px;
-border-radius: 4px;
-font-family: sans-serif;
+border-radius: 6px;
+font-family: inherit;
 font-size: 13px;
-box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 opacity: 0;
 }
-.ntf-flotante-top{
-animation: ntf-slide-top-fade 3s ease-in-out forwards;
+.ntf-flotante-top,
+.ntf-flotante-bottom {
+animation: none !important;
 }
-.ntf-flotante-bottom{
-animation: ntf-slide-bottom-fade 3s ease-in-out forwards;
+@keyframes ntf-slide-top-fade {
+from { transform: translateY(0); opacity: 1; }
+to   { transform: translateY(0); opacity: 1; }
 }
-@keyframes ntf-slide-top-fade{
-0% {
-transform: translateY(-20px);
-opacity: 0;
-}
-10% {
-transform: translateY(0);
-opacity: 1;
-}
-70% {
-transform: translateY(0);
-opacity: 1;
-}
-100% {
-transform: translateY(100px);
-opacity: 0;
-}
-}
-@keyframes ntf-slide-bottom-fade{
-0% {
-transform: translateY(100px);
-opacity: 0;
-}
-10% {
-transform: translateY(0);
-opacity: 1;
-}
-70% {
-transform: translateY(0);
-opacity: 1;
-}
-100% {
-transform: translateY(-20px);
-opacity: 0;
-}
+@keyframes ntf-slide-bottom-fade {
+from { transform: translateY(0); opacity: 1; }
+to   { transform: translateY(0); opacity: 1; }
 }
 
 /* REPORTS */
@@ -851,4 +865,9 @@ margin: 0;
 
 /* NOTIFIER OFFLINE */
 #offlineSyncNotifier { right:10px; left:10px; bottom:10px; width:auto; max-width:unset; }
+
+/* ALERTS */
+#ntf-flotante-container { max-width: 92%; padding: 8px; }
+.ntf-flotante-message-wrapper { padding: 10px; font-size: 13px; border-radius: 10px; }
+.ntf-close-btn { font-size: 18px; }
 }

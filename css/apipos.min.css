@@ -3,7 +3,7 @@ Name: apiPOS
 Author: Luisito Programa
 Website 1: luisitoprograma.com
 Website 2: apiERP.dev
-version: 6.0.2
+version: 6.0.3
 */
 
 /* Fonts */
@@ -3784,10 +3784,10 @@ background-color: transparent !important;
 @media (max-width: 768px){
 
 #div_section_left{
-width: 100%;
+width: 100% !important;
 }
 #div_section_right{
-width: 100%;
+width: 100% !important;
 }
 
 .modal{

@@ -3,7 +3,7 @@ Name: apiERP
 Author: Luisito Programa
 Website 1: luisitoprograma.com
 Website 2: apiERP.dev
-version: 6.0.2
+version: 6.0.3
 */
 
 /* SETUP */
@@ -338,7 +338,6 @@ transform: translateY(-8px) scale(0.995);
 flex: 1 1 auto;
 font-size: 14px;
 text-align: left;
-word-break: break-word;
 color: var(--white);
 }
 .ntf-close-btn {
@@ -867,7 +866,9 @@ margin: 0;
 #offlineSyncNotifier { right:10px; left:10px; bottom:10px; width:auto; max-width:unset; }
 
 /* ALERTS */
-#ntf-flotante-container { max-width: 92%; padding: 8px; }
+#ntf-flotante-container {
+width: 100%; padding: 8px;
+}
 .ntf-flotante-message-wrapper { padding: 10px; font-size: 13px; border-radius: 10px; }
 .ntf-close-btn { font-size: 18px; }
 }

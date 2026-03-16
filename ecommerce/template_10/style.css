@@ -1978,3 +1978,94 @@ will-change: opacity, transform, filter;
 backface-visibility: hidden;
 transform-origin: center bottom;
 }
+
+/* BOTON CART FLOTANTE */
+.floating-cart-btn{
+position:fixed;
+right:18px;
+bottom:18px;
+width:62px;
+height:62px;
+border:none;
+border-radius:999px;
+background:#FF5900;
+color:#fff;
+box-shadow:0 14px 35px rgba(0,0,0,.18);
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+z-index:99999;
+transition:transform .22s ease, box-shadow .22s ease, opacity .22s ease;
+}
+
+.floating-cart-btn:hover{
+transform:translateY(-2px) scale(1.03);
+box-shadow:0 18px 40px rgba(0,0,0,.22);
+}
+
+.floating-cart-btn:active{
+transform:scale(.96);
+}
+
+.floating-cart-icon{
+font-size:26px;
+line-height:1;
+pointer-events:none;
+}
+
+.floating-cart-badge{
+position:absolute;
+top:-4px;
+right:-2px;
+min-width:24px;
+height:24px;
+padding:0 6px;
+border-radius:999px;
+background:#080060;
+color:#fff;
+font-size:12px;
+font-weight:700;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 6px 16px rgba(0,0,0,.18);
+border:2px solid #fff;
+}
+
+.floating-cart-btn.is-buzz{
+animation:floatingCartBuzz .58s ease;
+}
+
+.floating-cart-badge.is-pop{
+animation:floatingCartBadgePop .42s ease;
+}
+
+@keyframes floatingCartBuzz{
+0%   { transform:translate3d(0,0,0) scale(1); }
+12%  { transform:translate3d(-4px,0,0) rotate(-8deg) scale(1.04); }
+24%  { transform:translate3d(4px,0,0) rotate(8deg) scale(1.07); }
+36%  { transform:translate3d(-3px,0,0) rotate(-7deg) scale(1.05); }
+48%  { transform:translate3d(3px,0,0) rotate(7deg) scale(1.08); }
+60%  { transform:translate3d(-2px,0,0) rotate(-5deg) scale(1.04); }
+72%  { transform:translate3d(2px,0,0) rotate(5deg) scale(1.03); }
+100% { transform:translate3d(0,0,0) rotate(0) scale(1); }
+}
+
+@keyframes floatingCartBadgePop{
+0%   { transform:scale(1); }
+50%  { transform:scale(1.28); }
+100% { transform:scale(1); }
+}
+
+@media (max-width: 768px){
+.floating-cart-btn{
+right:14px;
+bottom:14px;
+width:58px;
+height:58px;
+}
+.floating-cart-icon{
+font-size:24px;
+}
+}

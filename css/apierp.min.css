@@ -526,8 +526,6 @@ font-family: inherit;
 .export-btn,
 .export-toggle {
 font-size: 13px;
-color: green;
-border: 2px solid green;
 background: #fff;
 padding: 8px 12px;           /* idéntico para ambos */
 box-sizing: border-box;      /* asegurar cálculo consistente de tamaño */
@@ -538,6 +536,14 @@ gap: .5rem;
 cursor: pointer;
 line-height: 1;
 vertical-align: middle;
+}
+.report-btn-export, .export-toggle-export {
+color: green;
+border: none !important;
+}
+.report-btn-personalize, .export-toggle-personalize {
+color: var(--lead);
+border: none !important;
 }
 .export-btn {
 border-radius: 6px 0 0 6px;
@@ -570,6 +576,21 @@ display: flex; align-items: center; gap: .5rem;
 .export-btn:focus-visible,
 .export-toggle:focus-visible {
 box-shadow: 0 0 0 3px rgba(33, 115, 70, 0.12);
+}
+#customizeReportColumnsMenu li{
+font-size: 14px;
+}
+.reports-li-dropdown-menu-excel{
+background-color: #008000; border-top: 1px solid #333; color: #fff; font-weight: normal !important; font-size: 14px;
+}
+.reports-li-dropdown-menu-excel:hover{
+background-color: #00800090; color: #fff;
+}
+.reports-li-dropdown-menu-pdf{
+background-color: #FF0000; border-top: 1px solid #333; color: #fff; font-weight: normal !important; font-size: 14px;
+}
+.reports-li-dropdown-menu-pdf:hover{
+background-color: #FF000090; color: #fff;
 }
 @media (max-width: 420px){
 .export-label { display: none; }

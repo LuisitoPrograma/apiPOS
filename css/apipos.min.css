@@ -3,7 +3,7 @@ Name: apiPOS
 Author: Luisito Programa
 Website 1: luisitoprograma.com
 Website 2: apiERP.dev
-version: 6.1.8
+version: 6.1.9
 */
 
 /* Fonts */
@@ -4542,7 +4542,7 @@ padding: 18px !important;
 /* layout principal */
 #modal_opt_root .modal_opt_shell{
 display: grid !important;
-grid-template-columns: minmax(0, 1fr) 320px;
+grid-template-columns: minmax(0, 1fr) 74px;
 gap: 18px;
 height: 100%;
 min-height: 0;
@@ -4580,14 +4580,18 @@ background: transparent;
 min-width: 0;
 min-height: 0;
 height: 100%;
-overflow-x: hidden;
-overflow-y: auto;
-border: 1px solid #eceef5;
+overflow: hidden;
+border: none;
 border-radius: 24px;
-box-shadow: inset 0 1px 0 rgba(255,255,255,.9);
+box-shadow: none;
 scrollbar-width: thin;
 scrollbar-color: #c9cfdb transparent;
 box-sizing: border-box;
+display: flex;
+align-items: flex-start;
+justify-content: center;
+padding-top: 2px;
+background: transparent !important;
 }
 
 #modal_opt_root .modal_opt_sidebar::-webkit-scrollbar{
@@ -4604,10 +4608,11 @@ background: transparent;
 }
 
 #modal_opt_root .container-buttons{
-margin-bottom: 8px;
+margin-bottom: 0;
 display: flex;
-justify-content: flex-end;
-align-items: center;
+justify-content: center;
+align-items: flex-start;
+width: 100%;
 }
 
 #modal_opt_root .closeModal{
@@ -4970,10 +4975,228 @@ margin-top: 12px;
 display: none !important;
 }
 
+#modal_opt_root .modal_opt_shortcuts_grid{
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 12px;
+width: 100%;
+}
+
+#modal_opt_root .modal_opt_shortcuts_grid .btn-options{
+margin-top: 0;
+min-height: 58px;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile_wrap{
+width: 100%;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile_header{
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
+gap: 12px;
+margin-bottom: 12px;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile_title{
+font-size: 14px;
+font-weight: 700;
+color: #111827;
+line-height: 1.2;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile_subtitle{
+margin-top: 4px;
+font-size: 12px;
+color: #6b7280;
+line-height: 1.45;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile_counter{
+padding: 8px 10px;
+border-radius: 12px;
+background: #fff7f0;
+color: #FC5900;
+font-size: 12px;
+font-weight: 700;
+white-space: nowrap;
+border: 1px solid rgba(252,89,0,.12);
+}
+
+#modal_opt_root .mdl_opt_dropzonefile{
+position: relative;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 8px;
+min-height: 220px;
+padding: 22px 18px;
+border: 2px dashed #d7deeb;
+border-radius: 22px;
+background: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+text-align: center;
+transition: .18s ease;
+margin-bottom: 12px;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile.is-dragover{
+border-color: rgba(252,89,0,.45);
+background: #fff7f2;
+box-shadow: 0 0 0 4px rgba(252,89,0,.08);
+}
+
+#modal_opt_root .mdl_opt_dropzonefile_icon{
+width: 58px;
+height: 58px;
+border-radius: 18px;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+background: rgba(252,89,0,.10);
+color: #FC5900;
+font-size: 26px;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile_text{
+font-size: 15px;
+font-weight: 700;
+color: #111827;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile_hint{
+font-size: 12px;
+color: #6b7280;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile_selectbtn{
+border: none;
+border-radius: 14px;
+padding: 11px 18px;
+font-size: 13px;
+font-weight: 700;
+background: linear-gradient(180deg, #FC5900 0%, #f05200 100%);
+color: #fff;
+cursor: pointer;
+transition: .18s ease;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile_selectbtn:hover{
+background: linear-gradient(180deg, #080060 0%, #06004a 100%);
+}
+
+#modal_opt_root .mdl_opt_inputfile{
+display: none !important;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile_list{
+display: flex;
+flex-direction: column;
+gap: 10px;
+margin-bottom: 12px;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile_item{
+display: flex;
+align-items: flex-start;
+gap: 10px;
+padding: 12px;
+border: 1px solid #e7ebf3;
+border-radius: 16px;
+background: #fff;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile_item_uploaded{
+background: #fbfcff;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile_item_icon{
+width: 42px;
+height: 42px;
+border-radius: 12px;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+background: #fff3ed;
+color: #FC5900;
+font-size: 12px;
+font-weight: 800;
+flex: 0 0 42px;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile_item_meta{
+min-width: 0;
+flex: 1 1 auto;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile_item_name{
+font-size: 13px;
+font-weight: 700;
+color: #111827;
+line-height: 1.3;
+word-break: break-word;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile_item_sub{
+font-size: 11px;
+color: #6b7280;
+margin-top: 3px;
+word-break: break-all;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile_item_sub a{
+color: #2563eb;
+text-decoration: none;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile_item_sub a:hover{
+text-decoration: underline;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile_remove{
+width: 34px;
+height: 34px;
+border: 1px solid #eceef5;
+border-radius: 10px;
+background: #fff;
+color: #ef4444;
+font-size: 22px;
+line-height: 1;
+cursor: pointer;
+flex: 0 0 34px;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile_remove:hover{
+background: #fff5f5;
+border-color: #fecaca;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile_empty{
+padding: 14px;
+border-radius: 14px;
+background: #f8fafc;
+border: 1px dashed #dbe2ee;
+font-size: 12px;
+color: #6b7280;
+text-align: center;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile_uploaded{
+margin-top: 10px;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile_uploaded_title{
+font-size: 12px;
+font-weight: 700;
+color: #374151;
+margin-bottom: 10px;
+}
+
 /* ---------- Desktop mediano ---------- */
 @media (max-width: 1199px){
 #modal_opt_root .modal_opt_shell{
-grid-template-columns: minmax(0, 1fr) 290px;
+grid-template-columns: minmax(0, 1fr) 74px;
 }
 }
 
@@ -5004,12 +5227,11 @@ order: 1;
 flex: 0 0 auto;
 height: auto !important;
 min-height: auto !important;
-max-height: 32vh;
-overflow-y: auto;
-display: grid;
-grid-template-columns: repeat(2, minmax(0,1fr));
-gap: 10px;
-padding: 14px !important;
+max-height: none;
+overflow: visible;
+display: flex;
+justify-content: flex-end;
+padding: 0 !important;
 }
 
 #modal_opt_root .modal_opt_main{
@@ -5068,6 +5290,22 @@ max-height: 30vh;
 #modal_opt_root [id^="map_select_container_"]{
 min-height: 220px;
 }
+#modal_opt_root .modal_opt_shortcuts_grid{
+grid-template-columns: 1fr;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile_header{
+flex-direction: column;
+align-items: stretch;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile_counter{
+width: fit-content;
+}
+
+#modal_opt_root .mdl_opt_dropzonefile{
+min-height: 190px;
+}
 }
 
 @media (max-width: 575px){
@@ -5102,12 +5340,14 @@ overflow: hidden;
 }
 
 #modal_opt_root .modal_opt_sidebar{
-grid-template-columns: 1fr;
-max-height: 26vh;
-padding: 12px !important;
-border-radius: 18px !important;
-overflow-y: auto !important;
+grid-template-columns: none;
+max-height: none;
+padding: 0 !important;
+border-radius: 0 !important;
+overflow: visible !important;
 -webkit-overflow-scrolling: touch;
+display: flex;
+justify-content: flex-end;
 }
 
 #modal_opt_root .modal_opt_main{

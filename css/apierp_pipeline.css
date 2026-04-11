@@ -165,8 +165,8 @@ gap: 0.5rem;
 }
 
 .pipeline_etapa_count {
-background: rgba(99, 102, 241, 0.1);
-color: #6366f1;
+background: rgba(255, 89, 0, 0.10);
+color: var(--pipeline_accent);
 padding: 0.25rem 0.5rem;
 border-radius: 9999px;
 font-weight: 600;
@@ -189,8 +189,8 @@ color: var(--pipeline_text_secondary);
 }
 
 .pipeline_etapa_actions button:hover {
-background: rgba(99, 102, 241, 0.1);
-color: #6366f1;
+background: rgba(255, 89, 0, 0.10);
+color: var(--pipeline_accent);
 }
 
 /* Tickets mejorados */
@@ -234,7 +234,7 @@ transform: scale(0.98);
 width: 3rem;
 height: 3rem;
 border-radius: var(--pipeline_radius_md);
-background: linear-gradient(135deg, #667eea, #764ba2);
+background: linear-gradient(135deg, var(--orange), var(--blue));
 display: flex;
 align-items: center;
 justify-content: center;
@@ -303,16 +303,16 @@ color: var(--pipeline_text_secondary);
 }
 
 .pipeline_ticket_actions button:hover {
-background: rgba(99, 102, 241, 0.1);
-color: #6366f1;
+background: rgba(255, 89, 0, 0.10);
+color: var(--pipeline_accent);
 }
 
 .pipeline_add_ticket_btn {
 width: 100%;
 padding: 0.75rem;
-background: rgba(99, 102, 241, 0.05);
-color: #6366f1;
-border: 1px dashed #c7d2fe;
+background: rgba(255, 89, 0, 0.05);
+color: var(--pipeline_accent);
+border: 1px dashed rgba(255, 89, 0, 0.30);
 border-radius: var(--pipeline_radius_md);
 font-weight: 600;
 cursor: pointer;
@@ -324,8 +324,8 @@ gap: 0.5rem;
 }
 
 .pipeline_add_ticket_btn:hover {
-background: rgba(99, 102, 241, 0.1);
-border-color: #6366f1;
+background: rgba(255, 89, 0, 0.10);
+border-color: var(--pipeline_accent);
 }
 
 /* Modal mejorado */
@@ -683,8 +683,8 @@ transition: var(--pipeline_transition);
 }
 
 .pipeline_input_with_icon:focus-within {
-border-color: #6366f1;
-box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+border-color: var(--pipeline_accent);
+box-shadow: 0 0 0 3px rgba(255, 89, 0, 0.10);
 }
 
 .pipeline_input_icon {
@@ -829,66 +829,12 @@ align-items: center;
 gap: 0.25rem;
 }
 
-.pipeline_select_tag_placeholder {
-color: var(--pipeline_text_secondary);
-font-size: 0.875rem;
-}
-
-.pipeline_select_list_dropdown {
-position: absolute;
-top: 100%;
-left: 0;
-right: 0;
-background: white;
-border: 1px solid #6366f1;
-border-top: none;
-border-radius: 0 0 var(--pipeline_radius_md) var(--pipeline_radius_md);
-box-shadow: var(--pipeline_shadow_lg);
-max-height: 200px;
-overflow-y: auto;
-display: none;
-z-index: 1001;
-}
-
-.pipeline_select_list_dropdown div {
-padding: 0.75rem;
-cursor: pointer;
-font-size: 0.875rem;
-color: var(--pipeline_text_primary);
-transition: var(--pipeline_transition);
-}
-
-.pipeline_select_list_dropdown div:hover {
-background: #f1f5f9;
-}
-
-.pipeline_select_list_dropdown div.selected {
-background: #eef2ff;
-font-weight: 700;
-color: #6366f1;
-position: relative;
-}
-
-.pipeline_select_list_dropdown div.selected::after {
-content: "✓";
-color: #6366f1;
-position: absolute;
-right: 0.75rem;
-font-weight: 900;
-}
-
 /* Grid de dos columnas */
 .pipeline_two_columns {
 display: grid;
 grid-template-columns: 1fr 1fr;
 gap: 1rem;
 margin-bottom: 1rem;
-}
-
-@media (max-width: 768px) {
-.pipeline_two_columns {
-grid-template-columns: 1fr;
-}
 }
 
 /* Estados de plazo */
@@ -1108,10 +1054,6 @@ gap: 1rem;
 min-width: auto;
 }
 
-.pipeline_modal_body {
-flex-direction: column;
-}
-
 .pipeline_modal_sidebar {
 width: 100%;
 border-right: none;
@@ -1181,18 +1123,6 @@ justify-content: space-between;
 align-items: center;
 gap: 1rem;
 padding: 0.5rem 0;
-}
-
-.pipeline_selector_title {
-font-size: 1.75rem;
-font-weight: 800;
-color: #fff;
-margin-bottom: 0.25rem;
-}
-
-.pipeline_selector_subtitle {
-font-size: 0.95rem;
-color: rgba(255,255,255,0.85);
 }
 
 .pipeline_selector_grid {
@@ -1306,8 +1236,8 @@ font-size: 0.75rem;
 font-weight: 700;
 padding: 0.35rem 0.6rem;
 border-radius: 999px;
-background: #eef2ff;
-color: #4f46e5;
+background: rgba(255, 89, 0, 0.08);
+color: var(--pipeline_accent);
 }
 
 .pipeline_empty_state {
@@ -1349,8 +1279,8 @@ transition: var(--pipeline_transition);
 }
 
 .pipeline_field_plain:focus {
-border-color: #6366f1;
-box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+border-color: var(--pipeline_accent);
+box-shadow: 0 0 0 3px rgba(255, 89, 0, 0.10);
 }
 
 @media (max-width: 900px) {
@@ -1361,14 +1291,4 @@ grid-template-columns: 1fr;
 .pipeline_selector_card_wrap {
 display: block;
 position: relative;
-}
-
-.pipeline_selector_card_actions {
-display: flex;
-justify-content: flex-end;
-}
-
-.pipeline_selector_card_actions .pipeline_btn_secondary {
-padding: 0.55rem 0.85rem;
-font-size: 0.8rem;
 }

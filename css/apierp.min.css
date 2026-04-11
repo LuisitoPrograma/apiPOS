@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, h6 {
 color: var(--blue);
 }
 
-/* NEW YEAR EFFECT */
+/* EFFECT - NEW YEAR */
 #snow-layer{
 position: fixed;
 inset: 0;
@@ -66,12 +66,10 @@ transparent 8px
 background-size: 260px 260px, 420px 420px, 620px 620px;
 background-position: 0 0, 140px 80px, 300px 160px;
 }
-
 @keyframes snow-fall {
 from { transform: translateY(-160px); }
 to   { transform: translateY(120vh); }
 }
-
 
 /* MAIN */
 main{

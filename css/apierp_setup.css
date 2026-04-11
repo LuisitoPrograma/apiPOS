@@ -1,0 +1,59 @@
+/*
+Name: apiERP
+Author: Luisito Programa
+Website 1: luisitoprograma.com
+Website 2: apiERP.dev
+version: 6.2.2
+*/
+
+/* SETUP */
+@font-face{
+font-family: 'Poppins';
+src: url('../fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+font-weight: 700;
+font-style: normal;
+}
+@font-face{
+font-family: 'Poppins';
+src: url('../fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+font-weight: 400;
+font-style: normal;
+}
+@font-face{
+font-family: 'Raleway';
+src: url('../fonts/Raleway/Raleway-Bold.ttf') format('truetype');
+font-weight: 700;
+font-style: normal;
+}
+@font-face{
+font-family: 'Raleway';
+src: url('../fonts/Raleway/Raleway-Regular.ttf') format('truetype');
+font-weight: 400;
+font-style: normal;
+}
+@font-face{
+font-family: 'Roboto';
+src: url('../fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+font-weight: 700;
+font-style: normal;
+}
+@font-face{
+font-family: 'Roboto';
+src: url('../fonts/Roboto/Roboto-Light.ttf') format('truetype');
+font-weight: 200;
+font-style: normal;
+}
+@font-face{
+font-family: 'Roboto';
+src: url('../fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+font-weight: 400;
+font-style: normal;
+}
+:root {
+--blue: #080060;
+--orange: #FF5900;
+--green: #109500;
+--lead: #888;
+--transparent: #f7f7f7;
+--white: #fff;
+}

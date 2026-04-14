@@ -3,7 +3,7 @@ Name: apiPOS
 Author: Luisito Programa
 Website 1: luisitoprograma.com
 Website 2: apiERP.dev
-version: 6.2.2
+version: 6.2.3
 */
 
 :root {
@@ -43,13 +43,6 @@ linear-gradient(135deg, #fff7f2 0%, #f7f7fb 45%, #eef2ff 100%);
 min-height: 100vh;
 color: var(--pipeline_text_primary);
 line-height: 1.6;
-}
-
-.pipeline_app_container {
-max-width: 1400px;
-margin: 0 auto;
-padding: 1.5rem;
-min-height: 100vh;
 }
 
 /* Header mejorado */
@@ -200,6 +193,23 @@ display: flex;
 flex-direction: column;
 gap: 0.75rem;
 min-height: 100px;
+max-height: min(58vh, 720px);
+overflow-y: auto;
+padding-right: 0.2rem;
+scrollbar-gutter: stable;
+}
+
+.pipeline_tickets_container::-webkit-scrollbar {
+width: 8px;
+}
+
+.pipeline_tickets_container::-webkit-scrollbar-track {
+background: transparent;
+}
+
+.pipeline_tickets_container::-webkit-scrollbar-thumb {
+background: rgba(15, 23, 42, 0.18);
+border-radius: 999px;
 }
 
 .pipeline_ticket {
@@ -492,9 +502,6 @@ margin-bottom: 0;
 }
 
 @media (max-width: 640px) {
-.pipeline_app_container {
-padding: 0.75rem;
-}
 
 .pipeline_header_titles h1 {
 font-size: 1.2rem;
@@ -1036,9 +1043,6 @@ border-color: rgba(8, 0, 96, 0.22);
 
 /* Responsive */
 @media (max-width: 768px) {
-.pipeline_app_container {
-padding: 1rem;
-}
 
 .pipeline_header_content {
 flex-direction: column;
@@ -1291,4 +1295,472 @@ grid-template-columns: 1fr;
 .pipeline_selector_card_wrap {
 display: block;
 position: relative;
+}
+.pipeline_field_plain_textarea {
+resize: vertical;
+min-height: 96px;
+line-height: 1.5;
+}
+
+.pipeline_delete_icon_btn {
+background: transparent;
+border: none;
+cursor: pointer;
+width: 2rem;
+height: 2rem;
+border-radius: var(--pipeline_radius_md);
+display: flex;
+align-items: center;
+justify-content: center;
+color: #94a3b8;
+transition: var(--pipeline_transition);
+flex-shrink: 0;
+}
+
+.pipeline_delete_icon_btn:hover {
+background: #fef2f2;
+color: #dc2626;
+}
+
+.pipeline_comment_card {
+display: flex;
+justify-content: space-between;
+gap: 0.75rem;
+padding: 0.9rem;
+border-radius: var(--pipeline_radius_md);
+margin-bottom: 0.65rem;
+background: #fff;
+border: 1px solid #e2e8f0;
+transition: var(--pipeline_transition);
+}
+
+.pipeline_comment_card:hover {
+box-shadow: var(--pipeline_shadow_sm);
+}
+
+.pipeline_comment_card_body {
+flex: 1;
+min-width: 0;
+}
+
+.pipeline_comment_card_header {
+display: flex;
+justify-content: space-between;
+gap: 1rem;
+flex-wrap: wrap;
+margin-bottom: 0.45rem;
+}
+
+.pipeline_comment_card_author {
+font-weight: 800;
+font-size: 0.875rem;
+color: var(--pipeline_text_primary);
+}
+
+.pipeline_comment_card_date {
+font-size: 0.75rem;
+color: var(--pipeline_text_secondary);
+}
+
+.pipeline_comment_card_text {
+font-size: 0.875rem;
+color: var(--pipeline_text_primary);
+line-height: 1.55;
+white-space: pre-wrap;
+word-break: break-word;
+}
+
+.pipeline_ticket_people {
+display: flex;
+flex-wrap: wrap;
+gap: 0.45rem;
+margin-bottom: 0.55rem;
+}
+
+.pipeline_ticket_person_chip {
+display: inline-flex;
+align-items: center;
+gap: 0.3rem;
+padding: 0.32rem 0.55rem;
+border-radius: 999px;
+font-size: 0.72rem;
+font-weight: 700;
+line-height: 1.2;
+}
+
+.pipeline_ticket_person_chip_usuario {
+background: #eff6ff;
+color: #1d4ed8;
+}
+
+.pipeline_ticket_person_chip_cliente {
+background: #ecfdf5;
+color: #047857;
+}
+
+.pipeline_ticket_person_chip_proveedor {
+background: #fff7ed;
+color: #c2410c;
+}
+
+.pipeline_ticket_person_chip_colaborador {
+background: #f5f3ff;
+color: #6d28d9;
+}
+
+.pipeline_ticket_tags {
+display: flex;
+flex-wrap: wrap;
+gap: 0.4rem;
+margin-bottom: 0.55rem;
+}
+
+.pipeline_ticket_tag_chip {
+display: inline-flex;
+align-items: center;
+padding: 0.28rem 0.52rem;
+border-radius: 999px;
+font-size: 0.72rem;
+font-weight: 800;
+box-shadow: var(--pipeline_shadow_sm);
+}
+
+.pipeline_ticket_progress_wrap {
+margin-bottom: 0.6rem;
+}
+
+.pipeline_ticket_progress_meta {
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 0.72rem;
+font-weight: 700;
+color: var(--pipeline_text_secondary);
+margin-bottom: 0.28rem;
+}
+
+.pipeline_ticket_progress_bar {
+height: 7px;
+background: #e5e7eb;
+border-radius: 999px;
+overflow: hidden;
+}
+
+.pipeline_ticket_progress_fill {
+height: 100%;
+background: linear-gradient(90deg, #22c55e, #16a34a);
+border-radius: 999px;
+transition: width 0.25s ease;
+}
+
+.pipeline_etapa {
+padding: 0;
+overflow: hidden;
+border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.pipeline_etapa_header {
+padding: 1rem 1rem 0.95rem 1rem;
+border-bottom: none;
+}
+
+.pipeline_etapa_title,
+.pipeline_etapa_actions button {
+color: inherit;
+}
+
+.pipeline_etapa_actions button:hover {
+background: rgba(255,255,255,0.16);
+color: inherit;
+}
+
+.pipeline_tickets_container {
+padding: 1rem;
+}
+
+.pipeline_add_ticket_btn {
+margin: 0 1rem 1rem 1rem;
+width: auto;
+}
+
+.pipeline_stage_dragging {
+opacity: 0.55;
+transform: scale(0.98);
+}
+
+.pipeline_stage_drop_target {
+outline: 2px dashed rgba(255, 89, 0, 0.55);
+outline-offset: -8px;
+}
+
+.pipeline_board_shell {
+display: flex;
+flex-direction: column;
+gap: 1rem;
+width: 100%;
+min-height: 70vh;
+}
+
+.pipeline_board_scroller {
+overflow-x: auto;
+padding-bottom: 1rem;
+}
+
+.pipeline_board_inner {
+display: flex;
+gap: 1.5rem;
+min-height: 100%;
+}
+
+.pipeline_filters_bar {
+background: rgba(255,255,255,0.97);
+border: 1px solid rgba(8, 0, 96, 0.08);
+border-radius: 1rem;
+padding: 1rem;
+box-shadow: var(--pipeline_shadow_md);
+}
+
+.pipeline_filters_grid {
+display: grid;
+grid-template-columns: repeat(5, minmax(0, 1fr));
+gap: 0.85rem;
+align-items: end;
+}
+
+.pipeline_filter_item {
+min-width: 0;
+}
+
+.pipeline_filter_item_search {
+grid-column: span 2;
+}
+
+.pipeline_filter_item label {
+display: block;
+margin-bottom: 0.4rem;
+font-size: 0.8rem;
+font-weight: 800;
+color: var(--pipeline_text_primary);
+}
+
+.pipeline_filter_actions {
+display: flex;
+justify-content: flex-end;
+align-items: end;
+}
+
+.pipeline_comment_form_row {
+display: flex;
+gap: 0.75rem;
+align-items: flex-start;
+}
+
+.pipeline_comment_submit_btn {
+min-width: 120px;
+align-self: stretch;
+}
+
+@media (max-width: 1200px) {
+.pipeline_filters_grid {
+grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.pipeline_filter_item_search {
+grid-column: span 3;
+}
+}
+
+@media (max-width: 768px) {
+.pipeline_filters_grid {
+grid-template-columns: 1fr;
+}
+.pipeline_filter_item_search {
+grid-column: span 1;
+}
+.pipeline_comment_form_row {
+flex-direction: column;
+}
+.pipeline_comment_submit_btn {
+width: 100%;
+min-width: 0;
+}
+.pipeline_board_inner {
+flex-direction: column;
+}
+.pipeline_add_ticket_btn {
+width: calc(100% - 2rem);
+}
+}
+@media (max-width: 768px) {
+.pipeline_tickets_container {
+max-height: 52vh;
+}
+}
+.pipeline_filters_shell {
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
+
+.pipeline_filters_topbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 1rem;
+flex-wrap: wrap;
+}
+
+.pipeline_filters_topbar_left {
+display: flex;
+align-items: center;
+gap: 0.75rem;
+min-width: 0;
+}
+
+.pipeline_filters_topbar_title_wrap {
+display: flex;
+flex-direction: column;
+gap: 0.12rem;
+}
+
+.pipeline_filters_topbar_title {
+font-size: 1rem;
+font-weight: 800;
+color: var(--pipeline_text_primary);
+}
+
+.pipeline_filters_topbar_subtitle {
+font-size: 0.78rem;
+color: var(--pipeline_text_secondary);
+}
+
+.pipeline_filters_active_badge {
+min-width: 1.8rem;
+height: 1.8rem;
+padding: 0 0.55rem;
+border-radius: 999px;
+background: linear-gradient(135deg, var(--orange), #ff7a2f);
+color: #fff;
+font-size: 0.78rem;
+font-weight: 800;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+box-shadow: var(--pipeline_shadow_md);
+}
+
+.pipeline_filters_toggle_btn {
+min-width: 170px;
+justify-content: center;
+}
+
+.pipeline_filters_toggle_btn svg {
+transition: transform 0.2s ease;
+}
+
+.pipeline_filters_toggle_btn.is-open svg {
+transform: rotate(180deg);
+}
+
+.pipeline_filters_body {
+animation: pipeline_fadeInFilters 0.22s ease;
+}
+
+@keyframes pipeline_fadeInFilters {
+from {
+opacity: 0;
+transform: translateY(-6px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+.pipeline_filters_grid {
+background: linear-gradient(180deg, #ffffff, #fffaf7);
+border: 1px solid rgba(8, 0, 96, 0.06);
+border-radius: 1rem;
+padding: 1rem;
+}
+
+.pipeline_filter_item {
+background: #fff;
+border: 1px solid #eef2f7;
+border-radius: 0.9rem;
+padding: 0.8rem;
+box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+}
+
+.pipeline_filter_actions {
+display: flex;
+justify-content: flex-end;
+align-items: stretch;
+}
+
+.pipeline_filter_actions .pipeline_btn_secondary {
+height: 100%;
+min-height: 3rem;
+}
+
+.pipeline_stage_dragging {
+opacity: 0.5;
+transform: scale(0.985);
+box-shadow: 0 22px 40px -18px rgba(15, 23, 42, 0.35);
+}
+
+.pipeline_stage_drop_target {
+outline: 2px dashed rgba(255, 89, 0, 0.45);
+outline-offset: -10px;
+transform: translateY(-2px);
+}
+
+.pipeline_ticket.dragging {
+opacity: 0.55;
+transform: rotate(1deg) scale(0.985);
+box-shadow: 0 18px 30px -16px rgba(15, 23, 42, 0.32);
+}
+
+.pipeline_etapa,
+.pipeline_ticket {
+transition:
+transform 0.2s ease,
+box-shadow 0.2s ease,
+opacity 0.2s ease,
+background 0.2s ease,
+border-color 0.2s ease;
+}
+
+.pipeline_board_scroller {
+overflow-x: auto;
+overflow-y: hidden;
+scroll-behavior: smooth;
+}
+
+@media (max-width: 992px) {
+.pipeline_filters_topbar {
+align-items: stretch;
+}
+.pipeline_filters_topbar_right {
+width: 100%;
+}
+.pipeline_filters_toggle_btn {
+width: 100%;
+}
+}
+
+@media (max-width: 768px) {
+.pipeline_filters_bar {
+padding: 0.85rem;
+}
+.pipeline_filters_grid {
+padding: 0.8rem;
+gap: 0.75rem;
+}
+.pipeline_filter_item {
+padding: 0.75rem;
+border-radius: 0.85rem;
+}
+.pipeline_filters_topbar_left {
+align-items: flex-start;
+}
 }

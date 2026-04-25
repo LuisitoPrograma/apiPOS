@@ -1311,9 +1311,8 @@ align-items: center;
 }
 
 .header-logo .brand-logo {
-width: 40px;
-height: 40px;
-border-radius: 12px;
+width: auto;
+height: 80px;
 }
 
 /* Buscador */
@@ -4335,5 +4334,78 @@ padding:18px 16px 14px 16px;
 
 .register-modal-body{
 padding:16px;
+}
+}
+
+/* =========================== HEADER SOCIAL LINKS =========================== */
+.header-social-links {
+display: inline-flex;
+align-items: center;
+justify-content: flex-end;
+gap: 5px;
+flex-wrap: wrap;
+}
+
+.header-social-links[hidden] {
+display: none !important;
+}
+
+.header-social-link {
+width: 36px;
+height: 36px;
+border-radius: 999px;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+background: white;
+transition: transform .16s ease, box-shadow .16s ease, filter .16s ease;
+}
+
+.header-social-link:hover {
+transform: translateY(-2px);
+box-shadow: 0 12px 26px rgba(0,0,0,.16);
+filter: brightness(1.03);
+}
+
+.header-social-link svg {
+width: 19px;
+height: 19px;
+display: block;
+fill: currentColor;
+}
+
+.header-social-link.is-whatsapp path {
+color: #25D366;
+}
+
+.header-social-link.is-facebook path {
+color: #1877F2;
+}
+
+.header-social-link.is-instagram path {
+color: #E4405F;
+}
+
+.header-social-link.is-tiktok path {
+color: #111111;
+}
+
+@media (max-width: 640px) {
+.header-sub {
+align-items: center;
+}
+
+.header-social-links {
+gap: 8px;
+}
+
+.header-social-link {
+width: 34px;
+height: 34px;
+}
+
+.header-social-link svg {
+width: 18px;
+height: 18px;
 }
 }

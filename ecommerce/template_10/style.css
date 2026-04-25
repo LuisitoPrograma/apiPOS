@@ -259,15 +259,9 @@ padding: 9px 10px;
 outline: none;
 }
 
-.hero {
-padding: 14px 0 6px 0
-}
-
 .hero-carousel {
 position: relative;
 overflow: hidden;
-border-radius: 26px;
-border: 1px solid rgba(var(--brand-rgb), .12);
 box-shadow: var(--shadow-brand);
 background:
 linear-gradient(180deg, rgba(var(--brand-rgb), .06), rgba(var(--brand-rgb), .02)),
@@ -1255,8 +1249,6 @@ position: relative;
 z-index: 30;
 background:
 linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.92));
-border-bottom: 1px solid rgba(var(--brand-rgb), .10);
-box-shadow: 0 8px 28px rgba(18, 26, 45, .05);
 backdrop-filter: blur(12px);
 }
 

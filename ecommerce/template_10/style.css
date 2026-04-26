@@ -11,7 +11,7 @@
 --panel: #ffffff;
 --panel2: #f7f8fc;
 
---text: #0b0c10;
+--text: #333333;
 --muted: rgba(11, 12, 16, .65);
 
 --line: rgba(11, 12, 16, .10);
@@ -405,9 +405,10 @@ margin-bottom: 16px;
 }
 
 .home-cat-title {
-font-weight: 900;
-font-size: 1.35rem;
+font-weight: 600;
+font-size: 1.80rem;
 margin: 0 0 6px 0;
+color: var(--text);
 }
 
 .home-cat-desc {
@@ -420,13 +421,6 @@ font-size: .9rem;
 text-align: center;
 margin-bottom: 16px;
 position: relative;
-}
-
-.home-cat-title {
-font-weight: 900;
-font-size: 1.35rem;
-margin: 0 0 6px 0;
-color: #111827;
 }
 
 .home-cat-desc {
@@ -1358,13 +1352,13 @@ padding: 0 6px;
 }
 
 .header-account-title {
-font-size: .78rem;
+font-size: 0.9rem;
 color: var(--muted);
 }
 
 .header-account-sub {
-font-size: .86rem;
-font-weight: 800;
+font-size: 1rem;
+font-weight: 700;
 }
 
 .header-icon-btn {
@@ -1382,9 +1376,13 @@ transition: all .18s ease;
 }
 
 .header-icon-btn:hover {
-border-color: rgba(var(--brand-rgb), .28);
-background: linear-gradient(180deg, #fff, rgba(var(--brand-rgb), .08));
+border-color: var(--brand);
+background: var(--brand);
 transform: translateY(-1px);
+}
+
+#btnOpenWishlist{
+font-size: 20px;
 }
 
 /* Reusar badge del carrito actual */

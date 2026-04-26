@@ -196,15 +196,6 @@ gap: 12px;
 min-width: 220px
 }
 
-.brand-logo {
-width: 44px;
-height: 44px;
-border-radius: 14px;
-object-fit: cover;
-border: 1px solid var(--line);
-background: var(--panel2);
-}
-
 .brand-name {
 font-weight: 850;
 letter-spacing: .2px
@@ -1299,6 +1290,7 @@ align-items: center;
 .header-logo .brand-logo {
 width: auto;
 height: 80px;
+object-fit: cover;
 }
 
 /* Buscador */

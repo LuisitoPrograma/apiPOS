@@ -4867,7 +4867,7 @@ overflow-x: hidden !important;
 overscroll-behavior: contain !important;
 padding-right: 6px !important;
 scrollbar-width: thin;
-scrollbar-color: rgba(var(--brand-rgb), .45) transparent;
+scrollbar-color: rgba(var(--brand-rgb), 1) transparent;
 }
 
 .mainmenu-panel {
@@ -4876,6 +4876,8 @@ max-height: calc(100dvh - 56px) !important;
 overflow-y: auto !important;
 overflow-x: hidden !important;
 overscroll-behavior: contain !important;
+scrollbar-width: thin;
+scrollbar-color: rgba(var(--brand-rgb), 1) transparent;
 }
 
 .mainmenu-list-v2::-webkit-scrollbar,

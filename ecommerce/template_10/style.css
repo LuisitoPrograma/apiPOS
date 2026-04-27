@@ -4812,8 +4812,243 @@ grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 }
 
-/* =========================== FIX QUIRÚRGICO MAIN MENU BACK =========================== */
+/* =========================== FIX MAIN MENU BACK =========================== */
 .mainmenu-back-btn[hidden],
 .mainmenu-hello[hidden] {
 display: none !important;
+}
+
+/* =========================================================
+FIX FINAL CORRECTO: menú responsive + scroll sin romper niveles
+========================================================= */
+
+.mainmenu-v2 {
+height: 100dvh !important;
+max-height: 100dvh !important;
+overflow: hidden !important;
+}
+
+.mainmenu-head-v2 {
+flex: 0 0 auto !important;
+min-height: 0 !important;
+}
+
+.mainmenu-body-v2 {
+flex: 1 1 auto !important;
+min-height: 0 !important;
+height: auto !important;
+overflow: hidden !important;
+padding: 0 !important;
+}
+
+.mainmenu-shell {
+height: 100% !important;
+min-height: 0 !important;
+max-height: 100% !important;
+overflow: hidden !important;
+}
+
+.mainmenu-rail {
+min-height: 0 !important;
+max-height: 100% !important;
+overflow: hidden !important;
+}
+
+.mainmenu-rail .mainmenu-title {
+flex: 0 0 auto !important;
+}
+
+.mainmenu-list-v2 {
+min-height: 0 !important;
+height: auto !important;
+max-height: calc(100dvh - 76px) !important;
+overflow-y: auto !important;
+overflow-x: hidden !important;
+overscroll-behavior: contain !important;
+padding-right: 6px !important;
+scrollbar-width: thin;
+scrollbar-color: rgba(var(--brand-rgb), .45) transparent;
+}
+
+.mainmenu-panel {
+min-height: 0 !important;
+max-height: calc(100dvh - 56px) !important;
+overflow-y: auto !important;
+overflow-x: hidden !important;
+overscroll-behavior: contain !important;
+}
+
+.mainmenu-list-v2::-webkit-scrollbar,
+.mainmenu-panel::-webkit-scrollbar {
+width: 8px;
+}
+
+.mainmenu-list-v2::-webkit-scrollbar-thumb,
+.mainmenu-panel::-webkit-scrollbar-thumb {
+background: rgba(var(--brand-rgb), .42);
+border-radius: 999px;
+}
+
+.mainmenu-list-v2::-webkit-scrollbar-track,
+.mainmenu-panel::-webkit-scrollbar-track {
+background: transparent;
+}
+
+@media (max-width: 760px) {
+.mainmenu-v2 {
+height: 100dvh !important;
+max-height: 100dvh !important;
+width: min(320px, 92vw) !important;
+}
+
+.mainmenu-body-v2 {
+height: calc(100dvh - 46px) !important;
+max-height: calc(100dvh - 46px) !important;
+overflow: hidden !important;
+}
+
+.mainmenu-shell {
+display: block !important;
+height: 100% !important;
+max-height: 100% !important;
+overflow: hidden !important;
+}
+
+.mainmenu-rail {
+display: flex !important;
+flex-direction: column !important;
+height: 100% !important;
+max-height: 100% !important;
+overflow: hidden !important;
+padding: 10px !important;
+}
+
+/* CLAVE: no dejar que el fix de scroll pise el cambio de nivel responsive */
+.mainmenu-rail.is-hidden-mobile {
+display: none !important;
+}
+
+.mainmenu-list-v2 {
+flex: 1 1 auto !important;
+min-height: 0 !important;
+height: auto !important;
+max-height: none !important;
+overflow-y: auto !important;
+overflow-x: hidden !important;
+}
+
+.mainmenu-panel {
+display: block !important;
+height: 100% !important;
+max-height: 100% !important;
+overflow-y: auto !important;
+overflow-x: hidden !important;
+padding: 0 10px 14px 10px !important;
+background: #fff !important;
+}
+}
+
+@media (min-width: 761px) and (max-width: 1020px) {
+.mainmenu-v2 {
+width: min(260px, 96vw) !important;
+}
+
+.mainmenu-v2.has-panel {
+width: min(860px, 96vw) !important;
+}
+
+.mainmenu-v2.has-panel .mainmenu-shell {
+display: grid !important;
+grid-template-columns: 220px minmax(0, 1fr) !important;
+}
+
+.mainmenu-v2:not(.has-panel) .mainmenu-shell {
+display: grid !important;
+grid-template-columns: 220px 0 !important;
+}
+
+.mainmenu-rail {
+display: flex !important;
+flex-direction: column !important;
+}
+
+.mainmenu-panel {
+padding: 0 !important;
+overflow: hidden !important;
+background: #fff !important;
+}
+
+.mainmenu-v2.has-panel .mainmenu-panel {
+padding: 18px 20px 22px 20px !important;
+overflow-y: auto !important;
+overflow-x: hidden !important;
+background:
+linear-gradient(180deg, rgba(var(--brand-rgb), .035), rgba(255,255,255,0) 145px),
+#fff !important;
+}
+}
+
+/* =========================================================
+FIX FINAL: filtros categorías/subcategorías
+========================================================= */
+
+.cat-row-main-wrap {
+display: flex;
+align-items: center;
+gap: 6px;
+width: 100%;
+min-width: 0;
+}
+
+.cat-row-main-wrap .cat-row-main {
+flex: 1 1 auto;
+min-width: 0;
+}
+
+.cat-filter-toggle {
+flex: 0 0 auto;
+width: 30px;
+height: 30px;
+padding: 0;
+margin: 0;
+border: 0;
+background: transparent !important;
+box-shadow: none !important;
+outline: none;
+cursor: pointer;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+color: var(--brand);
+border-radius: 999px;
+}
+
+.cat-filter-toggle:hover {
+background: transparent !important;
+color: var(--brand);
+transform: none;
+box-shadow: none !important;
+}
+
+.cat-filter-toggle .cat-row-chevron {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+font-size: 1rem;
+font-weight: 950;
+line-height: 1;
+color: currentColor;
+transition: transform .16s ease;
+}
+
+.cat-filter-group.is-collapsed .cat-subfilters {
+display: none !important;
+}
+
+.cat-filter-group:not(.is-collapsed) .cat-filter-toggle .cat-row-chevron {
+transform: rotate(180deg);
+}
+
+.cat-filter-group.is-collapsed .cat-filter-toggle .cat-row-chevron {
+transform: rotate(0deg);
 }

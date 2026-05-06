@@ -1425,3 +1425,107 @@ grid-template-columns: repeat(2, minmax(0, 1fr));
 gap: 12px;
 }
 }
+
+/* REPORTES - FILTROS */
+.title_modal_filters{
+text-align: center;
+margin-bottom: 20px;
+font-weight: bold;
+}
+.title_img_filters{
+width: 40px;
+height: auto;
+}
+
+/* Tarjeta + layout en columnas para TODOS los filtros (fecha y multiselect) */
+.filter-card,
+.fill_multi-filter {
+display: inline-block;
+vertical-align: top;
+width: 31%;
+box-sizing: border-box;
+padding: 10px 14px;
+margin: 0 8px 12px 0;
+background: #ffffff;
+border-radius: 10px;
+border: 1px solid #e5e7eb;
+box-shadow: 0 4px 10px rgba(15, 23, 42, 0.06);
+}
+
+/* Responsivo: 2 por fila en pantallas medianas */
+@media (max-width: 992px) {
+.filter-card,
+.fill_multi-filter {
+width: 48%;
+}
+}
+
+/* Responsivo: 1 por fila en móviles */
+@media (max-width: 576px) {
+.filter-card,
+.fill_multi-filter {
+width: 100%;
+margin-right: 0;
+}
+}
+
+/* === MULTISELECT === */
+.fill_multi-filter {
+position: relative;
+}
+.fill_multi-filter .fill_ms-suggestions {
+position: absolute;
+top: 100%;
+left: 0;
+right: 0;
+max-height: 130px;
+overflow-y: auto;
+background: #fff;
+border: 1px solid #ddd;
+border-top: none;
+z-index: 1000;
+list-style: none;
+margin: 0;
+padding: 0;
+font-size: 10px;
+}
+.fill_multi-filter .fill_ms-suggestions li {
+padding: 8px;
+cursor: pointer;
+}
+.fill_multi-filter .fill_ms-suggestions li:hover {
+background: #f0f0f0;
+}
+.fill_multi-filter .fill_ms-selected-tags {
+display: flex;
+flex-wrap: wrap;
+gap: 4px;
+margin-top: 6px;
+}
+.fill_multi-filter .fill_ms-tag {
+background: #e9ecef;
+padding: 4px 8px;
+border-radius: 12px;
+font-size: 10px;
+display: flex;
+align-items: center;
+}
+.fill_multi-filter .fill_ms-tag .fill_remove-tag {
+margin-left: 6px;
+cursor: pointer;
+font-weight: bold;
+}
+.filter-card .form-label,
+.fill_multi-filter .form-label {
+font-size: 12px;
+font-weight: 600;
+color: #4b5563;
+margin-bottom: 4px;
+}
+.filter-card .form-control,
+.fill_multi-filter .form-control {
+font-size: 13px;
+height: 34px;
+padding: 4px 8px;
+border-radius: 8px;
+}

@@ -3,7 +3,7 @@ Name: apiERP
 Author: Luisito Programa
 Website 1: luisitoprograma.com
 Website 2: apiERP.dev
-version: 6.3.4
+version: 6.3.5
 */
 
 /* RESOURCES */
@@ -401,7 +401,7 @@ display: none;
 border: 1px solid #111;
 }
 .table-report th{
-font-size: 15px;
+font-size: 13px;
 background-color: var(--transparent);
 color: var(--blue);
 font-weight: normal;
@@ -409,7 +409,7 @@ white-space: nowrap;
 text-align: center;
 }
 .table-report td{
-font-size: 14px;
+font-size: 12px;
 color: var(--lead);
 white-space: nowrap;
 text-align: center;

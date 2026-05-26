@@ -1,6 +1,32 @@
 <?php
-header("Access-Control-Allow-Origin: *");
+// ===============================
+// CORS / BRAVE / CHROME / PNA
+// ===============================
+$allowedOrigins = [
+'https://fasyb.com',
+'https://www.fasyb.com'
+];
+
+$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+
+if ($origin && in_array($origin, $allowedOrigins, true)) {
+header("Access-Control-Allow-Origin: $origin");
+} else {
+header("Access-Control-Allow-Origin: https://fasyb.com");
+}
+
+header("Vary: Origin");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With, Accept, Origin");
+header("Access-Control-Allow-Private-Network: true");
+header("Access-Control-Max-Age: 86400");
 header("Content-Type: application/json; charset=utf-8");
+
+// Responder preflight de Brave / Chrome
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+http_response_code(204);
+exit;
+}
 
 //LOGS
 $debugLog = __DIR__ . DIRECTORY_SEPARATOR . 'apiprint_debug.log';
@@ -16,6 +42,16 @@ $line .= ' - ' . var_export($data, true);
 $line .= PHP_EOL;
 file_put_contents($debugLog, $line, FILE_APPEND);
 }
+
+//LOG REQUEST GENERAL
+debug_log('REQUEST INFO', [
+'method' => $_SERVER['REQUEST_METHOD'] ?? '',
+'origin' => $_SERVER['HTTP_ORIGIN'] ?? '',
+'referer' => $_SERVER['HTTP_REFERER'] ?? '',
+'content_type' => $_SERVER['CONTENT_TYPE'] ?? '',
+'user_agent' => $_SERVER['HTTP_USER_AGENT'] ?? '',
+'remote_addr' => $_SERVER['REMOTE_ADDR'] ?? ''
+]);
 
 //FUNCION RESPONSE
 function send_response($ok, $msg){
@@ -40,6 +76,15 @@ send_response(false, "Print Data.");
 }
 
 $data = json_decode($_POST['printData'], true);
+
+if (!is_array($data)) {
+debug_log('FALLO: printData no es JSON válido', [
+'printData_raw' => $_POST['printData'],
+'json_error' => json_last_error_msg()
+]);
+send_response(false, "Print Data JSON.");
+}
+
 debug_log('printData decodificado', $data);
 
 //POST DATA
@@ -51,6 +96,11 @@ $setPdfName      = $data['setPdfName'] ?? '';
 $setPdfName = str_replace(["\r", "\n"], '', $setPdfName);
 $setPdfName = trim($setPdfName);
 $setPdfName = preg_replace('/[\\\\\\/:"*?<>|]+/', '_', $setPdfName);
+
+// Asegurar extensión PDF
+if ($setPdfName !== '' && strtolower(pathinfo($setPdfName, PATHINFO_EXTENSION)) !== 'pdf') {
+$setPdfName .= '.pdf';
+}
 
 debug_log('POST DATA', [
 'setPrinterName' => $setPrinterName,
@@ -117,13 +167,30 @@ $folderDebug = [
 ];
 debug_log('DEBUG FOLDER', $folderDebug);
 
-if(!is_dir($targetFolder) || !is_writable($targetFolder)){
-debug_log('FALLO: Carpeta apiPrint no existe o no es escribible');
+if (!is_dir($targetFolder)) {
+debug_log('FALLO: Carpeta apiPrint no existe', [
+'targetFolder' => $targetFolder
+]);
 send_response(false, "apiPrint Not Found.");
+}
+
+if (!is_writable($targetFolder)) {
+debug_log('FALLO: Carpeta apiPrint no tiene permisos de escritura', [
+'targetFolder' => $targetFolder,
+'php_user' => get_current_user()
+]);
+send_response(false, "apiPrint Not Writable.");
 }
 
 //GUARDAR PDF
 $pdfFilePath = $targetFolder . DIRECTORY_SEPARATOR . $setPdfName;
+
+// Evitar choque si el archivo ya existe
+if (file_exists($pdfFilePath)) {
+$nameOnly = pathinfo($setPdfName, PATHINFO_FILENAME);
+$pdfFilePath = $targetFolder . DIRECTORY_SEPARATOR . $nameOnly . '_' . date('Ymd_His') . '.pdf';
+}
+
 $bytes = @file_put_contents($pdfFilePath, $pdfBlob);
 
 $savePdfDebug = [
@@ -138,7 +205,7 @@ send_response(false, "PDF Save.");
 }
 
 //GENERAR ID PRINT
-$idPrint = uniqid();
+$idPrint = uniqid('', true);
 
 //JSON DATA
 $json_data = [

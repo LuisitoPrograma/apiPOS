@@ -32,7 +32,7 @@
 - **apiERP**: API de Facturación Electrónica integrada con Lycet / Greenter. API de Consultas RUC / DNI ilimitadas. API de envío y recepción de Email, se pueden enviar correos electrónicos desde Gmail's Personales o Correos Corporativos. apiPRINT para impresión automática online y en red. apiWAChat, un API de Whatsapp con Inteligencia Artificial.
 
 ## Requerimientos
-1. **Registro y Auth Token**: Regístrate en [apiERP.dev](https://apierp.dev/signup/) para obtener tu Auth Token único (USD $3/mes).
+1. **Registro y Auth Token**: Regístrate en [apiERP.dev](https://apierp.dev/signup/) para obtener tu Auth Token Único.
 2. **Servidor Web**: Apache o Nginx.
 3. **PHP**: Versión >= 8.0 con extensiones `soap` y `curl`.
 4. **apiPrint**: Para impresión automática online y en red ([documentación](https://www.apierp.dev/apiprint)).

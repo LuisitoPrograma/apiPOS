@@ -1,785 +1,2051 @@
 /*
-Name: apiPOS
+Name: apiWAChat
 Author: Luisito Programa
 Website 1: luisitoprograma.com
 Website 2: apiERP.dev
-version: 6.4.3
+version: 6.4.4
 */
 
-/* Reset básico */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body, html { height: 100%; font-family: Arial, sans-serif; }
-.container { display: flex; height: 100%; }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-/* APIWACHAT V2 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body, html { height: 100%; overflow: hidden; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+
 #apiwachat_root,
-#apiwachat_root * {
-box-sizing: border-box;
+#apiwachat_root * { box-sizing: border-box; }
+
+/* ===== LOADING SCREEN ===== */
+.apiwachat_loader {
+position: fixed;
+top: 0;
+left: 0.000;
+right: 0;
+height: 100%;
+background: linear-gradient(135deg, #0b141a 0%, #1a2a35 50%, #0b141a 100%);
+display: flex; align-items: center; justify-content: center;
+z-index: 99999; transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.apiwachat_loader::before {
+content: ''; position: absolute; inset: 0;
+background: radial-gradient(ellipse at 50% 0%, rgba(0,168,132,0.08) 0%, transparent 60%);
+pointer-events: none;
+}
+
+.apiwachat_loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+.apiwachat_loader_content {
+text-align: center; color: #fff; position: relative; z-index: 1;
+}
+
+.apiwachat_loader_icon {
+font-size: 80px; margin-bottom: 20px;
+background: linear-gradient(135deg, #00a884 0%, #25d366 50%, #008f6f 100%);
+-webkit-background-clip: text; -webkit-text-fill-color: transparent;
+background-clip: text; animation: wa-loaderPulse 1.2s ease-in-out infinite;
+filter: drop-shadow(0 0 20px rgba(0,168,132,0.3));
+}
+
+.apiwachat_loader_text {
+font-size: 22px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 28px;
+background: linear-gradient(135deg, #00a884 0%, #25d366 50%, #008f6f 100%);
+-webkit-background-clip: text; -webkit-text-fill-color: transparent;
+background-clip: text;
+}
+
+.apiwachat_loader_bar {
+width: 240px; height: 4px; background: rgba(255,255,255,0.1);
+border-radius: 2px; margin: 0 auto; overflow: hidden;
+}
+
+.apiwachat_loader_bar_fill {
+width: 40%; height: 100%;
+background: linear-gradient(135deg, #00a884 0%, #25d366 50%, #008f6f 100%);
+border-radius: 2px; animation: wa-loaderSlide 1.4s ease-in-out infinite;
+}
+
+@keyframes wa-loaderPulse {
+0%, 100% { transform: scale(1); opacity: 0.9; }
+50% { transform: scale(1.08); opacity: 1; }
+}
+
+@keyframes wa-loaderSlide {
+0% { transform: translateX(-100%); }
+100% { transform: translateX(350%); }
 }
 
 #apiwachat_root {
---apiwachat_primary: #00a884;
---apiwachat_primary_dark: #008f6f;
---apiwachat_primary_light: #d9fdd3;
---apiwachat_bg: #efeae2;
---apiwachat_sidebar: #ffffff;
---apiwachat_header: #f0f2f5;
---apiwachat_text: #111b21;
---apiwachat_muted: #667781;
---apiwachat_border: #e9edef;
---apiwachat_received: #ffffff;
---apiwachat_sent: #d9fdd3;
---apiwachat_shadow: 0 8px 24px rgba(11, 20, 26, 0.10);
+--wa-primary: #00a884;
+--wa-primary-dark: #008f6f;
+--wa-primary-gradient: linear-gradient(135deg, #00a884 0%, #25d366 50%, #008f6f 100%);
+--wa-primary-light: #d9fdd3;
+--wa-accent: #7c3aed;
+--wa-accent-gradient: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+--wa-bg: #efeae2;
+--wa-sidebar: #ffffff;
+--wa-header-bg: rgba(240,242,245,0.75);
+--wa-text: #111b21;
+--wa-text-light: #54656f;
+--wa-border: #e9edef;
+--wa-bubble-received: #ffffff;
+--wa-bubble-sent: linear-gradient(135deg, #d9fdd3 0%, #b8f0c6 100%);
+--wa-bubble-sent-solid: #c8f0c0;
+--wa-online: #25d366;
+--wa-offline: #8696a0;
+--wa-shadow-light: 0 2px 5px rgba(11,20,26,0.05);
+--wa-shadow: 0 8px 24px rgba(11,20,26,0.08);
+--wa-shadow-glass: 0 8px 32px rgba(11,20,26,0.18);
+--wa-shadow-hover: 0 12px 28px rgba(11,20,26,0.15);
+--wa-shadow-glow: 0 0 20px rgba(0,168,132,0.3);
+--wa-radius-sm: 12px;
+--wa-radius-md: 20px;
+--wa-radius-lg: 30px;
+--wa-radius-xl: 40px;
+--wa-transition: 0.2s cubic-bezier(0.25,0.46,0.45,0.94);
+--wa-transition-smooth: 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
+--wa-transition-fast: 0.15s ease;
+--wa-glass-bg: rgba(255,255,255,0.6);
+--wa-glass-border: rgba(255,255,255,0.3);
 
-width: 100%;
-min-height: 680px;
-height: calc(100vh - 10px);
-font-family: Arial, sans-serif;
-color: var(--apiwachat_text);
-background: #0b141a;
+position: fixed;
+top: 0;
+left: 0.000;
+right: 0;
+bottom: 0;
+z-index: 1000;
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+color: var(--wa-text);
 overflow: hidden;
+-webkit-font-smoothing: antialiased;
+display: flex; flex-direction: column;
 }
 
-/* LOGIN QR */
+#apiwachat_root > .topbar {
+flex-shrink: 0; margin-left: 0; width: 100%;
+}
+
+#apiwachat_root > .apiwachat_login_panel,
+#apiwachat_root > .apiwachat_chat_panel {
+flex: 1; min-height: 0;
+}
+
+#apiwachat_root[data-theme="dark"] {
+--wa-primary-gradient: linear-gradient(135deg, #00a884 0%, #25d366 50%, #008f6f 100%);
+--wa-primary-light: #202c33;
+--wa-accent: #a855f7;
+--wa-accent-gradient: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+--wa-bg: #0b141a;
+--wa-sidebar: #111b21;
+--wa-header-bg: rgba(32,44,51,0.75);
+--wa-text: #e9edef;
+--wa-text-light: #8696a0;
+--wa-border: #222d34;
+--wa-bubble-received: #202c33;
+--wa-bubble-sent: linear-gradient(135deg, #005c4b 0%, #007a63 100%);
+--wa-bubble-sent-solid: #006a56;
+--wa-online: #00a884;
+--wa-shadow-light: 0 2px 5px rgba(0,0,0,0.2);
+--wa-shadow: 0 8px 24px rgba(0,0,0,0.3);
+--wa-shadow-glass: 0 8px 32px rgba(0,0,0,0.4);
+--wa-shadow-glow: 0 0 20px rgba(0,168,132,0.2);
+--wa-glass-bg: rgba(32,44,51,0.5);
+--wa-glass-border: rgba(255,255,255,0.08);
+}
+
+/* ===== LOGIN QR ===== */
 .apiwachat_login_panel {
-width: 100%;
-height: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-background: radial-gradient(circle at top, rgba(0, 168, 132, 0.15), transparent 36%),
-linear-gradient(135deg, #0b141a 0%, #111b21 50%, #202c33 100%);
-padding: 20px;
+width: 100%; height: 100%;
+display: flex; align-items: center; justify-content: center;
+background: radial-gradient(ellipse at 50% 0%, rgba(0,168,132,0.08) 0%, transparent 60%),
+linear-gradient(135deg, #0a1628 0%, #1a1a2e 50%, #16213e 100%);
+padding: 20px; position: relative; overflow: hidden;
 }
 
 .apiwachat_login_card {
 width: min(460px, 100%);
-background: rgba(255, 255, 255, 0.97);
-border-radius: 28px;
-padding: 28px;
-box-shadow: var(--apiwachat_shadow);
+background: rgba(255,255,255,0.97);
+border-radius: var(--wa-radius-lg);
+padding: 32px;
+box-shadow: var(--wa-shadow-glass);
 text-align: center;
+border: 1px solid var(--wa-glass-border);
+animation: wa-cardIn 0.4s cubic-bezier(0.16,1,0.3,1);
 }
 
-.apiwachat_login_header {
-margin-bottom: 22px;
+@keyframes wa-cardIn {
+from { opacity: 0; transform: translateY(20px) scale(0.97); }
+to { opacity: 1; transform: translateY(0) scale(1); }
 }
+
+#apiwachat_root[data-theme="dark"] .apiwachat_login_card {
+background: rgba(32,44,51,0.97);
+border-color: rgba(255,255,255,0.08);
+}
+
+.apiwachat_login_header { margin-bottom: 22px; }
 
 .apiwachat_login_logo {
-width: 68px;
-height: 68px;
-margin: 0 auto 14px;
+width: 72px; height: 72px; margin: 0 auto 16px;
 border-radius: 50%;
-background: linear-gradient(135deg, var(--apiwachat_primary), #25d366);
+background: var(--wa-primary-gradient);
 color: #fff;
-display: flex;
-align-items: center;
-justify-content: center;
-font-weight: 800;
-letter-spacing: 0.5px;
-box-shadow: 0 10px 28px rgba(0, 168, 132, 0.30);
+display: flex; align-items: center; justify-content: center;
+font-weight: 800; font-size: 28px;
+box-shadow: 0 8px 32px rgba(0,168,132,0.30);
+animation: wa-logoPulse 2s ease-in-out infinite;
+position: relative;
 }
 
-.apiwachat_login_header h2 {
-margin: 0 0 8px;
-font-size: 25px;
-color: var(--apiwachat_text);
+.apiwachat_login_logo::after {
+content: '';
+position: absolute;
+inset: -4px;
+border-radius: 50%;
+background: conic-gradient(var(--wa-primary), var(--wa-accent), var(--wa-primary));
+z-index: -1;
+animation: wa-spinRing 6s linear infinite;
 }
 
-.apiwachat_login_header p {
-margin: 0;
-color: var(--apiwachat_muted);
-font-size: 14px;
-line-height: 1.5;
+@keyframes wa-logoPulse {
+0%, 100% { box-shadow: 0 8px 32px rgba(0,168,132,0.3); }
+50% { box-shadow: 0 8px 48px rgba(0,168,132,0.5); }
 }
 
-.apiwachat_form_group {
-text-align: left;
-margin-bottom: 16px;
-}
+.apiwachat_login_header h2 { margin: 0 0 8px; font-size: 25px; color: var(--wa-text); }
+.apiwachat_login_header p { margin: 0; color: var(--wa-text-light); font-size: 14px; line-height: 1.5; }
+.apiwachat_form_group { text-align: left; margin-bottom: 16px; }
 
 .apiwachat_form_group label {
-display: block;
-margin-bottom: 7px;
-font-size: 13px;
-font-weight: 700;
-color: var(--apiwachat_text);
+display: block; margin-bottom: 6px;
+font-size: 14px; font-weight: 500; color: var(--wa-text);
 }
 
 .apiwachat_form_control {
-width: 100%;
-min-height: 42px;
-border: 1px solid var(--apiwachat_border);
-border-radius: 14px;
-padding: 10px 13px;
-background: #fff;
-color: var(--apiwachat_text);
-outline: none;
-font-size: 14px;
+width: 100%; min-height: 38px;
+border: 1px solid var(--wa-glass-border);
+border-radius: var(--wa-radius-md);
+padding: 10px 14px;
+background: var(--wa-glass-bg);
+backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+color: var(--wa-text);
+outline: none; font-size: 14px;
+transition: all var(--wa-transition);
+appearance: none; -webkit-appearance: none;
+font-family: inherit;
 }
 
 .apiwachat_form_control:focus {
-border-color: var(--apiwachat_primary);
-box-shadow: 0 0 0 3px rgba(0, 168, 132, 0.12);
+border-color: var(--wa-primary);
+box-shadow: 0 0 0 3px rgba(0,168,132,0.1);
+background: var(--wa-sidebar);
+}
+
+#apiwachat_root[data-theme="dark"] .apiwachat_form_control {
+background: #1f2c33; border-color: #222d34; color: #e9edef;
+}
+
+#apiwachat_root[data-theme="dark"] .apiwachat_form_control:focus {
+border-color: var(--wa-primary);
+box-shadow: 0 0 0 3px rgba(0,168,132,0.2);
 }
 
 .apiwachat_qr_box {
-width: 280px;
-height: 280px;
-margin: 18px auto 16px;
-padding: 12px;
-background: #fff;
-border-radius: 20px;
-border: 1px solid var(--apiwachat_border);
+width: 280px; height: 280px; margin: 18px auto 16px;
+padding: 12px; background: #fff;
+border-radius: var(--wa-radius-md);
+border: 1px solid var(--wa-border);
 position: relative;
-box-shadow: 0 5px 20px rgba(11, 20, 26, 0.12);
+box-shadow: 0 5px 20px rgba(11,20,26,0.12);
+transition: all var(--wa-transition-smooth);
 }
 
-.apiwachat_qr_img {
-width: 100%;
-height: 100%;
-display: block;
-object-fit: contain;
-border-radius: 12px;
-}
+.apiwachat_qr_box:hover { transform: scale(1.02) translateY(-2px); box-shadow: 0 12px 40px rgba(0,0,0,0.15); }
+#apiwachat_root[data-theme="dark"] .apiwachat_qr_box { background: #1f2c33; border-color: #222d34; }
 
-.apiwachat_qr_img_dim {
-opacity: 0.22;
-}
+.apiwachat_qr_img { width: 100%; height: 100%; display: block; object-fit: contain; border-radius: 12px; }
+.apiwachat_qr_img_dim { opacity: 0.22; }
 
 .apiwachat_qr_overlay {
-position: absolute;
-inset: 12px;
-border-radius: 12px;
-background: rgba(255, 255, 255, 0.92);
-display: flex;
-align-items: center;
-justify-content: center;
-cursor: pointer;
+position: absolute; inset: 12px; border-radius: 12px;
+background: rgba(255,255,255,0.92);
+display: flex; align-items: center; justify-content: center; cursor: pointer;
 }
+
+#apiwachat_root[data-theme="dark"] .apiwachat_qr_overlay { background: rgba(17,27,33,0.92); }
 
 .apiwachat_qr_overlay_content {
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 7px;
-color: var(--apiwachat_text);
+display: flex; flex-direction: column; align-items: center; gap: 7px; color: var(--wa-text);
 }
-
-.apiwachat_qr_overlay_content small {
-color: var(--apiwachat_muted);
-}
+.apiwachat_qr_overlay_content small { color: var(--wa-text-light); }
 
 .apiwachat_qr_spinner {
-width: 34px;
-height: 34px;
-border-radius: 50%;
-border: 3px solid #e9edef;
-border-top-color: var(--apiwachat_primary);
-animation: apiwachat_spin 0.8s linear infinite;
+width: 34px; height: 34px; border-radius: 50%;
+border: 3px solid #e9edef; border-top-color: var(--wa-primary);
+animation: wa-spin 0.8s linear infinite;
 }
 
-@keyframes apiwachat_spin {
-to { transform: rotate(360deg); }
-}
+@keyframes wa-spin { to { transform: rotate(360deg); } }
 
 .apiwachat_qr_status {
-min-height: 20px;
-color: var(--apiwachat_muted);
-font-size: 13px;
-line-height: 1.4;
-margin-bottom: 12px;
+min-height: 20px; color: var(--wa-text-light);
+font-size: 13px; line-height: 1.4; margin-bottom: 12px;
 }
 
 .apiwachat_btn_secondary {
-border: 1px solid var(--apiwachat_border);
-background: #fff;
-color: var(--apiwachat_text);
-border-radius: 999px;
-padding: 10px 18px;
-cursor: pointer;
-font-weight: 700;
+border: 1px solid var(--wa-border); background: #fff;
+color: var(--wa-text); border-radius: 999px;
+padding: 10px 18px; cursor: pointer; font-weight: 600;
+transition: all var(--wa-transition);
+font-family: inherit; font-size: 14px;
 }
 
-.apiwachat_btn_secondary:hover {
-background: var(--apiwachat_header);
+.apiwachat_btn_secondary:hover { background: var(--wa-header-bg); transform: translateY(-1px); }
+
+#apiwachat_root[data-theme="dark"] .apiwachat_btn_secondary {
+background: #1f2c33; border-color: #222d34; color: #e9edef;
 }
+#apiwachat_root[data-theme="dark"] .apiwachat_btn_secondary:hover { background: #2a3a45; }
 
 .apiwachat_login_steps {
-margin-top: 18px;
-text-align: left;
-display: grid;
-gap: 10px;
-color: var(--apiwachat_muted);
-font-size: 13px;
+margin-top: 18px; text-align: left; display: grid; gap: 10px;
+color: var(--wa-text-light); font-size: 13px;
 }
-
-.apiwachat_login_steps div {
-display: flex;
-align-items: center;
-gap: 10px;
-}
-
+.apiwachat_login_steps div { display: flex; align-items: center; gap: 10px; }
 .apiwachat_login_steps span {
-width: 24px;
-height: 24px;
-border-radius: 50%;
-background: rgba(0, 168, 132, 0.12);
-color: var(--apiwachat_primary);
-font-weight: 800;
-display: inline-flex;
-align-items: center;
-justify-content: center;
-flex-shrink: 0;
+width: 24px; height: 24px; border-radius: 50%;
+background: rgba(0,168,132,0.12); color: var(--wa-primary);
+font-weight: 800; display: inline-flex; align-items: center;
+justify-content: center; flex-shrink: 0;
 }
 
-/* CHAT */
+/* ===== CHAT PANEL ===== */
 .apiwachat_chat_panel {
-width: 100%;
-height: 100%;
-display: none;
-background: var(--apiwachat_sidebar);
+display: none; flex: 1; min-height: 0;
+padding: 0 !important;
+}
+.apiwachat_root{
+padding: 0 !important;
 }
 
 .apiwachat_app_container {
-width: 100%;
-height: 100%;
-display: flex;
-overflow: hidden;
-background: var(--apiwachat_sidebar);
+width: 100%; height: 100%; display: flex;
+background: var(--wa-sidebar);
+align-items: stretch;
 }
 
 .apiwachat_sidebar {
-width: 35%;
-min-width: 310px;
-max-width: 420px;
-height: 100%;
-display: flex;
-flex-direction: column;
-background: var(--apiwachat_sidebar);
-border-right: 1px solid var(--apiwachat_border);
-}
-
-.apiwachat_sidebar_header {
-height: 64px;
-padding: 10px 16px;
-background: linear-gradient(135deg, var(--apiwachat_primary), var(--apiwachat_primary_dark));
-display: flex;
-align-items: center;
-justify-content: space-between;
-}
-
-.apiwachat_user_avatar,
-.apiwachat_current_avatar,
-.apiwachat_chat_avatar {
-border-radius: 50%;
-color: #fff;
-font-weight: 800;
-display: inline-flex;
-align-items: center;
-justify-content: center;
+width: 35%; min-width: 300px; max-width: 400px;
+display: flex; flex-direction: column;
+background: var(--wa-sidebar);
+border-right: 1px solid var(--wa-border);
 flex-shrink: 0;
 }
 
-.apiwachat_user_avatar {
-width: 42px;
-height: 42px;
-background: rgba(255, 255, 255, 0.25);
-border: 2px solid rgba(255, 255, 255, 0.35);
+/* ===== SIDEBAR HEADER ===== */
+.apiwachat_sidebar_header {
+height: 60px; padding: 0 16px;
+background: var(--wa-primary-gradient);
+display: flex; align-items: center; justify-content: space-between;
+flex-shrink: 0; position: relative; z-index: 10;
+border-bottom: none;
 }
 
-.apiwachat_sidebar_actions {
-display: flex;
-align-items: center;
-gap: 8px;
+.apiwachat_sidebar_header::after {
+content: ''; position: absolute; bottom: -3px; left: 0; right: 0;
+height: 3px; background: var(--wa-accent-gradient); opacity: 0.7;
 }
 
-.apiwachat_sidebar_action,
-.apiwachat_header_icon,
-.apiwachat_back_button,
-.apiwachat_input_icon {
-border: none;
-background: transparent;
-cursor: pointer;
-font-size: 18px;
+.apiwachat_sidebar_header .apiwachat_header_icon {
+color: rgba(255,255,255,0.85);
 }
 
-.apiwachat_sidebar_action {
-width: 38px;
-height: 38px;
-border-radius: 50%;
+.apiwachat_sidebar_header .apiwachat_header_icon:hover {
 color: #fff;
-transition: 0.2s;
+background: rgba(255,255,255,0.15);
+transform: scale(1.1);
 }
 
-.apiwachat_sidebar_action:hover,
-.apiwachat_sidebar_action_active {
-background: rgba(255, 255, 255, 0.18);
+.apiwachat_user_avatar {
+width: 40px; height: 40px; border-radius: 50%;
+background: var(--wa-accent-gradient);
+border: 2px solid rgba(255,255,255,0.3);
+color: #fff; font-weight: 800;
+display: flex; align-items: center; justify-content: center;
+cursor: pointer; flex-shrink: 0; font-size: 15px;
+transition: transform var(--wa-transition);
 }
 
+.apiwachat_user_avatar:hover { transform: scale(1.1); box-shadow: 0 0 15px rgba(255,255,255,0.3); }
+
+.apiwachat_header_icons { display: flex; align-items: center; gap: 20px; }
+
+.apiwachat_header_icon {
+color: rgba(255,255,255,0.85); font-size: 20px; cursor: pointer;
+transition: all var(--wa-transition);
+border-radius: 50%; width: 34px; height: 34px;
+display: inline-flex; align-items: center; justify-content: center;
+border: none; background: transparent; font-family: inherit;
+padding: 6px;
+}
+.apiwachat_header_icon i { font-size: 20px; line-height: 1; }
+
+.apiwachat_header_icon:hover {
+color: #fff; background: rgba(255,255,255,0.15); transform: scale(1.1);
+}
+
+/* ===== SIDEBAR MENU ===== */
+.apiwachat_sidebar_menu {
+position: absolute; top: 60px; right: 8px;
+background: var(--wa-glass-bg);
+backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+border-radius: var(--wa-radius-md);
+box-shadow: var(--wa-shadow-glass);
+padding: 6px 0; min-width: 220px; z-index: 1000;
+display: none; overflow: hidden;
+border: 1px solid var(--wa-glass-border);
+}
+
+.apiwachat_sidebar_menu.show { display: block; animation: wa-scaleIn 0.2s cubic-bezier(0.16,1,0.3,1); }
+
+@keyframes wa-scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+
+#apiwachat_root[data-theme="dark"] .apiwachat_sidebar_menu { background: rgba(32,44,51,0.95); }
+
+.apiwachat_sidebar_menu_item {
+display: flex; align-items: center; gap: 12px; width: 100%;
+padding: 12px 18px; border: none; background: none;
+font-size: 14px; font-family: inherit;
+color: var(--wa-text); cursor: pointer;
+transition: background 0.15s; text-align: left; white-space: nowrap;
+}
+
+.apiwachat_sidebar_menu_item:hover { background: var(--wa-primary-light); transform: translateX(4px); }
+.apiwachat_sidebar_menu_item i { font-size: 16px; width: 22px; text-align: center; color: var(--wa-text-light); transition: color var(--wa-transition); }
+.apiwachat_sidebar_menu_item_danger { color: #ef4444 !important; }
+.apiwachat_sidebar_menu_item_danger:hover { background: #fef2f2 !important; }
+.apiwachat_sidebar_menu_item_danger i { color: #ef4444 !important; }
+.apiwachat_sidebar_menu_divider { height: 1px; background: var(--wa-border); margin: 4px 0; }
+
+/* ===== INSTANCE BAR ===== */
 .apiwachat_instance_bar {
-padding: 12px;
-background: var(--apiwachat_header);
-border-bottom: 1px solid var(--apiwachat_border);
+padding: 10px 16px; background: var(--wa-header-bg);
+border-bottom: 1px solid var(--wa-border); flex-shrink: 0;
 }
 
 .apiwachat_instance_bar label {
-display: block;
-margin-bottom: 6px;
-font-size: 12px;
-font-weight: 700;
-color: var(--apiwachat_muted);
+display: block; margin-bottom: 4px;
+font-size: 11px; font-weight: 700; color: var(--wa-text-light);
+text-transform: uppercase; letter-spacing: 0.3px;
 }
 
+.apiwachat_instance_bar select,
+.apiwachat_instance_bar .apiwachat_credentials_select {
+width: 100%; min-height: 34px;
+border: 1px solid var(--wa-glass-border);
+border-radius: var(--wa-radius-xl);
+padding: 6px 14px;
+background: var(--wa-glass-bg);
+backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+color: var(--wa-text);
+outline: none; font-size: 13px; font-family: inherit;
+transition: all var(--wa-transition);
+appearance: auto; -webkit-appearance: auto;
+}
+
+.apiwachat_instance_bar select:focus,
+.apiwachat_instance_bar .apiwachat_credentials_select:focus {
+border-color: var(--wa-primary);
+box-shadow: 0 0 0 3px rgba(0,168,132,0.1);
+background: var(--wa-sidebar);
+}
+
+#apiwachat_root[data-theme="dark"] .apiwachat_instance_bar select,
+#apiwachat_root[data-theme="dark"] .apiwachat_instance_bar .apiwachat_credentials_select {
+background: #1f2c33; border-color: #222d34; color: #e9edef;
+}
+#apiwachat_root[data-theme="dark"] .apiwachat_instance_bar select:focus,
+#apiwachat_root[data-theme="dark"] .apiwachat_instance_bar .apiwachat_credentials_select:focus {
+border-color: var(--wa-primary);
+box-shadow: 0 0 0 3px rgba(0,168,132,0.2);
+}
+
+/* ===== SEARCH WRAPPER ===== */
 .apiwachat_search_wrapper {
-padding: 10px 12px;
-background: var(--apiwachat_header);
-border-bottom: 1px solid var(--apiwachat_border);
+padding: 8px 12px; background: var(--wa-header-bg);
+border-bottom: 1px solid var(--wa-border); flex-shrink: 0;
+}
+
+.apiwachat_search_box {
+display: flex; align-items: center;
+background: var(--wa-glass-bg);
+backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+border-radius: var(--wa-radius-xl);
+padding: 8px 16px;
+border: 1px solid var(--wa-glass-border);
+transition: all 0.3s ease;
+}
+
+.apiwachat_search_box:focus-within {
+background: var(--wa-sidebar);
+border-color: var(--wa-primary);
+box-shadow: var(--wa-shadow-glow);
+}
+
+.apiwachat_search_icon {
+color: var(--wa-text-light); margin-right: 10px;
+display: flex; align-items: center; font-size: 18px;
 }
 
 .apiwachat_search_input {
-width: 100%;
-border: 1px solid transparent;
-outline: none;
-border-radius: 999px;
-padding: 12px 16px;
-background: #fff;
-color: var(--apiwachat_text);
+flex: 1; border: none;
+outline: none; background: transparent;
+color: var(--wa-text); font-size: 14px; font-family: inherit;
 }
 
-.apiwachat_search_input:focus {
-border-color: var(--apiwachat_primary);
+.apiwachat_search_input::placeholder {
+color: var(--wa-text-light); opacity: 0.6;
 }
 
+#apiwachat_root[data-theme="dark"] .apiwachat_search_box { background: rgba(32,44,51,0.5); }
+#apiwachat_root[data-theme="dark"] .apiwachat_search_box:focus-within { background: #1f2c33; }
+
+/* ===== CHAT LIST & CONTACTS ===== */
 .apiwachat_chat_list,
 .apiwachat_contacts_view {
-flex: 1;
-overflow-y: auto;
-padding: 8px;
+flex: 1; overflow-y: auto; padding: 4px 0; min-height: 0;
 }
 
 .apiwachat_chat_list::-webkit-scrollbar,
 .apiwachat_contacts_view::-webkit-scrollbar,
-.apiwachat_messages_container::-webkit-scrollbar {
-width: 6px;
-}
+.apiwachat_messages_container::-webkit-scrollbar,
+.apiwachat_modal_body::-webkit-scrollbar { width: 5px; }
+
+.apiwachat_chat_list::-webkit-scrollbar-track,
+.apiwachat_contacts_view::-webkit-scrollbar-track,
+.apiwachat_messages_container::-webkit-scrollbar-track,
+.apiwachat_modal_body::-webkit-scrollbar-track { background: transparent; }
 
 .apiwachat_chat_list::-webkit-scrollbar-thumb,
 .apiwachat_contacts_view::-webkit-scrollbar-thumb,
-.apiwachat_messages_container::-webkit-scrollbar-thumb {
-background: #c7d1d7;
-border-radius: 10px;
+.apiwachat_messages_container::-webkit-scrollbar-thumb,
+.apiwachat_modal_body::-webkit-scrollbar-thumb {
+background: var(--wa-border); border-radius: 10px;
 }
 
-.apiwachat_chat_item,
+.apiwachat_chat_list::-webkit-scrollbar-thumb:hover,
+.apiwachat_contacts_view::-webkit-scrollbar-thumb:hover,
+.apiwachat_messages_container::-webkit-scrollbar-thumb:hover,
+.apiwachat_modal_body::-webkit-scrollbar-thumb:hover { background: var(--wa-text-light); }
+
+/* ===== CHAT ITEMS ===== */
+.apiwachat_chat_item {
+border: none; background: transparent;
+display: flex; align-items: center; gap: 14px; text-align: left;
+padding: 12px 16px; margin: 4px 8px;
+border-radius: var(--wa-radius-md);
+cursor: pointer; transition: all var(--wa-transition);
+color: var(--wa-text); position: relative; overflow: hidden;
+font-family: inherit;
+}
+
 .apiwachat_contact_row {
-width: 100%;
-border: none;
-background: transparent;
-display: flex;
-align-items: center;
-gap: 12px;
-text-align: left;
-padding: 12px;
-border-radius: 18px;
-cursor: pointer;
-transition: 0.18s;
-color: var(--apiwachat_text);
+border: none; background: transparent;
+display: flex; align-items: center; gap: 14px; text-align: left;
+padding: 12px 16px;
+border-radius: var(--wa-radius-md);
+cursor: pointer; transition: all var(--wa-transition);
+color: var(--wa-text); position: relative; overflow: hidden;
+font-family: inherit;
 }
 
-.apiwachat_chat_item:hover,
-.apiwachat_contact_row:hover {
-background: #f5f6f6;
+.apiwachat_chat_item::before,
+.apiwachat_contact_row::before {
+content: ''; position: absolute; inset: 0;
+background: var(--wa-primary-gradient);
+opacity: 0; transition: opacity var(--wa-transition);
+border-radius: var(--wa-radius-md);
 }
+
+.apiwachat_chat_item:hover::before,
+.apiwachat_contact_row:hover::before { opacity: 0.05; }
+.apiwachat_chat_item:hover,
+.apiwachat_contact_row:hover { transform: translateX(4px); }
 
 .apiwachat_chat_item_active {
-background: rgba(0, 168, 132, 0.10);
-box-shadow: inset 4px 0 0 var(--apiwachat_primary);
+background: linear-gradient(135deg, rgba(0,168,132,0.08), rgba(0,143,111,0.04));
+box-shadow: inset 4px 0 0 var(--wa-primary), 0 2px 8px rgba(0,168,132,0.08);
+transform: none;
 }
+
+.apiwachat_chat_item_active::before { opacity: 0; }
+
+#apiwachat_root[data-theme="dark"] .apiwachat_chat_item:hover::before,
+#apiwachat_root[data-theme="dark"] .apiwachat_contact_row:hover::before { opacity: 0.08; }
+#apiwachat_root[data-theme="dark"] .apiwachat_chat_item_active { background: rgba(0,168,132,0.15); }
 
 .apiwachat_chat_avatar {
-width: 48px;
-height: 48px;
-font-size: 15px;
+width: 48px; height: 48px; border-radius: 50%;
+background: var(--wa-primary-gradient);
+color: #fff; font-weight: 800;
+display: flex; align-items: center; justify-content: center;
+flex-shrink: 0; font-size: 15px; position: relative;
+transition: all var(--wa-transition-smooth);
+border: 2px solid rgba(255,255,255,0.4);
+box-shadow: 0 2px 8px rgba(0,168,132,0.15);
 }
 
-.apiwachat_chat_info {
-flex: 1;
-min-width: 0;
+.apiwachat_chat_avatar:hover {
+transform: scale(1.08); box-shadow: 0 0 15px rgba(0,168,132,0.3);
 }
+
+.apiwachat_chat_info { flex: 1; min-width: 0; }
 
 .apiwachat_chat_row {
-display: flex;
-align-items: center;
-justify-content: space-between;
-gap: 8px;
-margin-bottom: 4px;
+display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 4px;
 }
-
-.apiwachat_chat_row strong,
-.apiwachat_contact_row strong {
-display: block;
-color: var(--apiwachat_text);
-font-size: 15px;
-white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
+.apiwachat_chat_row strong {
+display: block; color: var(--wa-text);
+font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-
-.apiwachat_chat_row small,
-.apiwachat_contact_row small,
+.apiwachat_chat_row small { color: var(--wa-text-light); font-size: 12px; }
 .apiwachat_chat_preview {
-color: var(--apiwachat_muted);
-font-size: 12px;
+color: var(--wa-text-light); font-size: 12px;
+display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 
-.apiwachat_chat_preview {
-display: block;
-white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
-}
-
+/* ===== CONTACT GROUPS ===== */
 .apiwachat_contact_group {
-margin-bottom: 12px;
-border: 1px solid var(--apiwachat_border);
-border-radius: 20px;
-overflow: hidden;
-background: #fff;
+margin-bottom: 12px; border: 1px solid var(--wa-glass-border);
+border-radius: var(--wa-radius-md); overflow: hidden;
+background: var(--wa-glass-bg);
+backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+
+#apiwachat_root[data-theme="dark"] .apiwachat_contact_group {
+background: #111b21; border-color: #222d34;
 }
 
 .apiwachat_contact_group_header {
-padding: 14px 16px;
-background: #f6f7f8;
-display: flex;
-justify-content: space-between;
-color: var(--apiwachat_primary);
-font-weight: 800;
+padding: 14px 16px; background: rgba(240,242,245,0.6);
+display: flex; justify-content: space-between;
+color: var(--wa-primary); font-weight: 700;
+font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;
 }
 
+#apiwachat_root[data-theme="dark"] .apiwachat_contact_group_header { background: #1f2c33; }
+
+.apiwachat_contact_row strong { display: block; font-size: 14px; }
+.apiwachat_contact_row small { display: block; font-size: 12px; color: var(--wa-text-light); }
+
+/* ===== CONVERSATION ===== */
 .apiwachat_conversation {
 flex: 1;
 min-width: 0;
-height: 100%;
+min-height: 0;
 display: flex;
 flex-direction: column;
-background-color: var(--apiwachat_bg);
-background-image: radial-gradient(rgba(0,0,0,0.035) 1px, transparent 1px);
-background-size: 28px 28px;
+background-color: var(--wa-bg);
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='4' cy='4' r='1' fill='rgba(0,0,0,0.03)'/%3E%3Ccircle cx='16' cy='16' r='1.2' fill='rgba(0,0,0,0.025)'/%3E%3C/svg%3E");
+background-repeat: repeat;
+background-size: 48px 48px;
+position: relative;
+overflow: hidden;
+
+/* Corrección */
+margin: 0;
+padding: 0;
 }
 
 .apiwachat_conversation_header {
-height: 64px;
-padding: 10px 16px;
-background: linear-gradient(135deg, var(--apiwachat_primary), var(--apiwachat_primary_dark));
+height: 60px;
+min-height: 60px;
+padding: 0 16px;
+margin: 0;
+
+background: linear-gradient(
+135deg,
+var(--wa-primary),
+var(--wa-primary-dark)
+);
+
 display: flex;
 align-items: center;
-gap: 12px;
 color: #fff;
+
+box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+flex-shrink: 0;
+
+position: relative;
+top: 0;
+left: 0;
+
+z-index: 10;
+border-bottom: none;
+box-sizing: border-box;
+}
+
+.apiwachat_conversation_header::after {
+content: '';
+position: absolute;
+bottom: -3px;
+left: 0;
+right: 0;
+height: 3px;
+background: var(--wa-accent-gradient);
+opacity: 0.7;
 }
 
 .apiwachat_back_button {
-display: none;
-color: #fff;
-font-size: 24px;
+display: none; align-items: center; justify-content: center;
+color: #fff; font-size: 20px; cursor: pointer;
+transition: all var(--wa-transition);
+border-radius: 50%; width: 38px; height: 38px;
+border: none; background: transparent; font-family: inherit;
+margin-right: 10px; flex-shrink: 0;
 }
+
+.apiwachat_back_button:hover { background: rgba(255,255,255,0.16); transform: scale(1.1); }
 
 .apiwachat_current_avatar {
-width: 42px;
-height: 42px;
-background: rgba(255, 255, 255, 0.25);
+width: 40px; height: 40px; border-radius: 50%;
+background: linear-gradient(135deg, #e0e0e0, #bdbdbd);
+color: #fff; font-weight: 700;
+display: flex; align-items: center; justify-content: center;
+flex-shrink: 0; font-size: 15px;
+border: 2px solid rgba(255,255,255,0.3);
+cursor: pointer; transition: all var(--wa-transition-smooth);
+position: relative;
+margin-right: 12px;
 }
 
-.apiwachat_current_info {
-flex: 1;
-min-width: 0;
+.apiwachat_current_avatar:hover { transform: scale(1.1); box-shadow: 0 0 20px rgba(255,255,255,0.2); }
+
+.apiwachat_current_avatar.has-online::before {
+content: ''; position: absolute; inset: -3px; border-radius: 50%;
+background: conic-gradient(var(--wa-primary), var(--wa-accent), var(--wa-primary));
+z-index: -1; animation: wa-spinRing 3s linear infinite;
 }
 
+.apiwachat_current_info { flex: 1; min-width: 0; cursor: pointer; }
 .apiwachat_current_info strong,
-.apiwachat_current_info small {
-display: block;
-white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
+.apiwachat_current_info small { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.apiwachat_current_info strong { text-shadow: 0 1px 2px rgba(0,0,0,0.15); font-size: 16px; line-height: 1.3; }
+.apiwachat_current_info small { opacity: 0.78; font-size: 12px; line-height: 1.3; }
+
+.apiwachat_current_actions { display: flex; gap: 16px; }
+
+.apiwachat_current_actions .apiwachat_header_icon {
+color: rgba(255,255,255,0.85);
 }
 
-.apiwachat_current_info small {
-opacity: 0.78;
-margin-top: 2px;
+.apiwachat_current_actions .apiwachat_header_icon:hover {
+color: #fff; background: rgba(255,255,255,0.15); transform: scale(1.1);
 }
 
-.apiwachat_current_actions {
-display: flex;
-gap: 8px;
-}
-
-.apiwachat_header_icon {
-color: #fff;
-width: 38px;
-height: 38px;
-border-radius: 50%;
-}
-
-.apiwachat_header_icon:hover {
-background: rgba(255, 255, 255, 0.16);
-}
-
+/* ===== MESSAGES CONTAINER ===== */
 .apiwachat_messages_container {
-flex: 1;
-overflow-y: auto;
-padding: 22px;
-display: flex;
-flex-direction: column;
-}
-
-.apiwachat_message {
-max-width: 72%;
-padding: 10px 13px;
-margin-bottom: 9px;
-border-radius: 16px;
-box-shadow: 0 1px 4px rgba(11, 20, 26, 0.08);
-font-size: 14px;
-line-height: 1.45;
-word-break: break-word;
-}
-
-.apiwachat_message small {
-display: block;
-margin-top: 4px;
-text-align: right;
-color: rgba(0, 0, 0, 0.46);
-font-size: 11px;
-}
-
-.apiwachat_message_received {
-align-self: flex-start;
-background: var(--apiwachat_received);
-border: 1px solid var(--apiwachat_border);
-border-top-left-radius: 4px;
-}
-
-.apiwachat_message_sent {
-align-self: flex-end;
-background: var(--apiwachat_sent);
-border-top-right-radius: 4px;
-}
-
-.apiwachat_input_area {
-min-height: 70px;
-padding: 12px 16px;
-background: rgba(240, 242, 245, 0.92);
-border-top: 1px solid var(--apiwachat_border);
-display: flex;
-align-items: center;
-gap: 10px;
-}
-
-.apiwachat_input_icon {
-width: 38px;
-height: 38px;
-border-radius: 50%;
-color: var(--apiwachat_muted);
-}
-
-.apiwachat_input_icon:hover {
-background: rgba(0, 168, 132, 0.10);
-color: var(--apiwachat_primary);
-}
-
-.apiwachat_message_input {
-flex: 1;
-border: 1px solid transparent;
-outline: none;
-border-radius: 999px;
-padding: 13px 18px;
-background: #fff;
-color: var(--apiwachat_text);
-}
-
-.apiwachat_message_input:focus {
-border-color: var(--apiwachat_primary);
-}
-
-.apiwachat_send_button {
-width: 46px;
-height: 46px;
-border-radius: 50%;
-border: none;
-background: linear-gradient(135deg, var(--apiwachat_primary), var(--apiwachat_primary_dark));
-color: #fff;
-font-size: 18px;
-cursor: pointer;
-}
-
-.apiwachat_send_button:disabled {
-opacity: 0.45;
-cursor: not-allowed;
-}
-
-.apiwachat_empty_state {
-padding: 28px;
-text-align: center;
-color: var(--apiwachat_muted);
-font-size: 14px;
-}
-
-.apiwachat_empty_state_center {
-height: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 8px;
-flex-direction: column;
-}
-
-.apiwachat_empty_icon {
-font-size: 56px;
-opacity: 0.25;
-}
-
-/* MODAL */
-.apiwachat_modal {
-position: fixed;
-inset: 0;
-background: rgba(11, 20, 26, 0.56);
-display: none;
-align-items: center;
-justify-content: center;
-z-index: 9999;
-padding: 18px;
-}
-
-.apiwachat_modal_show {
-display: flex;
-}
-
-.apiwachat_modal_content {
-width: min(520px, 100%);
-background: #fff;
-border-radius: 24px;
-overflow: hidden;
-box-shadow: var(--apiwachat_shadow);
-}
-
-.apiwachat_modal_header {
-padding: 16px 18px;
-background: linear-gradient(135deg, var(--apiwachat_primary), var(--apiwachat_primary_dark));
-color: #fff;
-display: flex;
-align-items: center;
-justify-content: space-between;
-}
-
-.apiwachat_modal_header button {
-border: none;
-background: transparent;
-color: #fff;
-font-size: 26px;
-cursor: pointer;
-}
-
-.apiwachat_modal_body {
-padding: 18px;
-}
-
-.apiwachat_api_details {
-border: 1px solid var(--apiwachat_border);
-border-radius: 18px;
-padding: 14px;
-margin-bottom: 16px;
-background: #f8fafb;
-}
-
-.apiwachat_api_details div {
-display: flex;
-justify-content: space-between;
-gap: 12px;
-margin-bottom: 8px;
-font-size: 13px;
-}
-
-.apiwachat_api_details div:last-child {
-margin-bottom: 0;
-}
-
-.apiwachat_api_details span {
-color: var(--apiwachat_muted);
-}
-
-.apiwachat_text_success {
-color: var(--apiwachat_primary);
-}
-
-.apiwachat_text_muted {
-color: var(--apiwachat_muted);
-}
-
-.apiwachat_modal_note {
-padding: 12px;
-border-radius: 14px;
-background: rgba(0, 168, 132, 0.10);
-color: var(--apiwachat_text);
-font-size: 13px;
-line-height: 1.5;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-#apiwachat_root {
-height: 100dvh;
-min-height: 100dvh;
-}
-
-.apiwachat_login_panel {
-padding: 12px;
-}
-
-.apiwachat_login_card {
-padding: 22px 18px;
-border-radius: 22px;
-}
-
-.apiwachat_qr_box {
-width: min(270px, 100%);
-height: min(270px, 78vw);
-}
-
-.apiwachat_app_container {
+flex: 1; min-height: 0; overflow-y: auto; padding: 20px;
+background: transparent; display: flex; flex-direction: column;
 position: relative;
 }
 
-.apiwachat_sidebar {
-position: absolute;
-inset: 0;
-width: 100%;
-max-width: none;
-min-width: 0;
-z-index: 2;
-transition: transform 0.25s ease;
-}
+.apiwachat_message:first-child { margin-top: 8px; }
+.apiwachat_message:last-child { margin-bottom: 4px; }
 
-.apiwachat_conversation {
-position: absolute;
-inset: 0;
-z-index: 1;
-display: flex;
-}
-
-.apiwachat_mobile_chat_open .apiwachat_sidebar {
-transform: translateX(-100%);
-}
-
-.apiwachat_back_button {
-display: inline-flex;
-align-items: center;
-justify-content: center;
-}
-
+/* ===== MESSAGE BUBBLE ===== */
 .apiwachat_message {
-max-width: 86%;
+max-width: 72%; padding: 10px 14px; margin-bottom: 8px;
+border-radius: var(--wa-radius-md);
+box-shadow: 0 1px 4px rgba(11,20,26,0.08);
+font-size: 15px; line-height: 1.5; word-break: break-word;
+position: relative;
+animation: wa-messageIn 0.25s ease-out;
+transition: all var(--wa-transition);
 }
 
-.apiwachat_current_actions {
-display: none;
+@keyframes wa-messageIn {
+from { opacity: 0; transform: translateY(8px) scale(0.97); }
+to { opacity: 1; transform: translateY(0) scale(1); }
 }
+
+.apiwachat_message:hover {
+box-shadow: var(--wa-shadow-hover);
+transform: translateY(-2px);
+}
+
+#apiwachat_root[data-theme="dark"] .apiwachat_message { color: #fff; }
+
+.apiwachat_message small {
+display: block; margin-top: 4px; text-align: right;
+color: rgba(0,0,0,0.4); font-size: 11px;
+}
+
+#apiwachat_root[data-theme="dark"] .apiwachat_message small { color: rgba(255,255,255,0.55); }
+
+.apiwachat_message_received {
+align-self: flex-start; background: var(--wa-bubble-received);
+border: 1px solid var(--wa-border);
+border-top-left-radius: 4px; margin-right: auto; margin-left: 18px;
+}
+
+#apiwachat_root[data-theme="dark"] .apiwachat_message_received { background: var(--wa-bubble-received); border-color: #222d34; color: #e9edef; }
+
+.apiwachat_message_sent {
+align-self: flex-end; background: var(--wa-bubble-sent);
+border-top-right-radius: 4px; margin-left: auto; margin-right: 18px;
+}
+
+#apiwachat_root[data-theme="dark"] .apiwachat_message_sent { color: #e9edef; }
+
+/* Tails */
+.apiwachat_message_received::before {
+content: ''; position: absolute; top: 0; left: -8px;
+width: 0; height: 0;
+border: 0 solid transparent;
+border-top: 8px solid var(--wa-bubble-received);
+border-right: 8px solid var(--wa-bubble-received);
+border-left: 8px solid transparent;
+filter: drop-shadow(-1px 0 1px rgba(0,0,0,0.03));
+}
+
+.apiwachat_message_sent::before {
+content: ''; position: absolute; top: 0; right: -8px;
+width: 0; height: 0;
+border-top: 8px solid var(--wa-bubble-sent-solid);
+border-left: 8px solid var(--wa-bubble-sent-solid);
+border-right: 8px solid transparent;
+}
+
+#apiwachat_root[data-theme="dark"] .apiwachat_message_sent::before {
+border-top-color: #006a56;
+border-left-color: #006a56;
+}
+
+/* Message status */
+.apiwachat_message_status {
+display: inline-flex; align-items: center; margin-left: 4px;
+font-size: 11px; vertical-align: middle;
+}
+.apiwachat_message_status i { font-size: 11px; }
+.apiwachat_message_status .fa-check { color: rgba(0,0,0,0.45); }
+.apiwachat_message_status .fa-check-double { color: rgba(0,0,0,0.45); }
+.apiwachat_message_status .fa-check-double.read { color: #53bdeb; }
+.apiwachat_message_status_sent { opacity: 0.45; }
+.apiwachat_message_status_delivered { opacity: 0.65; }
+.apiwachat_message_status_read { color: #53bdeb; opacity: 1; }
+#apiwachat_root[data-theme="dark"] .apiwachat_message_status {
+color: rgba(255,255,255,0.45);
+}
+#apiwachat_root[data-theme="dark"] .apiwachat_message_status .fa-check {
+color: rgba(255,255,255,0.45);
+}
+#apiwachat_root[data-theme="dark"] .apiwachat_message_status .fa-check-double {
+color: rgba(255,255,255,0.45);
+}
+#apiwachat_root[data-theme="dark"] .apiwachat_message_status_read,
+#apiwachat_root[data-theme="dark"] .apiwachat_message_status .fa-check-double.read {
+color: #53bdeb;
+}
+
+/* Date separator */
+.apiwachat_date_separator { display: flex; justify-content: center; margin: 16px 0; position: relative; }
+.apiwachat_date_separator::before {
+content: ''; position: absolute; top: 50%; left: 5%; right: 5%;
+height: 1px; background: var(--wa-border); transform: translateY(-50%);
+}
+.apiwachat_date_separator span {
+background: var(--wa-glass-bg); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+color: var(--wa-text-light);
+padding: 6px 16px; border-radius: 8px;
+font-size: 12px; font-weight: 500;
+box-shadow: var(--wa-shadow-light);
+border: 1px solid var(--wa-glass-border);
+position: relative; z-index: 1;
+}
+
+#apiwachat_root[data-theme="dark"] .apiwachat_date_separator span {
+background: rgba(32,44,51,0.85); border-color: rgba(255,255,255,0.08);
+}
+
+/* ===== INPUT AREA ===== */
+.apiwachat_input_area {
+padding: 12px 16px;
+background: var(--wa-glass-bg);
+backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+border-top: 1px solid var(--wa-glass-border);
+display: flex; align-items: center; gap: 10px;
+flex-shrink: 0;
+}
+
+#apiwachat_root[data-theme="dark"] .apiwachat_input_area {
+background: rgba(32,44,51,0.92); border-top-color: #222d34;
+}
+
+.apiwachat_input_icons { display: flex; align-items: center; gap: 12px; }
+
+.apiwachat_input_icon {
+width: 36px; height: 36px; border-radius: 50%;
+color: var(--wa-text-light);
+transition: all var(--wa-transition);
+display: inline-flex; align-items: center; justify-content: center;
+font-size: 20px; border: none; background: transparent; cursor: pointer;
+}
+
+.apiwachat_input_icon:hover { color: var(--wa-primary); background: var(--wa-primary-light); transform: scale(1.1); }
+
+.apiwachat_message_input {
+flex: 1; border: 1px solid var(--wa-glass-border);
+outline: none; border-radius: var(--wa-radius-xl); padding: 12px 18px;
+margin: 0 10px;
+background: var(--wa-glass-bg);
+backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+color: var(--wa-text);
+font-size: 15px; transition: all 0.3s ease; font-family: inherit;
+}
+
+.apiwachat_message_input:focus {
+background: var(--wa-sidebar);
+border-color: var(--wa-primary);
+box-shadow: var(--wa-shadow-glow);
+}
+
+#apiwachat_root[data-theme="dark"] .apiwachat_message_input { background: #1f2c33; border-color: #222d34; }
+#apiwachat_root[data-theme="dark"] .apiwachat_message_input:focus { background: #1f2c33; border-color: var(--wa-primary); box-shadow: var(--wa-shadow-glow); }
+
+.apiwachat_send_button {
+width: 46px; height: 46px; border-radius: 50%;
+border: none; background: var(--wa-primary-gradient);
+color: #fff; font-size: 18px; cursor: pointer;
+transition: all var(--wa-transition-smooth);
+box-shadow: 0 4px 15px rgba(0,168,132,0.3);
+display: inline-flex; align-items: center; justify-content: center;
+flex-shrink: 0; padding: 0;
+}
+
+.apiwachat_send_button:hover:not(:disabled) {
+transform: scale(1.1);
+box-shadow: 0 6px 20px rgba(0,168,132,0.4);
+}
+
+.apiwachat_send_button:active:not(:disabled) { transform: scale(0.95); }
+.apiwachat_send_button:disabled { background: var(--wa-text-light); cursor: not-allowed; box-shadow: none; opacity: 0.6; }
+
+/* ===== EMPTY STATE ===== */
+.apiwachat_empty_state {
+padding: 20px; text-align: center; color: var(--wa-text-light); font-size: 14px;
+animation: wa-fadeIn 0.5s ease;
+}
+.apiwachat_empty_state_center {
+display: flex; align-items: center;
+justify-content: center; flex-direction: column;
+flex: 1;
+text-align: center;
+color: var(--wa-text-light);
+padding: 40px;
+animation: wa-fadeIn 0.6s ease;
+}
+.apiwachat_empty_state_center strong {
+font-size: 17px; font-weight: 500;
+max-width: 280px; line-height: 1.6;
+color: var(--wa-text-light);
+}
+.apiwachat_empty_state_center small {
+font-size: 13px; opacity: 0.65;
+}
+.apiwachat_empty_icon {
+font-size: 64px; margin-bottom: 20px;
+transition: all var(--wa-transition-smooth);
+}
+.apiwachat_empty_icon i {
+background: var(--wa-primary-gradient);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+opacity: 0.35;
+font-size: 64px;
+transition: opacity var(--wa-transition-smooth);
+}
+.apiwachat_empty_state_center:hover .apiwachat_empty_icon { transform: scale(1.08); }
+.apiwachat_empty_state_center:hover .apiwachat_empty_icon i { opacity: 0.55; }
+
+/* ===== MODAL ===== */
+.apiwachat_modal {
+position: fixed; inset: 0;
+background: rgba(11,20,26,0.5);
+backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+display: none; align-items: center; justify-content: center;
+z-index: 9999; padding: 18px;
+opacity: 0; transition: opacity 0.3s ease;
+pointer-events: none;
+}
+
+.apiwachat_modal_show {
+display: flex; opacity: 1;
+pointer-events: auto;
+}
+
+.apiwachat_modal_show::before {
+content: ''; position: fixed; inset: 0;
+background: radial-gradient(ellipse at center, rgba(0,168,132,0.03) 0%, transparent 70%);
+pointer-events: none;
+}
+
+#apiwachat_root[data-theme="dark"] .apiwachat_modal { background: rgba(0,0,0,0.7); }
+
+.apiwachat_modal_content {
+width: min(600px, 100%); background: var(--wa-glass-bg);
+backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+border: 1px solid var(--wa-glass-border);
+border-radius: var(--wa-radius-xl); overflow: hidden;
+box-shadow: var(--wa-shadow-glass);
+transform: scale(0.9) translateY(20px); opacity: 0;
+transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+max-height: 90vh;
+display: flex; flex-direction: column;
+}
+
+.apiwachat_modal_show .apiwachat_modal_content { transform: scale(1) translateY(0); opacity: 1; }
+
+#apiwachat_root[data-theme="dark"] .apiwachat_modal_content { background: rgba(17,27,33,0.95); border-color: rgba(255,255,255,0.08); }
+
+.apiwachat_modal_header {
+padding: 16px 22px;
+background: var(--wa-primary-gradient);
+color: #fff; display: flex; align-items: center; justify-content: space-between;
+flex-shrink: 0; border-bottom: 1px solid var(--wa-glass-border);
+}
+
+.apiwachat_modal_header strong {
+font-weight: 600;
+text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+font-size: 16px;
+}
+
+.apiwachat_modal_header button {
+border: none; background: transparent; color: rgba(255,255,255,0.8); font-size: 20px;
+cursor: pointer; width: 34px; height: 34px;
+border-radius: var(--wa-radius-sm);
+display: flex; align-items: center; justify-content: center;
+transition: all var(--wa-transition);
+}
+
+.apiwachat_modal_header button:hover { color: #fff; background: rgba(255,255,255,0.15); transform: rotate(90deg); }
+
+.apiwachat_modal_body {
+padding: 20px;
+background: var(--wa-sidebar);
+overflow-y: auto; max-height: 70vh;
+}
+
+#apiwachat_root[data-theme="dark"] .apiwachat_modal_body { background: var(--wa-sidebar); }
+
+.apiwachat_api_details {
+border: 1px solid var(--wa-border); border-radius: 18px;
+padding: 14px; margin-bottom: 16px; background: #f8fafb;
+}
+
+#apiwachat_root[data-theme="dark"] .apiwachat_api_details { background: #1f2c33; border-color: #222d34; }
+
+.apiwachat_api_details div {
+display: flex; justify-content: space-between; gap: 12px; margin-bottom: 8px; font-size: 13px;
+}
+.apiwachat_api_details div:last-child { margin-bottom: 0; }
+.apiwachat_api_details span { color: var(--wa-text-light); }
+
+.apiwachat_modal_note {
+padding: 12px; border-radius: 14px;
+background: rgba(0,168,132,0.10);
+color: var(--wa-text); font-size: 13px; line-height: 1.5;
+}
+
+#apiwachat_root[data-theme="dark"] .apiwachat_modal_note { background: rgba(0,168,132,0.15); }
+
+/* System messages */
+.apiwachat_message_system {
+align-self: center; background: transparent; box-shadow: none;
+font-size: 12px; color: var(--wa-text-light); max-width: 100%;
+text-align: center; padding: 4px 16px; margin: 8px 0;
+border: none; animation: wa-fadeIn 0.3s ease;
+cursor: default;
+}
+.apiwachat_message_system:hover { box-shadow: none; transform: none; }
+
+/* Message highlight */
+.apiwachat_message_highlight {
+animation: wa-highlightFade 2s ease-out;
+}
+
+@keyframes wa-highlightFade {
+0% { background-color: rgba(0,168,132,0.2); }
+100% { background-color: transparent; }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes wa-fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes wa-slideUp { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes wa-pulse { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); } 70% { box-shadow: 0 0 0 8px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
+
+/* ===== TYPING INDICATOR ===== */
+.apiwachat_typing_indicator {
+display: none; font-size: 12px; color: var(--wa-accent);
+font-weight: 600; align-items: center; gap: 4px;
+}
+.apiwachat_typing_indicator.show { display: inline-flex; animation: wa-fadeIn 0.3s ease; }
+
+.apiwachat_typing_dots { display: flex; gap: 3px; }
+.apiwachat_typing_dots span {
+width: 5px; height: 5px; border-radius: 50%;
+background: var(--wa-accent-gradient);
+animation: wa-typingBounce 1.4s infinite ease-in-out;
+}
+.apiwachat_typing_dots span:nth-child(1) { animation-delay: 0s; }
+.apiwachat_typing_dots span:nth-child(2) { animation-delay: 0.2s; }
+.apiwachat_typing_dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes wa-typingBounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+
+/* ===== ONLINE / OFFLINE DOT ===== */
+.apiwachat_online_dot {
+position: absolute; bottom: 1px; right: 1px;
+width: 13px; height: 13px; background-color: var(--wa-online);
+border-radius: 50%; border: 2px solid var(--wa-sidebar);
+animation: wa-pulse 2s infinite; z-index: 1;
+}
+
+.apiwachat_offline_dot {
+position: absolute; bottom: 1px; right: 1px;
+width: 13px; height: 13px; background-color: var(--wa-offline);
+border-radius: 50%; border: 2px solid var(--wa-sidebar); z-index: 1;
+}
+
+/* ===== UNREAD BADGE ===== */
+.apiwachat_unread_badge {
+background: var(--wa-primary-gradient); color: white;
+border-radius: 50%; width: 22px; height: 22px;
+display: flex; align-items: center; justify-content: center;
+font-size: 11px; font-weight: 700;
+box-shadow: 0 2px 6px rgba(0,168,132,0.3); flex-shrink: 0;
+}
+
+/* ===== PINNED CHAT ===== */
+.apiwachat_chat_item_pinned {
+background: linear-gradient(135deg, rgba(0,168,132,0.06), rgba(124,58,237,0.03));
+border-left: 3px solid var(--wa-accent);
+position: relative;
+}
+
+.apiwachat_chat_item_pinned::after {
+content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 3px;
+background: linear-gradient(135deg, rgba(0,168,132,0.02), rgba(124,58,237,0.01));
+pointer-events: none;
+border-radius: 0 var(--wa-radius-md) var(--wa-radius-md) 0;
+}
+
+.apiwachat_pinned_badge {
+font-size: 11px; color: var(--wa-accent);
+margin-right: 4px; display: inline-flex; align-items: center; gap: 2px;
+}
+
+/* ===== REPLY PREVIEW BAR ===== */
+.apiwachat_reply_bar {
+display: none; align-items: center; padding: 8px 16px;
+background: var(--wa-glass-bg);
+backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+border-top: 1px solid var(--wa-glass-border);
+border-left: 4px solid var(--wa-primary); gap: 12px;
+flex-shrink: 0;
+}
+
+.apiwachat_reply_bar.show { display: flex; animation: wa-slideUp 0.2s ease-out; }
+
+#apiwachat_root[data-theme="dark"] .apiwachat_reply_bar { background: rgba(32,44,51,0.95); }
+
+.apiwachat_reply_content { flex: 1; min-width: 0; }
+.apiwachat_reply_sender { font-size: 13px; font-weight: 600; color: var(--wa-primary); margin-bottom: 2px; }
+.apiwachat_reply_text { font-size: 13px; color: var(--wa-text-light); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.apiwachat_reply_close {
+background: none; border: none; cursor: pointer;
+color: var(--wa-text-light); font-size: 18px; padding: 4px;
+border-radius: 50%; transition: background 0.2s;
+display: inline-flex; align-items: center; justify-content: center;
+}
+
+.apiwachat_reply_close:hover { background: var(--wa-primary-light); }
+
+/* ===== MESSAGE CONTEXT MENU ===== */
+.apiwachat_context_menu {
+position: fixed; background: var(--wa-glass-bg);
+backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+border-radius: var(--wa-radius-md);
+box-shadow: var(--wa-shadow-glass); z-index: 3000;
+min-width: 200px; padding: 4px; display: none;
+border: 1px solid var(--wa-glass-border); overflow: hidden;
+}
+
+.apiwachat_context_menu.show { display: block; animation: wa-scaleIn 0.15s cubic-bezier(0.16,1,0.3,1); }
+
+#apiwachat_root[data-theme="dark"] .apiwachat_context_menu { background: rgba(32,44,51,0.95); border-color: rgba(255,255,255,0.08); }
+
+.apiwachat_context_item {
+padding: 12px 16px; cursor: pointer; display: flex; align-items: center;
+gap: 12px; font-size: 14px; color: var(--wa-text);
+transition: all var(--wa-transition);
+border-radius: var(--wa-radius-sm); margin: 2px 0;
+border: none; background: none; width: 100%; font-family: inherit; text-align: left;
+}
+
+.apiwachat_context_item:hover { background: var(--wa-primary-light); transform: translateX(3px); }
+.apiwachat_context_item:hover i { color: var(--wa-primary); }
+.apiwachat_context_item i { width: 18px; text-align: center; color: var(--wa-text-light); transition: color var(--wa-transition); }
+.apiwachat_context_item_danger { color: #e74c3c !important; }
+.apiwachat_context_item_danger i { color: #e74c3c !important; }
+.apiwachat_context_item_danger:hover { background: rgba(231,76,60,0.1) !important; }
+
+/* ===== EMOJI PICKER ===== */
+.apiwachat_emoji_picker {
+position: absolute; bottom: 68px; left: 18px;
+background: var(--wa-glass-bg);
+backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+border-radius: var(--wa-radius-md);
+box-shadow: var(--wa-shadow-glass);
+border: 1px solid var(--wa-glass-border); padding: 12px;
+display: none; z-index: 500; width: 280px;
+}
+
+.apiwachat_emoji_picker.show { display: block; animation: wa-scaleIn 0.15s cubic-bezier(0.16,1,0.3,1); }
+
+#apiwachat_root[data-theme="dark"] .apiwachat_emoji_picker { background: rgba(32,44,51,0.97); border-color: rgba(255,255,255,0.08); }
+
+.apiwachat_emoji_grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; }
+
+.apiwachat_emoji_item {
+width: 32px; height: 32px; display: flex; align-items: center;
+justify-content: center; cursor: pointer; border-radius: 8px;
+font-size: 20px; transition: background 0.15s;
+background: none; border: none;
+}
+
+.apiwachat_emoji_item:hover { background: var(--wa-primary-light); transform: scale(1.15); }
+
+/* ===== ATTACH MENU ===== */
+.apiwachat_attach_menu {
+position: absolute; bottom: 68px; left: 64px;
+background: var(--wa-glass-bg);
+backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+border-radius: var(--wa-radius-md);
+box-shadow: var(--wa-shadow-glass);
+border: 1px solid var(--wa-glass-border);
+padding: 8px; display: none; z-index: 500;
+width: 260px;
+}
+
+#apiwachat_root[data-theme="dark"] .apiwachat_attach_menu {
+background: rgba(32,44,51,0.95);
+border-color: rgba(255,255,255,0.08);
+}
+
+.apiwachat_attach_menu.show { display: block; animation: wa-popUp 0.15s cubic-bezier(0.16,1,0.3,1); }
+
+@keyframes wa-popUp { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+
+.apiwachat_attach_grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+
+.apiwachat_attach_item {
+display: flex; flex-direction: column; align-items: center; gap: 6px;
+cursor: pointer; padding: 10px 8px; border-radius: var(--wa-radius-md);
+transition: all var(--wa-transition);
+border: none; background: transparent; color: var(--wa-text); font-size: 13px;
+font-family: inherit;
+}
+
+#apiwachat_root[data-theme="dark"] .apiwachat_attach_item { color: #e9edef; }
+
+.apiwachat_attach_item:hover { background: var(--wa-primary-light); transform: translateX(4px); }
+#apiwachat_root[data-theme="dark"] .apiwachat_attach_item:hover { background: rgba(255,255,255,0.05); }
+
+.apiwachat_attach_icon {
+width: 44px; height: 44px; border-radius: 50%;
+display: flex; align-items: center; justify-content: center;
+font-size: 18px; color: #fff;
+}
+.apiwachat_attach_icon i { font-size: 20px; }
+
+/* ===== PHOTO VIEWER ===== */
+.apiwachat_photo_viewer {
+position: fixed; inset: 0; background: rgba(11,20,26,0.92);
+backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+z-index: 99999; display: none; align-items: center; justify-content: center; cursor: pointer;
+}
+.apiwachat_photo_viewer.show { display: flex; animation: wa-fadeIn 0.2s ease; }
+.apiwachat_photo_viewer img {
+max-width: 90%; max-height: 90%; object-fit: contain;
+border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.apiwachat_photo_viewer_close {
+position: absolute; top: 20px; right: 20px;
+width: 40px; height: 40px; border-radius: 50%;
+background: rgba(255,255,255,0.15); border: none; color: #fff;
+font-size: 24px; cursor: pointer; display: flex; align-items: center;
+justify-content: center; transition: background 0.2s;
+}
+.apiwachat_photo_viewer_close:hover { background: rgba(255,255,255,0.25); transform: rotate(90deg); }
+
+/* ===== CONTACT INFO PANEL ===== */
+.apiwachat_contact_panel {
+position: absolute; top: 0; right: -400px;
+width: min(400px, 100%); height: 100%;
+background: var(--wa-sidebar);
+border-left: 1px solid var(--wa-border);
+z-index: 15; transition: right 0.3s cubic-bezier(0.16,1,0.3,1);
+display: flex; flex-direction: column;
+}
+
+.apiwachat_contact_panel.show { right: 0; }
+
+.apiwachat_contact_panel_header {
+padding: 16px 20px;
+background: var(--wa-primary-gradient);
+color: #fff; display: flex; align-items: center; gap: 16px;
+flex-shrink: 0;
+}
+
+.apiwachat_contact_panel_header button {
+background: none; border: none; color: rgba(255,255,255,0.8); font-size: 20px;
+cursor: pointer; padding: 6px; border-radius: 50%;
+width: 34px; height: 34px;
+display: flex; align-items: center; justify-content: center;
+transition: all var(--wa-transition);
+}
+
+.apiwachat_contact_panel_header button:hover { color: #fff; background: rgba(255,255,255,0.15); }
+
+.apiwachat_contact_panel::before {
+content: ''; position: absolute; top: 60px; left: 0; right: 0; height: 300px;
+background: linear-gradient(180deg, var(--wa-sidebar) 0%, var(--wa-bg) 100%);
+pointer-events: none; z-index: 0;
+}
+
+.apiwachat_contact_panel_avatar {
+width: 140px; height: 140px; border-radius: 50%;
+margin: 30px auto 20px; display: flex; align-items: center;
+justify-content: center; color: #fff; font-size: 56px; font-weight: 600;
+background: var(--wa-primary-gradient);
+border: 4px solid rgba(255,255,255,0.4);
+box-shadow: var(--wa-shadow);
+position: relative; z-index: 1;
+transition: transform var(--wa-transition-smooth);
+}
+
+.apiwachat_contact_panel_avatar:hover { transform: scale(1.05); }
+
+.apiwachat_contact_panel_avatar::after {
+content: ''; position: absolute; inset: -5px; border-radius: 50%;
+background: conic-gradient(var(--wa-primary), var(--wa-accent), var(--wa-primary));
+z-index: -1; animation: wa-spinRing 6s linear infinite;
+}
+
+@keyframes wa-spinRing { to { transform: rotate(360deg); } }
+
+.apiwachat_contact_panel_name { text-align: center; font-size: 22px; font-weight: 700; color: var(--wa-text); margin-bottom: 4px; position: relative; z-index: 1; }
+.apiwachat_contact_panel_phone { text-align: center; font-size: 16px; color: var(--wa-text-light); margin-bottom: 20px; position: relative; z-index: 1; }
+.apiwachat_contact_panel_info {
+padding: 0 16px 22px;
+display: flex; flex-direction: column;
+gap: 12px; position: relative; z-index: 1;
+}
+
+.apiwachat_contact_panel_row {
+display: flex; align-items: center; gap: 14px;
+padding: 16px; font-size: 14px;
+position: relative; transition: all var(--wa-transition);
+cursor: default;
+background: var(--wa-glass-bg);
+backdrop-filter: blur(8px);
+border: 1px solid var(--wa-glass-border);
+border-bottom: none;
+}
+.apiwachat_contact_panel_row:first-child {
+border-radius: var(--wa-radius-md) var(--wa-radius-md) 0 0;
+}
+.apiwachat_contact_panel_row:last-child {
+border-radius: 0 0 var(--wa-radius-md) var(--wa-radius-md);
+border-bottom: 1px solid var(--wa-glass-border);
+}
+.apiwachat_contact_panel_row:only-child {
+border-radius: var(--wa-radius-md);
+border-bottom: 1px solid var(--wa-glass-border);
+}
+.apiwachat_contact_panel_row:hover {
+background: var(--wa-primary-light);
+z-index: 1;
+box-shadow: var(--wa-shadow-light);
+}
+
+#apiwachat_root[data-theme="dark"] .apiwachat_contact_panel_row {
+background: rgba(32,44,51,0.6);
+border-color: rgba(236, 225, 225, 0.06);
+}
+
+.apiwachat_contact_panel_row_icon {
+width: 32px; height: 32px; border-radius: 50%;
+background: var(--wa-glass-bg);
+backdrop-filter: blur(4px);
+display: flex; align-items: center; justify-content: center;
+color: var(--wa-primary); flex-shrink: 0;
+font-size: 14px;
+transition: all var(--wa-transition);
+}
+.apiwachat_contact_panel_row:hover .apiwachat_contact_panel_row_icon {
+background: var(--wa-primary-gradient); color: #fff;
+transform: scale(1.05);
+}
+
+/* ===== CHAT SEARCH OVERLAY ===== */
+.apiwachat_chat_search {
+display: none; padding: 8px 16px;
+background: var(--wa-header-bg);
+border-bottom: 1px solid var(--wa-border); align-items: center; gap: 12px;
+flex-shrink: 0; min-height: 0;
+}
+.apiwachat_chat_search.show { display: flex; animation: wa-fadeIn 0.15s ease; }
+
+.apiwachat_chat_search input {
+flex: 1; border: none; outline: none; background: transparent;
+font-size: 14px; color: var(--wa-text); font-family: inherit;
+padding: 6px 0;
+}
+.apiwachat_chat_search_count { font-size: 12px; color: var(--wa-text-light); white-space: nowrap; }
+.apiwachat_chat_search_nav { display: flex; gap: 2px; }
+
+.apiwachat_chat_search_nav button {
+background: none; border: none; cursor: pointer;
+color: var(--wa-text-light); padding: 4px;
+border-radius: 50%; font-size: 16px; width: 32px; height: 32px;
+display: inline-flex; align-items: center; justify-content: center;
+transition: all var(--wa-transition);
+}
+
+.apiwachat_chat_search_nav button:hover { background: var(--wa-primary-light); color: var(--wa-primary); }
+.apiwachat_chat_search_nav button:disabled { opacity: 0.3; cursor: not-allowed; }
+
+.apiwachat_chat_search_close {
+background: none; border: none; cursor: pointer;
+color: var(--wa-text-light); font-size: 20px; padding: 4px; border-radius: 50%;
+width: 32px; height: 32px; display: inline-flex; align-items: center;
+justify-content: center; transition: all var(--wa-transition);
+}
+.apiwachat_chat_search_close:hover { background: var(--wa-primary-light); color: var(--wa-text); }
+
+/* ===== MESSAGE REPLY CONTEXT ===== */
+.apiwachat_message_reply_context {
+background: rgba(0,0,0,0.04); border-left: 3px solid var(--wa-primary);
+padding: 6px 10px; margin-bottom: 6px; border-radius: 6px; cursor: pointer;
+transition: background var(--wa-transition);
+}
+.apiwachat_message_reply_context:hover { background: rgba(0,0,0,0.08); }
+#apiwachat_root[data-theme="dark"] .apiwachat_message_reply_context { background: rgba(255,255,255,0.06); }
+#apiwachat_root[data-theme="dark"] .apiwachat_message_reply_context:hover { background: rgba(255,255,255,0.1); }
+
+.apiwachat_message_reply_sender { font-size: 12px; font-weight: 600; color: var(--wa-primary); margin-bottom: 2px; }
+.apiwachat_message_reply_text { font-size: 12px; color: var(--wa-text-light); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ===== EDITED BADGE ===== */
+.apiwachat_message_edited { font-size: 10px; font-style: italic; opacity: 0.7; margin-right: 2px; }
+
+/* ===== TOGGLE SWITCH ===== */
+.apiwachat_toggle {
+position: relative; display: inline-block; width: 44px; height: 24px; cursor: pointer; flex-shrink: 0;
+}
+.apiwachat_toggle input { opacity: 0; width: 0; height: 0; position: absolute; }
+
+.apiwachat_toggle_slider {
+position: absolute; inset: 0; background: #ccc;
+border-radius: 24px; transition: background 0.3s;
+}
+.apiwachat_toggle_slider::after {
+content: ''; position: absolute; left: 3px; bottom: 3px;
+width: 18px; height: 18px; border-radius: 50%; background: #fff; transition: transform 0.3s;
+}
+.apiwachat_toggle input:checked + .apiwachat_toggle_slider { background: var(--wa-primary); }
+.apiwachat_toggle input:checked + .apiwachat_toggle_slider::after { transform: translateX(20px); }
+
+/* ===== TEMPLATES PANEL ===== */
+.apiwachat_templates_panel {
+position: absolute; bottom: 68px; left: 18px; right: 18px;
+background: var(--wa-glass-bg); border-radius: var(--wa-radius-md);
+backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+box-shadow: var(--wa-shadow-glass); z-index: 900;
+display: none; max-height: 280px; overflow: hidden;
+flex-direction: column; border: 1px solid var(--wa-glass-border);
+}
+.apiwachat_templates_panel.show { display: flex; animation: wa-scaleIn 0.15s cubic-bezier(0.16,1,0.3,1); }
+#apiwachat_root[data-theme="dark"] .apiwachat_templates_panel { background: rgba(17,27,33,0.95); }
+
+.apiwachat_templates_panel_header {
+display: flex; align-items: center; justify-content: space-between;
+padding: 14px 16px; border-bottom: 1px solid var(--wa-border);
+font-size: 14px; font-weight: 600; color: var(--wa-text);
+}
+.apiwachat_templates_panel_header button {
+border: none; background: none; font-size: 20px; cursor: pointer;
+color: var(--wa-text-light); padding: 0 4px; line-height: 1;
+}
+.apiwachat_templates_panel_body { overflow-y: auto; flex: 1; padding: 8px; display: flex; flex-direction: column; gap: 4px; }
+
+.apiwachat_template_item {
+display: flex; align-items: center; gap: 12px; padding: 10px 12px;
+border: none; background: none; border-radius: 8px; cursor: pointer;
+font-size: 13px; font-family: inherit; color: var(--wa-text);
+text-align: left; transition: background 0.15s; width: 100%;
+}
+.apiwachat_template_item:hover { background: var(--wa-primary-light); }
+.apiwachat_template_item_icon {
+font-size: 20px; width: 36px; height: 36px; display: flex;
+align-items: center; justify-content: center;
+background: var(--wa-primary-light); border-radius: 8px; flex-shrink: 0;
+}
+.apiwachat_template_item_text { flex: 1; }
+.apiwachat_template_item_text strong { display: block; font-size: 14px; font-weight: 600; }
+.apiwachat_template_item_text small {
+display: block; color: var(--wa-text-light);
+font-size: 12px; margin-top: 2px; overflow: hidden;
+text-overflow: ellipsis; white-space: nowrap;
+}
+
+/* ===== BULK MODAL ===== */
+
+.apiwachat_bulk_recipients {
+max-height: 240px; overflow-y: auto;
+border: 1px solid var(--wa-border); border-radius: var(--wa-radius-sm);
+padding: 6px; margin-bottom: 16px;
+}
+
+.apiwachat_bulk_recipient_item {
+display: flex; align-items: center; gap: 10px; padding: 8px 10px;
+border: none; border-radius: 6px; cursor: pointer;
+font-size: 13px; font-family: inherit; color: var(--wa-text);
+text-align: left; transition: background 0.15s; width: 100%;
+-webkit-user-select: none; user-select: none;
+}
+.apiwachat_bulk_recipient_item:hover { background: var(--wa-primary-light); }
+.apiwachat_bulk_recipient_item.selected { background: var(--wa-primary-light); }
+.apiwachat_bulk_recipient_item input[type=checkbox] {
+width: 16px; height: 16px; accent-color: var(--wa-primary);
+cursor: pointer; flex-shrink: 0;
+}
+.apiwachat_bulk_recipient_item .apiwachat_chat_avatar { width: 32px; height: 32px; font-size: 12px; flex-shrink: 0; }
+.apiwachat_bulk_recipient_item .apiwachat_bulk_recipient_info { flex: 1; }
+.apiwachat_bulk_recipient_item .apiwachat_bulk_recipient_info strong { display: block; font-size: 13px; }
+.apiwachat_bulk_recipient_item .apiwachat_bulk_recipient_info small { display: block; color: var(--wa-text-light); font-size: 11px; }
+
+.apiwachat_bulk_selected_count { font-size: 13px; color: var(--wa-text-light); font-weight: 400; }
+.apiwachat_modal_header_actions { display: flex; align-items: center; gap: 12px; }
+.apiwachat_bulk_message_input { resize: vertical; min-height: 60px; }
+.apiwachat_bulk_send_btn { width: 100%; margin-top: 4px; }
+.apiwachat_bulk_send_btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ===== SETTINGS PANEL (WhatsApp Style) ===== */
+.apiwachat_settings_body { 
+flex: 1; overflow-y: auto; background: var(--wa-bg); padding: 0;
+}
+
+.apiwachat_settings_body::-webkit-scrollbar { width: 5px; }
+.apiwachat_settings_body::-webkit-scrollbar-track { background: transparent; }
+.apiwachat_settings_body::-webkit-scrollbar-thumb { background: var(--wa-border); border-radius: 10px; }
+
+.apiwachat_settings_profile {
+display: flex; align-items: center; padding: 28px 24px;
+background: var(--wa-glass-bg); backdrop-filter: blur(8px);
+cursor: pointer; transition: all var(--wa-transition-smooth);
+border-bottom: 1px solid var(--wa-glass-border);
+}
+
+.apiwachat_settings_profile:hover { background: var(--wa-primary-light); padding-left: 28px; }
+
+.apiwachat_settings_profile_avatar {
+width: 72px; height: 72px; border-radius: 50%;
+background: var(--wa-primary-gradient);
+display: flex; align-items: center; justify-content: center;
+color: white; font-size: 28px; font-weight: 700; margin-right: 20px;
+border: 3px solid rgba(255,255,255,0.4);
+box-shadow: 0 4px 15px rgba(0,168,132,0.25);
+position: relative; flex-shrink: 0; overflow: hidden; cursor: pointer;
+transition: all var(--wa-transition-fast);
+}
+
+.apiwachat_settings_profile_avatar:hover { transform: scale(1.03); }
+
+.apiwachat_settings_profile_avatar::after {
+content: ''; position: absolute; inset: -4px; border-radius: 50%;
+background: conic-gradient(#00a884, #7c3aed, #00a884);
+z-index: -1; animation: wa-spinRing 6s linear infinite;
+}
+
+.apiwachat_settings_profile_avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+
+.apiwachat_settings_avatar_overlay {
+position: absolute; inset: 0;
+background: rgba(0,0,0,0.4); display: flex; align-items: center;
+justify-content: center; opacity: 0; transition: opacity 0.2s;
+color: white; font-size: 20px; cursor: pointer;
+}
+
+.apiwachat_settings_profile_avatar:hover .apiwachat_settings_avatar_overlay { opacity: 1; }
+
+.apiwachat_settings_profile_info { flex: 1; min-width: 0; }
+.apiwachat_settings_profile_name { font-size: 20px; font-weight: 500; color: var(--wa-text); margin-bottom: 4px; }
+.apiwachat_settings_profile_status { font-size: 14px; color: var(--wa-text-light); }
+
+.apiwachat_settings_section_label {
+padding: 18px 24px 8px; font-size: 13px; font-weight: 500;
+color: var(--wa-primary); letter-spacing: 0.3px; text-transform: uppercase;
+}
+
+.apiwachat_settings_item {
+display: flex; align-items: center; padding: 14px 24px;
+background: var(--wa-sidebar); cursor: pointer;
+transition: background 0.12s; border-bottom: 1px solid var(--wa-border); gap: 16px;
+}
+
+.apiwachat_settings_item:hover { background: var(--wa-header-bg); }
+.apiwachat_settings_item:last-of-type { border-bottom: none; }
+
+.apiwachat_settings_item_icon {
+width: 44px; height: 44px; border-radius: 50%;
+display: flex; align-items: center; justify-content: center;
+font-size: 18px; color: white; flex-shrink: 0;
+}
+
+.apiwachat_settings_item_content { flex: 1; min-width: 0; }
+.apiwachat_settings_item_title { font-size: 16px; color: var(--wa-text); margin-bottom: 2px; }
+.apiwachat_settings_item_sub {
+font-size: 13px; color: var(--wa-text-light);
+white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+.apiwachat_settings_chevron { color: var(--wa-text-light); font-size: 14px; opacity: 0.6; }
+.apiwachat_settings_logout .apiwachat_settings_item_title { color: #e74c3c; }
+
+/* Settings sub-panel (WhatsApp style) */
+.apiwachat_settings_sub_panel {
+position: absolute; inset: 0; background: var(--wa-sidebar);
+display: none; flex-direction: column; z-index: 5;
+animation: wa-slideIn 0.2s ease;
+}
+
+@keyframes wa-slideIn {
+from { transform: translateX(30px); opacity: 0; }
+to { transform: translateX(0); opacity: 1; }
+}
+
+.apiwachat_settings_sub_panel.show { display: flex; }
+
+.apiwachat_settings_sub_header {
+background: var(--wa-primary); padding: 16px 20px;
+display: flex; align-items: center; gap: 20px;
+min-height: 60px; color: white; font-size: 18px; font-weight: 500; flex-shrink: 0;
+}
+
+.apiwachat_settings_sub_body { flex: 1; overflow-y: auto; padding: 24px; background: var(--wa-bg); }
+.apiwachat_settings_sub_back {
+background: none; border: none; color: white; font-size: 20px;
+cursor: pointer; padding: 6px; border-radius: 50%;
+display: flex; align-items: center; justify-content: center;
+transition: background 0.2s;
+}
+.apiwachat_settings_sub_back:hover { background: rgba(255,255,255,0.15); }
+
+/* Edit profile panel (WhatsApp style) */
+.apiwachat_wa_edit_header {
+display: flex; align-items: center; padding: 12px 16px;
+background: var(--wa-primary); color: white; min-height: 56px; flex-shrink: 0;
+}
+.apiwachat_wa_edit_header_back {
+background: none; border: none; color: white; font-size: 20px;
+cursor: pointer; padding: 8px; margin-right: 8px; border-radius: 50%;
+transition: background var(--wa-transition);
+}
+.apiwachat_wa_edit_header_back:hover { background: rgba(255,255,255,0.15); }
+.apiwachat_wa_edit_header_title { font-size: 18px; font-weight: 500; flex: 1; }
+.apiwachat_wa_edit_header_save {
+background: none; border: none; color: white; font-size: 20px;
+cursor: pointer; padding: 8px; border-radius: 50%;
+transition: background var(--wa-transition);
+}
+.apiwachat_wa_edit_header_save:hover { background: rgba(255,255,255,0.15); }
+
+.apiwachat_wa_edit_body { flex: 1; overflow-y: auto; padding: 24px; background: var(--wa-bg); }
+
+.apiwachat_wa_edit_avatar_section {
+display: flex; flex-direction: column; align-items: center; margin-bottom: 28px;
+}
+
+.apiwachat_wa_edit_avatar {
+width: 100px; height: 100px; border-radius: 50%;
+background: var(--wa-primary-gradient); margin-bottom: 16px;
+display: flex; align-items: center; justify-content: center;
+color: white; font-size: 36px; font-weight: 700; cursor: pointer;
+border: 3px solid rgba(255,255,255,0.4);
+box-shadow: 0 4px 15px rgba(0,168,132,0.25);
+position: relative; overflow: hidden; transition: all var(--wa-transition-fast);
+}
+
+.apiwachat_wa_edit_avatar:hover { transform: scale(1.03); }
+.apiwachat_wa_edit_avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.apiwachat_wa_edit_avatar_overlay {
+position: absolute; inset: 0;
+background: rgba(0,0,0,0.4); display: flex; align-items: center;
+justify-content: center; opacity: 0; transition: opacity 0.2s;
+color: white; font-size: 24px; cursor: pointer;
+}
+
+.apiwachat_wa_edit_avatar:hover .apiwachat_wa_edit_avatar_overlay { opacity: 1; }
+
+.apiwachat_wa_edit_field {
+background: var(--wa-sidebar); border-radius: var(--wa-radius-sm);
+padding: 16px; margin-bottom: 20px;
+border: 1px solid var(--wa-glass-border);
+}
+
+.apiwachat_wa_edit_field label {
+display: block; font-size: 12px; font-weight: 600;
+color: var(--wa-primary); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.3px;
+}
+
+.apiwachat_wa_edit_field input {
+width: 100%; border: none; outline: none; background: transparent;
+font-size: 16px; color: var(--wa-text); font-family: inherit;
+caret-color: var(--wa-primary);
+}
+
+/* Color swatches */
+.apiwachat_color_swatches {
+display: flex; gap: 12px; flex-wrap: wrap; padding: 8px 0;
+}
+
+.apiwachat_color_swatch {
+width: 40px; height: 40px; border-radius: 50%; cursor: pointer;
+border: 3px solid transparent; transition: all var(--wa-transition-fast);
+}
+
+.apiwachat_color_swatch:hover { transform: scale(1.12); }
+.apiwachat_color_swatch.active { border-color: var(--wa-primary); box-shadow: 0 0 0 2px var(--wa-sidebar), 0 0 0 4px var(--wa-primary); }
+.apiwachat_color_swatch input { display: none; }
+
+/* ===== CAMERA MODAL ===== */
+.apiwachat_camera_modal {
+position: fixed; inset: 0; background: #0b141a;
+z-index: 99999; display: none; align-items: center; justify-content: center;
+}
+.apiwachat_camera_modal.show { display: flex; }
+.apiwachat_camera_header {
+position: absolute; top: 0; left: 0; right: 0;
+padding: 12px 16px; display: flex; z-index: 2;
+}
+.apiwachat_camera_close {
+background: rgba(255,255,255,0.15); border: none; color: #fff;
+width: 36px; height: 36px; border-radius: 50%; cursor: pointer;
+font-size: 18px; display: flex; align-items: center; justify-content: center;
+transition: background 0.2s;
+}
+.apiwachat_camera_close:hover { background: rgba(255,255,255,0.25); }
+.apiwachat_camera_video { width: 100%; height: 100%; object-fit: cover; transform: scaleX(-1); }
+.apiwachat_camera_footer {
+position: absolute; bottom: 0; left: 0; right: 0;
+padding: 20px; text-align: center;
+}
+.apiwachat_camera_shutter {
+width: 60px; height: 60px; border-radius: 50%;
+background: var(--wa-primary); border: none; cursor: pointer;
+font-size: 24px; color: white; transition: background 0.2s;
+display: inline-flex; align-items: center; justify-content: center;
+}
+.apiwachat_camera_shutter:hover { background: var(--wa-primary-dark); }
+
+/* ===== CONTACT SELECTION ===== */
+.apiwachat_contact_selection_footer {
+background: var(--wa-glass-bg); backdrop-filter: blur(12px);
+border-top: 1px solid var(--wa-glass-border);
+padding: 12px 16px; display: flex; justify-content: space-between;
+align-items: center; min-height: 56px;
+}
+.apiwachat_contact_footer_name { font-size: 14px; font-weight: 500; color: var(--wa-text); }
+.apiwachat_contact_preview_card {
+background: var(--wa-glass-bg); backdrop-filter: blur(12px);
+padding: 20px; border-radius: var(--wa-radius-md);
+border: 1px solid var(--wa-glass-border); box-shadow: var(--wa-shadow);
+}
+
+/* ===== CATEGORY GROUPS (Contacts Tab) ===== */
+.apiwachat_cat_group_card {
+margin-bottom: 16px; border-radius: 16px;
+background: var(--wa-glass-bg); backdrop-filter: blur(8px);
+border: 1px solid var(--wa-glass-border); overflow: hidden;
+transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+box-shadow: 0 1px 4px rgba(11,20,26,0.03);
+}
+
+.apiwachat_cat_group_header {
+display: flex; align-items: center; padding: 14px 16px;
+cursor: pointer; transition: all 0.25s ease; gap: 14px;
+border-left: 4px solid var(--wa-primary); position: relative;
+}
+
+.apiwachat_cat_group_header::after {
+content: ''; position: absolute; bottom: 0; left: 16px; right: 16px;
+height: 1px; background: linear-gradient(90deg, var(--wa-primary), transparent); opacity: 0.15;
+}
+
+.apiwachat_cat_group_header:hover { background: rgba(0,168,132,0.04); }
+
+.apiwachat_cat_group_avatar {
+width: 48px; height: 48px; border-radius: 50%;
+display: flex; align-items: center; justify-content: center;
+color: white; font-size: 20px; flex-shrink: 0;
+box-shadow: 0 4px 12px rgba(0,0,0,0.12); position: relative;
+transition: transform 0.3s ease;
+}
+
+.apiwachat_cat_group_card:hover .apiwachat_cat_group_avatar { transform: scale(1.05); }
+
+.apiwachat_cat_group_avatar::after {
+content: ''; position: absolute; inset: -3px; border-radius: 50%;
+border: 2px solid rgba(0,168,132,0.3);
+}
+
+.apiwachat_cat_group_info { flex: 1; min-width: 0; }
+.apiwachat_cat_group_name {
+font-size: 16px; font-weight: 600; color: var(--wa-text); margin-bottom: 2px;
+display: flex; align-items: center; gap: 8px;
+}
+
+.apiwachat_cat_group_count {
+font-size: 13px; color: var(--wa-text-light);
+display: flex; align-items: center; gap: 4px;
+}
+
+.apiwachat_cat_group_count::before {
+content: ''; width: 6px; height: 6px; border-radius: 50%;
+background: var(--wa-primary); display: inline-block; opacity: 0.5;
+}
+
+.apiwachat_cat_group_actions { display: flex; gap: 6px; flex-shrink: 0; }
+.apiwachat_cat_action_btn {
+width: 36px; height: 36px; border-radius: 50%; border: none;
+background: var(--wa-header-bg); color: var(--wa-text-light);
+cursor: pointer; display: flex; align-items: center; justify-content: center;
+font-size: 14px; transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+}
+.apiwachat_cat_action_btn:hover { background: var(--wa-primary); color: #fff; transform: scale(1.12); box-shadow: 0 4px 12px rgba(0,168,132,0.35); }
+
+.apiwachat_cat_expand_btn i { transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); }
+.apiwachat_cat_expand_btn.expanded i { transform: rotate(180deg); }
+
+.apiwachat_cat_group_members {
+display: none; border-top: 1px solid var(--wa-border); padding: 4px 0;
+animation: wa-membersIn 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+.apiwachat_cat_group_members.show { display: block; }
+
+@keyframes wa-membersIn {
+0% { opacity: 0; max-height: 0; padding-top: 0; padding-bottom: 0; }
+100% { opacity: 1; max-height: 2000px; padding-top: 4px; padding-bottom: 4px; }
+}
+
+.apiwachat_cat_member_row {
+display: flex; align-items: center; padding: 8px 16px 8px 24px;
+gap: 12px; transition: all 0.2s ease; cursor: default; border-radius: 0; position: relative;
+}
+.apiwachat_cat_member_row:hover { background: var(--wa-header-bg); padding-left: 28px; }
+
+.apiwachat_cat_member_row+.apiwachat_cat_member_row::before {
+content: ''; position: absolute; top: 0; left: 64px; right: 16px;
+height: 1px; background: var(--wa-border);
+}
+
+.apiwachat_cat_member_avatar {
+width: 36px; height: 36px; border-radius: 50%;
+display: flex; align-items: center; justify-content: center;
+color: white; font-size: 14px; font-weight: 700; flex-shrink: 0;
+box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+transition: transform 0.2s ease; border: 2px solid rgba(255,255,255,0.3);
+}
+.apiwachat_cat_member_row:hover .apiwachat_cat_member_avatar { transform: scale(1.08); }
+
+.apiwachat_cat_member_info { flex: 1; min-width: 0; }
+.apiwachat_cat_member_name { font-size: 14px; font-weight: 500; color: var(--wa-text); margin-bottom: 1px; }
+.apiwachat_cat_member_phone { font-size: 12px; color: var(--wa-text-light); }
+
+.apiwachat_cat_member_actions {
+display: flex; gap: 2px; opacity: 0; transition: all 0.2s ease; transform: translateX(8px);
+}
+.apiwachat_cat_member_row:hover .apiwachat_cat_member_actions { opacity: 1; transform: translateX(0); }
+
+.apiwachat_cat_member_btn {
+width: 30px; height: 30px; border-radius: 50%; border: none;
+background: transparent; color: var(--wa-text-light); cursor: pointer;
+display: flex; align-items: center; justify-content: center;
+font-size: 12px; transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
+}
+.apiwachat_cat_member_btn:hover { background: rgba(0,168,132,0.12); color: var(--wa-primary); transform: scale(1.15); }
+.apiwachat_cat_member_btn.apiwachat_cat_member_btn_delete:hover { background: rgba(231,76,60,0.1); color: #e74c3c; }
+
+.apiwachat_cat_add_btn {
+display: flex; align-items: center; justify-content: center; gap: 10px;
+width: 100%; padding: 14px; border: 2px dashed var(--wa-border);
+border-radius: 14px; background: transparent; color: var(--wa-text-light);
+font-size: 15px; font-weight: 500; cursor: pointer;
+transition: all 0.3s cubic-bezier(0.4,0,0.2,1); margin-top: 8px; position: relative; overflow: hidden;
+}
+
+.apiwachat_cat_add_btn::before {
+content: ''; position: absolute; inset: 0;
+background: linear-gradient(135deg, var(--wa-primary), var(--wa-accent));
+opacity: 0; transition: opacity 0.3s ease;
+}
+
+.apiwachat_cat_add_btn:hover { border-color: transparent; color: #fff; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,168,132,0.25); }
+.apiwachat_cat_add_btn:hover::before { opacity: 1; }
+.apiwachat_cat_add_btn i, .apiwachat_cat_add_btn span { position: relative; z-index: 1; }
+.apiwachat_cat_add_btn i { font-size: 16px; transition: transform 0.3s ease; }
+.apiwachat_cat_add_btn:hover i { transform: rotate(90deg); }
+
+#apiwachat_root[data-theme="dark"] .apiwachat_cat_group_card { box-shadow: 0 1px 4px rgba(0,0,0,0.2); }
+#apiwachat_root[data-theme="dark"] .apiwachat_cat_group_card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.35); }
+#apiwachat_root[data-theme="dark"] .apiwachat_cat_add_btn::before { background: linear-gradient(135deg, #00a884, #075E54); }
+
+/* ===== CONTACT PANEL ACTIONS ===== */
+.apiwachat_contact_panel_actions { padding: 0 20px 20px; }
+
+/* ===== SETTINGS LOGOUT FULL ROW ===== */
+.apiwachat_settings_logout { cursor: pointer; border-radius: 0; }
+.apiwachat_settings_logout:hover { background: rgba(231,76,60,0.08) !important; }
+
+/* ===== SETTINGS INSTANCE ROW ===== */
+#apiwachat_settingsInstanceRow { cursor: pointer; border-radius: 0; }
+
+/* ===== TEXT SUCCESS/MUTED ===== */
+.apiwachat_text_success { color: #00a884; font-weight: 600; }
+.apiwachat_text_muted { color: var(--wa-text-light); }
+
+/* ===== TABS (Chats/Contactos) ===== */
+.apiwachat_tabs {
+display: flex; background: var(--wa-header-bg);
+border-bottom: 1px solid var(--wa-border); flex-shrink: 0;
+}
+
+.apiwachat_tab {
+flex: 1; text-align: center; padding: 12px 0; cursor: pointer;
+font-size: 14px; font-weight: 500; color: var(--wa-text-light);
+position: relative; transition: color 0.2s;
+border: none; background: none; font-family: inherit;
+}
+
+.apiwachat_tab:hover { color: var(--wa-primary); }
+.apiwachat_tab.active { color: var(--wa-primary); font-weight: 600; }
+
+.apiwachat_tab.active::after {
+content: ''; position: absolute; bottom: 0; left: 50%;
+transform: translateX(-50%); width: 50%;
+height: 3px; background: var(--wa-primary-gradient);
+border-radius: 12px 12px 0 0;
+}
+
+/* ===== CHAT LIST GROUP HEADERS ===== */
+.apiwachat_group_header {
+padding: 15px 16px 8px; font-size: 14px; font-weight: 700;
+color: var(--wa-primary); text-transform: uppercase; letter-spacing: 1.5px;
+display: flex; justify-content: space-between; align-items: center;
+}
+
+/* ===== PREVIEW LIST ===== */
+.apiwachat_preview_list {
+display: flex; gap: 10px; padding: 8px 16px;
+background: var(--wa-glass-bg); border-top: 1px solid var(--wa-glass-border);
+overflow-x: auto; min-height: 0;
+}
+
+.apiwachat_preview_list:empty { display: none !important; }
+
+.apiwachat_preview_item {
+position: relative; width: 72px; height: 72px; border-radius: var(--wa-radius-md);
+overflow: hidden; background: var(--wa-border); flex-shrink: 0;
+border: 2px solid var(--wa-glass-border); display: flex; align-items: center;
+justify-content: center; transition: all var(--wa-transition-fast);
+animation: wa-messageIn 0.2s ease-out;
+}
+
+.apiwachat_preview_item:hover { transform: scale(1.03); border-color: var(--wa-primary); }
+.apiwachat_preview_item img, .apiwachat_preview_item video { width: 100%; height: 100%; object-fit: cover; }
+.apiwachat_preview_item div { font-size: 11px; padding: 4px; word-break: break-all; line-height: 1.3; text-align: center; }
+
+.apiwachat_preview_remove {
+position: absolute; top: 4px; right: 4px; width: 22px; height: 22px;
+background: var(--wa-accent-gradient); color: white; border: none;
+border-radius: 50%; cursor: pointer; font-size: 12px;
+display: flex; align-items: center; justify-content: center;
+opacity: 0; transition: all var(--wa-transition-fast);
+box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.apiwachat_preview_item:hover .apiwachat_preview_remove { opacity: 1; }
+.apiwachat_preview_remove:hover { transform: scale(1.15); }
+
+/* ===== API DETAILS CARD ===== */
+.apiwachat_api_details_card {
+background: var(--wa-bg); padding: 15px; border-radius: var(--wa-radius-sm);
+margin-top: 10px; font-size: 13px; color: var(--wa-text-light);
+border: 1px solid var(--wa-border);
+}
+.apiwachat_api_details_card strong { color: var(--wa-text); }
+
+/* ===== UTILITY STYLES ===== */
+.apiwachat_modal_section_divider { height: 1px; background: var(--wa-border); margin: 12px 0; }
+.apiwachat_btn_primary {
+border: none; background: var(--wa-primary-gradient);
+color: #fff; border-radius: 999px; padding: 10px 24px;
+cursor: pointer; font-weight: 600; font-size: 14px;
+font-family: inherit; transition: all var(--wa-transition-smooth);
+box-shadow: 0 4px 15px rgba(0,168,132,0.25);
+}
+.apiwachat_btn_primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,168,132,0.35); }
+.apiwachat_btn_primary:active { transform: translateY(0); }
+.apiwachat_credentials_select { font-family: inherit; }
+
+.apiwachat_qr_overlay_loading .apiwachat_qr_spinner { display: block; }
+.apiwachat_qr_overlay_loading .apiwachat_qr_overlay_content strong::after { content: 'Cargando QR...'; }
+.apiwachat_qr_overlay_error .apiwachat_qr_overlay_content strong::after { content: 'Error al cargar'; }
+.apiwachat_qr_overlay_error .apiwachat_qr_overlay_content small { display: block; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1199px) {
+#apiwachat_root { left: 0; }
+}
+
+@media (max-width: 768px) {
+.apiwachat_login_panel { padding: 12px; }
+.apiwachat_login_card { padding: 24px 20px; border-radius: var(--wa-radius-md); }
+.apiwachat_qr_box { width: min(270px, 100%); height: min(270px, 78vw); }
+.apiwachat_app_container { position: relative; }
+
+.apiwachat_sidebar {
+position: absolute; inset: 0; width: 100%; max-width: none; min-width: 0;
+z-index: 2; transition: transform 0.25s ease;
+}
+.apiwachat_conversation { position: absolute; inset: 0; z-index: 1; display: flex; }
+.apiwachat_mobile_chat_open .apiwachat_sidebar { transform: translateX(-100%); }
+.apiwachat_back_button { display: inline-flex; align-items: center; justify-content: center; }
+.apiwachat_message { max-width: 85%; }
+.apiwachat_current_actions { display: none; }
+.apiwachat_reply_bar { padding: 6px 12px; }
+.apiwachat_context_menu { min-width: 160px; }
+.apiwachat_contact_panel { max-width: 100%; }
+.apiwachat_messages_container { padding: 14px; }
+.apiwachat_message:first-child { margin-top: 4px; }
+.apiwachat_sidebar_header,
+.apiwachat_conversation_header { height: 56px; padding: 0 12px; }
+.apiwachat_input_area { padding: 8px 12px; }
+.apiwachat_modal_content { max-width: 95vw; }
 }

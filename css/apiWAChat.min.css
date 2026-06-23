@@ -2049,3 +2049,55 @@ z-index: 2; transition: transform 0.25s ease;
 .apiwachat_input_area { padding: 8px 12px; }
 .apiwachat_modal_content { max-width: 95vw; }
 }
+.apiwachat_message_status_pending i {
+font-size: 9px;
+color: rgba(0,0,0,0.35);
+}
+
+.apiwachat_message_status_error i {
+color: #dc2626;
+}
+
+.apiwachat_message_media {
+display: flex;
+flex-direction: column;
+gap: 6px;
+max-width: 280px;
+}
+
+.apiwachat_message_media img,
+.apiwachat_message_media video {
+max-width: 280px;
+border-radius: 12px;
+display: block;
+cursor: pointer;
+}
+
+.apiwachat_message_media audio {
+width: 260px;
+}
+
+.apiwachat_message_caption {
+font-size: 14px;
+line-height: 1.4;
+}
+
+.apiwachat_message_document {
+display: flex;
+align-items: center;
+gap: 10px;
+padding: 10px 12px;
+border-radius: 10px;
+background: rgba(255,255,255,0.45);
+color: inherit;
+text-decoration: none;
+font-size: 14px;
+}
+
+.apiwachat_message_document i {
+font-size: 22px;
+}
+
+#apiwachat_root[data-theme="dark"] .apiwachat_message_document {
+background: rgba(255,255,255,0.08);
+}

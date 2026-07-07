@@ -21,8 +21,8 @@ overflow: hidden;
 font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Inter', Roboto, Helvetica, Arial, sans-serif;
 }
 
-#apiwachat_root,
-#apiwachat_root * {
+#div_html_root,
+#div_html_root * {
 box-sizing: border-box;
 }
 
@@ -111,7 +111,7 @@ transform: translateX(350%);
 }
 
 /* ===== ROOT & CSS VARIABLES ===== */
-#apiwachat_root {
+#div_html_root {
 /* WhatsApp Web light palette */
 --wa-primary: #008069;
 --wa-primary-dark: #006a56;
@@ -185,22 +185,23 @@ overflow: hidden;
 display: flex;
 flex-direction: column;
 font-size: 14px;
+padding: 0;
 }
 
-#apiwachat_root>.topbar {
+#div_html_root>.topbar {
 flex-shrink: 0;
 margin-left: 0;
 width: 100%;
 }
 
-#apiwachat_root>.apiwachat_login_panel,
-#apiwachat_root>.apiwachat_chat_panel {
+#div_html_root>.apiwachat_login_panel,
+#div_html_root>.apiwachat_chat_panel {
 flex: 1;
 min-height: 0;
 }
 
 /* ===== DARK THEME ===== */
-#apiwachat_root[data-theme="dark"] {
+#div_html_root[data-theme="dark"] {
 --wa-primary: #00a884;
 --wa-primary-dark: #008a6d;
 --wa-primary-hover: #009676;
@@ -228,32 +229,32 @@ min-height: 0;
 --wa-selected: #1d2c33;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_message_time {
+#div_html_root[data-theme="dark"] .apiwachat_message_time {
 color: rgba(255, 255, 255, 0.6);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_message_status .fa-check,
-#apiwachat_root[data-theme="dark"] .apiwachat_message_status .fa-check-double {
+#div_html_root[data-theme="dark"] .apiwachat_message_status .fa-check,
+#div_html_root[data-theme="dark"] .apiwachat_message_status .fa-check-double {
 color: rgba(255, 255, 255, 0.6);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_message_status_pending i {
+#div_html_root[data-theme="dark"] .apiwachat_message_status_pending i {
 color: rgba(255, 255, 255, 0.5);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_input_icon:hover {
+#div_html_root[data-theme="dark"] .apiwachat_input_icon:hover {
 background: rgba(255, 255, 255, 0.1);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_reply_close:hover {
+#div_html_root[data-theme="dark"] .apiwachat_reply_close:hover {
 background: rgba(255, 255, 255, 0.1);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_message_reply_context:hover {
+#div_html_root[data-theme="dark"] .apiwachat_message_reply_context:hover {
 background: rgba(255, 255, 255, 0.1);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_message_status_error i {
+#div_html_root[data-theme="dark"] .apiwachat_message_status_error i {
 color: #ff6b6b;
 }
 
@@ -293,7 +294,7 @@ transform: translateY(0);
 }
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_login_card {
+#div_html_root[data-theme="dark"] .apiwachat_login_card {
 background: var(--wa-sidebar);
 border-color: var(--wa-border);
 }
@@ -365,13 +366,13 @@ border-color: var(--wa-primary);
 box-shadow: 0 0 0 2px rgba(0, 128, 105, 0.15);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_form_control {
+#div_html_root[data-theme="dark"] .apiwachat_form_control {
 background: var(--wa-input-bg);
 border-color: var(--wa-border);
 color: var(--wa-text);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_form_control:focus {
+#div_html_root[data-theme="dark"] .apiwachat_form_control:focus {
 border-color: var(--wa-primary);
 box-shadow: 0 0 0 2px rgba(0, 168, 132, 0.2);
 }
@@ -393,7 +394,7 @@ transition: box-shadow var(--wa-transition);
 box-shadow: var(--wa-shadow);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_qr_box {
+#div_html_root[data-theme="dark"] .apiwachat_qr_box {
 background: #fff;
 border-color: var(--wa-border);
 }
@@ -421,7 +422,7 @@ justify-content: center;
 cursor: pointer;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_qr_overlay {
+#div_html_root[data-theme="dark"] .apiwachat_qr_overlay {
 background: rgba(17, 27, 33, 0.92);
 }
 
@@ -478,13 +479,13 @@ background: var(--wa-hover);
 border-color: #c8d2d7;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_btn_secondary {
+#div_html_root[data-theme="dark"] .apiwachat_btn_secondary {
 background: var(--wa-input-bg);
 border-color: var(--wa-border);
 color: var(--wa-text);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_btn_secondary:hover {
+#div_html_root[data-theme="dark"] .apiwachat_btn_secondary:hover {
 background: #2a3942;
 }
 
@@ -522,10 +523,6 @@ font-size: 12px;
 display: none;
 flex: 1;
 min-height: 0;
-padding: 0 !important;
-}
-
-.apiwachat_root {
 padding: 0 !important;
 }
 
@@ -625,7 +622,7 @@ background: rgba(255, 255, 255, 0.12);
 }
 
 /* Dark theme sidebar header */
-#apiwachat_root[data-theme="dark"] .apiwachat_sidebar_header {
+#div_html_root[data-theme="dark"] .apiwachat_sidebar_header {
 background: var(--wa-panel-header);
 }
 
@@ -662,7 +659,7 @@ transform: scale(1) translateY(0);
 }
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_sidebar_menu {
+#div_html_root[data-theme="dark"] .apiwachat_sidebar_menu {
 background: #233138;
 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
@@ -752,19 +749,19 @@ appearance: auto;
 border-color: var(--wa-primary);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_instance_bar {
+#div_html_root[data-theme="dark"] .apiwachat_instance_bar {
 background: var(--wa-header-bg);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_instance_bar select,
-#apiwachat_root[data-theme="dark"] .apiwachat_instance_bar .apiwachat_credentials_select {
+#div_html_root[data-theme="dark"] .apiwachat_instance_bar select,
+#div_html_root[data-theme="dark"] .apiwachat_instance_bar .apiwachat_credentials_select {
 background: var(--wa-input-bg);
 border-color: var(--wa-border);
 color: var(--wa-text);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_instance_bar select:focus,
-#apiwachat_root[data-theme="dark"] .apiwachat_instance_bar .apiwachat_credentials_select:focus {
+#div_html_root[data-theme="dark"] .apiwachat_instance_bar select:focus,
+#div_html_root[data-theme="dark"] .apiwachat_instance_bar .apiwachat_credentials_select:focus {
 border-color: var(--wa-primary);
 }
 
@@ -814,7 +811,7 @@ height: 24px;
 color: var(--wa-text-light);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_search_box {
+#div_html_root[data-theme="dark"] .apiwachat_search_box {
 background: var(--wa-input-bg);
 }
 
@@ -857,10 +854,10 @@ border-radius: 4px;
 background: #b0b9be;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_chat_list::-webkit-scrollbar-thumb,
-#apiwachat_root[data-theme="dark"] .apiwachat_contacts_view::-webkit-scrollbar-thumb,
-#apiwachat_root[data-theme="dark"] .apiwachat_messages_container::-webkit-scrollbar-thumb,
-#apiwachat_root[data-theme="dark"] .apiwachat_modal_body::-webkit-scrollbar-thumb {
+#div_html_root[data-theme="dark"] .apiwachat_chat_list::-webkit-scrollbar-thumb,
+#div_html_root[data-theme="dark"] .apiwachat_contacts_view::-webkit-scrollbar-thumb,
+#div_html_root[data-theme="dark"] .apiwachat_messages_container::-webkit-scrollbar-thumb,
+#div_html_root[data-theme="dark"] .apiwachat_modal_body::-webkit-scrollbar-thumb {
 background: #3a4954;
 }
 
@@ -933,7 +930,7 @@ background: var(--wa-active-bg) !important;
 background: var(--wa-active-bg) !important;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_chat_item_active {
+#div_html_root[data-theme="dark"] .apiwachat_chat_item_active {
 background: var(--wa-active-bg) !important;
 }
 
@@ -1049,7 +1046,7 @@ text-transform: none;
 letter-spacing: 0;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_contact_group_header {
+#div_html_root[data-theme="dark"] .apiwachat_contact_group_header {
 background: transparent;
 }
 
@@ -1093,7 +1090,7 @@ padding: 0;
 }
 
 /* ===== MODO OSCURO ===== */
-#apiwachat_root[data-theme="dark"] .apiwachat_conversation {
+#div_html_root[data-theme="dark"] .apiwachat_conversation {
 /* Color base oscuro original */
 background-color: #0b141a;
 
@@ -1274,7 +1271,7 @@ box-shadow: var(--wa-shadow-bubble);
 transform: none;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_message {
+#div_html_root[data-theme="dark"] .apiwachat_message {
 color: #e9edef;
 }
 
@@ -1289,7 +1286,7 @@ margin-left: 6px;
 margin-bottom: -2px;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_message small {
+#div_html_root[data-theme="dark"] .apiwachat_message small {
 color: rgba(255, 255, 255, 0.5);
 }
 
@@ -1302,7 +1299,7 @@ margin-right: auto;
 margin-left: 0;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_message_received {
+#div_html_root[data-theme="dark"] .apiwachat_message_received {
 background: var(--wa-bubble-in);
 color: #e9edef;
 }
@@ -1316,7 +1313,7 @@ margin-left: auto;
 margin-right: 0;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_message_sent {
+#div_html_root[data-theme="dark"] .apiwachat_message_sent {
 color: #e9edef;
 }
 
@@ -1333,7 +1330,7 @@ border-width: 0 9px 9px 0;
 border-color: transparent var(--wa-bubble-in) transparent transparent;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_message_received::before {
+#div_html_root[data-theme="dark"] .apiwachat_message_received::before {
 border-right-color: var(--wa-bubble-in);
 }
 
@@ -1349,7 +1346,7 @@ border-width: 0 0 9px 9px;
 border-color: transparent transparent transparent var(--wa-bubble-out);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_message_sent::before {
+#div_html_root[data-theme="dark"] .apiwachat_message_sent::before {
 border-left-color: var(--wa-bubble-out);
 }
 
@@ -1391,16 +1388,16 @@ color: var(--wa-read);
 opacity: 1;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_message_status .fa-check {
+#div_html_root[data-theme="dark"] .apiwachat_message_status .fa-check {
 color: rgba(255, 255, 255, 0.45);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_message_status .fa-check-double {
+#div_html_root[data-theme="dark"] .apiwachat_message_status .fa-check-double {
 color: rgba(255, 255, 255, 0.45);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_message_status_read,
-#apiwachat_root[data-theme="dark"] .apiwachat_message_status .fa-check-double.read {
+#div_html_root[data-theme="dark"] .apiwachat_message_status_read,
+#div_html_root[data-theme="dark"] .apiwachat_message_status .fa-check-double.read {
 color: var(--wa-read);
 }
 
@@ -1429,7 +1426,7 @@ position: relative;
 z-index: 1;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_date_separator span {
+#div_html_root[data-theme="dark"] .apiwachat_date_separator span {
 background: #182229;
 color: var(--wa-text-secondary);
 }
@@ -1446,7 +1443,7 @@ flex-shrink: 0;
 min-height: 62px;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_input_area {
+#div_html_root[data-theme="dark"] .apiwachat_input_area {
 background: var(--wa-header-bg);
 }
 
@@ -1504,7 +1501,7 @@ box-shadow: none;
 color: var(--wa-text-light);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_message_input {
+#div_html_root[data-theme="dark"] .apiwachat_message_input {
 background: var(--wa-input-bg);
 color: var(--wa-text);
 }
@@ -1565,7 +1562,7 @@ background: #f8f9fa;
 border-left: 1px solid var(--wa-border);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_empty_state_center {
+#div_html_root[data-theme="dark"] .apiwachat_empty_state_center {
 background: #222e35;
 }
 
@@ -1617,7 +1614,7 @@ opacity: 1;
 pointer-events: auto;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_modal {
+#div_html_root[data-theme="dark"] .apiwachat_modal {
 background: rgba(0, 0, 0, 0.65);
 }
 
@@ -1641,7 +1638,7 @@ transform: scale(1) translateY(0);
 opacity: 1;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_modal_content {
+#div_html_root[data-theme="dark"] .apiwachat_modal_content {
 background: #233138;
 }
 
@@ -1687,7 +1684,7 @@ overflow-y: auto;
 max-height: 70vh;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_modal_body {
+#div_html_root[data-theme="dark"] .apiwachat_modal_body {
 background: #111b21;
 }
 
@@ -1699,7 +1696,7 @@ margin-bottom: 14px;
 background: var(--wa-header-bg);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_api_details {
+#div_html_root[data-theme="dark"] .apiwachat_api_details {
 background: var(--wa-input-bg);
 border-color: var(--wa-border);
 }
@@ -1729,7 +1726,7 @@ font-size: 13px;
 line-height: 1.5;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_modal_note {
+#div_html_root[data-theme="dark"] .apiwachat_modal_note {
 background: rgba(0, 168, 132, 0.12);
 }
 
@@ -1754,7 +1751,7 @@ box-shadow: var(--wa-shadow-bubble);
 transform: none;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_message_system {
+#div_html_root[data-theme="dark"] .apiwachat_message_system {
 background: rgba(32, 44, 51, 0.85);
 }
 
@@ -1954,7 +1951,7 @@ display: flex;
 animation: wa-slideUp 0.15s ease-out;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_reply_bar {
+#div_html_root[data-theme="dark"] .apiwachat_reply_bar {
 background: #1f2c33;
 }
 
@@ -2017,7 +2014,7 @@ display: block;
 animation: wa-scaleIn 0.12s ease;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_context_menu {
+#div_html_root[data-theme="dark"] .apiwachat_context_menu {
 background: #233138;
 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
 }
@@ -2056,7 +2053,7 @@ color: #d93025 !important;
 background: #fff0f0 !important;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_context_item:hover {
+#div_html_root[data-theme="dark"] .apiwachat_context_item:hover {
 background: var(--wa-hover);
 }
 
@@ -2082,7 +2079,7 @@ display: flex;
 animation: wa-scaleIn 0.12s ease;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_emoji_picker {
+#div_html_root[data-theme="dark"] .apiwachat_emoji_picker {
 background: #233138;
 border-color: var(--wa-border);
 }
@@ -2108,7 +2105,7 @@ background: rgba(0, 0, 0, 0.2);
 border-radius: 4px;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_emoji_grid::-webkit-scrollbar-thumb {
+#div_html_root[data-theme="dark"] .apiwachat_emoji_grid::-webkit-scrollbar-thumb {
 background: rgba(255, 255, 255, 0.2);
 }
 
@@ -2145,7 +2142,7 @@ z-index: 500;
 width: 250px;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_attach_menu {
+#div_html_root[data-theme="dark"] .apiwachat_attach_menu {
 background: #233138;
 border-color: var(--wa-border);
 }
@@ -2181,11 +2178,11 @@ font-family: inherit;
 background: var(--wa-hover);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_attach_item {
+#div_html_root[data-theme="dark"] .apiwachat_attach_item {
 color: var(--wa-text);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_attach_item:hover {
+#div_html_root[data-theme="dark"] .apiwachat_attach_item:hover {
 background: var(--wa-hover);
 }
 
@@ -2390,12 +2387,12 @@ border-bottom: none;
 background: var(--wa-hover);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_contact_panel_row {
+#div_html_root[data-theme="dark"] .apiwachat_contact_panel_row {
 background: var(--wa-sidebar);
 border-color: var(--wa-border);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_contact_panel_row:hover {
+#div_html_root[data-theme="dark"] .apiwachat_contact_panel_row:hover {
 background: var(--wa-hover);
 }
 
@@ -2538,11 +2535,11 @@ transition: background var(--wa-transition);
 background: rgba(0, 0, 0, 0.09);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_message_reply_context {
+#div_html_root[data-theme="dark"] .apiwachat_message_reply_context {
 background: rgba(255, 255, 255, 0.07);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_message_reply_context:hover {
+#div_html_root[data-theme="dark"] .apiwachat_message_reply_context:hover {
 background: rgba(255, 255, 255, 0.11);
 }
 
@@ -2636,7 +2633,7 @@ display: flex;
 animation: wa-scaleIn 0.12s ease;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_templates_panel {
+#div_html_root[data-theme="dark"] .apiwachat_templates_panel {
 background: #233138;
 border-color: var(--wa-border);
 }
@@ -2761,7 +2758,7 @@ background: var(--wa-hover);
 background: var(--wa-selected);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_bulk_recipient_item.selected {
+#div_html_root[data-theme="dark"] .apiwachat_bulk_recipient_item.selected {
 background: var(--wa-selected);
 }
 
@@ -3632,17 +3629,17 @@ background: rgba(0, 128, 105, 0.06);
 border-color: var(--wa-primary);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_cat_group_card {
+#div_html_root[data-theme="dark"] .apiwachat_cat_group_card {
 box-shadow: none;
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_cat_group_header,
-#apiwachat_root[data-theme="dark"] .apiwachat_cat_header {
+#div_html_root[data-theme="dark"] .apiwachat_cat_group_header,
+#div_html_root[data-theme="dark"] .apiwachat_cat_header {
 background: var(--wa-sidebar);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_cat_group,
-#apiwachat_root[data-theme="dark"] .apiwachat_cat_members {
+#div_html_root[data-theme="dark"] .apiwachat_cat_group,
+#div_html_root[data-theme="dark"] .apiwachat_cat_members {
 background: var(--wa-sidebar);
 }
 
@@ -3878,7 +3875,7 @@ display: block;
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1199px) {
-#apiwachat_root {
+#div_html_root {
 left: 0;
 }
 }
@@ -4023,7 +4020,7 @@ font-size: 22px;
 color: var(--wa-primary);
 }
 
-#apiwachat_root[data-theme="dark"] .apiwachat_message_document {
+#div_html_root[data-theme="dark"] .apiwachat_message_document {
 background: rgba(255, 255, 255, 0.07);
 }
 

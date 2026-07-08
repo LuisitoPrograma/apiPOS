@@ -5433,3 +5433,284 @@ min-height: 300px;
 border-radius: 18px;
 }
 }
+
+/* LAYOUT ORDERS - DATE FILTERS */
+.layout-orders-date-filters{
+display:none;
+justify-content:center;
+align-items:center;
+gap:8px;
+margin:5px auto 12px auto;
+position:relative;
+flex-wrap:wrap;
+}
+
+.layout-orders-date-btn{
+border:none;
+background:#f1f1f1;
+color:#080060;
+font-weight:700;
+font-size:13px;
+padding:7px 12px;
+border-radius:8px;
+cursor:pointer;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+.layout-orders-date-btn.active{
+background:#080060;
+color:#fff;
+}
+
+.layout-orders-calendar-btn{
+background:#FF5900;
+color:#fff;
+}
+
+.layout-orders-calendar-popover{
+display:none;
+position:absolute;
+top:42px;
+background:#fff;
+border:1px solid #e7e7e7;
+border-radius:12px;
+box-shadow:0 12px 35px rgba(0,0,0,.18);
+padding:12px;
+z-index:3000;
+min-width:280px;
+}
+
+.layout-orders-calendar-popover.active{
+display:block;
+}
+
+.layout-orders-calendar-row{
+display:flex;
+flex-direction:column;
+gap:4px;
+margin-bottom:8px;
+}
+
+.layout-orders-calendar-row label{
+font-size:12px;
+font-weight:700;
+color:#080060;
+}
+
+.layout-orders-calendar-row input{
+border:1px solid #d7d7d7;
+border-radius:8px;
+padding:7px;
+font-size:13px;
+}
+
+.layout-orders-calendar-actions{
+display:flex;
+justify-content:flex-end;
+gap:8px;
+}
+
+.layout-orders-calendar-actions button{
+border:none;
+border-radius:8px;
+padding:7px 10px;
+font-weight:700;
+cursor:pointer;
+}
+
+#layoutOrdersCalendarCancel{
+background:#e9e9e9;
+color:#333;
+}
+
+#layoutOrdersCalendarApply{
+background:#FF5900;
+color:#fff;
+}
+
+/* LAYOUT ORDERS - PANEL */
+.layout-orders-panel{
+width:100%;
+padding:0 10px 20px 10px;
+}
+
+.layout-orders-loading,
+.layout-orders-empty{
+text-align:center;
+font-weight:700;
+color:#999;
+padding:18px;
+}
+
+.layout-orders-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill, minmax(270px, 1fr));
+gap:14px;
+align-items:start;
+}
+
+.layout-order-card{
+background:#fff;
+border-radius:14px;
+box-shadow:0 8px 22px rgba(0,0,0,.08);
+padding:12px;
+border:1px solid #f0f0f0;
+}
+
+.layout-order-card-dirty{
+border-color:#FF5900;
+}
+
+.layout-order-card-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:10px;
+margin-bottom:8px;
+}
+
+.layout-order-eye{
+color:#FF5900;
+margin-right:6px;
+}
+
+.layout-order-number{
+font-size:20px;
+font-weight:800;
+color:#999;
+}
+
+.layout-order-payment-badge{
+background:#080060;
+color:#fff;
+font-size:12px;
+font-weight:800;
+border-radius:8px;
+padding:5px 14px;
+white-space:nowrap;
+}
+
+.layout-order-card-body{
+font-size:12px;
+color:#444;
+}
+
+.layout-order-customer{
+font-weight:800;
+color:#222;
+margin-bottom:7px;
+}
+
+.layout-order-line{
+display:flex;
+justify-content:space-between;
+gap:8px;
+margin-bottom:4px;
+}
+
+.layout-order-line span{
+color:#666;
+}
+
+.layout-order-line strong{
+color:#222;
+text-align:right;
+}
+
+.layout-order-edit-box{
+margin-top:10px;
+border-top:1px solid #f0f0f0;
+padding-top:10px;
+display:grid;
+grid-template-columns:1fr;
+gap:6px;
+}
+
+.layout-order-edit-box label{
+font-size:11px;
+font-weight:800;
+color:#080060;
+}
+
+.layout-order-select{
+width:100%;
+border:1px solid #ddd;
+border-radius:8px;
+padding:7px;
+font-size:12px;
+background:#fff;
+}
+
+.layout-order-save-btn{
+border:none;
+border-radius:8px;
+background:#FF5900;
+color:#fff;
+font-weight:800;
+padding:8px 10px;
+cursor:pointer;
+margin-top:4px;
+}
+
+.layout-order-save-btn:disabled{
+opacity:.65;
+cursor:not-allowed;
+}
+
+.layout-order-save-message{
+font-size:12px;
+font-weight:700;
+min-height:16px;
+}
+
+.layout-order-save-message.success{
+color:#00bb2d;
+}
+
+.layout-order-save-message.error{
+color:#C41C00;
+}
+
+.layout-orders-pagination{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:10px;
+margin-top:18px;
+}
+
+.layout-orders-page-btn{
+border:none;
+background:#080060;
+color:#fff;
+font-weight:800;
+border-radius:8px;
+padding:7px 14px;
+cursor:pointer;
+}
+
+.layout-orders-page-btn:disabled{
+background:#d6d6d6;
+cursor:not-allowed;
+}
+
+.layout-orders-page-label{
+font-weight:800;
+color:#999;
+}
+
+@media (max-width: 768px){
+.layout-orders-grid{
+grid-template-columns:1fr;
+}
+
+.layout-orders-date-btn{
+font-size:12px;
+padding:6px 8px;
+}
+
+.layout-orders-calendar-popover{
+left:50%;
+transform:translateX(-50%);
+}
+}

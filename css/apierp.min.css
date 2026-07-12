@@ -151,6 +151,8 @@ color:#64748b;
 
 .userCfg_section{
 border-bottom:1px solid #e8ecf2;
+padding: 0 !important;
+border-radius: 16px;
 }
 
 .userCfg_section:last-child{

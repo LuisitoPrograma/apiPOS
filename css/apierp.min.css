@@ -2793,6 +2793,15 @@ body.apiERPInst_modalOpen{
 overflow:hidden !important;
 }
 
+/* PDF SOBRE EDITOR DE CUOTAS */
+body.apiERPInst_modalOpen #modalOverlay{
+z-index:100200 !important;
+}
+
+body.apiERPInst_modalOpen #detalleModal{
+z-index:100201 !important;
+}
+
 #modalOverlayInstallment.apiERPInst_overlay{
 display:none;
 position:fixed !important;
@@ -2934,6 +2943,18 @@ cursor:pointer;
 
 .inst_iconButton:hover{
 background:rgba(255,255,255,.18);
+}
+
+.inst_iconButton:disabled{
+opacity:.55;
+cursor:not-allowed;
+}
+
+.inst_headerPrintButton img{
+width:19px;
+height:19px;
+display:block;
+filter:brightness(0) invert(1);
 }
 
 .inst_headerActions{

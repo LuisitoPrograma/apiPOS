@@ -3,7 +3,7 @@ Name: apiERP
 Author: Luisito Programa
 Website 1: luisitoprograma.com
 Website 2: apiERP.dev
-version: 6.5.5
+version: 6.5.6
 */
 
 /* css/apierp.min.css */
@@ -4274,5 +4274,928 @@ transition:none;
 
 .inst_installmentCardFocus{
 animation:none;
+}
+}
+
+/* ======================================================
+ATTENDANCE / HUMAN RESOURCES
+====================================================== */
+
+.att23_overlay,
+.att36_overlay,
+.attScan_confirmOverlay{
+position:fixed;
+inset:0;
+z-index:99999;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:18px;
+background:rgba(15,23,42,.58);
+backdrop-filter:blur(5px);
+}
+
+.att23_modal,
+.att36_modal,
+.attScan_confirmModal{
+width:min(920px,100%);
+max-height:94vh;
+overflow:auto;
+background:var(--white);
+border-radius:18px;
+box-shadow:0 25px 70px rgba(15,23,42,.24);
+}
+
+.att23_modalHeader,
+.att36_header{
+display:flex;
+align-items:flex-start;
+justify-content:space-between;
+gap:16px;
+padding:20px 22px;
+border-bottom:1px solid #e7eaf0;
+}
+
+.att23_modalHeader h2,
+.att36_header h2{
+margin:0;
+font-size:20px;
+color:var(--blue);
+}
+
+.att23_modalHeader p,
+.att36_header p{
+margin:4px 0 0;
+font-size:12px;
+color:var(--lead);
+}
+
+.att23_iconButton,
+.att36_iconButton{
+width:38px;
+height:38px;
+border:0;
+border-radius:50%;
+background:#f3f4f6;
+color:var(--blue);
+font-size:24px;
+cursor:pointer;
+}
+
+.att23_form,
+#att36_form{
+padding:20px 22px 22px;
+}
+
+.att23_grid{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:14px;
+}
+
+.att23_field,
+.att36_field{
+display:flex;
+flex-direction:column;
+gap:6px;
+min-width:0;
+}
+
+.att23_field--wide{
+grid-column:1 / -1;
+}
+
+.att23_field span,
+.att36_field span{
+font-size:12px;
+font-weight:700;
+color:var(--blue);
+}
+
+.att23_field input,
+.att23_field select,
+.att23_field textarea,
+.att36_field input,
+.att36_field select{
+width:100%;
+min-height:42px;
+box-sizing:border-box;
+border:1px solid #d8dde5;
+border-radius:9px;
+background:var(--white);
+color:var(--lead);
+padding:8px 10px;
+font:inherit;
+}
+
+.att23_field textarea{
+resize:vertical;
+}
+
+.att23_field input:focus,
+.att23_field select:focus,
+.att23_field textarea:focus,
+.att36_field input:focus,
+.att36_field select:focus{
+outline:none;
+border-color:var(--orange);
+box-shadow:0 0 0 3px rgba(255,89,0,.12);
+}
+
+.att23_actions,
+.att36_actions{
+display:flex;
+align-items:center;
+justify-content:flex-end;
+gap:9px;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
+.att23_button,
+.att36_button,
+.attScan_primaryButton,
+.attScan_secondaryButton{
+min-height:42px;
+border:1px solid var(--blue);
+border-radius:9px;
+padding:9px 16px;
+background:var(--blue);
+color:var(--white);
+font-weight:700;
+cursor:pointer;
+transition:opacity .15s ease,transform .15s ease;
+}
+
+.att23_button:hover,
+.att36_button:hover,
+.attScan_primaryButton:hover,
+.attScan_secondaryButton:hover{
+opacity:.9;
+}
+
+.att23_button:disabled,
+.att36_button:disabled{
+opacity:.55;
+cursor:not-allowed;
+}
+
+.att23_button--soft,
+.att36_button--soft,
+.attScan_secondaryButton{
+background:var(--white);
+color:var(--blue);
+}
+
+.att23_barcodeSection{
+margin-top:18px;
+padding:16px;
+border:1px dashed #cbd5e1;
+border-radius:12px;
+text-align:center;
+background:#fafbfc;
+}
+
+.att23_barcodeSection p{
+margin:0 0 12px;
+font-size:12px;
+}
+
+.att23_barcodeSection svg{
+max-width:100%;
+}
+
+.att23_tableActions,
+.att36_tableActions{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:6px;
+flex-wrap:wrap;
+}
+
+.att23_tableButton,
+.att36_tableButton{
+border:1px solid var(--blue);
+border-radius:7px;
+padding:5px 8px;
+background:var(--white);
+color:var(--blue);
+font-size:11px;
+font-weight:700;
+cursor:pointer;
+}
+
+.att23_tableButton--secondary{
+border-color:var(--orange);
+color:var(--orange);
+}
+
+.att23_tableButton--danger,
+.att36_tableButton--danger{
+border-color:#b42318;
+color:#b42318;
+}
+
+.att36_topFields{
+display:grid;
+grid-template-columns:minmax(0,1fr) auto;
+gap:18px;
+align-items:end;
+}
+
+.att36_totalBox{
+min-width:170px;
+padding:10px 14px;
+border-radius:10px;
+background:#f7f7fb;
+}
+
+.att36_totalBox span{
+display:block;
+font-size:11px;
+color:var(--lead);
+}
+
+.att36_totalBox strong{
+display:block;
+margin-top:2px;
+color:var(--blue);
+font-size:16px;
+}
+
+.att36_days{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:12px;
+margin-top:18px;
+}
+
+.att36_day{
+border:1px solid #e2e6ec;
+border-radius:12px;
+padding:12px;
+background:#fbfcfe;
+}
+
+.att36_day header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:8px;
+margin-bottom:10px;
+}
+
+.att36_day header strong{
+color:var(--blue);
+font-size:13px;
+}
+
+.att36_addRange{
+border:0;
+background:transparent;
+color:var(--orange);
+font-size:12px;
+font-weight:700;
+cursor:pointer;
+}
+
+.att36_ranges{
+display:flex;
+flex-direction:column;
+gap:8px;
+}
+
+.att36_range{
+display:grid;
+grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) 30px;
+align-items:center;
+gap:7px;
+}
+
+.att36_range input{
+width:100%;
+min-width:0;
+height:36px;
+border:1px solid #d8dde5;
+border-radius:8px;
+padding:4px 6px;
+}
+
+.att36_removeRange{
+width:30px;
+height:30px;
+border:0;
+border-radius:50%;
+background:#feecec;
+color:#b42318;
+cursor:pointer;
+}
+
+.att36_assignment{
+margin-top:18px;
+}
+
+.att36_assignment select{
+min-height:180px;
+}
+
+.att36_assignment small{
+font-size:11px;
+color:var(--lead);
+}
+
+/* SCANNER */
+
+.attScan_shell,
+.attDash_shell{
+width:100%;
+box-sizing:border-box;
+padding:22px;
+}
+
+.attScan_header,
+.attDash_header{
+display:flex;
+align-items:flex-end;
+justify-content:space-between;
+gap:20px;
+margin-bottom:14px;
+}
+
+.attScan_header h1,
+.attDash_header h1{
+margin:2px 0 4px;
+font-size:26px;
+color:var(--blue);
+}
+
+.attScan_header p,
+.attDash_header p{
+margin:0;
+font-size:13px;
+color:var(--lead);
+}
+
+.attScan_eyebrow,
+.attDash_eyebrow{
+font-size:11px;
+font-weight:800;
+letter-spacing:.08em;
+text-transform:uppercase;
+color:var(--orange);
+}
+
+.attScan_branchField{
+display:flex;
+flex-direction:column;
+gap:5px;
+min-width:220px;
+}
+
+.attScan_branchField span{
+font-size:11px;
+font-weight:700;
+color:var(--blue);
+}
+
+.attScan_branchField select{
+height:42px;
+border:1px solid #d8dde5;
+border-radius:9px;
+background:var(--white);
+padding:6px 10px;
+}
+
+.attScan_security{
+display:flex;
+gap:7px;
+flex-wrap:wrap;
+margin-bottom:16px;
+}
+
+.attScan_securityChip{
+padding:5px 9px;
+border-radius:999px;
+background:#f0f2f7;
+color:var(--blue);
+font-size:11px;
+font-weight:700;
+}
+
+.attScan_methods{
+display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:10px;
+margin-bottom:15px;
+}
+
+.attScan_methods button{
+min-height:70px;
+border:1px solid #dce1e8;
+border-radius:12px;
+background:var(--white);
+color:var(--blue);
+font-weight:700;
+cursor:pointer;
+}
+
+.attScan_methods button span{
+display:block;
+font-size:23px;
+margin-bottom:3px;
+}
+
+.attScan_methods button[aria-pressed="true"]{
+border-color:var(--orange);
+box-shadow:0 0 0 3px rgba(255,89,0,.1);
+color:var(--orange);
+}
+
+.attScan_panel,
+.attDash_card{
+background:var(--white);
+border:1px solid #e3e7ed;
+border-radius:14px;
+box-shadow:0 5px 18px rgba(15,23,42,.05);
+}
+
+.attScan_panel{
+padding:16px;
+}
+
+.attScan_panelHeader{
+margin-bottom:14px;
+}
+
+.attScan_panelHeader h2,
+.attDash_card h2{
+margin:0 0 3px;
+font-size:16px;
+color:var(--blue);
+}
+
+.attScan_panelHeader p,
+.attDash_card p{
+margin:0;
+font-size:12px;
+color:var(--lead);
+}
+
+.attScan_barcodeLayout,
+.attScan_photoLayout{
+display:grid;
+grid-template-columns:minmax(0,2fr) minmax(220px,1fr);
+gap:16px;
+}
+
+.attScan_photoLayout{
+grid-template-columns:minmax(0,1.5fr) minmax(180px,.8fr) minmax(220px,1fr);
+}
+
+.attScan_camera{
+min-height:320px;
+border-radius:12px;
+overflow:hidden;
+background:#111827;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.attScan_camera video{
+width:100%;
+height:100%;
+min-height:320px;
+object-fit:cover;
+}
+
+.attScan_photoCaptured{
+min-height:220px;
+border:1px dashed #cbd5e1;
+border-radius:12px;
+background:#f8fafc;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+}
+
+.attScan_photoCaptured img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.attScan_photoCaptured img:not([src]){
+display:none;
+}
+
+.attScan_side{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.attScan_field{
+display:flex;
+flex-direction:column;
+gap:5px;
+}
+
+.attScan_field span{
+font-size:11px;
+font-weight:700;
+color:var(--blue);
+}
+
+.attScan_field input,
+.attScan_field select{
+width:100%;
+height:42px;
+box-sizing:border-box;
+border:1px solid #d8dde5;
+border-radius:9px;
+background:var(--white);
+padding:6px 10px;
+}
+
+.attScan_status{
+margin-top:14px;
+min-height:46px;
+padding:12px 14px;
+border-radius:10px;
+background:#f4f5f8;
+font-size:13px;
+font-weight:600;
+}
+
+.attScan_status[data-type="success"]{
+background:#eef9ed;
+color:var(--green);
+}
+
+.attScan_status[data-type="error"]{
+background:#fff0ed;
+color:#b42318;
+}
+
+.attScan_status[data-type="loading"]{
+color:var(--blue);
+}
+
+.attScan_biometric{
+min-height:380px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.attScan_fingerprint{
+font-size:80px;
+line-height:1;
+color:var(--blue);
+}
+
+.attScan_biometricLast{
+display:flex;
+flex-direction:column;
+gap:3px;
+min-width:min(420px,100%);
+margin-top:18px;
+padding:14px;
+border-radius:10px;
+background:#f6f7fa;
+}
+
+.attScan_biometricLast strong{
+color:var(--blue);
+}
+
+.attScan_confirmOverlay[hidden]{
+display:none;
+}
+
+.attScan_confirmModal{
+max-width:430px;
+padding:28px;
+text-align:center;
+}
+
+.attScan_confirmIcon{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+width:54px;
+height:54px;
+border-radius:50%;
+background:#eef9ed;
+color:var(--green);
+font-size:26px;
+font-weight:800;
+}
+
+.attScan_confirmModal h2{
+margin:12px 0 8px;
+}
+
+.attScan_confirmModal strong{
+display:block;
+font-size:18px;
+color:var(--blue);
+}
+
+.attScan_confirmModal p{
+margin:5px 0 20px;
+}
+
+.attScan_confirmActions{
+display:flex;
+justify-content:center;
+gap:10px;
+}
+
+/* ATTENDANCE DASHBOARD */
+
+.attDash_filters{
+display:flex;
+align-items:flex-end;
+gap:8px;
+flex-wrap:wrap;
+}
+
+.attDash_filters label{
+display:flex;
+flex-direction:column;
+gap:4px;
+}
+
+.attDash_filters label span{
+font-size:11px;
+font-weight:700;
+color:var(--blue);
+}
+
+.attDash_filters input,
+.attDash_filters select,
+.attDash_filters button{
+min-height:40px;
+border:1px solid #d8dde5;
+border-radius:8px;
+background:var(--white);
+padding:6px 9px;
+}
+
+.attDash_filters button{
+border-color:var(--blue);
+background:var(--blue);
+color:var(--white);
+font-weight:700;
+cursor:pointer;
+}
+
+.attDash_kpis{
+display:grid;
+grid-template-columns:repeat(6,minmax(0,1fr));
+gap:10px;
+margin-bottom:20px;
+}
+
+.attDash_kpis article{
+min-width:0;
+padding:14px;
+border:1px solid #e2e6ec;
+border-radius:12px;
+background:var(--white);
+}
+
+.attDash_kpis span{
+display:block;
+font-size:11px;
+color:var(--lead);
+}
+
+.attDash_kpis strong{
+display:block;
+margin-top:5px;
+font-size:21px;
+color:var(--blue);
+}
+
+.attDash_sectionHeader{
+margin:18px 0 10px;
+}
+
+.attDash_sectionHeader h2{
+margin:0;
+font-size:17px;
+color:var(--blue);
+}
+
+.attDash_sectionHeader p{
+margin:3px 0 0;
+font-size:12px;
+}
+
+.attDash_participantCards{
+display:grid;
+grid-template-columns:repeat(4,minmax(0,1fr));
+gap:10px;
+}
+
+.attDash_participantCard{
+padding:14px;
+border:1px solid #e2e6ec;
+border-radius:11px;
+background:var(--white);
+}
+
+.attDash_participantCard span,
+.attDash_participantCard small{
+display:block;
+}
+
+.attDash_participantCard span{
+font-size:11px;
+color:var(--lead);
+}
+
+.attDash_participantCard strong{
+display:block;
+margin:4px 0;
+font-size:23px;
+color:var(--orange);
+}
+
+.attDash_participantCard small{
+font-size:11px;
+}
+
+.attDash_grid{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:12px;
+margin-top:18px;
+}
+
+.attDash_card{
+padding:16px;
+min-width:0;
+}
+
+.attDash_card--wide{
+grid-column:1 / -1;
+}
+
+.attDash_chart{
+width:100%;
+height:320px;
+margin-top:12px;
+}
+
+.attDash_chart--large{
+height:420px;
+}
+
+@media (max-width:1199px){
+
+.attDash_kpis{
+grid-template-columns:repeat(3,minmax(0,1fr));
+}
+
+.attScan_photoLayout{
+grid-template-columns:1fr 1fr;
+}
+
+.attScan_side{
+grid-column:1 / -1;
+}
+}
+
+@media (max-width:767px){
+
+.att23_grid,
+.att36_days,
+.attDash_grid,
+.attDash_participantCards,
+.attScan_barcodeLayout,
+.attScan_photoLayout{
+grid-template-columns:1fr;
+}
+
+.att36_topFields{
+grid-template-columns:1fr;
+}
+
+.attScan_shell,
+.attDash_shell{
+padding:12px;
+}
+
+.attScan_header,
+.attDash_header{
+align-items:stretch;
+flex-direction:column;
+}
+
+.attScan_branchField{
+min-width:0;
+}
+
+.attScan_methods{
+grid-template-columns:1fr;
+}
+
+.attScan_methods button{
+min-height:52px;
+}
+
+.attScan_methods button span{
+display:inline;
+margin-right:8px;
+font-size:19px;
+}
+
+.attScan_camera,
+.attScan_camera video{
+min-height:260px;
+}
+
+.attDash_kpis{
+grid-template-columns:repeat(2,minmax(0,1fr));
+}
+
+.attDash_card--wide{
+grid-column:auto;
+}
+
+.attDash_chart,
+.attDash_chart--large{
+height:300px;
+}
+}
+
+@media (max-width:420px){
+
+.attDash_kpis{
+grid-template-columns:1fr;
+}
+
+.att23_actions,
+.att36_actions,
+.attScan_confirmActions{
+align-items:stretch;
+flex-direction:column;
+}
+
+.att23_button,
+.att36_button,
+.attScan_primaryButton,
+.attScan_secondaryButton{
+width:100%;
+}
+}
+
+.attDash_cardHeader{
+display:flex;
+align-items:flex-start;
+justify-content:space-between;
+gap:12px;
+}
+
+.attDash_cardActions{
+display:flex;
+align-items:center;
+justify-content:flex-end;
+gap:8px;
+flex-wrap:wrap;
+}
+
+.attDash_cardActions span{
+font-size:11px;
+color:var(--lead);
+}
+
+.attDash_cardActions button{
+min-height:32px;
+padding:5px 10px;
+border:1px solid var(--blue);
+border-radius:7px;
+background:var(--white);
+color:var(--blue);
+font-size:11px;
+font-weight:700;
+cursor:pointer;
+}
+
+@media(max-width:767px){
+.attDash_cardHeader{
+flex-direction:column;
+}
+
+.attDash_cardActions{
+justify-content:flex-start;
 }
 }

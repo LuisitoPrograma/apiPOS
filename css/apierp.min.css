@@ -2309,7 +2309,8 @@ display:none;
 .rptux_filterDrawer{
 position:fixed;
 top:0;
-left:0;
+right:0;
+left:auto;
 z-index:1100;
 width:min(430px,92vw);
 height:100dvh;
@@ -2318,10 +2319,10 @@ flex-direction:column;
 overflow:hidden;
 box-sizing:border-box;
 border:0;
-border-radius:0 22px 22px 0;
+border-radius:22px 0 0 22px;
 background:var(--white);
-box-shadow:18px 0 45px rgba(15,23,42,.2);
-transform:translateX(-104%);
+box-shadow:-18px 0 45px rgba(15,23,42,.2);
+transform:translateX(104%);
 visibility:hidden;
 transition:transform .22s ease,visibility .22s ease;
 }
@@ -2388,6 +2389,8 @@ background:#f8f9fb;
 }
 
 .rptux_filterSection{
+position:relative;
+z-index:1;
 min-height:0;
 margin:0;
 padding:0 !important;
@@ -2396,6 +2399,20 @@ border-radius:14px;
 background:var(--white);
 box-shadow:5px 5px 12px rgba(15,23,42,.045),-4px -4px 10px rgba(255,255,255,.9);
 overflow:hidden;
+}
+
+.rptux_filterSection.active{
+z-index:10;
+overflow:visible;
+}
+
+.rptux_filterSection.active .rptux_filterSectionBody{
+border-radius:0 0 14px 14px;
+}
+
+.rptux_filterSection.active .fill_multi-filter:focus-within{
+position:relative;
+z-index:20;
 }
 
 .rptux_filterSectionToggle{
@@ -2696,7 +2713,7 @@ flex:0 0 auto;
 
 .rptux_filterDrawer{
 width:min(390px,96vw);
-border-radius:0 18px 18px 0;
+border-radius:18px 0 0 18px;
 }
 }
 

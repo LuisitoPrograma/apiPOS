@@ -2137,19 +2137,35 @@ box-shadow:5px 5px 13px rgba(15,23,42,.06),-5px -5px 13px rgba(255,255,255,.92),
 }
 
 .rptux_quickSearch>i{
+flex:0 0 18px;
+width:18px;
 color:var(--orange);
 font-size:16px;
+line-height:1;
+text-align:center;
+pointer-events:none;
 }
 
-.rptux_quickSearch input{
-width:100%;
+.rptux_quickSearch input[type="search"]{
+flex:1 1 auto;
+min-width:0;
+width:auto;
 height:40px;
-padding:0;
-border:0;
-outline:0;
-background:transparent;
+margin:0;
+padding:0 4px !important;
+border:0 !important;
+border-radius:0 !important;
+outline:none !important;
+box-shadow:none !important;
+background:transparent !important;
 color:#475467;
 font-size:12.5px;
+-webkit-appearance:none;
+appearance:none;
+}
+
+.rptux_quickSearch input[type="search"]::-webkit-search-decoration{
+-webkit-appearance:none;
 }
 
 .rptux_quickSearch input::placeholder{
@@ -2372,6 +2388,9 @@ background:#f8f9fb;
 }
 
 .rptux_filterSection{
+min-height:0;
+margin:0;
+padding:0 !important;
 border:1px solid #e2e6ec;
 border-radius:14px;
 background:var(--white);
@@ -2412,13 +2431,15 @@ transform:rotate(180deg);
 }
 
 .rptux_filterSectionBody{
+display:block;
+min-height:0;
 padding:10px 11px 4px;
 border-top:1px solid #eef0f3;
 background:#fbfcfd;
 }
 
 .rptux_filterSectionBody[hidden]{
-display:none;
+display:none !important;
 }
 
 .rptux_filterDrawer .filter-card,

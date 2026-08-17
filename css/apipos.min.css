@@ -2997,6 +2997,46 @@ text-align: center;
 font-size: 13px;
 color: #888;
 }
+
+/* TABLAS DETALLE TURNO */
+#shiftContent .table-wrapper{
+position:relative;
+width:100%;
+max-width:100%;
+overflow-x:auto;
+-webkit-overflow-scrolling:touch;
+scrollbar-width:thin;
+scrollbar-color:var(--orange) transparent;
+cursor:grab;
+}
+
+#shiftContent .table-wrapper:active{
+cursor:grabbing;
+}
+
+#shiftContent .table-wrapper::-webkit-scrollbar{
+height:8px;
+}
+
+#shiftContent .table-wrapper::-webkit-scrollbar-track{
+background:transparent;
+}
+
+#shiftContent .table-wrapper::-webkit-scrollbar-thumb{
+background:var(--orange);
+border-radius:10px;
+}
+
+#shiftContent .table-report{
+width:max-content;
+min-width:100%;
+}
+
+#shiftContent .table-report th,
+#shiftContent .table-report td{
+white-space:nowrap;
+}
+
 .shift-close-info-col {
 flex: 1;
 display: flex;

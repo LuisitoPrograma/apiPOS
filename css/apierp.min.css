@@ -2128,8 +2128,10 @@ gap:12px;
 box-sizing:border-box;
 text-align:left;
 position:relative;
-z-index:1081;
 overflow:visible;
+padding:5px 0;
+align-items:stretch;
+flex-direction:column;
 }
 
 .rptux_quickSearch{
@@ -2696,12 +2698,6 @@ box-sizing:border-box;
 
 .rptux_periodBtn{
 flex:1 0 auto;
-}
-
-.container-report-buttons.rptux_toolbar{
-padding:5px 0;
-align-items:stretch;
-flex-direction:column;
 }
 
 .rptux_quickSearch{

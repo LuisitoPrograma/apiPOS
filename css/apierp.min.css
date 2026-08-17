@@ -893,6 +893,9 @@ scrollbar-width: none;
 .table-wrapper::-webkit-scrollbar{
 display: none;
 }
+.table-report tbody tr.rptincome_creditNoteRow>td{
+background:color-mix(in srgb,var(--orange),transparent 94%);
+}
 .table-report{
 border: 1px solid #111;
 }
@@ -1005,6 +1008,7 @@ box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 border-radius: 8px;
 overflow: hidden;
 border: 1px solid rgba(0,0,0,0.06);
+z-index:1082;
 }
 .export-btn:hover,
 .export-toggle:hover,
@@ -1019,6 +1023,9 @@ display: flex; align-items: center; gap: .5rem;
 .export-btn:focus-visible,
 .export-toggle:focus-visible {
 box-shadow: 0 0 0 3px rgba(33, 115, 70, 0.12);
+}
+#customizeReportColumnsMenu{
+z-index:1082;
 }
 #customizeReportColumnsMenu li{
 font-size: 14px;
@@ -2120,6 +2127,9 @@ justify-content:space-between;
 gap:12px;
 box-sizing:border-box;
 text-align:left;
+position:relative;
+z-index:1081;
+overflow:visible;
 }
 
 .rptux_quickSearch{
@@ -2703,7 +2713,8 @@ box-sizing:border-box;
 .rptux_toolbarActions{
 width:100%;
 justify-content:flex-start;
-overflow-x:auto;
+overflow:visible;
+flex-wrap:wrap;
 padding-bottom:3px;
 }
 

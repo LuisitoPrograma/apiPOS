@@ -6809,9 +6809,8 @@ color:var(--lead);
 .erpCal_calendarCard,
 .erpCal_listCard,
 .erpCal_modal{
-background:rgba(255,255,255,.94);
-border:1px solid rgba(8,0,96,.08);
-box-shadow:0 12px 32px rgba(8,0,96,.08), inset 0 1px 0 rgba(255,255,255,.8);
+background:rgba(255,255,255,.96);
+border:1px solid rgba(8,0,96,.12);
 }
 
 .erpCal_header{
@@ -6869,7 +6868,6 @@ padding:10px 13px;
 border:1px solid rgba(8,0,96,.08);
 border-radius:15px;
 background:rgba(255,255,255,.78);
-box-shadow:0 7px 18px rgba(8,0,96,.05);
 }
 
 .erpCal_timezoneBox span{
@@ -6916,7 +6914,7 @@ color:var(--blue);
 font:inherit;
 border:0;
 cursor:pointer;
-transition:transform .14s ease, box-shadow .14s ease, background-color .14s ease, border-color .14s ease;
+transition:transform .14s ease, background-color .14s ease, border-color .14s ease;
 }
 
 .erpCal_iconButton,
@@ -6925,7 +6923,6 @@ height:36px;
 border:1px solid rgba(8,0,96,.12);
 background:var(--white);
 color:var(--blue);
-box-shadow:0 4px 12px rgba(8,0,96,.05);
 }
 
 .erpCal_iconButton{
@@ -6963,7 +6960,6 @@ color:var(--lead);
 .erpCal_viewSwitch button[aria-pressed="true"]{
 background:var(--blue);
 color:var(--white);
-box-shadow:0 5px 12px rgba(8,0,96,.18);
 }
 
 .erpCal_iconButton:hover,
@@ -7101,7 +7097,8 @@ opacity:.48;
 }
 
 .erpCal_day--today{
-box-shadow:inset 0 0 0 1px rgba(255,89,0,.35);
+outline:1px solid rgba(255,89,0,.35);
+outline-offset:-1px;
 background:rgba(255,89,0,.035);
 }
 
@@ -7128,7 +7125,6 @@ cursor:pointer;
 .erpCal_day--today .erpCal_dayNumber{
 background:var(--orange);
 color:var(--white);
-box-shadow:0 5px 12px rgba(255,89,0,.24);
 }
 
 .erpCal_dayCount{
@@ -7171,12 +7167,6 @@ color:#8f3606;
 background:rgba(8,0,96,.075);
 border-color:rgba(8,0,96,.13);
 color:var(--blue);
-}
-
-.erpCal_event--system{
-background:rgba(136,136,136,.09);
-border-color:rgba(136,136,136,.16);
-color:var(--lead);
 }
 
 .erpCal_event--completed{
@@ -7226,15 +7216,11 @@ cursor:pointer;
 }
 
 .erpCal_listItem--manual{
-box-shadow:inset 3px 0 0 var(--orange);
+border-left:3px solid var(--orange);
 }
 
 .erpCal_listItem--pipeline{
-box-shadow:inset 3px 0 0 var(--blue);
-}
-
-.erpCal_listItem--system{
-box-shadow:inset 3px 0 0 var(--lead);
+border-left:3px solid var(--blue);
 }
 
 .erpCal_listDate{
@@ -7329,9 +7315,6 @@ border-radius:24px;
 }
 
 .erpCal_modalHeader{
-position:sticky;
-top:0;
-z-index:2;
 display:flex;
 align-items:flex-start;
 justify-content:space-between;
@@ -7339,7 +7322,6 @@ gap:14px;
 padding:17px 18px 13px;
 border-bottom:1px solid rgba(8,0,96,.08);
 background:rgba(255,255,255,.96);
-backdrop-filter:blur(8px);
 }
 
 .erpCal_modalHeader h2{
@@ -7561,7 +7543,6 @@ font-weight:700;
 .erpCal_primaryButton{
 background:var(--blue);
 color:var(--white);
-box-shadow:0 7px 15px rgba(8,0,96,.17);
 }
 
 .erpCal_secondaryButton{
@@ -7581,6 +7562,328 @@ color:#b42318;
 opacity:.55;
 cursor:not-allowed;
 transform:none;
+}
+
+.erpCal_toolbarActions{
+display:flex;
+align-items:center;
+justify-content:flex-end;
+gap:8px;
+}
+
+.erpCal_createButton{
+white-space:nowrap;
+}
+
+.erpCal_legendDot--birthday,
+.erpCal_event--birthday .erpCal_eventDot{
+background:var(--green);
+}
+
+.erpCal_legendDot--receivable,
+.erpCal_event--receivable .erpCal_eventDot{
+background:#0b7a75;
+}
+
+.erpCal_legendDot--payable,
+.erpCal_event--payable .erpCal_eventDot{
+background:#b42318;
+}
+
+.erpCal_day--outside:hover{
+background:rgba(247,247,247,.58);
+}
+
+.erpCal_day--outside .erpCal_dayNumber,
+.erpCal_day--outside .erpCal_event{
+cursor:default;
+}
+
+.erpCal_dayNumber:disabled,
+.erpCal_event:disabled{
+cursor:default;
+}
+
+.erpCal_event--birthday{
+background:rgba(16,149,0,.08);
+border-color:rgba(16,149,0,.16);
+color:#0b6c00;
+}
+
+.erpCal_event--receivable{
+background:rgba(11,122,117,.08);
+border-color:rgba(11,122,117,.16);
+color:#075f5b;
+}
+
+.erpCal_event--payable{
+background:rgba(180,35,24,.07);
+border-color:rgba(180,35,24,.14);
+color:#8d1c13;
+}
+
+.erpCal_eventCopy{
+min-width:0;
+display:flex;
+flex-direction:column;
+line-height:1.1;
+}
+
+.erpCal_eventEntity,
+.erpCal_listEntity{
+min-width:0;
+overflow:hidden;
+text-overflow:ellipsis;
+white-space:nowrap;
+font:8px 'Raleway',sans-serif;
+opacity:.78;
+}
+
+.erpCal_listItem--birthday{
+border-left:3px solid var(--green);
+}
+
+.erpCal_listItem--receivable{
+border-left:3px solid #0b7a75;
+}
+
+.erpCal_listItem--payable{
+border-left:3px solid #b42318;
+}
+
+.erpCal_listEntity{
+font-size:9.5px;
+color:var(--lead);
+}
+
+.erpCal_modal--compact{
+width:min(520px,100%);
+}
+
+.erpCal_dayChoice,
+.erpCal_eventDetails{
+padding:16px 18px 18px;
+}
+
+.erpCal_dayChoiceInfo{
+padding:14px;
+border:1px solid rgba(8,0,96,.1);
+border-radius:16px;
+background:rgba(8,0,96,.035);
+}
+
+.erpCal_dayChoiceInfo h3{
+margin:8px 0 0;
+font-size:16px;
+color:var(--blue);
+}
+
+.erpCal_dayChoiceInfo p{
+margin:4px 0 0;
+font:11px/1.45 'Raleway',sans-serif;
+color:var(--lead);
+}
+
+.erpCal_dayChoiceActions{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:10px;
+margin-top:10px;
+}
+
+.erpCal_choiceButton{
+min-width:0;
+min-height:94px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+gap:5px;
+padding:14px;
+border:1px solid rgba(8,0,96,.12);
+border-radius:16px;
+background:var(--white);
+font:inherit;
+text-align:left;
+cursor:pointer;
+transition:background-color .14s ease,border-color .14s ease;
+}
+
+.erpCal_choiceButton:hover{
+border-color:rgba(255,89,0,.34);
+background:rgba(255,89,0,.035);
+}
+
+.erpCal_choiceButton strong{
+font-size:12px;
+color:var(--blue);
+}
+
+.erpCal_choiceButton span{
+font:10px/1.4 'Raleway',sans-serif;
+color:var(--lead);
+}
+
+.erpCal_choiceButton:focus-visible,
+.erpCal_eventActionButton:focus-visible{
+outline:3px solid rgba(255,89,0,.2);
+outline-offset:2px;
+}
+
+.erpCal_eventDetailsBar{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:10px;
+margin-bottom:10px;
+}
+
+.erpCal_eventDetailsBar > span{
+font:9.5px/1.4 'Raleway',sans-serif;
+text-align:right;
+color:var(--lead);
+}
+
+.erpCal_eventCards{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.erpCal_eventCard{
+padding:14px;
+border:1px solid rgba(8,0,96,.1);
+border-left-width:4px;
+border-radius:17px;
+background:rgba(255,255,255,.96);
+}
+
+.erpCal_eventCard--manual{
+border-left-color:var(--orange);
+}
+
+.erpCal_eventCard--pipeline{
+border-left-color:var(--blue);
+}
+
+.erpCal_eventCard--birthday{
+border-left-color:var(--green);
+}
+
+.erpCal_eventCard--receivable{
+border-left-color:#0b7a75;
+}
+
+.erpCal_eventCard--payable{
+border-left-color:#b42318;
+}
+
+.erpCal_eventCardHeader{
+display:flex;
+align-items:flex-start;
+justify-content:space-between;
+gap:12px;
+}
+
+.erpCal_eventCardHeading{
+min-width:0;
+}
+
+.erpCal_eventTypeBadge{
+display:inline-flex;
+align-items:center;
+min-height:23px;
+padding:4px 8px;
+border:1px solid rgba(8,0,96,.1);
+border-radius:999px;
+background:rgba(8,0,96,.045);
+font-size:8.5px;
+font-weight:700;
+color:var(--blue);
+}
+
+.erpCal_eventCardHeading h3{
+margin:7px 0 0;
+font-size:14px;
+line-height:1.3;
+color:var(--blue);
+word-break:break-word;
+}
+
+.erpCal_eventCardActions{
+flex:0 0 auto;
+display:flex;
+gap:6px;
+}
+
+.erpCal_eventActionButton{
+width:34px;
+height:34px;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:0;
+border:1px solid rgba(8,0,96,.12);
+border-radius:11px;
+background:rgba(8,0,96,.04);
+cursor:pointer;
+transition:background-color .14s ease,border-color .14s ease;
+}
+
+.erpCal_eventActionButton:hover{
+background:rgba(8,0,96,.08);
+}
+
+.erpCal_eventActionButton--danger{
+border-color:rgba(180,35,24,.16);
+background:rgba(180,35,24,.045);
+}
+
+.erpCal_eventActionButton--danger:hover{
+background:rgba(180,35,24,.09);
+}
+
+.erpCal_eventActionButton img{
+width:16px;
+height:16px;
+object-fit:contain;
+}
+
+.erpCal_eventInfoGrid{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:8px;
+margin-top:12px;
+}
+
+.erpCal_eventInfoItem{
+min-width:0;
+padding:9px 10px;
+border:1px solid rgba(8,0,96,.07);
+border-radius:11px;
+background:rgba(247,247,247,.62);
+}
+
+.erpCal_eventInfoItem span,
+.erpCal_eventInfoItem strong{
+display:block;
+}
+
+.erpCal_eventInfoItem span{
+font:8.5px 'Raleway',sans-serif;
+color:var(--lead);
+}
+
+.erpCal_eventInfoItem strong{
+margin-top:3px;
+font-size:10.5px;
+line-height:1.35;
+color:var(--blue);
+word-break:break-word;
+}
+
+.erpCal_event{
+height:auto;
+min-height:29px;
 }
 
 @media(max-width:900px){
@@ -7774,13 +8077,74 @@ padding:14px 12px 10px;
 }
 }
 
+@media(max-width:720px){
+.erpCal_toolbarActions{
+width:100%;
+align-items:stretch;
+flex-direction:column;
+}
+
+.erpCal_createButton{
+width:100%;
+}
+
+.erpCal_dayChoiceActions,
+.erpCal_eventInfoGrid{
+grid-template-columns:1fr;
+}
+
+.erpCal_eventDetailsBar{
+align-items:stretch;
+flex-direction:column;
+}
+
+.erpCal_eventDetailsBar > span{
+text-align:left;
+}
+
+.erpCal_event{
+height:auto;
+min-height:24px;
+}
+}
+
+@media(max-width:460px){
+.erpCal_dayChoice,
+.erpCal_eventDetails{
+padding:12px;
+}
+
+.erpCal_eventCard{
+padding:11px;
+}
+
+.erpCal_eventCardHeader{
+gap:8px;
+}
+
+.erpCal_eventCardHeading h3{
+font-size:12.5px;
+}
+
+.erpCal_eventActionButton{
+width:32px;
+height:32px;
+}
+
+.erpCal_eventCopy{
+display:none;
+}
+}
+
 @media(prefers-reduced-motion:reduce){
 .erpCal_iconButton,
 .erpCal_todayButton,
 .erpCal_viewSwitch button,
 .erpCal_primaryButton,
 .erpCal_secondaryButton,
-.erpCal_dangerButton{
+.erpCal_dangerButton,
+.erpCal_choiceButton,
+.erpCal_eventActionButton{
 transition:none;
 }
 }

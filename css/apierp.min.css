@@ -1344,6 +1344,15 @@ width: 100%; padding: 8px;
 .ntf-close-btn { font-size: 18px; }
 }
 
+/* MODAL ITEM */
+.modalItem_button{
+background: var(--orange);
+color: #fff;
+border-radius: 10px;
+font-size: 12px;
+border: none;
+}
+
 /* ADMIN */
 .adm-shell{
 position: relative;

@@ -5484,7 +5484,8 @@ gap:9px;
 flex-wrap:wrap;
 margin:0;
 padding:10px 3px 1px;
-background:linear-gradient(to bottom,rgba(247,248,251,0),#f7f8fb 24%);
+border-top:1px solid #e2e6ed;
+background:#f7f8fb;
 }
 
 .att23_button,
@@ -5572,71 +5573,6 @@ color:var(--white);
 .attHR_confirmButton:focus-visible{
 outline:2px solid var(--white);
 outline-offset:2px;
-}
-
-.att23_barcodeSection{
-margin-top:0;
-padding:16px;
-border:1px solid #e0d7ff;
-border-radius:12px;
-text-align:center;
-background:linear-gradient(135deg,#fbfaff,#fff7f2);
-}
-
-.att23_barcodeSection p{
-margin:0 0 12px;
-font-size:12px;
-}
-
-.att23_barcodeSection svg{
-max-width:100%;
-}
-
-.att23_tableActions,
-.att36_tableActions{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:6px;
-flex-wrap:wrap;
-}
-
-.att23_tableButton,
-.att36_tableButton{
-min-width:32px;
-min-height:30px;
-border:1px solid #d9dee7;
-border-radius:7px;
-padding:5px 8px;
-background:var(--white);
-color:var(--blue);
-font-size:11px;
-font-weight:700;
-cursor:pointer;
-display:inline-flex;
-align-items:center;
-justify-content:center;
-box-shadow:0 2px 6px rgba(15,23,42,.04);
-transition:transform .12s ease,box-shadow .12s ease;
-}
-
-.att23_tableButton img,
-.att36_tableButton img{
-width:16px;
-height:16px;
-display:block;
-pointer-events:none;
-}
-
-.att23_tableButton--secondary{
-border-color:var(--orange);
-color:var(--orange);
-}
-
-.att23_tableButton--danger,
-.att36_tableButton--danger{
-border-color:#b42318;
-color:#b42318;
 }
 
 .att36_topFields{
@@ -5913,6 +5849,377 @@ background:#f0f2f7;
 color:var(--blue);
 font-size:11px;
 font-weight:700;
+}
+
+.attScan_securityControls{
+display:flex;
+align-items:center;
+justify-content:flex-end;
+gap:7px;
+min-width:0;
+}
+
+.attScan_settingsButton{
+width:34px;
+height:34px;
+flex:0 0 34px;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+border:1px solid #d8dde5;
+border-radius:9px;
+background:#fff;
+color:var(--blue);
+font-size:16px;
+cursor:pointer;
+}
+
+.attScan_settingsButton:hover,
+.attScan_settingsButton:focus-visible{
+border-color:var(--orange);
+color:var(--orange);
+outline:2px solid rgba(255,89,0,.18);
+outline-offset:1px;
+}
+
+body.attScan_deviceSettingsOpen{
+overflow:hidden !important;
+}
+
+.attScan_deviceSettingsOverlay{
+position:fixed;
+inset:0;
+z-index:100000;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:18px;
+background:rgba(15,23,42,.62);
+}
+
+.attScan_deviceSettingsOverlay[hidden],
+.attScan_deviceSecretBox[hidden]{
+display:none !important;
+}
+
+.attScan_deviceSettingsModal{
+width:min(1000px,100%);
+max-height:92vh;
+overflow:auto;
+border:1px solid #dfe5ec;
+border-radius:16px;
+background:#fff;
+}
+
+.attScan_deviceSettingsHeader{
+display:flex;
+align-items:flex-start;
+justify-content:space-between;
+gap:14px;
+padding:16px 18px;
+border-bottom:1px solid #e6eaf0;
+}
+
+.attScan_deviceSettingsHeader > div > span{
+display:block;
+margin-bottom:4px;
+font-size:10px;
+font-weight:800;
+letter-spacing:.08em;
+color:var(--orange);
+}
+
+.attScan_deviceSettingsHeader h2{
+margin:0;
+font-size:18px;
+color:var(--blue);
+}
+
+.attScan_deviceSettingsHeader p,
+.attScan_devicePanelHeader p,
+.attScan_deviceFormHelp{
+margin:4px 0 0;
+font-size:11px;
+line-height:1.4;
+color:#64748b;
+}
+
+#attScan_deviceClose{
+width:36px;
+height:36px;
+flex:0 0 36px;
+border:1px solid #d8dde5;
+border-radius:9px;
+background:#fff;
+color:var(--blue);
+font-size:22px;
+line-height:1;
+cursor:pointer;
+}
+
+#attScan_deviceClose:hover,
+#attScan_deviceClose:focus-visible{
+border-color:var(--orange);
+color:var(--orange);
+outline:2px solid rgba(255,89,0,.18);
+outline-offset:1px;
+}
+
+.attScan_deviceSettingsGrid{
+display:grid;
+grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+gap:12px;
+padding:12px;
+}
+
+.attScan_deviceSettingsPanel{
+min-width:0;
+padding:13px;
+border:1px solid #e1e6ec;
+border-radius:12px;
+background:#fff;
+}
+
+.attScan_deviceSettingsPanel h3{
+margin:0;
+font-size:14px;
+color:var(--blue);
+}
+
+.attScan_devicePanelHeader{
+display:flex;
+align-items:flex-start;
+justify-content:space-between;
+gap:10px;
+margin-bottom:10px;
+}
+
+.attScan_deviceList{
+display:flex;
+flex-direction:column;
+gap:8px;
+}
+
+.attScan_deviceEmpty{
+margin:0;
+padding:14px;
+border:1px dashed #cbd5e1;
+border-radius:9px;
+color:#64748b;
+font-size:12px;
+text-align:center;
+}
+
+.attScan_deviceCard{
+padding:10px;
+border:1px solid #dfe5ec;
+border-radius:10px;
+background:#fbfcfe;
+}
+
+.attScan_deviceCardTop{
+display:flex;
+align-items:flex-start;
+justify-content:space-between;
+gap:9px;
+}
+
+.attScan_deviceCardInfo{
+display:flex;
+flex-direction:column;
+gap:3px;
+min-width:0;
+}
+
+.attScan_deviceCardInfo strong{
+font-size:12px;
+color:var(--blue);
+word-break:break-word;
+}
+
+.attScan_deviceCardInfo span{
+font-size:10.5px;
+line-height:1.4;
+color:#64748b;
+word-break:break-word;
+}
+
+.attScan_deviceStatus{
+flex:0 0 auto;
+padding:4px 7px;
+border-radius:999px;
+background:#f1f5f9;
+color:#64748b;
+font-size:10px;
+font-weight:800;
+}
+
+.attScan_deviceStatus[data-status="1"]{
+background:#edf8ef;
+color:#16752a;
+}
+
+.attScan_deviceActions{
+display:flex;
+flex-wrap:wrap;
+gap:6px;
+margin-top:9px;
+}
+
+.attScan_deviceAction{
+min-height:31px;
+padding:5px 8px;
+border:1px solid #d8dde5;
+border-radius:7px;
+background:#fff;
+color:var(--blue);
+font-size:10.5px;
+font-weight:700;
+cursor:pointer;
+}
+
+.attScan_deviceAction:hover,
+.attScan_deviceAction:focus-visible{
+border-color:var(--orange);
+color:var(--orange);
+outline:none;
+}
+
+.attScan_deviceAction--danger{
+color:#b42318;
+border-color:#efc5c1;
+}
+
+.attScan_deviceAction--danger:hover,
+.attScan_deviceAction--danger:focus-visible{
+border-color:#b42318;
+color:#b42318;
+background:#fff5f5;
+}
+
+.attScan_deviceForm{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:9px;
+margin-top:11px;
+}
+
+.attScan_deviceWide,
+.attScan_deviceFormActions{
+grid-column:1 / -1;
+}
+
+.attScan_deviceFormActions{
+display:flex;
+justify-content:flex-end;
+gap:8px;
+}
+
+.attScan_deviceSecretBox{
+margin-top:12px;
+padding:11px;
+border:1px solid #f0b68f;
+border-radius:10px;
+background:#fff8f3;
+}
+
+.attScan_deviceSecretBox > strong{
+display:block;
+font-size:12px;
+color:var(--blue);
+}
+
+.attScan_deviceSecretBox p,
+.attScan_deviceSecretBox small{
+margin:4px 0 0;
+font-size:10.5px;
+line-height:1.4;
+color:#7c4a2f;
+}
+
+.attScan_deviceSecretControl{
+display:grid;
+grid-template-columns:minmax(0,1fr) auto;
+gap:7px;
+margin-top:8px;
+}
+
+.attScan_deviceSecretControl input{
+width:100%;
+min-width:0;
+min-height:40px;
+box-sizing:border-box;
+padding:8px 9px;
+border:1px solid #d8a781;
+border-radius:8px;
+background:#fff;
+color:#5c2f18;
+font:12px ui-monospace,SFMono-Regular,Consolas,monospace;
+}
+
+.attScan_deviceAction:disabled,
+.attScan_deviceForm button:disabled,
+.attScan_deviceForm input:disabled,
+.attScan_deviceSecretControl button:disabled{
+opacity:.55;
+cursor:not-allowed;
+}
+
+.attScan_deviceSettingsModal .attScan_primaryButton,
+.attScan_deviceSettingsModal .attScan_secondaryButton{
+box-shadow:none;
+}
+
+@media(max-width:980px){
+
+.attScan_securityControls{
+justify-content:flex-start;
+}
+
+.attScan_deviceSettingsGrid{
+grid-template-columns:1fr;
+}
+}
+
+@media(max-width:560px){
+
+.attScan_deviceSettingsOverlay{
+padding:8px;
+align-items:stretch;
+}
+
+.attScan_deviceSettingsModal{
+max-height:100%;
+}
+
+.attScan_deviceSettingsGrid{
+padding:8px;
+}
+
+.attScan_devicePanelHeader,
+.attScan_deviceCardTop{
+flex-direction:column;
+}
+
+.attScan_deviceForm,
+.attScan_deviceSecretControl{
+grid-template-columns:1fr;
+}
+
+.attScan_deviceWide,
+.attScan_deviceFormActions{
+grid-column:auto;
+}
+
+.attScan_deviceFormActions,
+.attScan_deviceActions{
+flex-direction:column;
+}
+
+.attScan_deviceFormActions button,
+.attScan_deviceActions button{
+width:100%;
+}
 }
 
 .attScan_methods{
@@ -6588,23 +6895,8 @@ line-height:1.35;
 box-shadow:0 5px 12px rgba(8,0,96,.14);
 }
 
-.att23_barcodeEyebrow{
-display:block;
-margin-bottom:4px;
-color:var(--orange);
-font-size:9px;
-font-weight:900;
-letter-spacing:.12em;
-}
-
 .att36_assignment option{
 padding:6px 8px;
-}
-
-.att23_tableButton:hover,
-.att36_tableButton:hover{
-transform:translateY(-1px);
-box-shadow:0 4px 10px rgba(15,23,42,.08);
 }
 
 .attDash_header{
@@ -6754,13 +7046,6 @@ padding:13px;
 
 .attScan_statusWrap{
 grid-template-columns:1fr;
-}
-}
-
-@media(prefers-reduced-motion:reduce){
-.att23_tableButton,
-.att36_tableButton{
-transition:none;
 }
 }
 
@@ -8646,6 +8931,265 @@ padding:0 8px 0 0;
 background:none;
 color:var(--orange);
 outline:none;
+}
+
+.attHR_actionDanger{
+color:#b42318;
+}
+
+.attHR_actionDanger:hover,
+.attHR_actionDanger:focus-visible{
+background:#fff5f5;
+color:#b42318;
+}
+
+.att23_cellCenter,
+.att36_cellCenter{
+text-align:center;
+}
+
+.att23_cellNumber,
+.att36_cellNumber{
+text-align:right;
+font-variant-numeric:tabular-nums;
+}
+
+.att23_consolidated{
+margin-top:22px;
+padding-top:18px;
+border-top:1px solid #dfe5ec;
+}
+
+.att23_consolidatedHeader{
+margin-bottom:10px;
+}
+
+.att23_consolidatedHeader h2{
+margin:0;
+font-size:16px;
+font-weight:800;
+color:var(--blue);
+}
+
+.att23_consolidatedHeader p{
+margin:4px 0 0;
+font-size:11px;
+line-height:1.4;
+color:#64748b;
+}
+
+#att23_consolidatedTable{
+min-width:780px;
+}
+
+.att23_consolidatedEmpty{
+padding:22px !important;
+text-align:center !important;
+color:#64748b !important;
+}
+
+body.att4_credentialOpen{
+overflow:hidden;
+}
+
+.att4_credentialOverlay{
+position:fixed;
+inset:0;
+z-index:2140;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:18px;
+background:rgba(15,23,42,.55);
+}
+
+.att4_credentialModal{
+position:relative;
+width:min(520px,100%);
+max-height:90vh;
+overflow:auto;
+border:1px solid #dfe5ec;
+border-radius:18px;
+background:var(--white);
+color:var(--lead);
+}
+
+.att4_credentialClose{
+position:absolute;
+top:12px;
+right:12px;
+width:36px;
+height:36px;
+border:1px solid #dfe5ec;
+border-radius:10px;
+background:var(--white);
+color:var(--lead);
+font-size:22px;
+line-height:1;
+cursor:pointer;
+}
+
+.att4_credentialClose:hover,
+.att4_credentialClose:focus-visible{
+border-color:var(--orange);
+outline:2px solid var(--orange);
+outline-offset:2px;
+}
+
+.att4_credentialHeader{
+padding:22px 58px 15px 22px;
+border-bottom:1px solid #edf0f4;
+}
+
+.att4_credentialEyebrow{
+display:block;
+margin-bottom:5px;
+font-size:10px;
+font-weight:800;
+letter-spacing:.09em;
+color:var(--orange);
+}
+
+.att4_credentialHeader h2{
+margin:0;
+font-size:17px;
+font-weight:800;
+color:var(--blue);
+}
+
+.att4_credentialHeader p,
+.att4_credentialBarcode p{
+margin:7px 0 0;
+font-size:12px;
+line-height:1.45;
+color:#64748b;
+}
+
+.att4_credentialBarcode{
+padding:20px;
+text-align:center;
+}
+
+.att4_credentialBarcode svg{
+max-width:100%;
+}
+
+.att4_credentialActions{
+display:flex;
+justify-content:flex-end;
+gap:10px;
+padding:15px 22px 20px;
+border-top:1px solid #edf0f4;
+}
+
+.att4_deviceIdentityList{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.att4_deviceIdentityRow{
+display:grid;
+grid-template-columns:minmax(220px,1.2fr) minmax(220px,1fr);
+gap:14px;
+align-items:end;
+padding:13px;
+border:1px solid #dfe5ec;
+border-radius:13px;
+background:var(--white);
+}
+
+.att4_deviceIdentityInfo{
+display:flex;
+flex-direction:column;
+gap:4px;
+min-width:0;
+}
+
+.att4_deviceIdentityInfo strong{
+font-size:13px;
+color:var(--blue);
+}
+
+.att4_deviceIdentityInfo span{
+font-size:11px;
+line-height:1.4;
+color:#64748b;
+word-break:break-word;
+}
+
+.att4_deviceIdentityField{
+display:flex;
+flex-direction:column;
+gap:6px;
+}
+
+.att4_deviceIdentityField span{
+font-size:11px;
+font-weight:700;
+color:var(--blue);
+}
+
+.att4_deviceIdentityField input{
+width:100%;
+min-height:40px;
+box-sizing:border-box;
+border:1px solid #d9dee7;
+border-radius:9px;
+background:var(--white);
+color:var(--lead);
+padding:8px 10px;
+font:inherit;
+font-size:12.5px;
+}
+
+.att4_deviceIdentityField input:focus{
+outline:2px solid var(--orange);
+outline-offset:1px;
+border-color:var(--orange);
+}
+
+.att4_deviceIdentityWarning{
+display:block;
+margin-top:5px;
+color:#b54708;
+font-size:10.5px;
+line-height:1.35;
+}
+
+.att4_deviceIdentityEmpty{
+margin:0;
+padding:14px;
+border:1px solid #dfe5ec;
+border-radius:11px;
+background:var(--white);
+color:#64748b;
+font-size:12px;
+}
+
+@media(max-width:640px){
+
+.att4_credentialOverlay{
+padding:10px;
+align-items:flex-end;
+}
+
+.att4_credentialModal{
+border-radius:16px 16px 8px 8px;
+}
+
+.att4_credentialActions{
+flex-direction:column-reverse;
+}
+
+.att4_credentialActions .rptcrud_cancelBtn,
+.att4_credentialActions .rptcrud_saveBtn{
+width:100%;
+}
+
+.att4_deviceIdentityRow{
+grid-template-columns:1fr;
+}
 }
 
 .rptcrud_signaturePreview{

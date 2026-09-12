@@ -2556,6 +2556,229 @@ backface-visibility: hidden;
 transform-origin: center bottom;
 }
 
+/* ============================================================
+   BOTON FLOTANTE DE LLAMADA
+   ============================================================ */
+
+.floating-assistant-call-btn {
+
+position: fixed;
+
+right: 18px;
+
+bottom: 92px;
+
+width: 62px;
+
+height: 62px;
+
+border: none;
+
+border-radius: 999px;
+
+background:
+linear-gradient(
+180deg,
+var(--brand),
+rgba(var(--brand-rgb), .88)
+);
+
+color: var(--brand-contrast, #fff);
+
+box-shadow:
+0 14px 35px rgba(0, 0, 0, .18);
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+cursor: pointer;
+
+z-index: 99999;
+
+transition:
+transform .22s ease,
+box-shadow .22s ease,
+opacity .22s ease;
+
+}
+
+.floating-assistant-call-btn:hover {
+
+transform:
+translateY(-2px)
+scale(1.03);
+
+box-shadow:
+0 18px 40px rgba(0, 0, 0, .22);
+
+}
+
+.floating-assistant-call-btn:active {
+
+transform: scale(.96);
+
+}
+
+.floating-assistant-call-icon {
+
+width: 29px;
+
+height: 29px;
+
+display: grid;
+
+place-items: center;
+
+pointer-events: none;
+
+}
+
+.floating-assistant-call-icon svg {
+
+width: 100%;
+
+height: 100%;
+
+display: block;
+
+}
+
+.floating-assistant-call-status-dot {
+
+position: absolute;
+
+right: 5px;
+
+bottom: 5px;
+
+width: 13px;
+
+height: 13px;
+
+border-radius: 999px;
+
+background: #94a3b8;
+
+border: 2px solid #fff;
+
+box-shadow:
+0 4px 10px rgba(0,0,0,.18);
+
+}
+
+.floating-assistant-call-btn[data-call-state="connecting"] {
+
+animation:
+floatingAssistantPulse 1.35s ease-in-out infinite;
+
+}
+
+.floating-assistant-call-btn[data-call-state="connecting"]
+.floating-assistant-call-status-dot {
+
+background: #f59e0b;
+
+}
+
+.floating-assistant-call-btn[data-call-state="active"]
+.floating-assistant-call-status-dot {
+
+background: #22c55e;
+
+animation:
+floatingAssistantActiveDot 1.15s ease-in-out infinite;
+
+}
+
+@keyframes floatingAssistantPulse {
+
+0%,
+100% {
+
+box-shadow:
+0 14px 35px rgba(0,0,0,.18);
+
+}
+
+50% {
+
+box-shadow:
+0 0 0 7px
+rgba(var(--brand-rgb), .14),
+0 18px 42px rgba(0,0,0,.22);
+
+}
+
+}
+
+@keyframes floatingAssistantActiveDot {
+
+0%,
+100% {
+
+transform: scale(1);
+
+}
+
+50% {
+
+transform: scale(1.18);
+
+}
+
+}
+
+@media (max-width: 768px) {
+
+.floating-assistant-call-btn {
+
+right: 14px;
+
+bottom: 84px;
+
+width: 58px;
+
+height: 58px;
+
+}
+
+.floating-assistant-call-icon {
+
+width: 27px;
+
+height: 27px;
+
+}
+
+.floating-assistant-call-status-dot {
+
+right: 4px;
+
+bottom: 4px;
+
+width: 12px;
+
+height: 12px;
+
+}
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+.floating-assistant-call-btn,
+
+.floating-assistant-call-btn[data-call-state="connecting"] {
+
+animation: none;
+
+}
+
+}
+
 /* BOTON CART FLOTANTE */
 .floating-cart-btn {
 position: fixed;
@@ -8725,6 +8948,416 @@ height:20px;
 
 .ecom-assistant-control-btn{
 transition:none;
+}
+
+}
+
+/* ============================================================
+   ASSISTANT POPUP / MODO FLOATING
+   ============================================================ */
+
+body.ecom-assistant-compact {
+
+width: 100%;
+
+min-width: 0;
+
+min-height: 100dvh;
+
+margin: 0;
+
+overflow: hidden;
+
+background: #f5f7fa !important;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-page-shell {
+
+width: 100%;
+
+height: 100dvh;
+
+min-height: 0;
+
+display: flex;
+
+flex-direction: column;
+
+overflow: hidden;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-topbar {
+
+width: 100%;
+
+margin: 0;
+
+padding: 10px 12px;
+
+border-width: 0 0 1px;
+
+border-radius: 0;
+
+box-shadow: none;
+
+flex: 0 0 auto;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-brand-copy {
+
+min-width: 0;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-company-name {
+
+max-width: 230px;
+
+font-size: .90rem;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-secure-badge {
+
+padding: 6px 8px;
+
+font-size: .70rem;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-main {
+
+width: 100%;
+
+min-width: 0;
+
+min-height: 0;
+
+margin: 0;
+
+padding: 10px;
+
+display: flex;
+
+align-items: stretch;
+
+justify-content: stretch;
+
+overflow-y: auto;
+
+overflow-x: hidden;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-call-card {
+
+width: 100%;
+
+max-width: none;
+
+min-width: 0;
+
+padding: 10px;
+
+border-radius: 18px;
+
+box-shadow: none;
+
+display: flex;
+
+flex-direction: column;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-call-stage {
+
+width: 100%;
+
+min-width: 0;
+
+min-height: 270px;
+
+height: 270px;
+
+border-radius: 16px;
+
+flex: 0 0 270px;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-call-stage-top {
+
+padding: 12px 14px;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-call-title {
+
+font-size: .88rem;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-timer {
+
+padding: 5px 8px;
+
+font-size: .74rem;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-call-avatar {
+
+width: 82px;
+
+height: 82px;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-entry {
+
+width: 100%;
+
+margin: 10px 0 0;
+
+padding: 10px;
+
+gap: 9px;
+
+grid-template-columns: 1fr;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-field {
+
+gap: 4px;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-field input {
+
+min-height: 40px;
+
+padding: 8px 10px;
+
+font-size: .84rem;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-status {
+
+width: 100%;
+
+margin: 10px 0 0;
+
+padding: 9px 11px;
+
+border-radius: 12px;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-status-title {
+
+font-size: .80rem;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-status-detail {
+
+font-size: .70rem;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-controls {
+
+width: 100%;
+
+margin: 10px 0 0;
+
+padding: 0;
+
+gap: 7px;
+
+flex-wrap: nowrap;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-control-btn {
+
+min-width: 0;
+
+width: 58px;
+
+min-height: 58px;
+
+padding: 7px 5px;
+
+border-radius: 15px;
+
+font-size: .62rem;
+
+flex: 1 1 0;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-control-btn--start,
+body.ecom-assistant-compact
+.ecom-assistant-control-btn--join {
+
+width: 100%;
+
+max-width: none;
+
+min-height: 48px;
+
+font-size: .78rem;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-control-icon {
+
+width: 20px;
+
+height: 20px;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-note {
+
+width: 100%;
+
+margin: 8px 0 0;
+
+font-size: .64rem;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-footer {
+
+display: none;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-call-stage
+.ecom-assistant-video-stage {
+
+padding: 52px 8px 8px;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-participant-item {
+
+flex-basis: 92px;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-participant-avatar {
+
+min-height: 54px;
+
+font-size: 1.3rem;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-main-participant
+.ecom-assistant-participant-name {
+
+font-size: .70rem;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-remote-audio {
+
+position: fixed;
+
+width: 1px;
+
+height: 1px;
+
+left: 0;
+
+bottom: 0;
+
+overflow: hidden;
+
+}
+
+@media (max-width: 440px) {
+
+body.ecom-assistant-compact
+.ecom-assistant-main {
+
+padding: 6px;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-call-card {
+
+padding: 7px;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-call-stage {
+
+height: 240px;
+
+min-height: 240px;
+
+flex-basis: 240px;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-control-btn {
+
+width: 52px;
+
+min-height: 54px;
+
+font-size: .58rem;
+
+}
+
+body.ecom-assistant-compact
+.ecom-assistant-control-icon {
+
+width: 18px;
+
+height: 18px;
+
 }
 
 }

@@ -8200,1164 +8200,381 @@ align-items:center
 }
 
 /* PUBLIC VOICE ASSISTANT */
-
 body.ecom-assistant-page{
 min-height:100%;
 margin:0;
-background:#f5f7fa !important;
-color:var(--text);
+background:#080060 !important;
+color:#fff;
+font-family:"Outfit",sans-serif;
 }
 
 .ecom-assistant-page-shell{
 min-height:100dvh;
-display:grid;
-grid-template-rows:auto 1fr auto;
-}
-
-.ecom-assistant-topbar{
-width:min(1080px,calc(100% - 32px));
-margin:16px auto 0;
-padding:10px 14px;
 display:flex;
-align-items:center;
-justify-content:space-between;
-gap:14px;
-border:1px solid #e3e7ed;
-border-radius:18px;
-background:#fff;
-box-shadow:none;
-}
-
-.ecom-assistant-brand{
-min-width:0;
-display:flex;
-align-items:center;
-gap:11px;
-}
-
-.ecom-assistant-logo-wrap{
-width:42px;
-height:42px;
-flex:0 0 42px;
-display:grid;
-place-items:center;
-overflow:hidden;
-border-radius:50%;
-background:rgba(var(--brand-rgb),.10);
-}
-
-.ecom-assistant-logo{
-width:100%;
-height:100%;
-object-fit:contain;
-}
-
-.ecom-assistant-brand-copy{
-min-width:0;
-}
-
-.ecom-assistant-kicker{
-margin:0 0 2px;
-font-size:.72rem;
-font-weight:750;
-letter-spacing:.05em;
-text-transform:uppercase;
-color:#6b7280;
-}
-
-.ecom-assistant-company-name{
-margin:0;
-max-width:min(54vw,520px);
-overflow:hidden;
-font-size:.98rem;
-font-weight:850;
-line-height:1.15;
-text-overflow:ellipsis;
-white-space:nowrap;
-color:#111827;
-}
-
-.ecom-assistant-secure-badge{
-flex:0 0 auto;
-display:inline-flex;
-align-items:center;
-gap:7px;
-padding:7px 10px;
-border-radius:999px;
-background:#ecfdf3;
-color:#16753c;
-font-size:.76rem;
-font-weight:800;
-}
-
-.ecom-assistant-secure-dot,
-.ecom-assistant-status-dot{
-width:8px;
-height:8px;
-flex:0 0 8px;
-border-radius:50%;
-background:currentColor;
+flex-direction:column;
+background:
+radial-gradient(circle at 20% 0%, rgba(255,89,0,.20) 0%, rgba(8,0,96,0) 45%),
+radial-gradient(circle at 90% 100%, rgba(255,89,0,.10) 0%, rgba(8,0,96,0) 50%),
+#080060;
 }
 
 .ecom-assistant-main{
-width:min(980px,calc(100% - 32px));
-margin:18px auto;
-display:grid;
+flex:1;
+display:flex;
 align-items:center;
+justify-content:center;
+padding:16px;
+width:100%;
 }
 
 .ecom-assistant-call-card{
 width:100%;
-padding:14px;
-border:1px solid #e2e6ec;
+max-width:520px;
+background:#0a0080;
+border:1px solid rgba(255,255,255,.06);
 border-radius:26px;
-background:#fff;
-box-shadow:none;
+overflow:hidden;
+box-shadow:0 30px 80px rgba(0,0,0,.45);
+display:flex;
+flex-direction:column;
 }
 
 .ecom-assistant-call-stage{
-width:100%;
-min-height:480px;
 position:relative;
-overflow:hidden;
-border-radius:20px;
-background:#202124;
-color:#fff;
+background:linear-gradient(180deg,rgba(255,89,0,.10) 0%,rgba(8,0,96,0) 45%),#080060;
+min-height:300px;
+padding:18px;
+display:flex;
+flex-direction:column;
 }
 
 .ecom-assistant-call-stage-top{
-position:absolute;
-top:0;
-left:0;
-right:0;
-z-index:5;
 display:flex;
 align-items:flex-start;
 justify-content:space-between;
-gap:16px;
-padding:18px 20px;
-background:rgba(17,19,21,.82);
-pointer-events:none;
+gap:14px;
+margin-bottom:8px;
 }
 
-.ecom-assistant-call-heading{
-min-width:0;
-}
-
+.ecom-assistant-call-heading{min-width:0;flex:1}
 .ecom-assistant-call-eyebrow{
 display:block;
-margin-bottom:2px;
-font-size:.72rem;
+font-size:.68rem;
 font-weight:700;
-letter-spacing:.06em;
+letter-spacing:.08em;
 text-transform:uppercase;
-color:rgba(255,255,255,.70);
+color:rgba(255,255,255,.5);
 }
-
 .ecom-assistant-call-title{
-margin:0;
-overflow:hidden;
-font-size:1rem;
+margin:3px 0 0 0;
+font-size:.98rem;
 font-weight:750;
+color:#fff;
+overflow:hidden;
 text-overflow:ellipsis;
 white-space:nowrap;
-color:#fff;
 }
 
 .ecom-assistant-timer{
-flex:0 0 auto;
-padding:6px 10px;
+padding:5px 10px;
 border-radius:999px;
-background:rgba(0,0,0,.44);
+background:rgba(255,255,255,.10);
 color:#fff;
-font-size:.84rem;
+font-size:.76rem;
 font-weight:800;
 font-variant-numeric:tabular-nums;
+flex-shrink:0;
+}
+
+/* ÚNICO INDICADOR DE ESTADO */
+.ecom-assistant-status-dot{
+position:absolute;
+top:18px;
+right:18px;
+width:12px;
+height:12px;
+border-radius:50%;
+background:#ef4444;
+box-shadow:0 0 0 4px rgba(239,68,68,.22);
+z-index:4;
+transition:background .2s ease,box-shadow .2s ease;
+}
+.ecom-assistant-status-dot[data-state="ready"],
+.ecom-assistant-status-dot[data-state="active"]{
+background:#22c55e;
+box-shadow:0 0 0 4px rgba(34,197,94,.22);
+}
+.ecom-assistant-status-dot[data-state="connecting"]{
+background:#f59e0b;
+box-shadow:0 0 0 4px rgba(245,158,11,.22);
+animation:ecomAssistantPulse 1.4s ease-in-out infinite;
+}
+.ecom-assistant-status-dot[data-state="active"]{
+animation:ecomAssistantPulse 1.8s ease-in-out infinite;
+}
+@keyframes ecomAssistantPulse{
+0%,100%{transform:scale(1)}
+50%{transform:scale(1.25)}
 }
 
 .ecom-assistant-audio-stage{
-position:absolute;
-inset:0;
+flex:1;
 display:flex;
-flex-direction:column;
 align-items:center;
 justify-content:center;
-gap:14px;
-padding:80px 22px 28px;
-text-align:center;
+padding:24px 0 8px 0;
 }
-
-.ecom-assistant-audio-stage[hidden]{
-display:none !important;
-}
+.ecom-assistant-audio-stage[hidden]{display:none !important}
 
 .ecom-assistant-call-avatar{
-width:122px;
-height:122px;
+width:118px;
+height:118px;
+border-radius:50%;
+background:rgba(255,255,255,.08);
 display:grid;
 place-items:center;
 overflow:hidden;
-border:1px solid rgba(255,255,255,.14);
-border-radius:50%;
-background:rgba(var(--brand-rgb),.20);
-box-shadow:none;
+box-shadow:0 0 0 6px rgba(255,89,0,.18);
 }
+.ecom-assistant-call-avatar-logo{width:100%;height:100%;object-fit:contain;background:#fff}
+.ecom-assistant-call-avatar-icon{width:48px;height:48px;color:#fff}
 
-.ecom-assistant-call-avatar-logo{
-width:100%;
-height:100%;
-object-fit:contain;
-background:#fff;
-}
-
-.ecom-assistant-call-avatar-icon{
-width:46px;
-height:46px;
-color:#fff;
-}
-
-.ecom-assistant-call-audio-label{
-margin:0;
-font-size:.86rem;
-font-weight:650;
-color:rgba(255,255,255,.72);
-}
-
+/* VIDEO STAGE */
 .ecom-assistant-video-stage{
-position:absolute;
-inset:0;
-padding:72px 14px 14px;
+position:relative;
+flex:1;
 display:grid;
 grid-template-rows:minmax(0,1fr) auto;
-gap:10px;
-overflow:hidden;
-background:#111315;
+gap:8px;
+background:#080060;
+min-height:300px;
 }
+.ecom-assistant-video-stage[hidden]{display:none !important}
 
-.ecom-assistant-video-stage[hidden]{
-display:none !important;
-}
-
-.ecom-assistant-main-participant{
-min-width:0;
-min-height:0;
-position:relative;
-overflow:hidden;
-border:1px solid rgba(255,255,255,.14);
-border-radius:16px;
+.ecom-assistant-fullscreen-btn{
+position:absolute;
+top:10px;
+right:10px;
+z-index:5;
+width:36px;
+height:36px;
+border-radius:10px;
+border:1px solid rgba(255,255,255,.22);
+background:rgba(0,0,0,.45);
+color:#fff;
 display:grid;
 place-items:center;
-background:#202124;
+cursor:pointer;
+transition:background .15s ease,transform .15s ease;
 }
+.ecom-assistant-fullscreen-btn:hover{background:rgba(255,89,0,.6);transform:translateY(-1px)}
+.ecom-assistant-fullscreen-btn svg{width:18px;height:18px}
 
-.ecom-assistant-main-participant video,
-.ecom-assistant-participant-thumb video{
-width:100%;
-height:100%;
-min-width:0;
-min-height:0;
-display:block;
-object-fit:cover;
-background:#111315;
+.ecom-assistant-main-participant{
+position:relative;
+border-radius:16px;
+overflow:hidden;
+background:#000;
+display:grid;
+place-items:center;
+min-height:220px;
 }
+.ecom-assistant-main-participant video{
+width:100%;height:100%;display:block;object-fit:cover;background:#000;
+}
+.ecom-assistant-main-participant video[data-source="screen_share"]{object-fit:contain}
+.ecom-assistant-main-participant video[data-local="1"][data-source="camera"]{transform:scaleX(-1)}
 
-.ecom-assistant-main-participant video[data-source="screen_share"],
-.ecom-assistant-participant-thumb video[data-source="screen_share"]{
-object-fit:contain;
-}
-
-.ecom-assistant-main-participant video[data-local="1"][data-source="camera"],
-.ecom-assistant-participant-thumb video[data-local="1"][data-source="camera"]{
-transform:scaleX(-1);
-}
+.ecom-assistant-video-stage:fullscreen{border-radius:0;padding:8px;background:#000}
+.ecom-assistant-video-stage:fullscreen .ecom-assistant-main-participant{border-radius:0}
 
 .ecom-assistant-participants{
-min-width:0;
 display:flex;
-gap:9px;
+gap:8px;
 overflow-x:auto;
-overscroll-behavior-x:contain;
+padding-bottom:2px;
 scrollbar-width:thin;
-scroll-snap-type:x proximity;
-padding-bottom:1px;
 }
-
-.ecom-assistant-participant-item{
-flex:0 0 152px;
-min-width:0;
-scroll-snap-align:start;
-}
-
+.ecom-assistant-participant-item{flex:0 0 132px}
 .ecom-assistant-participant-thumb{
 width:100%;
 aspect-ratio:16/9;
 position:relative;
+border-radius:10px;
 overflow:hidden;
-padding:0;
 border:1px solid rgba(255,255,255,.18);
-border-radius:12px;
-display:block;
-background:#202124;
-color:#fff;
+background:#000;
+padding:0;
 cursor:pointer;
 }
-
-.ecom-assistant-participant-thumb:hover,
-.ecom-assistant-participant-thumb:focus-visible,
-.ecom-assistant-participant-thumb[data-active="1"]{
-border-color:var(--brand);
-outline:none;
-}
-
+.ecom-assistant-participant-thumb[data-active="1"]{border-color:#ff5900;box-shadow:0 0 0 2px rgba(255,89,0,.35)}
 .ecom-assistant-participant-avatar{
-width:100%;
-height:100%;
-min-height:88px;
-display:grid;
-place-items:center;
-background:#2d3035;
-color:#fff;
-font-size:clamp(1.3rem,4vw,2.6rem);
-font-weight:800;
-letter-spacing:.02em;
+width:100%;height:100%;min-height:74px;
+display:grid;place-items:center;
+background:#1a1060;color:#fff;
+font-size:1.4rem;font-weight:800;
 }
-
-.ecom-assistant-main-participant > .ecom-assistant-participant-avatar{
-min-height:100%;
-font-size:clamp(2.6rem,8vw,5rem);
-}
-
 .ecom-assistant-participant-meta{
-position:absolute;
-left:8px;
-right:8px;
-bottom:8px;
-z-index:3;
-min-width:0;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:8px;
+position:absolute;left:6px;right:6px;bottom:6px;
+display:flex;align-items:center;justify-content:space-between;gap:6px;
 pointer-events:none;
 }
-
 .ecom-assistant-participant-name{
-min-width:0;
-max-width:calc(100% - 34px);
-padding:4px 7px;
-overflow:hidden;
-border-radius:8px;
-background:rgba(17,19,21,.82);
-color:#fff;
-font-size:.72rem;
-font-weight:750;
-text-overflow:ellipsis;
-white-space:nowrap;
+padding:3px 6px;border-radius:6px;
+background:rgba(0,0,0,.7);color:#fff;
+font-size:.66rem;font-weight:750;
+max-width:calc(100% - 30px);
+overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
 }
-
-.ecom-assistant-main-participant .ecom-assistant-participant-name{
-font-size:.82rem;
-}
-
 .ecom-assistant-participant-mic{
-width:28px;
-height:28px;
-flex:0 0 28px;
-display:grid;
-place-items:center;
+width:22px;height:22px;flex:0 0 22px;
 border-radius:50%;
-background:#166534;
-color:#fff;
+display:grid;place-items:center;
+background:#166534;color:#fff;
 }
+.ecom-assistant-participant-mic[data-muted="1"]{background:#b42318}
+.ecom-assistant-participant-mic svg{width:12px;height:12px}
 
-.ecom-assistant-participant-mic[data-muted="1"]{
-background:#b42318;
-}
-
-.ecom-assistant-participant-mic svg{
-width:15px;
-height:15px;
-}
-
+/* ENTRY (inputs) */
 .ecom-assistant-entry{
-width:min(100%,700px);
-margin:14px auto 0;
-padding:14px;
-border:1px solid #e3e7ed;
-border-radius:16px;
-display:grid;
-grid-template-columns:repeat(2,minmax(0,1fr));
-gap:12px;
-background:#fff;
-}
-
-.ecom-assistant-entry[hidden]{
-display:none !important;
-}
-
-.ecom-assistant-field{
-min-width:0;
+padding:18px 20px 6px 20px;
 display:flex;
 flex-direction:column;
-gap:6px;
+gap:10px;
+background:#080060;
 }
+.ecom-assistant-entry[hidden]{display:none !important}
 
-.ecom-assistant-field > span{
-font-size:.78rem;
-font-weight:800;
-color:#344054;
+.ecom-assistant-field{display:block}
+.ecom-assistant-field-label{
+display:block;
+font-size:.7rem;
+color:rgba(255,255,255,.6);
+margin-bottom:5px;
+font-weight:700;
+letter-spacing:.03em;
 }
-
 .ecom-assistant-field input{
 width:100%;
-min-height:44px;
-padding:9px 11px;
-border:1px solid #cfd6df;
-border-radius:11px;
-outline:none;
-background:#fff;
-color:#111827;
-font:inherit;
-font-size:.88rem;
-}
-
-.ecom-assistant-field input:focus{
-border-color:var(--brand);
-outline:3px solid rgba(var(--brand-rgb),.12);
-outline-offset:1px;
-}
-
-.ecom-assistant-field small{
-font-size:.69rem;
-line-height:1.35;
-color:#7b8492;
-}
-
-.ecom-assistant-status{
-width:min(100%,700px);
-margin:14px auto 0;
-padding:11px 14px;
-display:grid;
-grid-template-columns:auto 1fr;
-align-items:center;
-gap:10px;
-border:1px solid #e3e7ed;
+padding:14px 16px;
 border-radius:14px;
-background:#f8fafc;
-text-align:left;
+border:1.5px solid rgba(255,255,255,.12);
+background:rgba(255,255,255,.06);
+color:#fff;
+font-size:.95rem;
+outline:none;
+box-sizing:border-box;
+transition:border-color .15s ease,background .15s ease;
+font-family:inherit;
+}
+.ecom-assistant-field input::placeholder{color:rgba(255,255,255,.42)}
+.ecom-assistant-field input:focus{
+border-color:#ff5900;
+background:rgba(255,89,0,.10);
 }
 
-.ecom-assistant-status[data-state="active"]{
-border-color:#b7e3c4;
-background:#effaf3;
-color:#16753c;
-}
-
-.ecom-assistant-status[data-state="connecting"],
-.ecom-assistant-status[data-state="waiting"],
-.ecom-assistant-status[data-state="ending"]{
-border-color:rgba(var(--brand-rgb),.24);
-background:rgba(var(--brand-rgb),.06);
-color:var(--brand);
-}
-
-.ecom-assistant-status[data-state="busy"],
-.ecom-assistant-status[data-state="missed"]{
-border-color:#f0cf91;
-background:#fff9ec;
-color:#96600c;
-}
-
-.ecom-assistant-status[data-state="error"]{
-border-color:#efb7b7;
-background:#fff3f3;
-color:#a32121;
-}
-
-.ecom-assistant-status-copy{
-min-width:0;
-}
-
-.ecom-assistant-status-title{
-display:block;
-font-size:.88rem;
-font-weight:800;
-line-height:1.2;
-color:currentColor;
-}
-
-.ecom-assistant-status-detail{
-display:block;
-margin-top:2px;
-font-size:.76rem;
-line-height:1.35;
-color:#6b7280;
-}
-
+/* CONTROLS */
 .ecom-assistant-controls{
-margin:16px auto 0;
-display:flex;
-align-items:center;
-justify-content:center;
-gap:12px;
-flex-wrap:wrap;
+padding:14px 20px 20px 20px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
 }
 
 .ecom-assistant-control-btn{
-min-width:66px;
-min-height:66px;
-padding:8px 11px;
-border:1px solid #d7dce3;
-border-radius:18px;
+min-height:52px;
+padding:10px 14px;
+border:none;
+border-radius:999px;
 display:inline-flex;
-flex-direction:column;
 align-items:center;
 justify-content:center;
-gap:5px;
-background:#f8f9fa;
-color:#202124;
-cursor:pointer;
-font:inherit;
-font-size:.70rem;
+gap:8px;
+font-size:.88rem;
 font-weight:750;
-transition:background-color .15s ease,border-color .15s ease,transform .15s ease;
+cursor:pointer;
+font-family:inherit;
+color:#fff;
+transition:transform .12s ease,background .15s ease,opacity .15s ease;
 }
-
-.ecom-assistant-control-btn:hover:not(:disabled){
-transform:translateY(-1px);
-background:#eef1f4;
-}
-
-.ecom-assistant-control-btn:disabled{
-opacity:.55;
-cursor:not-allowed;
-transform:none;
-}
-
-.ecom-assistant-control-btn[hidden]{
-display:none !important;
-}
+.ecom-assistant-control-btn:hover:not(:disabled){transform:translateY(-1px)}
+.ecom-assistant-control-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.ecom-assistant-control-btn[hidden]{display:none !important}
+.ecom-assistant-control-icon{width:20px;height:20px;flex:0 0 20px}
 
 .ecom-assistant-control-btn--start{
-min-width:220px;
-min-height:52px;
-padding:10px 22px;
-flex-direction:row;
-border-color:var(--brand);
-border-radius:999px;
-background:var(--brand);
-color:var(--brand-contrast);
-font-size:.88rem;
+background:#ff5900;
+color:#fff;
+grid-column:1 / -1;
+box-shadow:0 10px 26px rgba(255,89,0,.35);
 }
+.ecom-assistant-control-btn--start:hover:not(:disabled){background:#ff7028}
 
 .ecom-assistant-control-btn--join{
-min-width:220px;
-min-height:52px;
-padding:10px 22px;
-flex-direction:row;
-border-color:var(--brand);
-border-radius:999px;
-background:#fff;
-color:var(--brand);
-font-size:.88rem;
+background:transparent;
+color:#fff;
+border:1.5px solid rgba(255,255,255,.25);
+grid-column:1 / -1;
+}
+.ecom-assistant-control-btn--join:hover:not(:disabled){background:rgba(255,255,255,.08)}
+
+/* Botones de medios en llamada */
+.ecom-assistant-control-btn--media{
+flex-direction:column;
+gap:5px;
+font-size:.68rem;
+min-height:62px;
+background:rgba(255,255,255,.08);
+border-radius:16px;
+padding:8px 4px;
+}
+.ecom-assistant-control-btn--media:hover:not(:disabled){background:rgba(255,255,255,.14)}
+.ecom-assistant-control-btn--media[data-active="1"]{
+background:rgba(255,89,0,.22);
+color:#ff5900;
+}
+.ecom-assistant-control-btn--media[data-muted="1"]{
+background:rgba(245,158,11,.20);
+color:#f59e0b;
 }
 
 .ecom-assistant-control-btn--end{
-border-color:#d93025;
-background:#d93025;
+background:#ef4444;
 color:#fff;
 }
-
-.ecom-assistant-control-btn[data-active="1"]{
-border-color:var(--brand);
-background:rgba(var(--brand-rgb),.12);
-color:var(--brand);
-}
-
-.ecom-assistant-control-btn[data-muted="1"]{
-border-color:#d97706;
-background:#fff7e6;
-color:#9a5d05;
-}
-
-.ecom-assistant-control-icon{
-width:22px;
-height:22px;
-flex:0 0 22px;
-}
-
-.ecom-assistant-note{
-width:min(100%,680px);
-margin:14px auto 0;
-font-size:.72rem;
-line-height:1.45;
-text-align:center;
-color:#7b8492;
-}
-
-.ecom-assistant-footer{
-width:min(980px,calc(100% - 32px));
-margin:0 auto 16px;
-font-size:.72rem;
-line-height:1.4;
-text-align:center;
-color:#8a919d;
-}
-
-.ecom-assistant-remote-audio{
-width:0;
-height:0;
-position:fixed;
-left:0;
-bottom:0;
-overflow:hidden;
-pointer-events:none;
-}
-
-@media(max-width:640px){
-
-.ecom-assistant-page-shell{
-display:flex;
-flex-direction:column;
-}
-
-.ecom-assistant-topbar{
-width:100%;
-margin:0;
-padding:10px 12px;
-border-width:0 0 1px;
-border-radius:0;
-box-shadow:none;
-}
-
-.ecom-assistant-secure-badge{
-padding:7px;
-}
-
-.ecom-assistant-secure-badge span:last-child{
-display:none;
-}
-
-.ecom-assistant-main{
-width:100%;
-margin:0;
-flex:1;
-}
-
-.ecom-assistant-call-card{
-padding:0;
-border:0;
-border-radius:0;
-box-shadow:none;
-}
-
-.ecom-assistant-call-stage{
-min-height:58dvh;
-border-radius:0 0 22px 22px;
-}
-
-.ecom-assistant-call-stage-top{
-padding:15px 14px;
-}
-
-.ecom-assistant-call-avatar{
-width:106px;
-height:106px;
-}
-
-.ecom-assistant-status{
-width:calc(100% - 24px);
-margin-top:12px;
-}
-
-.ecom-assistant-controls{
-width:100%;
-padding:0 12px;
-gap:8px;
-}
-
-.ecom-assistant-control-btn{
-min-width:60px;
-min-height:60px;
-flex:1 1 60px;
-max-width:90px;
-border-radius:16px;
-}
-
-.ecom-assistant-control-btn--start,
-.ecom-assistant-control-btn--join{
-width:100%;
-max-width:none;
-min-height:52px;
-}
-
-.ecom-assistant-entry{
-width:calc(100% - 24px);
-grid-template-columns:1fr;
-padding:12px;
-}
-
-.ecom-assistant-video-stage{
-padding:64px 8px 8px;
-}
-
-.ecom-assistant-main-participant{
-border-radius:12px;
-}
-
-.ecom-assistant-participant-item{
-flex-basis:118px;
-}
-
-.ecom-assistant-participant-avatar{
-min-height:66px;
-}
-
-.ecom-assistant-note{
-padding:0 15px;
-}
-
-.ecom-assistant-footer{
-width:calc(100% - 24px);
-margin-top:12px;
-}
-
-}
-
-@media(max-width:390px){
-
-.ecom-assistant-call-stage{
-min-height:55dvh;
-}
-
-.ecom-assistant-control-btn{
-min-width:54px;
-min-height:58px;
-padding:7px;
-font-size:.64rem;
-}
-
-.ecom-assistant-control-icon{
-width:20px;
-height:20px;
-}
-
-}
-
-@media(prefers-reduced-motion:reduce){
-
-.ecom-assistant-control-btn{
-transition:none;
-}
-
-}
-
-/* ============================================================
-   ASSISTANT POPUP / MODO FLOATING
-   ============================================================ */
-
-body.ecom-assistant-compact {
-
-width: 100%;
-
-min-width: 0;
-
-min-height: 100dvh;
-
-margin: 0;
-
-overflow: hidden;
-
-background: #f5f7fa !important;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-page-shell {
-
-width: 100%;
-
-height: 100dvh;
-
-min-height: 0;
-
-display: flex;
-
-flex-direction: column;
-
-overflow: hidden;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-topbar {
-
-width: 100%;
-
-margin: 0;
-
-padding: 10px 12px;
-
-border-width: 0 0 1px;
-
-border-radius: 0;
-
-box-shadow: none;
-
-flex: 0 0 auto;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-brand-copy {
-
-min-width: 0;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-company-name {
-
-max-width: 230px;
-
-font-size: .90rem;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-secure-badge {
-
-padding: 6px 8px;
-
-font-size: .70rem;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-main {
-
-width: 100%;
-
-min-width: 0;
-
-min-height: 0;
-
-margin: 0;
-
-padding: 10px;
-
-display: flex;
-
-align-items: stretch;
-
-justify-content: stretch;
-
-overflow-y: auto;
-
-overflow-x: hidden;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-call-card {
-
-width: 100%;
-
-max-width: none;
-
-min-width: 0;
-
-padding: 10px;
-
-border-radius: 18px;
-
-box-shadow: none;
-
-display: flex;
-
-flex-direction: column;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-call-stage {
-
-width: 100%;
-
-min-width: 0;
-
-min-height: 270px;
-
-height: 270px;
-
-border-radius: 16px;
-
-flex: 0 0 270px;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-call-stage-top {
-
-padding: 12px 14px;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-call-title {
-
-font-size: .88rem;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-timer {
-
-padding: 5px 8px;
-
-font-size: .74rem;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-call-avatar {
-
-width: 82px;
-
-height: 82px;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-entry {
-
-width: 100%;
-
-margin: 10px 0 0;
-
-padding: 10px;
-
-gap: 9px;
-
-grid-template-columns: 1fr;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-field {
-
-gap: 4px;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-field input {
-
-min-height: 40px;
-
-padding: 8px 10px;
-
-font-size: .84rem;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-status {
-
-width: 100%;
-
-margin: 10px 0 0;
-
-padding: 9px 11px;
-
-border-radius: 12px;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-status-title {
-
-font-size: .80rem;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-status-detail {
-
-font-size: .70rem;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-controls {
-
-width: 100%;
-
-margin: 10px 0 0;
-
-padding: 0;
-
-gap: 7px;
-
-flex-wrap: nowrap;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-control-btn {
-
-min-width: 0;
-
-width: 58px;
-
-min-height: 58px;
-
-padding: 7px 5px;
-
-border-radius: 15px;
-
-font-size: .62rem;
-
-flex: 1 1 0;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-control-btn--start,
-body.ecom-assistant-compact
-.ecom-assistant-control-btn--join {
-
-width: 100%;
-
-max-width: none;
-
-min-height: 48px;
-
-font-size: .78rem;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-control-icon {
-
-width: 20px;
-
-height: 20px;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-note {
-
-width: 100%;
-
-margin: 8px 0 0;
-
-font-size: .64rem;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-footer {
-
-display: none;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-call-stage
-.ecom-assistant-video-stage {
-
-padding: 52px 8px 8px;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-participant-item {
-
-flex-basis: 92px;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-participant-avatar {
-
-min-height: 54px;
-
-font-size: 1.3rem;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-main-participant
-.ecom-assistant-participant-name {
-
-font-size: .70rem;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-remote-audio {
-
-position: fixed;
-
-width: 1px;
-
-height: 1px;
-
-left: 0;
-
-bottom: 0;
-
-overflow: hidden;
-
-}
-
-@media (max-width: 440px) {
-
-body.ecom-assistant-compact
-.ecom-assistant-main {
-
-padding: 6px;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-call-card {
-
-padding: 7px;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-call-stage {
-
-height: 240px;
-
-min-height: 240px;
-
-flex-basis: 240px;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-control-btn {
-
-width: 52px;
-
-min-height: 54px;
-
-font-size: .58rem;
-
-}
-
-body.ecom-assistant-compact
-.ecom-assistant-control-icon {
-
-width: 18px;
-
-height: 18px;
-
-}
-
+.ecom-assistant-control-btn--end:hover:not(:disabled){background:#dc2626}
+
+/* En llamada: grid de 4 columnas para medios + salir */
+.ecom-assistant-call-card[data-mode="active"] .ecom-assistant-controls{
+grid-template-columns:repeat(4,minmax(0,1fr));
+padding:14px 16px 20px 16px;
+}
+.ecom-assistant-call-card[data-mode="active"] .ecom-assistant-control-btn--media,
+.ecom-assistant-call-card[data-mode="active"] .ecom-assistant-control-btn--end{
+grid-column:auto;
+}
+
+/* Compact / floating */
+body.ecom-assistant-compact{overflow:hidden}
+body.ecom-assistant-compact .ecom-assistant-page-shell{height:100dvh}
+body.ecom-assistant-compact .ecom-assistant-main{padding:6px}
+body.ecom-assistant-compact .ecom-assistant-call-card{max-width:100%;border-radius:18px}
+
+@media (max-width:640px){
+.ecom-assistant-main{padding:8px}
+.ecom-assistant-call-card{max-width:100%;border-radius:20px;min-height:calc(100dvh - 16px)}
+.ecom-assistant-call-stage{min-height:220px}
+.ecom-assistant-controls{grid-template-columns:1fr 1fr}
+.ecom-assistant-call-card[data-mode="active"] .ecom-assistant-controls{
+grid-template-columns:repeat(4,minmax(0,1fr));
+}
+.ecom-assistant-control-btn{font-size:.8rem}
+.ecom-assistant-call-avatar{width:96px;height:96px}
+.ecom-assistant-main-participant{min-height:180px}
+}
+
+@media (prefers-reduced-motion:reduce){
+.ecom-assistant-status-dot,
+.ecom-assistant-control-btn,
+.ecom-assistant-fullscreen-btn{transition:none;animation:none}
 }

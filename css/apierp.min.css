@@ -10402,3 +10402,227 @@ min-width:0;
 }
 
 }
+
+/* ======================================================
+MI EMPRESA (SETTINGS)
+====================================================== */
+.company_shell{
+width:100%;
+max-width:1440px;
+margin:0 auto;
+padding:18px;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+color:var(--lead);
+}
+
+.company_header{
+margin-bottom:18px;
+padding:18px 22px;
+border:1px solid rgba(8,0,96,.12);
+border-radius:18px;
+background:var(--white);
+}
+
+.company_title{
+margin:0;
+color:var(--blue);
+font-size:24px;
+font-weight:800;
+}
+
+.company_subtitle{
+margin:5px 0 0;
+color:#64748b;
+font-family:'Raleway',sans-serif;
+font-size:13px;
+line-height:1.4;
+}
+
+.company_logoZone{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:12px;
+margin-bottom:18px;
+padding:22px;
+border:1px dashed rgba(255,89,0,.35);
+border-radius:16px;
+background:#fff8f4;
+cursor:pointer;
+transition:background-color .15s ease, border-color .15s ease;
+}
+
+.company_logoZone:hover,
+.company_logoZone:focus-visible{
+background:rgba(255,89,0,.08);
+border-color:var(--orange);
+outline:none;
+}
+
+.company_logoZone img{
+width:140px;
+height:140px;
+object-fit:contain;
+border:1px solid #dce1e8;
+border-radius:14px;
+background:var(--white);
+}
+
+.company_logoZone strong{
+color:var(--orange);
+font-size:14px;
+}
+
+.company_logoZone small{
+color:#64748b;
+font-family:'Raleway',sans-serif;
+font-size:11px;
+text-align:center;
+}
+
+.company_panel{
+margin-bottom:18px;
+padding:20px;
+border:1px solid rgba(8,0,96,.12);
+border-radius:18px;
+background:var(--white);
+}
+
+.company_panelTitle{
+margin:0 0 16px;
+padding-bottom:10px;
+border-bottom:1px solid #eef1f5;
+color:var(--blue);
+font-size:16px;
+font-weight:800;
+}
+
+.company_grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:16px;
+}
+
+.company_field{
+display:flex;
+flex-direction:column;
+gap:6px;
+min-width:0;
+}
+
+.company_fieldWide{
+grid-column:1 / -1;
+}
+
+.company_field label{
+color:var(--blue);
+font-size:11.5px;
+font-weight:700;
+}
+
+.company_field input,
+.company_field select,
+.company_field textarea{
+width:100%;
+min-height:42px;
+padding:9px 12px;
+border:1px solid #d8dde5;
+border-radius:11px;
+background:var(--white);
+color:var(--lead);
+font:inherit;
+font-size:13px;
+box-sizing:border-box;
+}
+
+.company_field textarea{
+min-height:85px;
+resize:vertical;
+}
+
+.company_field input:focus,
+.company_field select:focus,
+.company_field textarea:focus{
+border-color:var(--orange);
+outline:2px solid rgba(255,89,0,.15);
+outline-offset:1px;
+}
+
+.company_inputWrap{
+position:relative;
+display:flex;
+align-items:center;
+}
+
+.company_inputWrap input{
+flex:1;
+padding-right:42px;
+}
+
+.company_eyeBtn{
+position:absolute;
+right:5px;
+width:32px;
+height:32px;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:0;
+border:0;
+border-radius:8px;
+background:transparent;
+color:var(--lead);
+font-size:16px;
+cursor:pointer;
+transition:background-color .15s ease;
+}
+
+.company_eyeBtn:hover,
+.company_eyeBtn:focus-visible{
+background:#f3f4f6;
+outline:none;
+}
+
+.company_actions{
+display:flex;
+align-items:center;
+justify-content:flex-end;
+margin-top:20px;
+}
+
+.company_btn{
+min-height:44px;
+padding:0 22px;
+border:1px solid var(--orange);
+border-radius:12px;
+background:var(--orange);
+color:var(--white);
+font-size:13.5px;
+font-weight:800;
+cursor:pointer;
+transition:background-color .15s ease;
+}
+
+.company_btn:hover,
+.company_btn:focus-visible{
+background:color-mix(in srgb,var(--orange),#000 8%);
+outline:none;
+}
+
+.company_btn:disabled{
+opacity:.55;
+cursor:not-allowed;
+}
+
+@media(max-width:640px){
+.company_shell{
+padding:12px;
+}
+.company_grid{
+grid-template-columns:1fr;
+}
+.company_btn{
+width:100%;
+}
+}

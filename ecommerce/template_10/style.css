@@ -2557,8 +2557,8 @@ transform-origin: center bottom;
 }
 
 /* ============================================================
-   BOTON FLOTANTE DE LLAMADA
-   ============================================================ */
+BOTON FLOTANTE DE LLAMADA
+============================================================ */
 
 .floating-assistant-call-btn {
 
@@ -8603,14 +8603,159 @@ body.ecom-assistant-compact .ecom-assistant-main{padding:6px}
 body.ecom-assistant-compact .ecom-assistant-call-card{max-width:100%;border-radius:18px}
 
 @media (max-width:640px){
-.ecom-assistant-main{padding:8px}
-.ecom-assistant-call-card{max-width:100%;border-radius:20px;min-height:calc(100dvh - 16px)}
-.ecom-assistant-call-stage{min-height:220px}
-.ecom-assistant-controls{grid-template-columns:1fr 1fr}
-.ecom-assistant-control-btn{font-size:.8rem}
-.ecom-assistant-call-avatar{width:96px;height:96px}
-.ecom-assistant-main-participant{min-height:180px}
-.ecom-assistant-call-card[data-mode="active"] .ecom-assistant-control-btn--end{width:min(180px,68%)}
+
+.ecom-assistant-main{
+padding:8px;
+align-items:stretch;
+min-height:0;
+}
+
+.ecom-assistant-call-card{
+max-width:100%;
+border-radius:20px;
+min-height:calc(100dvh - 16px);
+}
+
+/*
+* FUERA DE LLAMADA:
+* conserva una altura mínima cómoda.
+*/
+.ecom-assistant-call-stage{
+min-height:220px;
+}
+
+.ecom-assistant-controls{
+grid-template-columns:1fr 1fr;
+}
+
+.ecom-assistant-control-btn{
+font-size:.8rem;
+}
+
+.ecom-assistant-call-avatar{
+width:96px;
+height:96px;
+}
+
+.ecom-assistant-main-participant{
+min-height:180px;
+}
+
+
+/* ==========================================================
+LLAMADA ACTIVA EN MÓVIL
+========================================================== */
+
+.ecom-assistant-call-card[data-mode="active"]{
+height:calc(100dvh - 16px);
+min-height:0;
+max-height:calc(100dvh - 16px);
+overflow:hidden;
+}
+
+/*
+* El escenario ocupa solamente el espacio disponible
+* después de reservar espacio para los controles.
+*/
+.ecom-assistant-call-card[data-mode="active"]
+.ecom-assistant-call-stage{
+flex:1 1 auto;
+min-height:0;
+overflow:hidden;
+padding:14px 14px 8px 14px;
+}
+
+.ecom-assistant-call-card[data-mode="active"]
+.ecom-assistant-video-stage{
+flex:1 1 auto;
+min-height:0;
+overflow:hidden;
+}
+
+.ecom-assistant-call-card[data-mode="active"]
+.ecom-assistant-main-participant{
+min-height:0;
+}
+
+.ecom-assistant-call-card[data-mode="active"]
+.ecom-assistant-participants{
+flex:0 0 auto;
+min-height:0;
+}
+
+.ecom-assistant-call-card[data-mode="active"]
+.ecom-assistant-participant-item{
+flex:0 0 112px;
+}
+
+
+/* ==========================================================
+CONTROLES
+========================================================== */
+
+.ecom-assistant-call-card[data-mode="active"]
+.ecom-assistant-controls{
+flex:0 0 auto;
+position:relative;
+z-index:20;
+
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:8px;
+
+padding:
+10px
+12px
+calc(12px + env(safe-area-inset-bottom, 0px))
+12px;
+
+background:var(--brand);
+
+border-top:
+1px solid
+color-mix(
+in srgb,
+var(--brand-contrast,#fff),
+transparent 88%
+);
+}
+
+.ecom-assistant-call-card[data-mode="active"]
+[data-ecom-assistant-screen-share="0"]
+.ecom-assistant-controls{
+grid-template-columns:repeat(2,minmax(0,1fr));
+}
+
+.ecom-assistant-call-card[data-mode="active"]
+.ecom-assistant-control-btn--media{
+grid-column:auto;
+min-width:0;
+min-height:56px;
+padding:7px 4px;
+font-size:.66rem;
+}
+
+.ecom-assistant-call-card[data-mode="active"]
+.ecom-assistant-control-btn--end{
+grid-column:1 / -1;
+justify-self:center;
+
+width:min(180px,72%);
+min-height:50px;
+
+gap:8px;
+}
+
+
+/* ==========================================================
+MODO FLOTANTE
+========================================================== */
+
+body.ecom-assistant-compact
+.ecom-assistant-call-card[data-mode="active"]{
+height:calc(100dvh - 12px);
+max-height:calc(100dvh - 12px);
+}
+
 }
 
 @media (prefers-reduced-motion:reduce){

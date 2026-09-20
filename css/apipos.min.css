@@ -4544,31 +4544,26 @@ display: flex;
 }
 
 .modal_opt_dialog{
-width: min(1440px, calc(100vw - 24px));
-height: min(94vh, 920px);
-max-height: calc(100vh - 24px);
-background: #ffffff;
-border-radius: 28px;
-overflow: hidden;
-box-shadow:
-0 24px 80px rgba(0,0,0,0.18),
-0 2px 12px rgba(0,0,0,0.08);
-border: 1px solid rgba(255,255,255,0.7);
-display: flex;
-flex-direction: column;
+width:min(1440px,calc(100vw - 24px));
+height:min(94vh,920px);
+max-height:calc(100vh - 24px);
+background:#fff;
+border-radius:16px;
+overflow:hidden;
+border:1px solid #dfe3eb;
+display:flex;
+flex-direction:column;
 }
 
 .modal_opt_content{
-width: 100%;
-height: 100%;
-min-height: 0;
-border: none !important;
-padding: 0 !important;
-background:
-radial-gradient(circle at top right, rgba(252,89,0,0.08), transparent 22%),
-linear-gradient(180deg, #ffffff 0%, #fbfbfd 100%);
-display: flex;
-flex-direction: column;
+width:100%;
+height:100%;
+min-height:0;
+border:none !important;
+padding:0 !important;
+background:#fff;
+display:flex;
+flex-direction:column;
 }
 
 .modal_opt_dynamic{
@@ -4657,24 +4652,6 @@ border-radius: 999px;
 
 #modal_opt_root .modal_opt_main::-webkit-scrollbar-track{
 background: transparent;
-}
-
-#modal_opt_root .modal_opt_sidebar{
-min-width: 0;
-min-height: 0;
-height: 100%;
-overflow: hidden;
-border: none;
-border-radius: 24px;
-box-shadow: none;
-scrollbar-width: thin;
-scrollbar-color: #c9cfdb transparent;
-box-sizing: border-box;
-display: flex;
-align-items: flex-start;
-justify-content: center;
-padding-top: 2px;
-background: transparent !important;
 }
 
 #modal_opt_root .modal_opt_sidebar::-webkit-scrollbar{
@@ -4829,64 +4806,6 @@ transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
 padding: 0;
 border-bottom: none;
 background: linear-gradient(180deg, #ffffff 0%, #fcfcfe 100%);
-}
-
-#modal_opt_root .modal_opt_card_toggle{
-width: 100%;
-border: none;
-background: transparent;
-display: flex;
-align-items: center;
-justify-content: space-between;
-gap: 12px;
-padding: 16px 18px;
-text-align: left;
-cursor: pointer;
-}
-
-#modal_opt_root .modal_opt_card_toggle:hover{
-background: rgba(252,89,0,.03);
-}
-
-#modal_opt_root .modal_opt_card_chevron{
-flex: 0 0 auto;
-width: 34px;
-height: 34px;
-border-radius: 10px;
-display: inline-flex;
-align-items: center;
-justify-content: center;
-color: #6b7280;
-background: #f8fafc;
-border: 1px solid #eceef5;
-transition: transform .2s ease, color .2s ease, background .2s ease;
-}
-
-#modal_opt_root .modal_opt_card{
-padding: 0 !important;
-margin: 0 !important;
-overflow: visible !important;
-}
-
-#modal_opt_root .modal_opt_card_body{
-display: none;
-padding: 0 18px 18px 18px;
-overflow: visible !important;
-opacity: 1;
-max-height: none !important;
-border-top: 1px solid transparent;
-}
-
-#modal_opt_root .modal_opt_card.is-expanded .modal_opt_card_body{
-display: block;
-border-top: 1px solid #f1f3f8;
-}
-
-#modal_opt_root .modal_opt_card.is-expanded .modal_opt_card_chevron{
-transform: rotate(180deg);
-color: #FC5900;
-background: #fff3ed;
-border-color: rgba(252,89,0,.18);
 }
 
 #modal_opt_root .modal_opt_dialog,
@@ -5856,18 +5775,6 @@ min-height: 0;
 overflow: hidden;
 }
 
-#modal_opt_root .modal_opt_sidebar{
-order: 1;
-flex: 0 0 auto;
-height: auto !important;
-min-height: auto !important;
-max-height: none;
-overflow: visible;
-display: flex;
-justify-content: flex-end;
-padding: 0 !important;
-}
-
 #modal_opt_root .modal_opt_main{
 order: 2;
 flex: 1 1 auto;
@@ -5901,24 +5808,6 @@ margin-bottom: 12px;
 
 #modal_opt_root .div-group-container > *:last-child{
 margin-bottom: 0;
-}
-
-#modal_opt_root .modal_opt_card_toggle{
-padding: 14px;
-}
-
-#modal_opt_root .modal_opt_card_body{
-padding-left: 14px;
-padding-right: 14px;
-}
-
-#modal_opt_root .modal_opt_card.is-expanded .modal_opt_card_body{
-padding: 0 14px 14px 14px;
-}
-
-#modal_opt_root .modal_opt_sidebar{
-grid-template-columns: 1fr 1fr;
-max-height: 30vh;
 }
 
 #modal_opt_root [id^="map_select_container_"]{
@@ -5971,17 +5860,6 @@ gap: 10px;
 height: 100%;
 min-height: 0;
 overflow: hidden;
-}
-
-#modal_opt_root .modal_opt_sidebar{
-grid-template-columns: none;
-max-height: none;
-padding: 0 !important;
-border-radius: 0 !important;
-overflow: visible !important;
--webkit-overflow-scrolling: touch;
-display: flex;
-justify-content: flex-end;
 }
 
 #modal_opt_root .modal_opt_main{
@@ -6298,4 +6176,540 @@ padding:6px 8px;
 left:50%;
 transform:translateX(-50%);
 }
+}
+
+/* ============================== APIPOS MODAL MAS OPCIONES ============================== */
+#modal_opt_root .modal_opt_shell{
+display:flex !important;
+flex-direction:column !important;
+grid-template-columns:1fr !important;
+gap:0 !important;
+padding:12px !important;
+height:100%;
+min-height:0;
+}
+
+#modal_opt_root .modal_opt_main{
+width:100% !important;
+min-width:0;
+min-height:0;
+height:100%;
+overflow-x:hidden !important;
+overflow-y:auto !important;
+padding:0 !important;
+}
+
+#modal_opt_root .apipos_guideUx_modalHeader{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:12px;
+min-height:34px;
+padding:0 2px 8px;
+}
+
+#modal_opt_root .apipos_guideUx_modalHeaderTitle{
+font-size:15px;
+font-weight:800;
+color:#1d2939;
+}
+
+#modal_opt_root .apipos_guideUx_modalHeaderActions{
+display:flex;
+align-items:center;
+justify-content:flex-end;
+}
+
+#modal_opt_root .apipos_guideUx_modalHeaderActions .closeModal{
+width:32px;
+height:32px;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:0;
+border:1px solid #dfe3eb;
+border-radius:10px;
+background:#fff;
+color:#667085;
+cursor:pointer;
+font-size:22px;
+line-height:1;
+}
+
+#modal_opt_root .apipos_guideUx_modalHeaderActions .closeModal:hover{
+color:var(--orange);
+border-color:var(--orange);
+}
+
+#modal_opt_root .modal_opt_sections_grid{
+display:flex !important;
+flex-direction:column !important;
+gap:12px;
+padding-bottom:18px;
+}
+
+#modal_opt_root .modal_opt_card{
+background:#fff;
+border:1px solid #e2e6ee;
+border-radius:14px;
+box-shadow:none !important;
+overflow:visible !important;
+}
+
+#modal_opt_root .modal_opt_card_header{
+display:flex !important;
+align-items:center;
+justify-content:space-between;
+gap:12px;
+padding:10px 14px !important;
+border-bottom:1px solid #e2e6ee !important;
+background:#fff !important;
+}
+
+#modal_opt_root .modal_opt_card_body{
+display:block !important;
+padding:14px !important;
+border-top:none !important;
+}
+
+#modal_opt_root .modal_opt_card_title_wrap{
+min-width:0;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+#modal_opt_root .modal_opt_card_icon{
+width:32px;
+height:32px;
+flex:0 0 32px;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+border:1px solid #e2e6ee;
+border-radius:9px;
+background:#fff7f2;
+color:var(--orange);
+}
+
+#modal_opt_root .modal_opt_card_title{
+margin:0;
+font-size:14px;
+font-weight:800;
+line-height:1.2;
+color:#1d2939;
+}
+
+#modal_opt_root .modal_opt_card_subtitle{
+margin:3px 0 0;
+font-size:10px;
+line-height:1.3;
+color:#667085;
+}
+
+#modal_opt_root .div-group-container{
+display:flex;
+gap:12px;
+width:100%;
+margin-bottom:12px;
+}
+
+#modal_opt_root .div-group-container:last-child{
+margin-bottom:0;
+}
+
+#modal_opt_root .div-width-options{
+min-width:0;
+}
+
+#modal_opt_root .label-options,
+#modal_opt_root .apipos_guideUx_fieldLabel{
+display:block;
+margin:0 0 5px;
+font-size:11px;
+font-weight:700;
+line-height:1.2;
+color:#344054;
+}
+
+#modal_opt_root .custom-input-cart-options,
+#modal_opt_root .custom-input-cart-observacion,
+#modal_opt_root .form-control,
+#modal_opt_root .form-select{
+min-height:38px;
+border:1px solid #d9dee8;
+border-radius:9px;
+background:#fff;
+box-shadow:none !important;
+}
+
+#modal_opt_root textarea.custom-input-cart-observacion{
+min-height:92px;
+}
+
+#modal_opt_root .custom-input-btn-background,
+#modal_opt_root .apipos_guideUx_moreButton,
+#modal_opt_root .apipos_guideUx_relatedAddButton{
+min-height:34px;
+border:1px solid #d9dee8;
+border-radius:9px;
+background:#fff;
+color:#344054;
+box-shadow:none !important;
+cursor:pointer;
+}
+
+#modal_opt_root .custom-input-btn-background:hover,
+#modal_opt_root .apipos_guideUx_moreButton:hover,
+#modal_opt_root .apipos_guideUx_relatedAddButton:hover{
+border-color:var(--orange);
+color:var(--orange);
+background:#fffaf7;
+}
+
+#modal_opt_root [id^="vehicle-card-"],
+#modal_opt_root [id^="driver-card-"]{
+box-shadow:none !important;
+border:1px solid #e2e6ee !important;
+border-radius:12px !important;
+background:#fff !important;
+}
+
+#modal_opt_root .apipos_guideUx_publicHidden{
+display:none !important;
+}
+
+#modal_opt_root .apipos_guideUx_moreButton{
+width:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:6px;
+margin:0 0 10px;
+padding:7px 10px;
+font-size:11px;
+font-weight:700;
+}
+
+#modal_opt_root .apipos_guideUx_moreIcon{
+width:15px;
+height:15px;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+flex:0 0 15px;
+}
+
+#modal_opt_root .apipos_guideUx_moreIcon svg{
+width:15px;
+height:15px;
+fill:none;
+stroke:currentColor;
+stroke-width:2;
+stroke-linecap:round;
+}
+
+#modal_opt_root .apipos_guideUx_relatedActions{
+position:relative;
+display:flex;
+justify-content:flex-end;
+margin:0 0 10px;
+}
+
+#modal_opt_root .apipos_guideUx_relatedAddButton{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:6px;
+padding:7px 11px;
+font-size:11px;
+font-weight:700;
+}
+
+#modal_opt_root .apipos_guideUx_relatedMenu{
+position:absolute;
+top:calc(100% + 5px);
+right:0;
+z-index:30;
+min-width:230px;
+padding:5px;
+border:1px solid #dfe3eb;
+border-radius:10px;
+background:#fff;
+}
+
+#modal_opt_root .apipos_guideUx_relatedMenuItem{
+width:100%;
+display:block;
+padding:9px 10px;
+border:0;
+border-radius:7px;
+background:#fff;
+color:#344054;
+text-align:left;
+font-size:11px;
+cursor:pointer;
+}
+
+#modal_opt_root .apipos_guideUx_relatedMenuItem:hover{
+background:#fff7f2;
+color:var(--orange);
+}
+
+.apipos_guideUx_helperOverlay{
+position:fixed;
+inset:0;
+z-index:100001;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:16px;
+background:rgba(15,23,42,.34);
+}
+
+.apipos_guideUx_helperDialog{
+width:min(760px,calc(100vw - 32px));
+max-height:min(86vh,760px);
+display:flex;
+flex-direction:column;
+background:#fff;
+border:1px solid #dfe3eb;
+border-radius:16px;
+overflow:hidden;
+}
+
+.apipos_guideUx_helperHeader{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:12px;
+padding:12px 14px;
+border-bottom:1px solid #e2e6ee;
+background:#fff;
+}
+
+.apipos_guideUx_helperHeader strong,
+.apipos_guideUx_helperHeader small{
+display:block;
+}
+
+.apipos_guideUx_helperHeader strong{
+font-size:14px;
+color:#1d2939;
+}
+
+.apipos_guideUx_helperHeader small{
+margin-top:3px;
+font-size:10px;
+color:#667085;
+}
+
+.apipos_guideUx_helperClose{
+width:30px;
+height:30px;
+flex:0 0 30px;
+border:1px solid #dfe3eb;
+border-radius:9px;
+background:#fff;
+color:#667085;
+font-size:20px;
+line-height:1;
+cursor:pointer;
+}
+
+.apipos_guideUx_helperBody{
+min-height:0;
+overflow:auto;
+padding:14px;
+}
+
+.apipos_guideUx_helperFooter{
+display:flex;
+justify-content:flex-end;
+padding:10px 14px;
+border-top:1px solid #e2e6ee;
+background:#fff;
+}
+
+.apipos_guideUx_helperDone{
+min-height:34px;
+padding:7px 14px;
+border:1px solid var(--orange);
+border-radius:9px;
+background:var(--orange);
+color:#fff;
+font-size:11px;
+font-weight:700;
+cursor:pointer;
+}
+
+#modal_opt_root.apipos_options_mode .apipos_guideUx_helperSource{
+display:none !important;
+}
+
+#modal_opt_root.apipos_options_mode .apipos_guideUx_helperSource.apipos_guideUx_helperOpen{
+display:block !important;
+}
+
+@media (max-width:768px){
+#modal_opt_root .div-group-container{
+flex-direction:column;
+}
+
+#modal_opt_root .div-group-container > *{
+width:100% !important;
+margin-bottom:10px;
+}
+
+#modal_opt_root .div-group-container > *:last-child{
+margin-bottom:0;
+}
+
+.apipos_guideUx_helperOverlay{
+padding:8px;
+}
+
+.apipos_guideUx_helperDialog{
+width:calc(100vw - 16px);
+max-height:92vh;
+}
+}
+#modal_opt_root *{
+box-shadow:none !important;
+text-shadow:none !important;
+background-image:none !important;
+}
+
+#modal_opt_root .container-title-options,
+#modal_opt_root .modal_opt_card_header,
+#modal_opt_root .mdl_opt_dropzonefile,
+#modal_opt_root .modal_opt_attach_panel,
+#modal_opt_root .pos_relxml_panel,
+#modal_opt_root .modal_opt_attach_panel_primary,
+#modal_opt_root .modal_opt_attach_panel_secondary,
+#modal_opt_root .modal_opt_attach_panel_icon,
+#modal_opt_root .pos_relxml_importer,
+#modal_opt_root .pos_relxml_select_btn,
+#modal_opt_root .pos_relxml_bill_callout{
+background-color:#fff !important;
+}
+
+#modal_opt_root .custom-input-btn-background,
+#modal_opt_root .mdl_opt_dropzonefile_selectbtn,
+#modal_opt_root .modal_opt_pending_attach_card_btn{
+background-color:var(--orange) !important;
+}
+
+#modal_opt_root .custom-input-btn-background:hover,
+#modal_opt_root .mdl_opt_dropzonefile_selectbtn:hover,
+#modal_opt_root .modal_opt_pending_attach_card_btn:hover{
+background-color:var(--blue) !important;
+}
+
+#modal_opt_root .modal_opt_pending_action{
+background-color:#fff7f2 !important;
+}
+
+#modal_opt_root .pos_relxml_bill_btn{
+background-color:var(--blue) !important;
+}
+
+#modal_opt_root .pos_relxml_bill_btn:hover:not(:disabled){
+background-color:var(--orange) !important;
+}
+#modal_opt_root .modal_opt_sections_grid{
+gap:6px !important;
+padding-bottom:8px !important;
+}
+
+#modal_opt_root .modal_opt_card_header{
+padding:7px 10px !important;
+}
+
+#modal_opt_root .modal_opt_card_body{
+padding:8px 10px !important;
+}
+
+#modal_opt_root .modal_opt_card_icon{
+width:28px;
+height:28px;
+flex-basis:28px;
+border-radius:8px;
+}
+
+#modal_opt_root .modal_opt_card_title{
+font-size:12.5px;
+}
+
+#modal_opt_root .div-group-container{
+gap:8px;
+margin-bottom:7px;
+}
+
+#modal_opt_root .div-group-container:last-child{
+margin-bottom:0;
+}
+
+#modal_opt_root .label-options,
+#modal_opt_root .apipos_guideUx_fieldLabel{
+margin-bottom:3px;
+font-size:10.5px;
+}
+
+#modal_opt_root .custom-input-cart-options,
+#modal_opt_root .custom-input-cart-observacion,
+#modal_opt_root .form-control,
+#modal_opt_root .form-select{
+min-height:34px;
+}
+
+#modal_opt_root .apipos_guideUx_moreButton{
+width:22px;
+height:22px;
+min-height:22px;
+margin:0 0 0 5px;
+padding:0;
+border:1px solid #d9dee8;
+border-radius:6px;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+vertical-align:middle;
+}
+
+#modal_opt_root .apipos_guideUx_moreButton i{
+font-size:11px;
+line-height:1;
+}
+
+#modal_opt_root .label-options .apipos_guideUx_moreButton{
+margin-left:5px;
+}
+
+#modal_opt_root .apipos_guideUx_addTransportButton{
+width:30px;
+height:30px;
+min-width:30px;
+min-height:30px;
+padding:0;
+margin:0 0 5px auto;
+display:flex;
+align-items:center;
+justify-content:center;
+border:1px solid #d9dee8;
+border-radius:8px;
+background:#fff;
+color:var(--orange);
+cursor:pointer;
+}
+
+#modal_opt_root .apipos_guideUx_addTransportButton:hover{
+border-color:var(--orange);
+background:#fffaf7;
+}
+
+#modal_opt_root [id^="vehicle-card-"],
+#modal_opt_root [id^="driver-card-"]{
+padding:9px !important;
+margin-bottom:7px !important;
 }

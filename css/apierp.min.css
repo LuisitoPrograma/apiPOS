@@ -9965,14 +9965,16 @@ background:var(--white);
 }
 
 .iaAssistant_callAvatar{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#eef2f7;color:var(--blue);font-size:15px;font-weight:850;letter-spacing:.03em}
-.iaAssistant_callCard_waiting{background:linear-gradient(135deg,#17191f 0%,#222630 100%);border-bottom-color:#303641}
-.iaAssistant_callCard_waiting .iaAssistant_callAvatar{background:var(--orange);color:#fff;box-shadow:0 0 0 5px rgba(255,89,0,.12);animation:iaAssistant_incomingPulse 1.5s ease-in-out infinite}
+.iaAssistant_callCard_waiting{background:#17191f;border-bottom-color:#303641}
+.iaAssistant_callCard_waiting .iaAssistant_callAvatar{background:var(--orange);color:#fff;border:2px solid rgba(255,255,255,.18)}
 .iaAssistant_callCard_waiting .iaAssistant_callTitle{color:#fff;font-size:16px}
 .iaAssistant_callCard_waiting .iaAssistant_callMeta{color:rgba(255,255,255,.62)}
-.iaAssistant_callBtn_answer{min-height:44px;padding:9px 16px;border-color:#22c55e;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;gap:7px;background:#22c55e;color:#fff;box-shadow:0 8px 20px rgba(34,197,94,.22)}
+.iaAssistant_callBtn_answer{min-height:44px;padding:9px 16px;border-color:#22c55e;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;gap:7px;background:#22c55e;color:#fff}
 .iaAssistant_callBtn_answer svg{width:17px;height:17px}
 .iaAssistant_callBtn_answer:hover{background:#16a34a;border-color:#16a34a;opacity:1}
-@keyframes iaAssistant_incomingPulse{0%,100%{box-shadow:0 0 0 5px rgba(255,89,0,.12)}50%{box-shadow:0 0 0 9px rgba(255,89,0,.05)}}
+.iaAssistant_answerRealtimeChoice{min-height:40px;padding:7px 10px;border:1px solid #cbd5e1;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;gap:7px;background:#fff;color:#334155;font:inherit;font-size:11px;font-weight:750;cursor:pointer}
+.iaAssistant_answerRealtimeChoice input{width:16px;height:16px;margin:0;accent-color:var(--orange)}
+.iaAssistant_answerRealtimeChoice:has(input:checked){border-color:var(--orange);color:var(--orange);background:#fff8f3}
 
 .iaAssistant_callCard:last-child{
 border-bottom:0;

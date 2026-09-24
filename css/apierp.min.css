@@ -878,24 +878,6 @@ grid-column:auto;
 }
 }
 
-/* OPERATIONS PROCESS */
-#panel_operations table {
-width: 100%;
-border-collapse: collapse;
-margin-top: 1rem;
-}
-#panel_operations th,
-#panel_operations td {
-border: 1px solid #ccc;
-padding: 0.5rem;
-font-size: 13px;
-text-align: left;
-}
-#panel_operations th {
-background: var(--transparent);
-font-weight: bold;
-}
-
 /* NOTIFICATIONS */
 .ntf-notification-wrapper{
 margin-left: auto;
@@ -968,7 +950,7 @@ color: var(--white);
 position: fixed;
 left: 50%;
 transform: translateX(-50%);
-z-index: 9999999;
+z-index: 2147483647 !important;
 pointer-events: none;
 text-align: center;
 width: auto;

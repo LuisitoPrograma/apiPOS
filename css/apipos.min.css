@@ -3191,6 +3191,22 @@ padding-bottom: 20px;
 z-index:10000000;
 }
 
+#unitEqUxOverlay{
+z-index:10000001 !important;
+}
+
+#unitEqUxModal{
+z-index:10000002 !important;
+}
+
+#warehouseStockUxOverlay{
+z-index:10000001 !important;
+}
+
+#warehouseStockUxModal{
+z-index:10000002 !important;
+}
+
 /* Item Modal */
 .product-zoom-area{
 position: absolute;

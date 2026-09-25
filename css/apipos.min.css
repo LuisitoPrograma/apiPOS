@@ -1779,7 +1779,7 @@ position:fixed;
 inset:0;
 width:100vw;
 height:100vh;
-z-index:99999;
+z-index:99997;
 display:none;
 pointer-events:none;
 }
@@ -4961,48 +4961,6 @@ color: #FC5900;
 border-color: rgba(252,89,0,.18);
 }
 
-#modal_opt_root .btn-options{
-width: 100%;
-display: flex;
-align-items: center;
-gap: 10px;
-background: #fff;
-border: 1px solid #eceef5;
-border-radius: 16px;
-padding: 12px 14px;
-margin-top: 10px;
-font-size: 13px;
-color: #394150;
-transition: .18s ease;
-box-shadow: 0 6px 18px rgba(15,23,42,.03);
-text-align: left;
-overflow: hidden;
-}
-
-#modal_opt_root .btn-options:hover{
-transform: translateY(-1px);
-border-color: rgba(252,89,0,.22);
-box-shadow: 0 10px 24px rgba(252,89,0,.08);
-color: #111827;
-}
-
-#modal_opt_root .btn-options span{
-display: block;
-min-width: 0;
-overflow: hidden;
-text-overflow: ellipsis;
-white-space: nowrap;
-}
-
-#modal_opt_root .img-options,
-#modal_opt_root .img-options-o{
-width: 22px;
-height: 22px;
-object-fit: contain;
-margin-right: 0;
-flex: 0 0 22px;
-}
-
 #modal_opt_root .modal_opt_sections_grid{
 display: flex;
 flex-direction: column;
@@ -5244,18 +5202,6 @@ margin-top: 12px;
 
 #modal_opt_root [id^="map_select_container_"].d-none{
 display: none !important;
-}
-
-#modal_opt_root .modal_opt_shortcuts_grid{
-display: grid;
-grid-template-columns: repeat(2, minmax(0, 1fr));
-gap: 12px;
-width: 100%;
-}
-
-#modal_opt_root .modal_opt_shortcuts_grid .btn-options{
-margin-top: 0;
-min-height: 58px;
 }
 
 #modal_opt_root .mdl_opt_dropzonefile_wrap{
@@ -6058,10 +6004,6 @@ grid-column: 1 / -1;
 margin-bottom: 0;
 }
 
-#modal_opt_root .btn-options{
-margin-top: 0;
-min-height: 56px;
-}
 }
 
 @media (max-width: 768px){
@@ -6081,9 +6023,6 @@ margin-bottom: 0;
 
 #modal_opt_root [id^="map_select_container_"]{
 min-height: 220px;
-}
-#modal_opt_root .modal_opt_shortcuts_grid{
-grid-template-columns: 1fr;
 }
 
 #modal_opt_root .mdl_opt_dropzonefile_header{
@@ -6140,11 +6079,6 @@ overflow-x: hidden !important;
 -webkit-overflow-scrolling: touch;
 padding-right: 0;
 padding-bottom: 14px;
-}
-
-#modal_opt_root .btn-options{
-min-height: 50px;
-padding: 10px 12px;
 }
 
 .modal_opt_card{
@@ -6981,6 +6915,138 @@ background:#fffaf7;
 #modal_opt_root [id^="driver-card-"]{
 padding:9px !important;
 margin-bottom:7px !important;
+}
+
+#modal_opt_root .modal_opt_sections_grid{
+gap:0 !important;
+padding-bottom:4px !important;
+}
+
+#modal_opt_root .modal_opt_card{
+border:0 !important;
+border-bottom:1px solid #e2e6ee !important;
+border-radius:0 !important;
+background:transparent !important;
+}
+
+#modal_opt_root .modal_opt_card:last-child{
+border-bottom:0 !important;
+}
+
+#modal_opt_root .modal_opt_card_header{
+padding:7px 4px !important;
+}
+
+#modal_opt_root .modal_opt_card_body{
+padding:7px 4px 9px !important;
+}
+
+#modal_opt_root .div-group-container{
+gap:8px;
+margin-bottom:6px;
+}
+
+#modal_opt_root .pos_relxml_panel{
+padding:0 !important;
+border:0 !important;
+border-radius:0 !important;
+background:transparent !important;
+}
+
+#modal_opt_root .pos_relxml_importer{
+padding:8px;
+margin-bottom:8px;
+border-radius:10px;
+}
+
+#modal_opt_root .pos_relxml_manual{
+padding:8px;
+border-radius:10px;
+}
+
+#modal_opt_root .pos_relxml_results_label{
+margin:8px 0 5px;
+}
+
+#modal_opt_root .pos_relxml_results{
+gap:6px;
+}
+
+#modal_opt_root .pos_relxml_empty{
+padding:9px;
+border-radius:10px;
+}
+
+#modal_opt_root .pos_relxml_doc_card{
+padding:8px 9px;
+border-radius:10px;
+box-shadow:none !important;
+}
+
+#modal_opt_root .apipos_guideUx_locationLabel{
+display:flex !important;
+align-items:center;
+gap:5px;
+margin-bottom:3px !important;
+}
+
+#modal_opt_root .apipos_guideUx_locationLabel .apipos_guideUx_moreButton{
+margin:0 !important;
+flex:0 0 22px;
+}
+
+#modal_opt_root .apipos_optionsFooter{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:8px;
+padding:8px 0 2px;
+border-top:1px solid #e2e6ee;
+}
+
+#modal_opt_root .apipos_optionsFooterButton{
+width:100%;
+min-height:38px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:7px;
+padding:7px 10px;
+border:1px solid #d9dee8;
+border-radius:9px;
+background:#fff;
+color:#344054;
+font-size:11px;
+font-weight:700;
+cursor:pointer;
+}
+
+#modal_opt_root .apipos_optionsFooterButton:hover{
+border-color:var(--orange);
+color:var(--orange);
+background:#fffaf7;
+}
+
+#modal_opt_root .apipos_optionsFooterIcon{
+width:18px;
+height:18px;
+object-fit:contain;
+flex:0 0 18px;
+}
+
+#modal_opt_root .apipos_optionsFooter .fsy_update_version_shortcut_wrap{
+margin:0 !important;
+width:100%;
+}
+
+#modal_opt_root .apipos_optionsFooter .fsy_update_version_btn{
+width:100%;
+min-height:38px;
+}
+
+@media (max-width:600px){
+#modal_opt_root .apipos_optionsFooter{
+grid-template-columns:1fr;
+}
 }
 
 /* GESTION APIPOS DE OPERACIONES OFFLINE PENDIENTES */

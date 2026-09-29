@@ -11603,8 +11603,7 @@ flex:0 0 auto;
 
 .rptrelated_itemButton,
 .rptrelated_addButton,
-.rptrelated_closeButton,
-.rptrelated_manageButton{
+.rptrelated_closeButton{
 border:1px solid #d5dce5;
 border-radius:9px;
 background:#fff;
@@ -11632,13 +11631,6 @@ padding:7px 11px;
 border-color:var(--orange);
 background:var(--orange);
 color:#fff;
-}
-
-.rptrelated_manageButton{
-padding:6px 9px;
-border-color:var(--blue);
-color:var(--blue);
-white-space:nowrap;
 }
 
 .rptrelated_footer{
@@ -11717,9 +11709,5 @@ width:100%;
 
 .rptrelated_itemButton{
 flex:1;
-}
-
-.rptrelated_manageButton{
-white-space:normal;
 }
 }

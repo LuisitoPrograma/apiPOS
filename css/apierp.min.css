@@ -11739,6 +11739,7 @@ background:var(--gw_bg);
 color:var(--gw_text);
 font-family:var(--default-font,Roboto,Arial,sans-serif);
 overflow:hidden;
+padding: 0;
 }
 
 .gw_root *{
@@ -12066,6 +12067,7 @@ display:none;
 position:absolute;
 inset:0;
 min-height:0;
+padding: 0;
 }
 
 .gw_panel.gw_active{

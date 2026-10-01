@@ -11938,6 +11938,13 @@ border-color:#3b4858;
 background:var(--gw_surface3);
 }
 
+.gw_iconButton svg{
+width:15px;
+height:15px;
+display:block;
+flex:0 0 auto;
+}
+
 .gw_fileList{
 flex:1;
 min-height:0;
@@ -12289,6 +12296,42 @@ white-space:pre-wrap;
 color:#dce3eb;
 font-size:11px;
 line-height:1.5;
+}
+
+.gw_typingIndicator{
+display:inline-flex;
+align-items:center;
+gap:4px;
+min-height:18px;
+}
+
+.gw_typingIndicator span{
+width:5px;
+height:5px;
+border-radius:50%;
+background:currentColor;
+animation:gw_typingDot 1.2s infinite ease-in-out;
+transform:scale(.7);
+opacity:.55;
+}
+
+.gw_typingIndicator span:nth-child(2){
+animation-delay:.15s;
+}
+
+.gw_typingIndicator span:nth-child(3){
+animation-delay:.3s;
+}
+
+@keyframes gw_typingDot{
+0%,60%,100%{
+transform:scale(.7);
+opacity:.55;
+}
+30%{
+transform:scale(1.25);
+opacity:1;
+}
 }
 
 .gw_error{

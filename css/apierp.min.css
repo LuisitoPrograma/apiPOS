@@ -12322,6 +12322,12 @@ animation-delay:.15s;
 animation-delay:.3s;
 }
 
+.gw_jobMessage{border-color:var(--orange);background:var(--gw_surface);}
+.gw_jobInfo{display:flex;align-items:center;gap:9px;min-height:24px;color:#dce3eb;font-size:11px;line-height:1.5;}
+.gw_jobText{flex:1;min-width:0;}
+.gw_jobHelp{display:block;margin-top:7px;color:var(--gw_muted);font-size:10px;line-height:1.5;}
+@media(prefers-reduced-motion:reduce){.gw_jobMessage .gw_typingIndicator span{animation:none;opacity:1;transform:none;}}
+
 @keyframes gw_typingDot{
 0%,60%,100%{
 transform:scale(.7);

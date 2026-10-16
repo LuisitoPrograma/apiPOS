@@ -12601,3 +12601,37 @@ padding:10px;
 .gw_projectGroup .gw_fileList{max-height:none;padding-left:12px;}
 .gw_chatForm{display:flex;flex-direction:column;}
 .gw_editorHeader{flex-wrap:wrap;}
+
+/* HISTORIAS CLINICAS - REPORTE 42 */
+.medical42_filters{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px;margin:16px 0;padding:14px;border:1px solid var(--blue);border-radius:18px;background:#fff}
+.medical42_filters label{display:flex;flex:1 1 180px;flex-direction:column;gap:5px;font-size:12px;font-weight:700;color:var(--lead)}
+.medical42_filters input,.medical42_filters select,.medical42_field input,.medical42_field select,.medical42_field textarea{min-width:0;width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:12px;background:#fff;color:var(--lead);font:inherit}
+.medical42_filters input:focus,.medical42_filters select:focus,.medical42_field input:focus,.medical42_field select:focus,.medical42_field textarea:focus{outline:2px solid var(--orange);outline-offset:1px}
+.medical42_button{padding:8px 12px;border:1px solid var(--blue);border-radius:12px;background:#fff;color:var(--blue);font-weight:700;cursor:pointer}
+.medical42_button:hover{border-color:var(--orange);color:var(--orange)}
+.medical42_button:disabled{opacity:.5;cursor:wait}
+.medical42_primary{background:var(--blue);color:#fff}
+.medical42_actions{display:flex;justify-content:center;gap:6px;flex-wrap:wrap}
+.medical42_actions .medical42_button{font-size:12px;padding:7px 9px}
+.medical42_overlay{position:fixed;inset:0;z-index:10050;display:flex;align-items:center;justify-content:center;background:rgba(15,23,42,.55);padding:12px}
+.medical42_dialog{width:min(980px,100%);max-height:94vh;display:flex;flex-direction:column;border:1px solid var(--blue);border-radius:22px;background:#fff;overflow:hidden}
+.medical42_header,.medical42_footer{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;background:#f8fafc;border-bottom:1px solid #dbe4ed}
+.medical42_footer{justify-content:flex-end;border-top:1px solid #dbe4ed;border-bottom:0}
+.medical42_header h2{margin:0;font-size:19px;color:var(--blue)}
+.medical42_scroll{padding:20px;overflow-y:auto}
+.medical42_grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.medical42_field{display:flex;flex-direction:column;gap:6px;min-width:0;font-size:12px;font-weight:700;color:var(--lead)}
+.medical42_field textarea{resize:vertical;min-height:84px}
+.medical42_full{grid-column:1/-1}
+.medical42_section{min-width:0;margin:16px 0 0;padding:16px;border:1px solid #dbe4ed;border-radius:16px;background:#fbfcfe}
+.medical42_section legend{padding:0 8px;color:var(--blue);font-weight:800;font-size:14px}
+.medical42_checkbox{flex-direction:row;align-items:center;gap:9px;padding:10px;border:1px solid #e2e8f0;border-radius:11px;background:#fff;cursor:pointer}
+.medical42_checkbox input{width:18px;flex:0 0 18px;accent-color:var(--orange)}
+.medical42_person{position:relative}
+.medical42_autocomplete{position:absolute;top:100%;left:0;right:0;z-index:3;max-height:220px;overflow-y:auto;padding:6px;border:1px solid var(--blue);border-radius:12px;background:#fff}
+.medical42_autocomplete[hidden]{display:none}
+.medical42_result{display:block;width:100%;text-align:left;background:#fff;border:0;border-bottom:1px solid #edf2f7;padding:9px 10px;color:var(--lead);cursor:pointer}
+.medical42_result:hover{background:#f8fafc}
+.medical42_pdfFrame{width:100%;height:min(68vh,800px);border:0;border-radius:12px;background:#fff}
+body.medical42_modalOpen{overflow:hidden}
+@media(max-width:640px){.medical42_grid{grid-template-columns:1fr}.medical42_scroll{padding:12px}.medical42_dialog{max-height:98vh}.medical42_header,.medical42_footer{padding:12px}}

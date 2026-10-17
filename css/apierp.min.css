@@ -1125,8 +1125,8 @@ white-space: nowrap;
 text-align: center;
 }
 .table-report td{
-font-size: 12px;
-color: var(--lead);
+font-size: 13px;
+color: var(--blue);
 white-space: nowrap;
 text-align: center;
 text-wrap: auto;
@@ -2811,8 +2811,7 @@ border-spacing:0;
 background:var(--blue) !important;
 color:var(--white) !important;
 border-color:color-mix(in srgb,var(--blue),white 15%) !important;
-font-size:12px;
-font-weight:600;
+font-size:13px;
 vertical-align:middle;
 }
 

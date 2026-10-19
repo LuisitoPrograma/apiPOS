@@ -1906,6 +1906,7 @@ align-items:center;
 gap:6px;
 text-align:left;
 font:inherit;
+text-decoration:none;
 }
 .apipos_tipoOperacionItem:hover,
 .apipos_tipoOperacionItem:focus-visible{
@@ -3669,6 +3670,49 @@ gap: .5rem;
 flex: 1 1 0;
 min-width: 140px;
 }
+
+/* GENERADOR CODE 128 EN CREACION DE PRODUCTOS */
+.newItem_barcodeHeader{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:6px;
+min-height:24px;
+}
+
+#detalleModalCreateItem .newItem_barcodeGenerate{
+display:none;
+align-items:center;
+justify-content:center;
+gap:4px;
+padding:4px 7px;
+border:1px solid var(--orange);
+border-radius:9px;
+background:var(--white);
+color:var(--orange);
+font-size:10px;
+font-weight:700;
+line-height:1;
+white-space:nowrap;
+cursor:pointer;
+}
+
+#detalleModalCreateItem.newItem_barcodeCreateMode .newItem_barcodeGenerate{
+display:inline-flex;
+}
+
+#detalleModalCreateItem .newItem_barcodeGenerate:hover,
+#detalleModalCreateItem .newItem_barcodeGenerate:focus-visible{
+background:var(--orange);
+color:var(--white);
+}
+
+.newItem_barcodeGenerate svg{
+width:16px;
+height:16px;
+flex:none;
+}
+
 .unit_gain_info {
 display: flex;
 flex-wrap: wrap;

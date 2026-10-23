@@ -2474,6 +2474,128 @@ text-overflow:ellipsis;
 white-space:nowrap;
 }
 
+.rptux_quickActiveFilters{
+width:100%;
+display:flex;
+align-items:center;
+align-content:flex-start;
+flex-wrap:wrap;
+gap:8px;
+margin:0 0 14px;
+padding:0;
+}
+
+.rptux_quickActiveFilters[hidden]{
+display:none;
+}
+
+.rptux_quickActiveBadge{
+position:relative;
+display:inline-flex;
+align-items:center;
+min-height:28px;
+padding:5px 26px 5px 10px;
+border:1px solid color-mix(in srgb,var(--orange),transparent 65%);
+border-radius:11px;
+background:color-mix(in srgb,var(--orange),white 94%);
+color:var(--orange);
+font-size:11px;
+font-weight:600;
+max-width:100%;
+}
+
+.rptux_quickActiveLabel{
+overflow:hidden;
+text-overflow:ellipsis;
+white-space:nowrap;
+}
+
+.rptux_quickActiveRemove{
+position:absolute;
+right:4px;
+top:50%;
+transform:translateY(-50%);
+display:flex;
+align-items:center;
+justify-content:center;
+width:17px;
+height:17px;
+padding:0;
+border:0;
+border-radius:50%;
+background:var(--orange);
+color:#fff;
+font-size:13px;
+font-weight:700;
+line-height:1;
+cursor:pointer;
+}
+
+.rptux_quickActiveRemove:focus-visible{
+outline:2px solid var(--orange);
+outline-offset:2px;
+}
+
+.rptux_correlativoControls{
+display:flex;
+align-items:center;
+gap:8px;
+width:100%;
+}
+
+.rptux_correlativoControls input{
+flex:1;
+min-width:0;
+padding:9px 11px;
+border:1px solid #e3e7ed;
+border-radius:10px;
+background:var(--white);
+color:#475467;
+}
+
+.rptux_correlativoControls button{
+padding:9px 12px;
+border:1px solid var(--orange);
+border-radius:10px;
+background:var(--orange);
+color:#fff;
+cursor:pointer;
+}
+
+.rptux_correlativoTags{
+display:flex;
+flex-wrap:wrap;
+gap:6px;
+margin-top:8px;
+}
+
+.rptux_correlativoTag{
+display:inline-flex;
+align-items:center;
+gap:6px;
+padding:4px 7px 4px 9px;
+border:1px solid color-mix(in srgb,var(--orange),transparent 60%);
+border-radius:10px;
+background:color-mix(in srgb,var(--orange),white 94%);
+color:var(--orange);
+font-size:11px;
+}
+
+.rptux_correlativoTag button{
+display:flex;
+align-items:center;
+justify-content:center;
+width:17px;
+height:17px;
+padding:0;
+border:0;
+border-radius:50%;
+background:var(--orange);
+color:#fff;
+font-weight:700;
+cursor:pointer;
+}
+
 .rptux_toolbarActions{
 display:flex;
 align-items:center;

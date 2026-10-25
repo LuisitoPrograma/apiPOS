@@ -1428,7 +1428,6 @@ background: #fff;
 cursor: pointer;
 height: 100%;
 }
-.product:focus,
 input:focus,
 textarea:focus{
 outline: 1px solid var(--blue);
@@ -3406,16 +3405,6 @@ z-index:10000002 !important;
 }
 
 /* Item Modal */
-.product-zoom-area{
-position: absolute;
-top: 0;
-left: 15px;
-width: 50px;
-height: 50px;
-cursor: zoom-in;
-background: transparent;
-z-index: 2;
-}
 .carousel {
 position: relative;
 display: flex;        /* necesario para alinear verticalmente */
@@ -4410,78 +4399,6 @@ flex-basis:26px;
 .product{
 position:relative;
 overflow:hidden;
-}
-.product-group-marker{
-position:absolute;
-z-index:4;
-display:inline-flex;
-align-items:center;
-gap:4px;
-padding:4px 8px;
-border-radius:999px;
-font-size:10px;
-font-weight:700;
-line-height:1;
-backdrop-filter: blur(4px);
-user-select:none;
-pointer-events:none;
-max-width:calc(100% - 16px);
-white-space:nowrap;
-overflow:hidden;
-text-overflow:ellipsis;
-}
-
-.product-group-marker.marker-unit{
-background:rgba(8,0,96,.10);
-color:#080060;
-border:1px solid rgba(8,0,96,.18);
-}
-
-.product-group-marker.marker-product{
-background: rgba(8, 0, 96, .10);
-color: #080060;
-border: 1px solid rgba(8, 0, 96, .18);
-}
-
-.product-group-marker .pgm-icon{
-font-size:11px;
-line-height:1;
-}
-
-/* =========================
-VISTA CUADRICULA
-abajo centrado
-========================= */
-.product.group-view-grid .product-group-marker{
-left: auto;
-right: 1px;
-top: 1px;
-bottom: auto;
-padding: 2px;
-}
-
-/* =========================
-VISTA LISTA
-abajo derecha
-========================= */
-.product.group-view-list .product-group-marker{
-right:1px;
-left:auto;
-top:1px;
-bottom:auto;
-transform:none;
-padding: 2px;
-}
-
-@media (max-width: 768px){
-.product-group-marker{
-padding:4px 7px;
-font-size:9px;
-}
-
-.product-group-marker .pgm-icon{
-font-size:10px;
-}
 }
 
 .btn-product-action-list,
@@ -7383,5 +7300,402 @@ box-sizing:border-box;
 
 .apiposOfflineOps_actions{
 flex-wrap:wrap;
+}
+}
+
+/* TARJETAS DE PRODUCTOS APIPOS */
+#divItemNoFlex.apipos-products-grid{
+display:grid !important;
+grid-template-columns:repeat(2,minmax(0,1fr));
+grid-auto-rows:minmax(172px,max-content);
+align-content:start;
+gap:12px;
+}
+@media(max-width:600px){
+#divItemNoFlex.apipos-products-grid{
+grid-template-columns:minmax(0,1fr);
+}
+}
+#divItemNoFlex.apipos-products-list{
+display:flex !important;
+flex-direction:column;
+container-type:inline-size;
+gap:5px;
+}
+.apipos-product-wrap{
+min-width:0;
+margin:0;
+}
+.apipos-product-card{
+box-sizing:border-box;
+position:relative;
+display:flex;
+align-items:stretch;
+gap:10px;
+height:100%;
+min-width:0;
+margin:0;
+padding:10px;
+border:1px solid transparent;
+border-radius:18px;
+outline:none;
+background:var(--white);
+background-image:none !important;
+box-shadow:none !important;
+}
+.apipos-product-card::before{
+display:none;
+}
+.apipos-product-media{
+display:flex;
+align-self:stretch;
+gap:5px;
+flex:none;
+min-width:0;
+}
+.apipos-product-media-grid{
+width:42%;
+max-width:170px;
+min-height:150px;
+}
+.apipos-product-thumbnails{
+display:grid;
+grid-template-rows:repeat(4,minmax(0,1fr));
+gap:4px;
+width:25%;
+min-width:27px;
+}
+.apipos-product-thumbnail,
+.apipos-product-image-main{
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+min-width:0;
+min-height:0;
+overflow:hidden;
+padding:0;
+border:1px solid #e7e7e7;
+background:var(--transparent);
+color:#b8b8b8;
+box-shadow:none !important;
+cursor:pointer;
+}
+.apipos-product-thumbnail.apipos-product-image-loaded,
+.apipos-product-image-main.apipos-product-image-loaded{
+background:var(--white);
+}
+.apipos-product-thumbnail{
+border-radius:7px;
+}
+.apipos-product-thumbnail:disabled{
+cursor:default;
+}
+.apipos-product-thumbnail.apipos-product-image-active{
+border-color:var(--orange);
+}
+.apipos-product-thumbnail img,
+.apipos-product-image-main img{
+position:absolute;
+inset:0;
+display:block;
+width:100%;
+height:100%;
+object-fit:contain;
+}
+.apipos-product-thumbnail svg{
+width:64%;
+height:auto;
+opacity:.38;
+}
+.apipos-product-image-main{
+flex:1;
+border-radius:12px;
+}
+.apipos-product-image-main img[hidden]{
+display:none;
+}
+.apipos-product-image-empty{
+display:grid;
+place-items:center;
+width:100%;
+height:100%;
+}
+.apipos-product-image-empty[hidden]{
+display:none;
+}
+.apipos-product-image-empty svg{
+width:50%;
+max-width:65px;
+height:auto;
+opacity:.5;
+}
+.apipos-product-info{
+display:flex;
+flex:1;
+min-width:0;
+flex-direction:column;
+align-items:stretch;
+gap:3px;
+padding:2px 0;
+}
+.apipos-product-top{
+display:flex;
+align-items:flex-start;
+justify-content:space-between;
+gap:4px;
+min-width:0;
+padding-right:22px;
+}
+.apipos-product-codes{
+display:flex;
+flex-wrap:wrap;
+align-items:center;
+gap:3px;
+min-width:0;
+}
+.apipos-product-code{
+display:inline-block;
+max-width:100%;
+overflow:hidden;
+text-overflow:ellipsis;
+white-space:nowrap;
+border-radius:4px;
+padding:2px 4px;
+background:var(--transparent);
+color:var(--lead);
+font-size:9px;
+line-height:1.2;
+}
+.apipos-product-actions{
+display:flex;
+align-items:center;
+justify-content:flex-end;
+gap:2px;
+flex:none;
+}
+.apipos-product-actions .btn-product-action-grid,
+.apipos-product-actions .btn-product-action-list{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+width:17px;
+height:20px;
+margin:0 !important;
+padding:0 !important;
+border:0;
+background:transparent;
+box-shadow:none !important;
+}
+.apipos-product-actions img{
+display:block;
+width:15px;
+height:15px;
+object-fit:contain;
+}
+.apipos-product-price{
+display:flex;
+align-items:center;
+flex-wrap:wrap;
+gap:5px;
+min-width:0;
+color:var(--orange);
+}
+.apipos-product-price strong{
+font-size:20px;
+line-height:1.2;
+font-weight:800;
+white-space:nowrap;
+}
+.apipos-product-price span{
+font-size:10px;
+color:var(--lead);
+font-weight:400;
+}
+.apipos-product-name{
+font-size:13px;
+font-weight:800;
+color:var(--lead);
+line-height:1.15;
+overflow-wrap:anywhere;
+}
+.apipos-product-description,
+.apipos-product-variants,
+.apipos-product-brand{
+font-size:10px;
+line-height:1.2;
+color:var(--lead);
+overflow-wrap:anywhere;
+}
+.apipos-product-meta{
+display:flex;
+flex-wrap:wrap;
+align-items:flex-start;
+justify-content:space-between;
+gap:5px;
+margin-top:auto;
+padding-top:4px;
+}
+.apipos-product-meta-item{
+display:flex;
+flex:1 1 0;
+flex-direction:column;
+align-items:center;
+justify-content:flex-start;
+text-align:center;
+gap:3px;
+min-width:0;
+color:var(--lead);
+}
+.apipos-product-meta-item svg{
+width:18px;
+height:18px;
+flex:none;
+}
+.apipos-product-meta-item > span{
+display:flex;
+flex-direction:column;
+min-width:0;
+align-items:center;
+gap:1px;
+font-size:10px;
+line-height:1.1;
+}
+.apipos-product-meta-item strong{
+font-size:9.5px;
+line-height:1.2;
+color:var(--default-color);
+overflow-wrap:anywhere;
+}
+.apipos-product-meta-label{
+font-size:9px;
+color:var(--lead);
+}
+.apipos-product-meta-item.apipos-product-stock-ok svg,
+.apipos-product-meta-item.apipos-product-stock-ok strong,
+.apipos-product-meta-item.apipos-product-stock-ok .apipos-product-meta-label{
+color:var(--green);
+}
+.apipos-product-meta-item.apipos-product-stock-low svg,
+.apipos-product-meta-item.apipos-product-stock-low strong,
+.apipos-product-meta-item.apipos-product-stock-low .apipos-product-meta-label{
+color:var(--orange);
+}
+.apipos-product-notification{
+position:absolute;
+z-index:5;
+top:6px;
+right:6px;
+display:flex;
+align-items:center;
+justify-content:center;
+width:22px;
+height:22px;
+padding:2px;
+border:0;
+border-radius:50%;
+background:var(--white);
+color:var(--blue);
+cursor:pointer;
+}
+.apipos-product-notification svg{
+width:18px;
+height:18px;
+}
+.apipos-product-grouped{
+display:inline-flex;
+width:fit-content;
+max-width:100%;
+align-items:center;
+gap:5px;
+color:var(--blue);
+font-size:10px;
+font-weight:600;
+line-height:1.2;
+}
+.apipos-product-grouped svg{
+flex:none;
+width:15px;
+height:15px;
+}
+.apipos-product-card-list{
+align-items:center;
+min-height:78px;
+gap:8px;
+padding:7px 9px;
+}
+.apipos-product-card-list .apipos-product-media{
+width:52px;
+height:60px;
+align-self:center;
+}
+.apipos-product-card-list .apipos-product-image-main{
+border-radius:9px;
+}
+.apipos-product-card-list .apipos-product-info{
+display:grid;
+grid-template-columns:minmax(0,1fr) max-content;
+grid-template-areas:
+"top top"
+"name price"
+"description price"
+"variants price"
+"brand price"
+"group group"
+"meta meta";
+column-gap:10px;
+row-gap:2px;
+align-items:center;
+}
+.apipos-product-card-list .apipos-product-top{grid-area:top;}
+.apipos-product-card-list .apipos-product-name{grid-area:name;}
+.apipos-product-card-list .apipos-product-description{grid-area:description;}
+.apipos-product-card-list .apipos-product-variants{grid-area:variants;}
+.apipos-product-card-list .apipos-product-brand{grid-area:brand;}
+.apipos-product-card-list .apipos-product-grouped{grid-area:group;}
+.apipos-product-card-list .apipos-product-meta{grid-area:meta;margin:3px 0 0;}
+.apipos-product-card-list .apipos-product-price{grid-area:price;justify-self:end;align-self:center;}
+.apipos-product-card-list .apipos-product-price strong{font-size:20px;}
+@container (min-width:590px){
+.apipos-product-card-list .apipos-product-info{
+grid-template-columns:minmax(140px,1.1fr) minmax(165px,1.1fr) max-content;
+grid-template-areas:
+"top top top"
+"name meta price"
+"description meta price"
+"variants meta price"
+"brand meta price"
+"group meta price";
+column-gap:14px;
+}
+.apipos-product-card-list .apipos-product-meta{margin:0;}
+}
+@container (max-width:360px){
+.apipos-product-card-list .apipos-product-info{
+grid-template-columns:minmax(0,1fr);
+grid-template-areas:
+"top" "name" "description" "variants" "brand" "group" "price" "meta";
+}
+.apipos-product-card-list .apipos-product-price{justify-self:start;}
+}
+@media(max-width:490px){
+.apipos-product-card{
+padding:8px;
+gap:7px;
+border-radius:14px;
+}
+.apipos-product-media-grid{
+width:38%;
+min-height:145px;
+}
+.apipos-product-price strong{font-size:18px;}
+.apipos-product-name{font-size:12px;}
+.apipos-product-meta-item svg{width:16px;height:16px;}
+.apipos-product-card-list .apipos-product-price strong{font-size:18px;}
+}
+@media(prefers-reduced-motion:reduce){
+.apipos-product-image-main,
+.apipos-product-thumbnail{
+transition:none;
 }
 }

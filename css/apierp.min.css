@@ -3268,12 +3268,8 @@ to{transform:rotate(360deg);}
 
 .hairSalon_settingsGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
 .hairSalon_formGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;}
-.hairSalon_formGrid--prices{grid-template-columns:repeat(6,minmax(115px,1fr));align-items:end;margin-bottom:14px;}
 .hairSalon_formGrid label{display:flex;flex-direction:column;gap:5px;min-width:0;}
 .hairSalon_span2{grid-column:span 2;}
-
-.hairSalon_checkbox{flex-direction:row !important;align-items:center;align-self:end;min-height:40px;padding:7px 9px;border:1px solid #e7ebf1;border-radius:9px;background:#fafbfc;}
-.hairSalon_checkbox input{width:17px !important;min-height:auto !important;margin:0;accent-color:var(--orange);}
 
 .hairSalon_formActions{display:flex;align-items:end;justify-content:flex-end;gap:7px;}
 
@@ -3319,7 +3315,6 @@ to{transform:rotate(360deg);}
 .hairSalon_nav{grid-template-columns:repeat(5,minmax(90px,1fr));overflow-x:auto;}
 .hairSalon_kpis{grid-template-columns:repeat(2,minmax(0,1fr));}
 .hairSalon_chartGrid,.hairSalon_settingsGrid{grid-template-columns:1fr;}
-.hairSalon_formGrid--prices{grid-template-columns:repeat(2,minmax(0,1fr));}
 .hairSalon_panel--wide{grid-column:auto;}
 }
 
@@ -3350,8 +3345,7 @@ to{transform:rotate(360deg);}
 
 .hairSalon_inventoryNumbers{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,1fr);text-align:left;padding-top:9px;border-top:1px solid #edf0f5;}
 
-.hairSalon_formGrid,
-.hairSalon_formGrid--prices{grid-template-columns:1fr;}
+.hairSalon_formGrid{grid-template-columns:1fr;}
 
 .hairSalon_span2{grid-column:auto;}
 .hairSalon_formActions{flex-wrap:wrap;}
@@ -12832,3 +12826,26 @@ body.medical42_modalOpen{overflow:hidden}
 .accounting44_modalBody{flex:1;min-height:0;overflow:auto;background:#f8fafc;padding:12px}
 .accounting44_modalBody iframe{display:block;width:100%;height:100%;min-height:380px;border:1px solid #dbe4ed;border-radius:8px;background:#fff}
 @media(max-width:680px){#accounting44_root{padding:12px}.accounting44_grid{grid-template-columns:1fr}.accounting44_card{padding:13px}.accounting44_modal{max-height:98vh}.accounting44_modalBody{padding:6px}}
+
+/* PELUQUERIA - MATRICES DE PRECIOS */
+.hairSalon_priceCurrencyLabel{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:800;color:var(--blue)}
+.hairSalon_priceCurrencyLabel select{min-width:110px;padding:9px;border:1px solid #cbd5e1;border-radius:10px;background:var(--white);color:var(--blue)}
+.hairSalon_priceMatrix{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:16px;align-items:start}
+.hairSalon_priceMatrixBox{min-width:0;border:1px solid #dbe3ed;border-radius:14px;background:var(--white);overflow:hidden;box-shadow:none}
+.hairSalon_priceMatrixBox h3{margin:0;padding:12px 8px;text-align:center;font-size:13px;font-weight:800;background:var(--orange);color:var(--white)}
+.hairSalon_priceMatrixSub{padding:9px 5px;text-align:center;font-size:11px;font-weight:800;background:var(--blue);color:var(--white)}
+.hairSalon_priceMatrixRows{min-height:45px}
+.hairSalon_priceMatrixRow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) 32px;border-bottom:1px solid #dbe3ed}
+.hairSalon_priceMatrixRow input{width:100%;min-width:0;min-height:39px;border:0;border-right:1px solid #dbe3ed;border-radius:0;padding:7px 4px;text-align:center;background:var(--white);color:var(--blue);font-size:12px;box-shadow:none}
+.hairSalon_priceMatrixRow input:focus{outline:2px solid var(--orange);outline-offset:-2px}
+.hairSalon_priceMatrixRemove{display:flex;align-items:center;justify-content:center;border:0;background:#fff0f0;color:#a51a1a;cursor:pointer;font-size:18px;font-weight:800}
+.hairSalon_priceMatrixRemove:hover{background:#ffd9df}
+.hairSalon_priceMatrixAdd{margin:12px 8px;min-height:35px;padding:7px 12px;border:1px solid #dbe3ed;border-radius:10px;background:var(--white);color:var(--blue);font-size:12px;font-weight:800;cursor:pointer;box-shadow:none}
+.hairSalon_priceMatrixAdd:hover{border-color:var(--orange);color:var(--orange)}
+.hairSalon_priceMatrixAdd:focus-visible,.hairSalon_priceMatrixRemove:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+@media(max-width:1150px){.hairSalon_priceMatrix{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.hairSalon_priceMatrix{grid-template-columns:1fr}.hairSalon_priceCurrencyLabel{width:100%;justify-content:space-between}}
+.hairSalon_historyPager{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px;padding:15px 10px;background:var(--white);border:1px solid #dbe3ed;border-radius:12px;margin-top:12px}
+.hairSalon_historyPager span{color:var(--blue);font-size:12px;font-weight:800}
+.hairSalon_historyPager button{min-width:95px}
+.hairSalon_historyPager button:disabled{opacity:.45;cursor:not-allowed}

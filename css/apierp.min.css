@@ -12829,7 +12829,18 @@ body.medical42_modalOpen{overflow:hidden}
 
 /* PELUQUERIA - MATRICES DE PRECIOS */
 .hairSalon_priceCurrencyLabel{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:800;color:var(--blue)}
+.hairSalon_supplierDocumentRow{display:flex;align-items:center;gap:8px;min-width:0}
+.hairSalon_supplierDocumentRow input{flex:1;min-width:0}
+.hairSalon_supplierDocumentRow .hairSalon_iconButton{flex:0 0 40px;height:40px}
 .hairSalon_priceCurrencyLabel select{min-width:110px;padding:9px;border:1px solid #cbd5e1;border-radius:10px;background:var(--white);color:var(--blue)}
+.hairSalon_consolidadoFieldset{min-width:0;margin:0;padding:12px;border:1px solid #dbe3ed;border-radius:12px;background:var(--white)}
+.hairSalon_consolidadoFieldset legend{padding:0 7px;color:var(--blue);font-size:12px;font-weight:800}
+.hairSalon_consolidadoChecks{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:8px;margin-bottom:12px;max-height:180px;overflow-y:auto}
+.hairSalon_consolidadoChecks label{display:flex;flex-direction:row;align-items:center;gap:8px;padding:9px;border:1px solid #e1e8f0;border-radius:9px;background:#f8fafc;cursor:pointer;font-size:12px}
+.hairSalon_consolidadoChecks input{width:16px;min-height:auto;accent-color:var(--orange);margin:0;flex:0 0 auto}
+.hairSalon_consolidadoCleanFields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.hairSalon_consolidadoCleanRow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media(max-width:680px){.hairSalon_consolidadoCleanFields,.hairSalon_consolidadoCleanRow{grid-template-columns:1fr}}
 .hairSalon_consolidadoGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .hairSalon_consolidadoSummary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:14px;border:1px solid #dbe3ed;border-radius:13px;background:#f8fafc}
 .hairSalon_consolidadoSummary label{min-width:0;display:flex;flex-direction:column;gap:6px}

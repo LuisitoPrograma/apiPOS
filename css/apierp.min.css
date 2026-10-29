@@ -11654,7 +11654,11 @@ flex-direction:column;
 .rptprod_small_action:hover,.rptprod_small_action:focus-visible{border-color:var(--orange);outline:none}
 .rptprod_advance_history_section #rptprod_advance_history_table{margin-top:16px}
 .rptprod_advance_history_section .rptprod_progress_cards{margin-bottom:16px}
-
+.rptprod_advance_material_section{margin-top:18px;padding-top:17px;border-top:1px solid #e0e7ef}
+.rptprod_advance_material_section .rptprod_section_head{margin-bottom:12px}
+.rptprod_close:has(svg){width:38px;height:38px;min-height:38px;display:inline-flex;align-items:center;justify-content:center;padding:0;border-radius:11px;color:var(--blue);background:var(--white)}
+.rptprod_close:has(svg):hover{border-color:var(--orange);color:var(--orange)}
+.rptprod_close svg{display:block}
 .rptaction_overlay{position:fixed;inset:0;z-index:2147483500;display:flex;align-items:center;justify-content:center;padding:15px;background:rgba(8,0,96,.35)}
 .rptaction_panel{width:min(760px,100%);background:var(--white);border:1px solid #dfe5f0;border-top:4px solid var(--orange);border-radius:18px;padding:18px;max-height:85dvh;overflow:auto}
 .rptaction_head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
@@ -12905,6 +12909,23 @@ body.medical42_modalOpen{overflow:hidden}
 .hairSalon_supplierDocumentRow{display:flex;align-items:center;gap:8px;min-width:0}
 .hairSalon_supplierDocumentRow input{flex:1;min-width:0}
 .hairSalon_supplierDocumentRow .hairSalon_iconButton{flex:0 0 40px;height:40px}
+.hairSalon_supplierDocumentRow .hairSalon_iconButton{background:var(--orange);color:var(--white);border-color:var(--orange);border-radius:10px}
+.hairSalon_supplierDocumentRow .hairSalon_iconButton:hover{background:var(--blue);border-color:var(--blue);color:var(--white)}
+.hairSalon_supplierDocumentRow .hairSalon_iconButton:disabled{opacity:.55;cursor:not-allowed}
+.hairSalon_headingIcon{width:22px;height:22px;flex:0 0 22px;color:var(--orange)}
+.hairSalon_panelHeader h2{display:flex;align-items:center;gap:9px}
+.hairSalon_buttonIcon{width:16px;height:16px;flex:0 0 16px}
+.hairSalon_modalTitleRow{display:flex;align-items:center;gap:12px}
+.hairSalon_modalTitleIcon{width:40px;height:40px;display:grid;place-items:center;flex:0 0 40px;border:1px solid #dce5f1;border-radius:12px;background:#f4f6ff;color:var(--orange)}
+.hairSalon_modalTitleIcon svg{width:23px;height:23px}
+.hairSalon_panel{animation:hairSalon_panelEnter .24s ease both}
+.hairSalon_modal.active .hairSalon_modalCard{animation:hairSalon_modalEnter .22s ease both}
+.hairSalon_actionGrid button{transition:background-color .16s ease,border-color .16s ease,transform .16s ease}
+.hairSalon_actionGrid button:hover{background:#f8fafc;transform:translateY(-2px)}
+.hairSalon_table tbody tr{transition:background-color .16s ease}
+@keyframes hairSalon_panelEnter{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@keyframes hairSalon_modalEnter{from{opacity:0;transform:translateY(10px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(prefers-reduced-motion:reduce){.hairSalon_panel,.hairSalon_modal.active .hairSalon_modalCard{animation:none}.hairSalon_actionGrid button{transition:none}}
 .hairSalon_priceCurrencyLabel select{min-width:110px;padding:9px;border:1px solid #cbd5e1;border-radius:10px;background:var(--white);color:var(--blue)}
 .hairSalon_consolidadoFieldset{min-width:0;margin:0;padding:12px;border:1px solid #dbe3ed;border-radius:12px;background:var(--white)}
 .hairSalon_consolidadoFieldset legend{padding:0 7px;color:var(--blue);font-size:12px;font-weight:800}
@@ -12986,3 +13007,42 @@ body.medical42_modalOpen{overflow:hidden}
 .prodDash_month small{grid-column:2/-1;font-size:10px;color:#64748b}
 @media(max-width:850px){.prodDash_stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.prodDash_shell{padding:10px}.prodDash_header,.prodDash_section{padding:14px}.prodDash_header svg{display:none}.prodDash_stats{grid-template-columns:1fr}.prodDash_sectionHead{flex-direction:column;align-items:stretch}.prodDash_sectionHead button{width:100%}.prodDash_cards{grid-template-columns:1fr}.prodDash_month{grid-template-columns:65px minmax(0,1fr) 72px;gap:6px}}
+.prodDash_header{flex-wrap:wrap;align-items:center;gap:22px;border-top:4px solid var(--orange)}
+.prodDash_header h1{display:flex;align-items:center;gap:12px}
+.prodDash_header h1 svg{width:32px;height:32px;flex:0 0 32px;color:var(--orange)}
+.prodDash_filters{min-width:310px;display:flex;align-items:end;flex-wrap:wrap;gap:12px}
+.prodDash_filters .dashb_field{min-width:140px;flex:1 1 140px}
+.prodDash_filters .dashb_select{width:100%;min-height:42px}
+.prodDash_section{scroll-margin-top:20px;animation:prodDash_sectionEnter .26s ease both}
+.prodDash_sectionHead{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:16px}
+.prodDash_sectionHead h2{display:inline-flex;align-items:center;gap:10px}
+.prodDash_sectionHead h2 svg{width:23px;height:23px;flex:0 0 23px;color:var(--orange)}
+.prodDash_sectionHead p{margin:0;font-size:12px!important;color:#64748b}
+.prodDash_ranking{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.prodDash_rankItem{display:flex;align-items:flex-start;gap:12px;padding:15px;border:1px solid #e1e7ef;border-radius:14px;background:#f8fafc;transition:border-color .15s ease,transform .15s ease}
+.prodDash_rankItem:hover{border-color:var(--orange);transform:translateY(-2px)}
+.prodDash_rankNumber{width:34px;height:34px;flex:0 0 34px;display:grid;place-items:center;border:1px solid #dce5f1;border-radius:10px;background:var(--white);color:var(--orange);font-weight:900;font-size:14px}
+.prodDash_rankContent{flex:1;min-width:0}
+.prodDash_rankHeading{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:11px}
+.prodDash_rankHeading strong{min-width:0;font-size:13px;color:var(--blue);overflow-wrap:anywhere}
+.prodDash_rankHeading>span{font-size:10px;font-weight:800;color:var(--orange);white-space:nowrap}
+.prodDash_rankMeta{display:flex;justify-content:space-between;gap:9px;flex-wrap:wrap;margin-top:9px;font-size:11px;color:#64748b}
+.prodDash_teamCard{border-top:3px solid var(--blue)}
+.prodDash_teamHeading{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.prodDash_teamHeading h3{min-width:0;overflow-wrap:anywhere}
+.prodDash_teamHeading>span{font-size:10px;color:#64748b;text-align:right}
+.prodDash_teamPercent{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:10px}
+.prodDash_teamPercent strong{font-size:27px;font-weight:900;color:var(--orange)}
+.prodDash_teamPercent small{font-size:10px;color:#64748b}
+.prodDash_teamMetrics{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:15px}
+.prodDash_teamMetrics span{padding:8px;border:1px solid #e6eaf1;border-radius:8px;background:#f8fafc;font-size:11px;color:#475569}
+.prodDash_teamCost{margin-top:14px;padding-top:12px;border-top:1px solid #e6eaf1}
+.prodDash_teamCost>span{font-size:11px;color:#64748b}
+.prodDash_teamCost>strong{display:block;margin-top:5px;font-size:17px;color:var(--blue)}
+.prodDash_loadingIcon{width:17px;height:17px;display:inline-block;vertical-align:middle;margin-right:9px;border:2px solid #dce5f1;border-top-color:var(--orange);border-radius:50%;animation:prodDash_spin .8s linear infinite}
+.prodDash_retry{display:block;margin:12px auto 0;padding:8px 15px;border:1px solid var(--orange);border-radius:9px;background:var(--orange);color:var(--white);cursor:pointer;font-size:12px;font-weight:800}
+@keyframes prodDash_spin{to{transform:rotate(360deg)}}
+@keyframes prodDash_sectionEnter{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:900px){.prodDash_ranking{grid-template-columns:1fr}}
+@media(max-width:560px){.prodDash_header h1{font-size:23px}.prodDash_header h1 svg{display:block;width:26px;height:26px;flex-basis:26px}.prodDash_filters{width:100%;min-width:0}.prodDash_filters .dashb_field{flex:1 1 100%}.prodDash_rankItem{padding:11px}.prodDash_sectionHead h2{font-size:16px}}
+@media(prefers-reduced-motion:reduce){.prodDash_section,.prodDash_loadingIcon{animation:none}.prodDash_rankItem{transition:none}}

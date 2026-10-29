@@ -4181,6 +4181,14 @@ opacity: .92;
 .apipos_pickerField{display:flex;flex-direction:column;justify-content:center;min-width:0;min-height:38px;padding:5px 7px;border-radius:5px;background:#f6f7fb;overflow-wrap:anywhere;gap:2px}
 .apipos_pickerFieldLabel{font-size:9px;color:var(--lead)}
 .apipos_pickerField strong{font-size:10px;line-height:1.2;color:var(--lead)}
+.apipos_pickerExpiryField{position:relative;padding-right:28px}
+.apipos_pickerExpiryInput{display:block;width:100%;min-width:0;height:16px;margin:0;padding:0;border:0;border-radius:0;outline:0;background:transparent;color:var(--lead);font-size:10px;font-weight:600;line-height:1.2;font-family:inherit;color-scheme:light}
+.apipos_pickerExpiryInput:focus{outline:1px solid var(--orange);outline-offset:1px}
+.apipos_pickerExpirySave{position:absolute;right:4px;bottom:6px;display:grid;place-items:center;width:20px;height:20px;padding:0;border:0;border-radius:4px;background:transparent;color:var(--orange);cursor:pointer}
+.apipos_pickerExpirySave svg{width:13px;height:13px}
+.apipos_pickerExpirySave:disabled{opacity:.5;cursor:wait}
+.apipos_pickerExpirySave[hidden]{display:none}
+.apipos_pickerExpiryDirty{border:1px solid var(--orange)}
 .apipos_pickerFilters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:11px}
 .apipos_pickerVariantEditor{position:relative;min-width:0}
 .apipos_pickerVariantLabel{display:block;margin:0 0 4px 2px;font-size:10px;font-weight:600;color:var(--lead)}

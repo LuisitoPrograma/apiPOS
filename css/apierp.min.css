@@ -3217,6 +3217,14 @@ to{transform:rotate(360deg);}
 .hairSalon_kpi small{color:#64748b;font-size:11px;}
 .hairSalon_kpi--warning{border-color:color-mix(in srgb,var(--orange),transparent 70%);background:color-mix(in srgb,var(--orange),white 97%);}
 .hairSalon_kpi--warning strong{color:var(--orange);}
+.hairSalon_typeTotals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}
+.hairSalon_typeTotal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:16px;border:1px solid #dbe3ed;border-radius:15px;background:var(--white)}
+.hairSalon_typeTotalHead{grid-column:1/-1;display:flex;align-items:center;gap:10px;padding-bottom:10px;border-bottom:1px solid #e8ecf2;color:var(--orange)}
+.hairSalon_typeTotalHead strong{font-size:14px;color:var(--blue)}
+.hairSalon_typeTotal>div:not(.hairSalon_typeTotalHead){display:flex;flex-direction:column;gap:5px;min-width:0}
+.hairSalon_typeTotal span{font-size:11px;color:#64748b}
+.hairSalon_typeTotal>div>strong{font-size:17px;color:var(--blue)}
+@media(max-width:700px){.hairSalon_typeTotals{grid-template-columns:1fr}}
 
 .hairSalon_currencyGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:12px;}
 .hairSalon_currencyCard{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:16px;border-radius:14px;background:var(--blue);color:var(--white);}
@@ -3245,6 +3253,17 @@ to{transform:rotate(360deg);}
 .hairSalon_table td small{display:block;margin-top:3px;color:#7b8798;}
 
 .hairSalon_actions{display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.hairSalon_collaboratorCell{width:220px;max-width:220px;white-space:normal;overflow-wrap:anywhere}
+.hairSalon_collaborators{max-width:200px}
+.hairSalon_collaborators summary{cursor:pointer;line-height:1.5}
+.hairSalon_collaborators summary strong{color:var(--orange);white-space:nowrap}
+.hairSalon_collaborators>div{padding:9px;margin-top:8px;border:1px solid #dbe3ed;border-radius:10px;background:#f8fafc;line-height:1.6}
+.hairSalon_actionGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.hairSalon_actionGrid button{min-width:0;min-height:82px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:12px;border:1px solid #dbe3ed;border-radius:13px;background:var(--white);color:var(--blue);font-size:12px;font-weight:700;cursor:pointer}
+.hairSalon_actionGrid button:hover,.hairSalon_actionGrid button:focus-visible{border-color:var(--orange);outline:none}
+.hairSalon_actionGrid svg{width:24px;height:24px;color:var(--orange)}
+@media(max-width:600px){.hairSalon_actionGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:380px){.hairSalon_actionGrid{grid-template-columns:1fr}}
 
 .hairSalon_iconButton{width:32px;height:32px;flex:0 0 32px;display:inline-flex;align-items:center;justify-content:center;padding:0;border:1px solid #d9e0e9;border-radius:8px;background:var(--white);cursor:pointer;transition:transform .12s ease,border-color .12s ease,background-color .12s ease;}
 .hairSalon_iconButton:hover{transform:translateY(-1px);border-color:color-mix(in srgb,var(--blue),transparent 65%);background:color-mix(in srgb,var(--blue),white 97%);}
@@ -11633,16 +11652,18 @@ flex-direction:column;
 .rptprod_small_action{border:1px solid #dce4ee;border-radius:8px;background:#f7f8ff;color:var(--blue);padding:6px 9px;margin:2px;font-size:11px;cursor:pointer}
 .rptprod_small_action_danger{background:#fff5f4;color:#a62d2d;border-color:#f2d0cb}
 .rptprod_small_action:hover,.rptprod_small_action:focus-visible{border-color:var(--orange);outline:none}
-.rptprod_advance_material_section #rptprod_advance_history_table{margin-top:20px}
-.rptprod_advance_data .rptprod_progress_cards{margin-top:16px}
+.rptprod_advance_history_section #rptprod_advance_history_table{margin-top:16px}
+.rptprod_advance_history_section .rptprod_progress_cards{margin-bottom:16px}
 
 .rptaction_overlay{position:fixed;inset:0;z-index:2147483500;display:flex;align-items:center;justify-content:center;padding:15px;background:rgba(8,0,96,.35)}
-.rptaction_panel{width:min(370px,100%);background:var(--white);border:1px solid #dfe5f0;border-top:4px solid var(--orange);border-radius:18px;padding:18px;max-height:85dvh;overflow:auto}
+.rptaction_panel{width:min(760px,100%);background:var(--white);border:1px solid #dfe5f0;border-top:4px solid var(--orange);border-radius:18px;padding:18px;max-height:85dvh;overflow:auto}
 .rptaction_head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
 .rptaction_head strong{display:block;font-size:15px;color:var(--blue)}
 .rptaction_close{display:inline-flex;align-items:center;justify-content:center;border:1px solid #dce5ef;background:var(--white);border-radius:9px;width:32px;height:32px;cursor:pointer;color:var(--blue)}
-.rptaction_list{display:grid;gap:7px}
-.rptaction_item{display:flex;align-items:center;gap:11px;width:100%;padding:11px 12px;border:1px solid #e3e7f1;border-radius:11px;background:#fbfcff;text-align:left;font-size:12.5px;font-weight:700;color:var(--blue);cursor:pointer}
+.rptaction_list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.rptaction_item{display:flex;align-items:center;gap:10px;width:100%;min-width:0;min-height:70px;padding:12px;border:1px solid #e3e7f1;border-radius:13px;background:#fbfcff;text-align:left;font-size:12.5px;font-weight:700;color:var(--blue);cursor:pointer;overflow-wrap:anywhere}
+@media(max-width:700px){.rptaction_list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:460px){.rptaction_list{grid-template-columns:1fr}.rptaction_item{min-height:52px}}
 .rptaction_item:hover,.rptaction_item:focus-visible{background:#fff7f2;border-color:var(--orange);outline:none}
 .rptaction_item svg{width:17px;height:17px;color:var(--orange);flex:0 0 auto}
 .rptaction_item:disabled{opacity:.55;cursor:not-allowed}
@@ -12892,6 +12913,12 @@ body.medical42_modalOpen{overflow:hidden}
 .hairSalon_consolidadoChecks input{width:16px;min-height:auto;accent-color:var(--orange);margin:0;flex:0 0 auto}
 .hairSalon_consolidadoCleanFields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .hairSalon_consolidadoCleanRow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.hairSalon_typeGrossInfo{display:grid;grid-template-columns:32px repeat(2,minmax(0,1fr));align-items:center;gap:12px;margin-bottom:14px;padding:13px;border:1px solid #dbe3ed;border-radius:12px;background:#f8fafc}
+.hairSalon_typeGrossInfo svg{color:var(--orange)}
+.hairSalon_typeGrossInfo div{min-width:0;display:flex;flex-direction:column;gap:4px}
+.hairSalon_typeGrossInfo span{font-size:11px;font-weight:700;color:#64748b}
+.hairSalon_typeGrossInfo strong{font-size:16px;font-weight:800;color:var(--blue)}
+@media(max-width:480px){.hairSalon_typeGrossInfo{grid-template-columns:28px minmax(0,1fr)}.hairSalon_typeGrossInfo div:last-child{grid-column:2}}
 @media(max-width:680px){.hairSalon_consolidadoCleanFields,.hairSalon_consolidadoCleanRow{grid-template-columns:1fr}}
 .hairSalon_consolidadoGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .hairSalon_consolidadoSummary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:14px;border:1px solid #dbe3ed;border-radius:13px;background:#f8fafc}
@@ -12921,3 +12948,41 @@ body.medical42_modalOpen{overflow:hidden}
 .hairSalon_historyPager span{color:var(--blue);font-size:12px;font-weight:800}
 .hairSalon_historyPager button{min-width:95px}
 .hairSalon_historyPager button:disabled{opacity:.45;cursor:not-allowed}
+
+/* DASHBOARD PRODUCCION */
+.prodDash_shell{max-width:1600px;margin:0 auto;padding:20px;display:flex;flex-direction:column;gap:18px;color:var(--lead)}
+.prodDash_header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:25px;border:1px solid #dbe3ed;border-radius:20px;background:var(--white)}
+.prodDash_header>div{min-width:0}
+.prodDash_header span{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--orange)}
+.prodDash_header h1{margin:7px 0;font-size:clamp(23px,3vw,34px);color:var(--blue)}
+.prodDash_header p{margin:0;font-size:13px!important;line-height:1.6!important;color:#64748b}
+.prodDash_header svg{flex:0 0 auto;color:var(--orange)}
+.prodDash_section{min-width:0;padding:20px;border:1px solid #dbe3ed;border-radius:18px;background:var(--white)}
+.prodDash_sectionHead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.prodDash_section h2{margin:0 0 15px;font-size:18px;font-weight:800;color:var(--blue)}
+.prodDash_sectionHead h2{margin:0}
+.prodDash_sectionHead button{min-height:40px;padding:9px 16px;border:1px solid var(--orange);border-radius:11px;background:var(--orange);color:var(--white);font-size:12px;font-weight:800;cursor:pointer}
+.prodDash_sectionHead button:disabled{opacity:.55;cursor:not-allowed}
+.prodDash_empty{padding:28px;text-align:center;font-size:13px;color:#64748b;border:1px dashed #cbd5e1;border-radius:12px;background:#f8fafc}
+.prodDash_stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.prodDash_stats article{min-width:0;padding:18px;border:1px solid #e0e7ef;border-radius:14px;background:#f8fafc}
+.prodDash_stats span,.prodDash_costCard span{display:block;font-size:11px;font-weight:700;color:#64748b}
+.prodDash_stats strong{display:block;margin-top:8px;font-size:clamp(21px,2.5vw,30px);color:var(--blue)}
+.prodDash_cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.prodDash_costCard,.prodDash_branch{min-width:0;padding:17px;border:1px solid #e1e7ef;border-radius:14px;background:var(--white)}
+.prodDash_costCard h3,.prodDash_branch h3{margin:0 0 14px;font-size:15px;font-weight:800;color:var(--blue)}
+.prodDash_costCard>div:not(.prodDash_month){margin:12px 0}
+.prodDash_costCard strong{display:block;margin-top:5px;font-size:17px;color:var(--blue);overflow-wrap:anywhere}
+.prodDash_branches{display:flex;flex-direction:column;gap:14px}
+.prodDash_warehouse{display:flex;flex-direction:column;gap:6px;min-width:0;padding:14px;border:1px solid #e3e8ef;border-radius:12px;background:#f8fafc}
+.prodDash_warehouse>strong{font-size:14px;color:var(--blue)}
+.prodDash_warehouse>span{font-size:12px;color:#475569}
+.prodDash_warehouse small{font-size:11px;color:#64748b}
+.prodDash_track{height:9px;border:1px solid #dbe3ed;border-radius:99px;background:#edf2f7;overflow:hidden}
+.prodDash_track>span{display:block;height:100%;border-radius:99px;background:var(--orange)}
+.prodDash_month{display:grid;grid-template-columns:72px minmax(0,1fr) 90px;gap:10px;align-items:center;margin:12px 0}
+.prodDash_month>span{font-size:12px;font-weight:700;color:var(--blue)}
+.prodDash_month>strong{margin:0;font-size:12px}
+.prodDash_month small{grid-column:2/-1;font-size:10px;color:#64748b}
+@media(max-width:850px){.prodDash_stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.prodDash_shell{padding:10px}.prodDash_header,.prodDash_section{padding:14px}.prodDash_header svg{display:none}.prodDash_stats{grid-template-columns:1fr}.prodDash_sectionHead{flex-direction:column;align-items:stretch}.prodDash_sectionHead button{width:100%}.prodDash_cards{grid-template-columns:1fr}.prodDash_month{grid-template-columns:65px minmax(0,1fr) 72px;gap:6px}}

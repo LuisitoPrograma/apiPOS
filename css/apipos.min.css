@@ -4195,7 +4195,6 @@ opacity: .92;
 .apipos_pickerNav[hidden],.apipos_pickerFilters[hidden],.apipos_pickerHeaderActions [hidden]{display:none}
 .apipos_pickerNav button{display:grid;place-items:center;width:24px;height:24px;padding:2px;border:0;background:#f3f5fa;color:var(--blue);border-radius:5px;cursor:pointer}
 .apipos_pickerNav svg{width:16px;height:16px}
-.apipos_pickerSectionVariants h4{display:flex;align-items:center;gap:9px}
 .apipos_pickerVariantCreatorOpen{display:inline-grid;place-items:center;width:25px;height:25px;margin-left:auto;padding:3px;border:1px solid var(--orange);border-radius:8px;background:var(--white);color:var(--orange);cursor:pointer}
 .apipos_pickerVariantCreatorOpen svg{width:16px;height:16px}
 .apipos_pickerVariantCreatorOverlay{position:fixed;inset:0;z-index:10000001;display:flex;align-items:center;justify-content:center;padding:12px;background:rgba(0,0,0,.5)}
@@ -4235,7 +4234,8 @@ opacity: .92;
 .apipos_pickerVariants{display:flex;align-items:flex-start;gap:8px;margin-top:12px;padding:2px 0;font-size:10px;line-height:1.35;overflow-wrap:anywhere}
 .apipos_pickerVariantsIcon{display:grid;place-items:center;flex:none;width:19px;height:19px;color:var(--green)}
 .apipos_pickerVariantsIcon svg{width:18px;height:18px}
-.apipos_pickerVariantsText{display:flex;flex-direction:column;gap:2px;min-width:0}
+.apipos_pickerVariantsText{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:2px 8px;min-width:0;flex:1}
+.apipos_pickerVariantsText>span{grid-column:1/-1}
 .apipos_pickerVariants strong{color:var(--lead);font-size:11px}
 .apipos_pickerVariants span{color:var(--lead)}
 .apipos_pickerPriceBox{display:flex;align-items:center;flex-direction:column;gap:3px;padding:7px;border-radius:5px;background:rgba(255,89,0,.08);min-width:0}

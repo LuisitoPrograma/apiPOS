@@ -4201,27 +4201,90 @@ opacity: .92;
 .apipos_pickerVariantCreatorOpen{display:inline-grid;place-items:center;flex:none;width:20px;height:20px;padding:2px;border:1px solid var(--orange);border-radius:50%;background:var(--orange);color:var(--white);cursor:pointer;transition:transform .16s ease,background-color .16s ease}
 .apipos_pickerVariantCreatorOpen:hover{transform:scale(1.05);background:var(--blue);border-color:var(--blue)}
 .apipos_pickerVariantCreatorOpen svg{width:12px;height:12px}
-.apipos_pickerVariantCreatorOverlay{position:fixed;inset:0;z-index:10000004;display:flex;align-items:center;justify-content:center;padding:12px;background:rgba(0,0,0,.5)}
-.apipos_pickerVariantCreatorModal{display:flex;flex-direction:column;gap:11px;width:min(490px,100%);max-height:calc(100dvh - 24px);padding:14px;border:1px solid #e2e5eb;border-radius:17px;background:var(--white);color:var(--lead);animation:apipos_pickerVariantAppear .18s ease-out}
-.apipos_pickerVariantCreatorHeader,.apipos_pickerVariantCreatorCardHead,.apipos_pickerVariantCreatorFooter{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.apipos_pickerVariantCreatorHeader strong{font-size:14px;color:var(--blue)}
-.apipos_pickerVariantCreatorHeader button,.apipos_pickerVariantCreatorCardHead button{display:grid;place-items:center;width:27px;height:27px;border:1px solid #e2e5eb;border-radius:8px;background:var(--white);color:var(--lead);font-size:19px;cursor:pointer}
-.apipos_pickerVariantCreatorHelp{font-size:11px;line-height:1.4;color:var(--lead)}
-.apipos_pickerVariantCreatorCards{display:flex;flex-direction:column;gap:10px;min-height:0;min-width:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;background:var(--white)}
-.apipos_pickerVariantCreatorCard{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 10px;padding:14px;border:1px solid #e2e5eb;border-radius:12px;background:var(--white);transition:border-color .16s ease}
-.apipos_pickerVariantCreatorCard:focus-within{border-color:var(--orange)}
-.apipos_pickerVariantCreatorCardHead{grid-column:1/-1;padding-bottom:8px;border-bottom:1px solid #edf0f5;color:var(--blue);font-size:12px}
-.apipos_pickerVariantCreatorField{display:flex;flex-direction:column;gap:5px;min-width:0;font-size:11px;font-weight:650;color:var(--lead)}
-.apipos_pickerVariantCreatorField input{width:100%;min-width:0;height:37px;box-sizing:border-box;padding:7px 10px;border:1px solid #dce1e9;border-radius:9px;background:var(--white);color:var(--lead);font-family:inherit;font-size:12px;transition:border-color .16s ease}
+.apipos_pickerVariantCreatorOverlay{position:fixed;inset:0;z-index:10000004;display:flex;align-items:center;justify-content:center;padding:8px;background:rgba(0,0,0,.5)}
+.apipos_pickerVariantCreatorModal{display:flex;flex-direction:column;gap:12px;width:min(540px,100%);max-height:calc(100dvh - 16px);min-width:0;padding:18px 20px;border:1px solid #e2e5eb;border-radius:19px;background:var(--white);color:var(--lead);animation:apipos_pickerVariantAppear .18s ease-out}
+.apipos_pickerVariantCreatorHeader,.apipos_pickerVariantCreatorCardHead,.apipos_pickerVariantCreatorFooterBottom{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.apipos_pickerVariantCreatorTitleWrap{display:flex;align-items:center;gap:10px;min-width:0}
+.apipos_pickerVariantCreatorTitleIcon{display:grid;place-items:center;flex:none;width:24px;height:24px;color:var(--orange)}
+.apipos_pickerVariantCreatorTitleIcon svg{width:23px;height:23px}
+.apipos_pickerVariantCreatorHeader strong{font-size:15px;color:var(--blue)}
+.apipos_pickerVariantCreatorClose,.apipos_pickerVariantCreatorRemove{display:grid;place-items:center;flex:none;width:31px;height:31px;padding:5px;border:1px solid #e2e5eb;border-radius:9px;background:var(--white);color:#7e8796;cursor:pointer}
+.apipos_pickerVariantCreatorClose svg{width:19px;height:19px}
+.apipos_pickerVariantCreatorRemove{width:26px;height:26px;border:0;color:var(--orange)}
+.apipos_pickerVariantCreatorRemove svg{width:17px;height:17px}
+.apipos_pickerVariantCreatorHelp{padding:4px 12px;color:#7e8796;font-size:12px;line-height:1.55}
+.apipos_pickerVariantCreatorProduct{display:flex;align-items:center;gap:11px;min-height:83px;padding:12px 4px;border-top:1px solid #e2e5eb;border-bottom:1px solid #e2e5eb}
+.apipos_pickerVariantCreatorProductImage{display:grid;place-items:center;flex:none;width:65px;height:65px;overflow:hidden;border:1px solid #e2e5eb;border-radius:12px;background:var(--white);color:#a9afba}
+.apipos_pickerVariantCreatorProductImage img{width:100%;height:100%;object-fit:contain}
+.apipos_pickerVariantCreatorProductImage svg{width:31px;height:31px}
+.apipos_pickerVariantCreatorProductInfo{display:flex;flex-direction:column;gap:5px;min-width:0}
+.apipos_pickerVariantCreatorProductInfo>strong{font-size:15px;line-height:1.3;color:var(--blue);overflow-wrap:anywhere}
+.apipos_pickerVariantCreatorProductCodes{display:flex;flex-wrap:wrap;gap:4px;color:#7e8796}
+.apipos_pickerVariantCreatorProductCodes small{display:inline-flex;align-items:center;gap:4px;padding:3px 5px;border-radius:4px;background:#f3f5f9;font-size:9px}
+.apipos_pickerVariantCreatorCodeIcon{display:inline-grid;place-items:center;color:#7e8796}
+.apipos_pickerVariantCreatorCodeIcon svg{width:11px;height:11px}
+.apipos_pickerVariantCreatorProductBrand{font-size:11px;color:#788399}
+.apipos_pickerVariantCreatorCards{display:flex;flex-direction:column;gap:10px;min-height:0;min-width:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;padding:2px 1px;background:var(--white)}
+.apipos_pickerVariantCreatorCard{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px 10px;flex:none;padding:16px 13px;border:1px solid #dfe4ed;border-radius:15px;background:var(--white)}
+.apipos_pickerVariantCreatorCard:focus-within{border-color:#b8c8e4}
+.apipos_pickerVariantCreatorCardHead{grid-column:1/-1;padding-bottom:12px;border-bottom:1px solid #e9edf3}
+.apipos_pickerVariantCreatorCardName{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1}
+.apipos_pickerVariantCreatorCardHead .apipos_pickerVariantCreatorProductName{color:var(--blue);font-size:12px;line-height:1.4;overflow-wrap:anywhere}
+.apipos_pickerVariantCreatorCardHead .apipos_pickerVariantCreatorDynamicName{color:#788399;font-size:11px;line-height:1.4;font-weight:750;overflow-wrap:anywhere}
+.apipos_pickerVariantCreatorDynamicName:empty{display:none}
+.apipos_pickerVariantCreatorCardActions{display:flex;align-items:center;gap:9px;flex:none}
+.apipos_pickerVariantCreatorNumber{font-size:12px;color:var(--blue)}
+.apipos_pickerVariantCreatorField{display:flex;flex-direction:column;gap:6px;min-width:0;font-size:11px;font-weight:650;color:#778190}
+.apipos_pickerVariantCreatorField input{width:100%;min-width:0;height:42px;box-sizing:border-box;padding:9px 11px;border:1px solid #dce1e9;border-radius:11px;background:var(--white);color:var(--lead);font-family:inherit;font-size:12px;transition:border-color .16s ease}
 .apipos_pickerVariantCreatorField input::placeholder{color:#9298a3}
 .apipos_pickerVariantCreatorField input:focus{outline:none;border-color:var(--orange)}
-.apipos_pickerVariantCreatorFooter{flex-wrap:wrap}
-.apipos_pickerVariantCreatorFooter button{min-height:35px;padding:7px 11px;border:1px solid var(--orange);border-radius:9px;background:var(--white);color:var(--orange);font-size:11.5px;font-weight:700;cursor:pointer}
-.apipos_pickerVariantCreatorAnother{display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.apipos_pickerVariantCreatorCollapse{grid-column:1/-1;min-width:0}
+.apipos_pickerVariantCreatorCollapseTitle{display:flex;align-items:center;gap:9px;min-height:38px;padding:8px 11px;border-radius:5px;background:#f1f3f8;color:#262a33;cursor:pointer;list-style:none}
+.apipos_pickerVariantCreatorCollapseTitle::-webkit-details-marker{display:none}
+.apipos_pickerVariantCreatorCollapseTitle>strong{flex:1;font-size:11px;font-weight:750}
+.apipos_pickerVariantCreatorCollapseIcon{display:grid;place-items:center;color:var(--orange)}
+.apipos_pickerVariantCreatorCollapseIcon svg{width:17px;height:17px}
+.apipos_pickerVariantCreatorChevron{display:grid;place-items:center;color:var(--orange);transition:transform .16s ease}
+.apipos_pickerVariantCreatorChevron svg{width:17px;height:17px}
+.apipos_pickerVariantCreatorCollapse[open] .apipos_pickerVariantCreatorChevron{transform:rotate(180deg)}
+.apipos_pickerVariantCreatorPriceRows{display:flex;flex-direction:column;gap:8px;padding:11px 5px 2px}
+.apipos_pickerVariantCreatorDataRow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 12px;padding:8px 0 13px;border-bottom:1px solid #edf0f4}
+.apipos_pickerVariantCreatorDataRow:last-child{border-bottom:0}
+.apipos_pickerVariantCreatorUnitName{grid-column:1/-1;font-size:11px;color:var(--blue);overflow-wrap:anywhere}
+.apipos_pickerVariantCreatorFreightField{grid-column:1;grid-row:3}
+.apipos_pickerVariantCreatorGain{grid-column:2;grid-row:3;display:flex;flex-direction:column;align-self:center;gap:6px;min-width:0}
+.apipos_pickerVariantCreatorGainModes{display:flex;align-items:center;gap:4px;min-width:0}
+.apipos_pickerVariantCreatorGainModes button{padding:4px 7px;border:0;border-radius:6px;background:transparent;color:#7e8796;font-size:10px;font-weight:700;cursor:pointer}
+.apipos_pickerVariantCreatorGainModes .apipos_pickerVariantCreatorGainActive{background:var(--orange);color:var(--white)}
+.apipos_pickerVariantCreatorGainInput{width:60px;min-width:0;max-width:100%;height:29px;padding:5px;border:1px solid #e1e5ed;border-radius:7px;font-size:11px;color:var(--lead)}
+.apipos_pickerVariantCreatorGainText{font-size:11px;color:var(--orange);overflow-wrap:anywhere}
+.apipos_pickerVariantCreatorWarehouseRows{display:flex;flex-direction:column;gap:7px;padding:10px 6px 2px}
+.apipos_pickerVariantCreatorBranch{min-width:0}
+.apipos_pickerVariantCreatorBranchTitle{display:flex;align-items:center;gap:6px;cursor:pointer;list-style:none;padding:5px 0;color:var(--blue)}
+.apipos_pickerVariantCreatorBranchTitle::-webkit-details-marker{display:none}
+.apipos_pickerVariantCreatorBranchTitle strong{font-size:11px}
+.apipos_pickerVariantCreatorBranchTitle .apipos_pickerBranchChevron{width:16px;height:16px;transform:rotate(0deg)}
+.apipos_pickerVariantCreatorBranch[open] .apipos_pickerBranchChevron{transform:rotate(90deg)}
+.apipos_pickerVariantCreatorBranchTitle .apipos_pickerBranchChevron svg{width:14px;height:14px}
+.apipos_pickerVariantCreatorWarehouseRow{display:flex;align-items:center;gap:7px;min-width:0;padding:5px 0 5px 14px;background:var(--white)}
+.apipos_pickerVariantCreatorWarehouseInfo{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0;color:#7e8796;font-size:11px}
+.apipos_pickerVariantCreatorWarehouseInfo small{font-size:10px;color:#9ca5b2;overflow-wrap:anywhere}
+.apipos_pickerVariantCreatorWarehouseValue{display:flex;align-items:center;justify-content:flex-end;gap:4px;flex:none;color:var(--orange);font-size:11px;font-weight:750}
+.apipos_pickerVariantCreatorWarehouseValue input{width:77px;height:28px;padding:3px 2px;border:1px solid transparent;border-radius:6px;background:transparent;color:var(--orange);font:inherit;font-weight:800;text-align:right;appearance:textfield}
+.apipos_pickerVariantCreatorWarehouseValue input::-webkit-inner-spin-button,.apipos_pickerVariantCreatorWarehouseValue input::-webkit-outer-spin-button{appearance:none;margin:0}
+.apipos_pickerVariantCreatorWarehouseValue input:focus{outline:none;border-color:var(--orange);background:#fff}
+.apipos_pickerVariantCreatorStockPositive,.apipos_pickerVariantCreatorStockPositive input{color:var(--green)}
+.apipos_pickerVariantCreatorFooter{display:flex;flex-direction:column;gap:11px;flex:none;padding-top:10px;border-top:1px solid #e5e9f0}
+.apipos_pickerVariantCreatorFooterBottom{padding-top:10px;border-top:1px solid #e5e9f0}
+.apipos_pickerVariantCreatorFooter button{min-height:38px;padding:8px 12px;border:1px solid var(--orange);border-radius:10px;background:var(--white);color:var(--orange);font-size:11px;font-weight:750;cursor:pointer}
+.apipos_pickerVariantCreatorAnother{display:inline-flex;align-items:center;justify-content:center;gap:6px;align-self:flex-start}
 .apipos_pickerVariantCreatorAnother svg{width:14px;height:14px}
 .apipos_pickerVariantCreatorFooter .apipos_pickerVariantCreatorSave{background:var(--orange);color:var(--white)}
+.apipos_pickerVariantCreatorAddToCart{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:650;color:#6e7989;cursor:pointer}
+.apipos_pickerVariantCreatorCartCheck{width:16px;height:16px;margin:0;accent-color:var(--orange)}
 .apipos_pickerVariantCreatorFooter button:disabled{opacity:.55;cursor:not-allowed}
-@media(max-width:450px){.apipos_pickerVariantCreatorCard{grid-template-columns:1fr}.apipos_pickerVariantCreatorFooter button{flex:1}}
+@media(max-width:450px){.apipos_pickerVariantCreatorModal{padding:13px 11px}.apipos_pickerVariantCreatorCard{padding:12px 9px;gap:11px 7px}.apipos_pickerVariantCreatorProductCodes small{font-size:8px}.apipos_pickerVariantCreatorDataRow{gap:7px}.apipos_pickerVariantCreatorGainInput{width:47px}}
+@media(max-width:340px){.apipos_pickerVariantCreatorCard{grid-template-columns:1fr}.apipos_pickerVariantCreatorDataRow{grid-template-columns:1fr}.apipos_pickerVariantCreatorGain,.apipos_pickerVariantCreatorFreightField{grid-column:1;grid-row:auto}}
 #apipos_pickerFind{color:var(--orange);border:1px solid var(--orange)}
 .apipos_pickerVariantFinderOverlay{position:fixed;inset:0;z-index:10000003;display:flex;align-items:center;justify-content:center;padding:12px;background:rgba(0,0,0,.5)}
 .apipos_pickerVariantFinderModal{display:flex;flex-direction:column;gap:10px;width:min(470px,100%);max-height:min(620px,calc(100dvh - 24px));padding:17px;background:var(--white);border:1px solid #e7e8ee;border-radius:19px;color:var(--lead);animation:apipos_pickerVariantAppear .18s ease-out}
@@ -4244,12 +4307,20 @@ opacity: .92;
 @keyframes apipos_pickerVariantAppear{from{opacity:0;transform:translateY(7px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
 @media(prefers-reduced-motion:reduce){.apipos_pickerVariantFinderModal,.apipos_pickerVariantCreatorModal{animation:none}}
 .apipos_pickerVariants{display:flex;flex-direction:column;gap:8px;margin-top:12px;min-width:0;font-size:11px}
-.apipos_pickerBatchHeading{display:flex;align-items:center;gap:6px;color:var(--blue)}
+.apipos_pickerBatchCollapse{min-width:0}
+.apipos_pickerBatchHeading{display:flex;align-items:center;gap:6px;min-height:31px;padding:5px 8px;border-radius:5px;background:#f1f3f8;color:var(--blue);cursor:pointer;list-style:none}
+.apipos_pickerBatchHeading::-webkit-details-marker{display:none}
+.apipos_pickerBatchChevron{display:grid;place-items:center;margin-left:auto;color:var(--orange);transition:transform .16s ease}
+.apipos_pickerBatchChevron svg{width:15px;height:15px}
+.apipos_pickerBatchCollapse[open] .apipos_pickerBatchChevron{transform:rotate(180deg)}
+.apipos_pickerBatchCollapse .apipos_pickerBatchRows{margin-top:9px}
+.apipos_pickerBatchCollapse .apipos_pickerBatchActions{margin-top:9px}
 .apipos_pickerBatchHeading strong{font-size:12px;font-weight:800}
 .apipos_pickerVariantsIcon{display:grid;place-items:center;flex:none;width:19px;height:19px;color:var(--green)}
 .apipos_pickerVariantsIcon svg{width:18px;height:18px}
 .apipos_pickerBatchRows{display:flex;flex-direction:column;gap:7px;min-width:0}
 .apipos_pickerBatchRow{display:grid;grid-template-columns:minmax(95px,1fr) 53px minmax(68px,.7fr) 24px;gap:6px;align-items:center;min-width:0}
+.apipos_pickerBatchRemoveSpace{display:block;width:24px;height:27px}
 .apipos_pickerBatchName{display:flex;flex-direction:column;gap:2px;min-width:0;overflow-wrap:anywhere}
 .apipos_pickerBatchName strong{color:var(--blue);font-size:10.5px;font-weight:750;line-height:1.3}
 .apipos_pickerBatchName small{font-size:10px;font-weight:650;color:var(--lead);line-height:1.35}
@@ -4274,9 +4345,6 @@ opacity: .92;
 .apipos_pickerBatchEmpty,.apipos_pickerBatchHint{display:block;padding:8px}
 .apipos_pickerBatchActions{display:flex;justify-content:space-between;align-items:center;gap:7px;flex-wrap:wrap}
 .apipos_pickerBatchAnother{padding:5px 0;border:0;background:transparent;color:var(--blue);font-size:10.5px;font-weight:750;cursor:pointer}
-.apipos_pickerBatchSubmit{display:inline-flex;align-items:center;justify-content:center;gap:5px;margin-left:auto;min-height:32px;padding:7px 11px;border:1px solid var(--blue);border-radius:9px;background:var(--blue);color:var(--white);font-size:11px;font-weight:750;cursor:pointer}
-.apipos_pickerBatchSubmit svg{width:14px;height:14px;flex:none}
-.apipos_pickerBatchSubmit:disabled{opacity:.5;cursor:wait}
 .apipos_pickerPriceBox{display:flex;align-items:center;flex-direction:column;gap:3px;padding:7px;border-radius:5px;background:rgba(255,89,0,.08);min-width:0}
 #apipos_pickerUnit{width:100%;max-width:100%;min-height:28px;border:1px solid var(--orange);border-radius:5px;background:var(--orange);color:var(--white);font-weight:700;font-size:11px;text-align:center;cursor:pointer}
 #apipos_pickerPrice{color:var(--orange);font-size:24px;line-height:1.2;font-weight:800;overflow-wrap:anywhere}
@@ -4341,6 +4409,13 @@ opacity: .92;
 .apipos_pickerInfoFields .apipos_pickerFieldLabel{min-width:0;flex:none;font-size:10px;color:var(--lead)}
 .apipos_pickerInfoFields .apipos_pickerField strong{font-size:10px;line-height:1.45;font-weight:500;color:#555}
 .apipos_pickerVariantInfoRows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 7px}
+.apipos_pickerColorsBlock{margin-top:13px;padding-top:9px;border-top:1px solid #e4e8ee}
+.apipos_pickerColorsHeading{display:flex;align-items:center;gap:7px;margin-bottom:7px;padding:0 7px;font-size:11px;color:#34383f}
+.apipos_pickerColorsHeading .apipos_pickerInfoHeadingIcon{color:var(--green)}
+.apipos_pickerColorsFields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 7px}
+.apipos_pickerColorsFields .apipos_pickerColorRow{display:flex;align-items:center;min-width:0;gap:6px;padding:2px 4px;background:transparent}
+.apipos_pickerColorsFields .apipos_pickerColorName{min-width:0;flex:1;overflow-wrap:anywhere;font-size:10px;font-weight:500;color:#555}
+.apipos_pickerColorDot{display:block;flex:0 0 13px;width:13px;height:13px;border:1px solid #9ba1aa;border-radius:50%}
 .apipos_pickerComponentHeader,.apipos_pickerComponent{display:grid;grid-template-columns:minmax(0,1fr) minmax(42px,.35fr) minmax(48px,.6fr);align-items:start;gap:6px;padding:4px 9px;font-size:10px;color:var(--lead)}
 .apipos_pickerComponentHeader{margin-bottom:3px;border-bottom:1px solid #eceef3;font-weight:700}
 .apipos_pickerComponentHeader span:not(:first-child){text-align:right}
@@ -7425,7 +7500,7 @@ min-width:0;
 color:var(--orange);
 }
 .apipos-product-price strong{
-font-size:20px;
+font-size:17px;
 line-height:1.2;
 font-weight:800;
 white-space:nowrap;
@@ -7485,7 +7560,7 @@ font-size:10px;
 line-height:1.1;
 }
 .apipos-product-meta-item strong{
-font-size:9.5px;
+font-size:9px;
 line-height:1.2;
 color:var(--default-color);
 overflow-wrap:anywhere;
@@ -7578,7 +7653,7 @@ align-items:center;
 .apipos-product-card-list .apipos-product-grouped{grid-area:group;}
 .apipos-product-card-list .apipos-product-meta{grid-area:meta;margin:3px 0 0;}
 .apipos-product-card-list .apipos-product-price{grid-area:price;justify-self:end;align-self:center;}
-.apipos-product-card-list .apipos-product-price strong{font-size:20px;}
+.apipos-product-card-list .apipos-product-price strong{font-size:17px;}
 @container (min-width:590px){
 .apipos-product-card-list .apipos-product-info{
 grid-template-columns:minmax(140px,1.1fr) minmax(165px,1.1fr) max-content;
@@ -7611,10 +7686,10 @@ border-radius:14px;
 width:38%;
 min-height:145px;
 }
-.apipos-product-price strong{font-size:18px;}
+.apipos-product-price strong{font-size:15px;}
 .apipos-product-name{font-size:12px;}
 .apipos-product-meta-item svg{width:16px;height:16px;}
-.apipos-product-card-list .apipos-product-price strong{font-size:18px;}
+.apipos-product-card-list .apipos-product-price strong{font-size:15px;}
 }
 @media(prefers-reduced-motion:reduce){
 .apipos-product-image-main,

@@ -1465,11 +1465,6 @@ font-size: 12px;
 /* CONVERSION USD A PEN EN CARRITO */
 .apipos_cartFxTrigger{
 cursor:pointer;
-color:var(--orange);
-font-weight:700;
-text-decoration:underline;
-text-decoration-style:dotted;
-text-underline-offset:3px;
 }
 .apipos_cartFxTrigger:focus-visible{
 outline:2px solid var(--orange);

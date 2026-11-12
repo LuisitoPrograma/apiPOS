@@ -2709,6 +2709,15 @@ margin-left: 50px;
 margin-right: 50px;
 }
 
+.apipos_cashOnlyPayments{
+justify-content:center;
+}
+.apipos_cashOnlyPayments .payment-contado{
+flex:0 1 260px;
+width:100%;
+margin:0;
+}
+
 /* Estilo activo */
 .active-payment {
 background: #f9f5f5 !important;
@@ -8024,3 +8033,69 @@ min-height:145px;
 transition:none;
 }
 }
+
+/* CONFIRMACION DE DESPACHO APIPOS */
+.apipos_dispatch_dialog{
+width:min(92vw,500px);
+max-width:500px;
+max-height:min(90dvh,720px);
+margin:auto;
+padding:0;
+background:#fff;
+border:1px solid #dce3ee;
+border-radius:24px;
+color:var(--blue);
+box-sizing:border-box;
+overflow:auto;
+}
+.apipos_dispatch_dialog::backdrop{background:rgba(8,0,96,.42);}
+.apipos_dispatch_content{padding:clamp(20px,4vw,32px);text-align:center;}
+.apipos_dispatch_icon{
+width:84px;
+height:84px;
+margin:0 auto 18px;
+display:grid;
+place-items:center;
+background:#fff6ef;
+border:2px solid var(--orange);
+border-radius:24px;
+color:var(--orange);
+}
+.apipos_dispatch_icon svg{width:58px;height:58px;display:block;}
+.apipos_dispatch_title{margin:0 0 12px;font-size:clamp(19px,3.5vw,24px);font-weight:800;line-height:1.25;color:var(--blue);}
+.apipos_dispatch_description{margin:0 0 14px;font-size:15px !important;line-height:1.55 !important;color:#344054;overflow-wrap:anywhere;}
+.apipos_dispatch_related{margin:0 0 14px;padding:9px 12px;border:1px solid #dce3ee;border-radius:12px;background:#f8fafc;color:#667085;font-size:12px !important;line-height:1.5 !important;text-align:left;overflow-wrap:anywhere;}
+.apipos_dispatch_question{margin:0 0 22px;font-size:14px !important;line-height:1.5 !important;font-weight:700;color:var(--blue);}
+.apipos_dispatch_actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+.apipos_dispatch_button{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+flex:1 1 180px;
+min-height:48px;
+padding:11px 15px;
+border:2px solid var(--blue);
+border-radius:14px;
+background:#fff;
+color:var(--blue);
+font:inherit;
+font-size:14px;
+font-weight:800;
+line-height:1.25;
+cursor:pointer;
+transition:background-color .15s ease,border-color .15s ease;
+}
+.apipos_dispatch_accept{background:var(--orange);border-color:var(--orange);color:#fff;}
+.apipos_dispatch_accept svg{display:block;width:24px;height:24px;flex:none;}
+.apipos_dispatch_keep{background:var(--blue);border-color:var(--blue);color:#fff;}
+.apipos_dispatch_keep:hover{background:#06004a;border-color:#06004a;}
+.apipos_dispatch_accept:hover{background:#d94e00;border-color:#d94e00;}
+.apipos_dispatch_button:focus-visible{outline:3px solid var(--blue);outline-offset:3px;}
+@media(max-width:480px){
+.apipos_dispatch_dialog{width:calc(100vw - 24px);border-radius:20px;}
+.apipos_dispatch_content{padding:22px 18px;}
+.apipos_dispatch_actions{flex-direction:column;}
+.apipos_dispatch_button{flex:1 1 auto;width:100%;}
+}
+@media(prefers-reduced-motion:reduce){.apipos_dispatch_button{transition:none;}}

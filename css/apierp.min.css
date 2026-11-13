@@ -13046,3 +13046,26 @@ body.medical42_modalOpen{overflow:hidden}
 @media(max-width:900px){.prodDash_ranking{grid-template-columns:1fr}}
 @media(max-width:560px){.prodDash_header h1{font-size:23px}.prodDash_header h1 svg{display:block;width:26px;height:26px;flex-basis:26px}.prodDash_filters{width:100%;min-width:0}.prodDash_filters .dashb_field{flex:1 1 100%}.prodDash_rankItem{padding:11px}.prodDash_sectionHead h2{font-size:16px}}
 @media(prefers-reduced-motion:reduce){.prodDash_section,.prodDash_loadingIcon{animation:none}.prodDash_rankItem{transition:none}}
+
+.acc3_card{margin:16px 0;padding:20px;background:var(--white);border:2px solid #e2e8f0;border-radius:20px;color:var(--blue)}
+.acc3_title{font-size:21px;font-weight:800;margin:0 0 8px}
+.acc3_help{font-size:13px;color:#64748b;margin:0 0 18px}
+.acc3_form{display:grid;grid-template-columns:minmax(130px,1fr) minmax(200px,2fr) minmax(130px,1fr);gap:12px;align-items:end;margin-bottom:24px}
+.acc3_field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.acc3_label{font-size:13px;font-weight:700}
+.acc3_input{width:100%;min-height:42px;padding:10px 12px;border:1.5px solid #cbd5e1;border-radius:13px;background:var(--white);color:var(--blue)}
+.acc3_input:focus{outline:2px solid var(--orange);outline-offset:1px}
+.acc3_actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.acc3_form>.acc3_actions{grid-column:1/-1}
+.acc3_button{cursor:pointer;border:1.5px solid #cbd5e1;border-radius:12px;padding:9px 14px;background:#f1f5f9;color:var(--blue);font-weight:700;font-size:13px}
+.acc3_button:hover{border-color:var(--orange)}
+.acc3_button:disabled{opacity:.5;cursor:wait}
+.acc3_primary{background:var(--orange);color:var(--white);border-color:var(--orange)}
+.acc3_danger{background:#fff1f2;color:#b91c1c;border-color:#fecdd3}
+.acc3_list{border:1.5px solid #e2e8f0;border-radius:16px;padding:12px}
+.acc3_listHeader{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px}
+.acc3_listHeader h3{font-size:16px;margin:0}
+.acc3_row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px;border:1px solid #e2e8f0;border-radius:12px;background:#f8fafc;margin-top:8px}
+.acc3_info{display:flex;flex-direction:column;min-width:0;gap:4px;overflow-wrap:anywhere}
+.acc3_info small{color:#64748b}
+@media(max-width:760px){.acc3_form{grid-template-columns:1fr}.acc3_row{flex-direction:column;align-items:stretch}}

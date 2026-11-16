@@ -13069,3 +13069,28 @@ body.medical42_modalOpen{overflow:hidden}
 .acc3_info{display:flex;flex-direction:column;min-width:0;gap:4px;overflow-wrap:anywhere}
 .acc3_info small{color:#64748b}
 @media(max-width:760px){.acc3_form{grid-template-columns:1fr}.acc3_row{flex-direction:column;align-items:stretch}}
+
+/* CONSOLIDADO DE TURNOS EN REPORTES */
+.shiftconsolidate_overlay{position:fixed;inset:0;z-index:20000;background:rgba(8,0,40,.55)}
+.shiftconsolidate_dialog{position:fixed;z-index:20001;left:50%;top:50%;transform:translate(-50%,-50%);width:min(740px,calc(100vw - 26px));max-height:min(85vh,720px);display:flex;flex-direction:column;overflow:hidden;background:var(--white);border:2px solid #dbe3ef;border-radius:20px;color:var(--lead);box-sizing:border-box}
+.shiftconsolidate_overlay[hidden],.shiftconsolidate_dialog[hidden]{display:none!important}
+.shiftconsolidate_lock{overflow:hidden!important}
+.shiftconsolidate_header{padding:18px 20px 14px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;border-bottom:1px solid #e1e7ef}
+.shiftconsolidate_header h2{margin:0;color:var(--blue);font-size:19px;font-weight:850}
+.shiftconsolidate_header h2 i{color:var(--orange)}
+.shiftconsolidate_header p{margin:5px 0 0;font-size:12px!important;line-height:1.5!important;color:#64748b}
+.shiftconsolidate_close{width:34px;height:34px;display:grid;place-items:center;flex:none;border:1px solid #dce3ec;border-radius:10px;background:#f8fafc;color:var(--blue);cursor:pointer}
+.shiftconsolidate_tableWrap{overflow:auto;max-height:440px;min-height:0;padding:12px 16px}
+.shiftconsolidate_table{width:100%;min-width:590px;border-collapse:separate;border-spacing:0 5px;font-size:12px}
+.shiftconsolidate_table th{padding:9px 8px;text-align:left;color:var(--blue);font-weight:800;white-space:nowrap}
+.shiftconsolidate_table td{padding:10px 8px;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;background:#f8fafc;color:var(--lead);vertical-align:middle}
+.shiftconsolidate_table td:first-child{border-left:1px solid #e2e8f0;border-radius:10px 0 0 10px;text-align:center;width:35px}
+.shiftconsolidate_table td:last-child{border-right:1px solid #e2e8f0;border-radius:0 10px 10px 0}
+.shiftconsolidate_table tr:has(.shiftconsolidate_check:checked) td{background:#fff4eb;border-color:#ffc9a9}
+.shiftconsolidate_check{width:17px;height:17px;margin:0;accent-color:var(--orange);cursor:pointer}
+.shiftconsolidate_footer{padding:13px 18px 16px;border-top:1px solid #e1e7ef;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px}
+.shiftconsolidate_footer span{font-size:12px;color:#64748b;font-weight:700}
+.shiftconsolidate_footer button{padding:11px 18px;border:1px solid var(--orange);border-radius:12px;background:var(--orange);color:var(--white);font-size:13px;font-weight:800;cursor:pointer}
+.shiftconsolidate_footer button:disabled{opacity:.5;cursor:not-allowed}
+.shiftconsolidate_dialog[data-busy="1"] .shiftconsolidate_tableWrap{pointer-events:none;opacity:.7}
+@media(max-width:600px){.shiftconsolidate_header{padding:14px}.shiftconsolidate_header h2{font-size:17px}.shiftconsolidate_tableWrap{padding:8px}.shiftconsolidate_footer{padding:12px}}

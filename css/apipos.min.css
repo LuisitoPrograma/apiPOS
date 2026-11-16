@@ -2236,7 +2236,7 @@ align-items:center;
 justify-content:center;
 gap:6px;
 margin-top:0;
-background-color:transparent;
+background-color:var(--white);
 text-align:center;
 cursor:pointer;
 }

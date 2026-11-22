@@ -2929,8 +2929,6 @@ margin-top: 10px;
 /* MODAL DE VALORES UNITARIOS */
 .apipos_unitValueLabel{
 cursor:pointer;
-color:var(--blue);
-font-weight:700;
 }
 .apipos_unitValueLabel:hover{
 color:var(--orange);

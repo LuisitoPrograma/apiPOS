@@ -10323,9 +10323,9 @@ background:var(--white);
 .iaAssistant_callBtn_answer{min-height:44px;padding:9px 16px;border-color:#22c55e;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;gap:7px;background:#22c55e;color:#fff}
 .iaAssistant_callBtn_answer svg{width:17px;height:17px}
 .iaAssistant_callBtn_answer:hover{background:#16a34a;border-color:#16a34a;opacity:1}
-.iaAssistant_answerRealtimeChoice{min-height:40px;padding:7px 10px;border:1px solid #cbd5e1;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;gap:7px;background:#fff;color:#334155;font:inherit;font-size:11px;font-weight:750;cursor:pointer}
-.iaAssistant_answerRealtimeChoice input{width:16px;height:16px;margin:0;accent-color:var(--orange)}
-.iaAssistant_answerRealtimeChoice:has(input:checked){border-color:var(--orange);color:var(--orange);background:#fff8f3}
+.iaAssistant_answerVoiceChoice{min-height:40px;padding:7px 10px;border:1px solid #cbd5e1;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;gap:7px;background:#fff;color:#334155;font:inherit;font-size:11px;font-weight:750;cursor:pointer}
+.iaAssistant_answerVoiceChoice input{width:16px;height:16px;margin:0;accent-color:var(--orange)}
+.iaAssistant_answerVoiceChoice:has(input:checked){border-color:var(--orange);color:var(--orange);background:#fff8f3}
 
 .iaAssistant_callCard:last-child{
 border-bottom:0;

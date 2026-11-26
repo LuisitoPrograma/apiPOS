@@ -97,15 +97,15 @@ color: var(--blue);
 
 /* Header Sub Nav */
 .icon-main{
-width: 30px;
+width: 20px;
 height: auto;
 margin-right: 5px;
 color: var(--orange);
 }
 .icon-arrow-right{
-width: 20px;
+width: 15px;
 height: auto;
-color: var(--blue);
+color: var(--orange);
 }
 .navmenu li.has-submenu {
 padding-right: 10px;

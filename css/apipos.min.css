@@ -109,7 +109,7 @@ textarea{resize:vertical;}
 .visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip-path:inset(50%);white-space:nowrap!important;border:0!important;}
 
 /* ICONOS SVG ERP */
-.apierp_icon{display:inline-flex;width:24px;align-items:center;justify-content:center;flex-shrink:0;vertical-align:middle;line-height:0;color:var(--blue);}
+.apierp_icon{display:inline-flex;width:24px;align-items:center;justify-content:center;flex-shrink:0;vertical-align:middle;line-height:0;color:var(--orange);}
 .apierp_icon>svg{display:block;width:100%;height:auto;pointer-events:none;}
 .apierp_caretToggle[aria-expanded="true"]>svg{transform:rotate(180deg);}
 .apierp_flag{display:inline-flex;width:20px;height:14px;align-items:center;flex-shrink:0;}
@@ -1407,7 +1407,7 @@ gap: 5px;
 margin: 10px;
 }
 .img-tab-home{
-width: 30px;
+width: 25px;
 height: auto;
 }
 .arrow-link {
@@ -1448,10 +1448,12 @@ font-size: 13px;
 #fullscreen-btn,
 #btnAddProductFree{
 width: 7%;
-margin-top: 3.5px;
-margin-right: 5px;
 background: none;
 border: none;
+}
+#fullscreen-span{
+width: 30px;
+margin-top: 5px;
 }
 .custom-inputs-border{
 padding: 5px 15px;
@@ -2761,7 +2763,7 @@ height: auto;
 margin: 5px;
 }
 .img-tab-home-responsive{
-width: 30px;
+width: 25px;
 }
 .container-responsive-main-header{
 background: #FF590010;
@@ -4638,7 +4640,7 @@ margin: 0;
 margin-left: 0;
 }
 .img-tab-home{
-width: 25px;
+width: 20px;
 }
 
 /* Create Window */
@@ -8041,6 +8043,7 @@ display:block;
 width:15px;
 height:15px;
 object-fit:contain;
+color: var(--orange);
 }
 .apipos-product-price{
 display:flex;

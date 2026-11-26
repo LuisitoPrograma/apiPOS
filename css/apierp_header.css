@@ -96,22 +96,16 @@ color: var(--blue);
 }
 
 /* Header Sub Nav */
-.icon-main,
-.icon-main-lead{
+.icon-main{
 width: 30px;
 height: auto;
 margin-right: 5px;
+color: var(--orange);
 }
-.icon-main-lead{
-display: none;
-}
-.icon-arrow-right,
-.icon-arrow-right-white{
+.icon-arrow-right{
 width: 20px;
 height: auto;
-}
-.icon-arrow-right-white{
-display: none;
+color: var(--blue);
 }
 .navmenu li.has-submenu {
 padding-right: 10px;
@@ -159,17 +153,9 @@ color: var(--orange);
 .navmenu li.has-submenu.expanded > a .arrow {
 transform: translateY(-50%) rotate(90deg);
 }
-.navmenu li.has-submenu.expanded .icon-arrow-right {
-display: none !important;
-}
-.navmenu li.has-submenu.expanded .icon-arrow-right-white {
-display: block !important;
-}
-.navmenu li.has-submenu.expanded .icon-main {
-display: none !important;
-}
-.navmenu li.has-submenu.expanded .icon-main-lead {
-display: block !important;
+.navmenu li.has-submenu.expanded > a .icon-main,
+.navmenu li.has-submenu.expanded > a .icon-arrow-right{
+color: var(--white);
 }
 .navmenu li.has-submenu.expanded > .submenu {
 display: block;
@@ -294,32 +280,29 @@ background: #f7f7f7;
 color: #888;
 }
 
+.apierp_headerSelect{position:relative;display:inline-flex;align-items:center;}
+.apierp_headerSelectIcon{display:none;}
+
 /* Responsive Design */
 @media (max-width: 768px){
+.apierp_headerSelectIcon{display:inline-flex;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:30px;pointer-events:none;}
+.apierp_headerSelect:focus-within .apierp_headerSelectIcon{visibility:hidden;}
+.apierp_headerSelect #setBranchId:focus,
+.apierp_headerSelect #setWarehouseId:focus,
+.apierp_headerSelect #setFloorId:focus{width:100px;text-indent:0;}
 
 /* HEADER */
-#setBranchId{
-background: url(../img/icon-branch.svg) no-repeat center center;
-}
-#setWarehouseId{
-background: url(../img/icon-warehouse.svg) no-repeat center center;
-}
-#setFloorId{
-background: url(../img/icon-floor.svg) no-repeat center center;
-}
-
 #setBranchId,
 #setWarehouseId,
 #setFloorId{
 -webkit-appearance: none !important;
 -moz-appearance: none !important;
 appearance: none !important;
-background-size: 30px;
 transition: width 0.3s ease;
-text-indent: -9999px !important;
+text-indent: -9999px;
 overflow: hidden;
-text-indent: 0;
 width: 40px;
+margin-right:0;
 }
 .element-header-response{
 display: none;

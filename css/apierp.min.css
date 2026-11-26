@@ -1162,6 +1162,12 @@ background-color: var(--transparent);
 color: var(--blue);
 border: 1px solid var(--blue);
 }
+.pagination-table a[aria-current="page"]{
+background-color:var(--blue);
+border-color:var(--blue);
+color:var(--white);
+font-weight:700;
+}
 .span-table-custom{
 background: none;
 padding: 5px 10px;
@@ -3296,7 +3302,7 @@ to{transform:rotate(360deg);}
 .hairSalon_tag{max-width:100%;display:inline-flex;align-items:center;gap:7px;padding:6px 7px 6px 10px;border:1px solid #e4e9ef;border-radius:10px;background:#f8fafc;color:var(--blue);font-size:11px;font-weight:700;}
 .hairSalon_tag>span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .hairSalon_tagRemove{width:27px;height:27px;flex-basis:27px;}
-.hairSalon_tagRemove img{width:14px;height:14px;}
+.hairSalon_tagRemove svg{width:14px;height:14px;}
 .hairSalon_muted{color:#64748b;font-size:11.5px;}
 
 .hairSalon_autocomplete{position:relative;width:100%;}
@@ -4281,11 +4287,11 @@ opacity:.55;
 cursor:not-allowed;
 }
 
-.inst_headerPrintButton img{
+.inst_headerPrintButton svg{
 width:19px;
 height:19px;
 display:block;
-filter:brightness(0) invert(1);
+color:var(--white);
 }
 
 .inst_headerActions{
@@ -4751,7 +4757,7 @@ border-color:var(--orange);
 background:#fff8f4;
 }
 
-.inst_operationPrintButton img{
+.inst_operationPrintButton svg{
 width:17px;
 height:17px;
 display:block;
@@ -4931,7 +4937,7 @@ border-color:var(--orange);
 background:#fff8f4;
 }
 
-.inst_printButton img{
+.inst_printButton svg{
 width:18px;
 height:18px;
 display:block;
@@ -5360,11 +5366,14 @@ cursor:not-allowed;
 transform:none;
 }
 
-.inst_cardIconButton img{
+.inst_cardIconButton svg{
 width:17px;
 height:17px;
 display:block;
+color:var(--blue);
 }
+.inst_cardSaveButton svg{color:var(--green);}
+.inst_cardDeleteButton svg,.att36_removeRange svg,.erpCal_eventActionButton--danger svg{color:var(--orange);}
 
 .inst_cardSaveButton:hover:not(:disabled){
 border-color:rgba(8,0,96,.35);
@@ -6037,7 +6046,7 @@ align-items:center;
 justify-content:center;
 }
 
-.att36_removeRange img{
+.att36_removeRange svg{
 width:15px;
 height:15px;
 display:block;
@@ -8452,7 +8461,7 @@ background:rgba(180,35,24,.045);
 background:rgba(180,35,24,.09);
 }
 
-.erpCal_eventActionButton img{
+.erpCal_eventActionButton svg{
 width:16px;
 height:16px;
 object-fit:contain;
@@ -11224,7 +11233,8 @@ border-color:var(--orange);
 outline:none;
 }
 
-.company_logoZone img{
+.company_logoZone img,
+#company_logo_placeholder{
 width:140px;
 height:140px;
 object-fit:contain;

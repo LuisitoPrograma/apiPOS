@@ -403,24 +403,9 @@ width: 100px;
 .header~#footer {
 margin-left: 100px;
 }
-#icon-branch,
-#icon-warehouse,
-#icon-floor,
-#icon-user{
-display: none;
-}
-#setBranchId{
-background: url(../img/icon-branch.svg) no-repeat center center;
-}
-#setWarehouseId{
-background: url(../img/icon-warehouse.svg) no-repeat center center;
-}
-#setFloorId{
-background: url(../img/icon-floor.svg) no-repeat center center;
-}
-#setCajeroCodigo{
-background: url(../img/user.png) no-repeat center center;
-}
+#setBranchDiv,#setWarehouseDiv,#setFloorDiv,#setCajeroDiv{position:relative;}
+#icon-branch,#icon-warehouse,#icon-floor,#icon-user{display:inline-flex;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:30px;pointer-events:none;}
+#setBranchDiv:focus-within #icon-branch,#setWarehouseDiv:focus-within #icon-warehouse,#setFloorDiv:focus-within #icon-floor,#setCajeroDiv:focus-within #icon-user{visibility:hidden;}
 #setBranchId,
 #setWarehouseId,
 #setFloorId,
@@ -428,7 +413,6 @@ background: url(../img/user.png) no-repeat center center;
 -webkit-appearance: none !important;
 -moz-appearance: none !important;
 appearance: none !important;
-background-size: 30px;
 width: 50% !important;
 margin: 0 auto;
 transition: width 0.3s ease;
@@ -440,6 +424,7 @@ overflow: hidden;
 #setFloorId:focus,
 #setCajeroCodigo:focus{
 text-indent: 0;
+width:100%!important;
 }
 .custom-inputs{
 padding: 2px;
